@@ -1,0 +1,19 @@
+{
+  "name": "BecomeChampion - W40K 规则助手",
+  "short_name": "BecomeChampion",
+  "description": "战锤40K 阶段提示工具，离线可用",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait-primary",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}
