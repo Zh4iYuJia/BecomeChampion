@@ -1,14 +1,14 @@
 {
   "$schema": "https://becomechampion.app/schemas/rules-pack-v1.json",
-  "$comment": "BecomeChampion Rules Pack - Space Marines / Ultramarines (10th Edition). Generated from 10e CSV data. Includes Ultramarines-exclusive detachments and all compatible common Space Marines units surfaced from the current dataset; not official rules text.",
+  "$comment": "BecomeChampion Rules Pack - Space Marines / Ultramarines (10th Edition). Generated from 10e CSV data. Includes Ultramarines-exclusive detachments, compatible generic Space Marines detachments, and all compatible common Space Marines units surfaced from the current dataset; not official rules text.",
   "id": "sm-um-rules-pack",
   "faction": "Space Marines",
   "subfaction": "Ultramarines",
   "game_version": "10th Edition",
-  "pack_version": "1.0.0",
+  "pack_version": "1.1.0",
   "date": "2026-03-18",
   "author": "Community",
-  "source_note": "Generated from current 10e CSV exports. This pack includes Ultramarines-exclusive detachments Blade of Ultramar and Reclamation Force, plus common Space Marines units that do not belong to another chapter source. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+  "source_note": "Generated from current 10e CSV exports. This pack includes Ultramarines-exclusive detachments Blade of Ultramar, Reclamation Force, plus generic Space Marines detachments Gladius Task Force, Anvil Siege Force, Ironstorm Spearhead, Firestorm Assault Force, Stormlance Task Force, Vanguard Spearhead, 1st Company Task Force, Librarius Conclave, Bastion Task Force, Orbital Assault Force and common Space Marines units that do not belong to another chapter source. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
   "units": [
     {
       "id": "unit-000002099",
@@ -4178,6 +4178,320 @@
   ],
   "stratagems": [
     {
+      "id": "strat-000008495007",
+      "name": "LEGENDARY FORTITUDE",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "timing": "Your opponent’s Charge phase, just after an enemy unit ends a Charge move.",
+      "target": "One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army within Engagement Range of that enemy unit.",
+      "effect": "Until the end of the turn, each time an attack is allocated to a model in your unit, subtract 1 from the Damage characteristic of that attack.",
+      "source": "Wahapedia CSV / 1st Company Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "1st Company Task Force – Battle Tactic Stratagem",
+        "1st Company Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008495002",
+      "name": "ARMOUR OF CONTEMPT",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+      "source": "Wahapedia CSV / 1st Company Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "1st Company Task Force – Battle Tactic Stratagem",
+        "1st Company Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008495003",
+      "name": "HEROES OF THE CHAPTER",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack, add 1 to the Hit roll. If your unit is Below Half-strength, add 1 to the Wound roll as well.",
+      "source": "Wahapedia CSV / 1st Company Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "1st Company Task Force – Battle Tactic Stratagem",
+        "1st Company Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008495006",
+      "name": "ORBITAL TELEPORTARIUM",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "End of your opponent’s Fight phase.",
+      "target": "One ADEPTUS ASTARTES TERMINATOR unit from your army.",
+      "effect": "Remove your unit from the battlefield and place it into Strategic Reserves. It will arrive back on the battlefield in the Reinforcements step of your next Movement phase using the Deep Strike ability.",
+      "source": "Wahapedia CSV / 1st Company Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "1st Company Task Force – Strategic Ploy Stratagem",
+        "1st Company Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008495004",
+      "name": "TERRIFYING PROFICIENCY",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Your Fight phase.",
+      "target": "One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army that made a Charge move this turn and destroyed one or more enemy units this phase.",
+      "effect": "In your opponent’s next Command phase, each enemy unit within 6\" of your unit must take a Battle-shock test. If the unit taking that test is Below Half-strength, subtract 1 from that test. Enemy units affected by this Stratagem do not need to take any other Battle-shock tests in the same phase.",
+      "source": "Wahapedia CSV / 1st Company Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "1st Company Task Force – Strategic Ploy Stratagem",
+        "1st Company Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008495005",
+      "name": "DUTY AND HONOUR",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Movement phase.",
+      "target": "One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army within range of an objective marker you control.",
+      "effect": "That objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
+      "source": "Wahapedia CSV / 1st Company Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "1st Company Task Force – Strategic Ploy Stratagem",
+        "1st Company Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008475002",
+      "name": "ARMOUR OF CONTEMPT",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+      "source": "Wahapedia CSV / Anvil Siege Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Anvil Siege Force – Battle Tactic Stratagem",
+        "Anvil Siege Force"
+      ]
+    },
+    {
+      "id": "strat-000008475005",
+      "name": "NO THREAT TOO GREAT",
+      "cp_cost": 2,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets a MONSTER or VEHICLE unit, you can re-roll the Wound roll.",
+      "source": "Wahapedia CSV / Anvil Siege Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Anvil Siege Force – Battle Tactic Stratagem",
+        "Anvil Siege Force"
+      ]
+    },
+    {
+      "id": "strat-000008475006",
+      "name": "BATTLE DRILL RECALL",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability. If your unit Remained Stationary this turn, then until the end of the phase, each time a model in your unit makes a ranged attack, a successful unmodified Hit roll of 5+ scores a Critical Hit.",
+      "source": "Wahapedia CSV / Anvil Siege Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Anvil Siege Force – Battle Tactic Stratagem",
+        "Anvil Siege Force"
+      ]
+    },
+    {
+      "id": "strat-000008475004",
+      "name": "NOT ONE BACKWARDS STEP",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Your Command phase.",
+      "target": "One ADEPTUS ASTARTES INFANTRY unit from your army within range of an objective marker.",
+      "effect": "Until the end of the turn, double the Objective Control characteristic of models in your unit, but it must Remain Stationary this turn.",
+      "source": "Wahapedia CSV / Anvil Siege Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Anvil Siege Force – Strategic Ploy Stratagem",
+        "Anvil Siege Force"
+      ]
+    },
+    {
+      "id": "strat-000008475007",
+      "name": "HAIL OF VENGEANCE",
+      "cp_cost": 2,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.",
+      "target": "One ADEPTUS ASTARTES unit from your army that had one or more of its models destroyed as a result of the attacking unit’s attacks.",
+      "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
+      "source": "Wahapedia CSV / Anvil Siege Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Anvil Siege Force – Strategic Ploy Stratagem",
+        "Anvil Siege Force"
+      ]
+    },
+    {
+      "id": "strat-000008475003",
+      "name": "RIGID DISCIPLINE",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "End of the Fight phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that is within Engagement Range of one or more enemy units.",
+      "effect": "Your unit can immediately make a Fall Back move of up to 6\".",
+      "source": "Wahapedia CSV / Anvil Siege Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Anvil Siege Force – Strategic Ploy Stratagem",
+        "Anvil Siege Force"
+      ]
+    },
+    {
+      "id": "strat-000010677002",
+      "name": "CODEX DISCIPLINE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit, re-roll a Hit roll of 1. If that target is auspex scanned, re-roll a Wound roll of 1 as well.",
+      "source": "Wahapedia CSV / Bastion Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Bastion Task Force – Battle Tactic Stratagem",
+        "Bastion Task Force"
+      ]
+    },
+    {
+      "id": "strat-000010677004",
+      "name": "LIGHT OF VENGEANCE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have that ability while targeting an auspex scanned unit or if the bearer has the Battleline keyword.",
+      "source": "Wahapedia CSV / Bastion Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Bastion Task Force – Battle Tactic Stratagem",
+        "Bastion Task Force"
+      ]
+    },
+    {
+      "id": "strat-000010677007",
+      "name": "HERESY UNDONE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "charge"
+      ],
+      "timing": "Your Shooting phase or your Charge phase.",
+      "target": "One ADEPTUS ASTARTES unit (excluding Battleline units) from your army.",
+      "effect": "Until the end of the phase, your unit is eligible to shoot and declare a charge in a turn in which it Advanced or Fell Back. If it does, every target of that charge and every target of those attacks must be an auspex scanned unit.",
+      "source": "Wahapedia CSV / Bastion Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Bastion Task Force – Strategic Ploy Stratagem",
+        "Bastion Task Force"
+      ]
+    },
+    {
+      "id": "strat-000010677003",
+      "name": "GUIDED DISRUPTION",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase, just after an Adeptus Astartes Battleline unit from your army has finished making its attacks.",
+      "target": "That ADEPTUS ASTARTES BATTLELINE unit.",
+      "effect": "When an enemy unit is auspex scanned as a result of those attacks this turn, if that enemy unit does not have the MONSTER or VEHICLE keywords, until the start of your next turn, it is pinned. While a unit is pinned, subtract 2 from that unit’s Move characteristic and subtract 2 from Charge rolls made for that unit.",
+      "source": "Wahapedia CSV / Bastion Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Bastion Task Force – Strategic Ploy Stratagem",
+        "Bastion Task Force"
+      ]
+    },
+    {
+      "id": "strat-000010677005",
+      "name": "SHOCK BOMBARDMENT",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase, just after an Adeptus Astartes Battleline unit from your army finished making its attacks.",
+      "target": "That ADEPTUS ASTARTES BATTLELINE unit.",
+      "effect": "When an enemy unit is auspex scanned as a result of those attacks this turn, until the start of your next turn, it is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
+      "source": "Wahapedia CSV / Bastion Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Bastion Task Force – Strategic Ploy Stratagem",
+        "Bastion Task Force"
+      ]
+    },
+    {
       "id": "strat-000010634002",
       "name": "ARMOUR OF CONTEMPT",
       "cp_cost": 1,
@@ -4288,6 +4602,554 @@
       ]
     },
     {
+      "id": "strat-000008483003",
+      "name": "CRUCIBLE OF BATTLE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets the closest eligible target within 6\", add 1 to the Wound roll.",
+      "source": "Wahapedia CSV / Firestorm Assault Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Firestorm Assault Force – Battle Tactic Stratagem",
+        "Firestorm Assault Force"
+      ]
+    },
+    {
+      "id": "strat-000008483005",
+      "name": "IMMOLATION PROTOCOLS",
+      "cp_cost": 2,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, Torrent weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability.",
+      "source": "Wahapedia CSV / Firestorm Assault Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Firestorm Assault Force – Battle Tactic Stratagem",
+        "Firestorm Assault Force"
+      ]
+    },
+    {
+      "id": "strat-000008483002",
+      "name": "ARMOUR OF CONTEMPT",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+      "source": "Wahapedia CSV / Firestorm Assault Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Firestorm Assault Force – Battle Tactic Stratagem",
+        "Firestorm Assault Force"
+      ]
+    },
+    {
+      "id": "strat-000008483007",
+      "name": "BURNING VENGEANCE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.",
+      "target": "One ADEPTUS ASTARTES TRANSPORT unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "One unit embarked within that TRANSPORT can disembark as if it were your Movement phase, and can then shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
+      "source": "Wahapedia CSV / Firestorm Assault Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Firestorm Assault Force – Battle Tactic Stratagem",
+        "Firestorm Assault Force"
+      ]
+    },
+    {
+      "id": "strat-000008483006",
+      "name": "ONSLAUGHT OF FIRE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that disembarked from a TRANSPORT this turn and has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets the closest eligible target within 12\", add 1 to the Hit roll. If one or more enemy models are destroyed as the result of any of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test.",
+      "source": "Wahapedia CSV / Firestorm Assault Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Firestorm Assault Force – Battle Tactic Stratagem",
+        "Firestorm Assault Force"
+      ]
+    },
+    {
+      "id": "strat-000008483004",
+      "name": "RAPID EMBARKATION",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "End of the Fight phase.",
+      "target": "One ADEPTUS ASTARTES TRANSPORT unit from your army that has no models embarked within it, and one ADEPTUS ASTARTES INFANTRY unit from your army wholly within 6\" of that TRANSPORT .",
+      "effect": "Your INFANTRY unit can embark within that TRANSPORT .",
+      "source": "Wahapedia CSV / Firestorm Assault Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Firestorm Assault Force – Strategic Ploy Stratagem",
+        "Firestorm Assault Force"
+      ]
+    },
+    {
+      "id": "strat-000008352006",
+      "name": "STORM OF FIRE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. If your unit is under the effects of the Devastator Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",
+      "source": "Wahapedia CSV / Gladius Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Gladius Task Force – Battle Tactic Stratagem",
+        "Gladius Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008352002",
+      "name": "ARMOUR OF CONTEMPT",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+      "source": "Wahapedia CSV / Gladius Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Gladius Task Force – Battle Tactic Stratagem",
+        "Gladius Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008352004",
+      "name": "HONOUR THE CHAPTER",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army.",
+      "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [LANCE] ability. If your unit is under the effects of the Assault Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",
+      "source": "Wahapedia CSV / Gladius Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Gladius Task Force – Battle Tactic Stratagem",
+        "Gladius Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008352003",
+      "name": "ONLY IN DEATH DOES DUTY END",
+      "cp_cost": 2,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.",
+      "source": "Wahapedia CSV / Gladius Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Gladius Task Force – Epic Deed Stratagem",
+        "Gladius Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008352005",
+      "name": "ADAPTIVE STRATEGY",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Your Command phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army.",
+      "effect": "Select the Devastator Doctrine, Tactical Doctrine or Assault Doctrine. Until the start of your next Command phase, that Combat Doctrine is active for that unit instead of any other Combat Doctrine that is active for your army, even if you have already selected that doctrine this battle.",
+      "source": "Wahapedia CSV / Gladius Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Gladius Task Force – Strategic Ploy Stratagem",
+        "Gladius Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008352007",
+      "name": "SQUAD TACTICS",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
+      "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that is within 9\" of the enemy unit that just ended that move.",
+      "effect": "Your unit can make a Normal move of up to D6\", or a Normal move of up to 6\" instead if it is under the effects of the Tactical Doctrine.",
+      "source": "Wahapedia CSV / Gladius Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Gladius Task Force – Strategic Ploy Stratagem",
+        "Gladius Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008479004",
+      "name": "MERCY IS WEAKNESS",
+      "cp_cost": 2,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets a unit that is below its Starting Strength, that attack has the [SUSTAINED HITS 1] ability, and when making such an attack, if the attacking model is a VEHICLE , a successful unmodified Hit roll of 5+ scores a Critical Hit.",
+      "source": "Wahapedia CSV / Ironstorm Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Ironstorm Spearhead – Battle Tactic Stratagem",
+        "Ironstorm Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000008479003",
+      "name": "ARMOUR OF CONTEMPT",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+      "source": "Wahapedia CSV / Ironstorm Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Ironstorm Spearhead – Battle Tactic Stratagem",
+        "Ironstorm Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000008479002",
+      "name": "UNBOWED CONVICTION",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Command phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that is below its Starting Strength.",
+      "effect": "Until the end of the turn, your unit can ignore any or all modifiers to its characteristics and/or to any roll or test made for it (excluding modifiers to saving throws).",
+      "source": "Wahapedia CSV / Ironstorm Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Ironstorm Spearhead – Battle Tactic Stratagem",
+        "Ironstorm Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000008479005",
+      "name": "VENGEFUL ANIMUS",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase, just after an ADEPTUS ASTARTES VEHICLE model from your army with the Deadly Demise ability is destroyed.",
+      "target": "That ADEPTUS ASTARTES VEHICLE model. You can use this Stratagem on that model even though it was just destroyed.",
+      "effect": "Do not roll one D6 to determine whether mortal wounds are inflicted by your model’s Deadly Demise ability. Instead, mortal wounds are automatically inflicted.",
+      "source": "Wahapedia CSV / Ironstorm Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Ironstorm Spearhead – Epic Deed Stratagem",
+        "Ironstorm Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000008479006",
+      "name": "ANCIENT FURY",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Your Command phase.",
+      "target": "One ADEPTUS ASTARTES WALKER model from your army.",
+      "effect": "Until the start of your next Command phase, improve your model’s Move, Toughness, Leadership and Objective Control characteristics by 1 and each time your model makes an attack, add 1 to the Hit roll.",
+      "source": "Wahapedia CSV / Ironstorm Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Ironstorm Spearhead – Epic Deed Stratagem",
+        "Ironstorm Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000008479007",
+      "name": "POWER OF THE MACHINE SPIRIT",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.",
+      "target": "One ADEPTUS ASTARTES VEHICLE unit from your army that was reduced to Below Half-strength as a result of the attacking unit’s attacks.",
+      "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
+      "source": "Wahapedia CSV / Ironstorm Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Ironstorm Spearhead – Epic Deed Stratagem",
+        "Ironstorm Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000009791004",
+      "name": "FIERY SHIELD",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that is within 18\" of one or more friendly Adeptus Astartes Psyker models, and that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll, and if the Pyromancy Discipline is active for your army, weapons that target your unit have the [HAZARDOUS] ability.",
+      "source": "Wahapedia CSV / Librarius Conclave",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Librarius Conclave – Strategic Ploy Stratagem",
+        "Librarius Conclave"
+      ]
+    },
+    {
+      "id": "strat-000009791005",
+      "name": "IRON ARM",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "One Adeptus Astartes Infantry unit from your army that is within 18\" of one or more Adeptus Astartes Psyker models from your army and has not been selected to Fight this phase.",
+      "effect": "Until the end of the phase, add 1 to the Strength characteristic of melee weapons equipped by models in your unit, or add 2 if the Biomancy Discipline is active for your army.",
+      "source": "Wahapedia CSV / Librarius Conclave",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Librarius Conclave – Strategic Ploy Stratagem",
+        "Librarius Conclave"
+      ]
+    },
+    {
+      "id": "strat-000009791006",
+      "name": "ASSAIL",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One Adeptus Astartes Psyker unit from your army that is eligible to shoot.",
+      "effect": "Select one enemy unit within 18\" of and visible to one or more PSYKER models in your unit (excluding units with the Lone Operative ability), and roll six D6, adding 1 to each result if the Telekinesis Discipline is active for your army: for each 4+, that enemy unit suffers 1 mortal wound.",
+      "source": "Wahapedia CSV / Librarius Conclave",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Librarius Conclave – Strategic Ploy Stratagem",
+        "Librarius Conclave"
+      ]
+    },
+    {
+      "id": "strat-000009791007",
+      "name": "PRESCIENT PRECISION",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One Adeptus Astartes Psyker unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack, that attack has the [LETHAL HITS] ability, and the [IGNORES COVER] ability as well if the Divination Discipline is active for your army.",
+      "source": "Wahapedia CSV / Librarius Conclave",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Librarius Conclave – Strategic Ploy Stratagem",
+        "Librarius Conclave"
+      ]
+    },
+    {
+      "id": "strat-000009791002",
+      "name": "SENSORY ASSAULT",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Command phase.",
+      "target": "One Adeptus Astartes Psyker unit from your army.",
+      "effect": "Select one enemy unit that is within 18\" of and visible to one PSYKER model in your unit. Until the start of your next turn, that enemy unit is pinned. While a unit is pinned, subtract 2 from that unit’s Move characteristic and subtract 2 from Charge rolls made for it. In addition, if the Telepathy Discipline is active for your army, that enemy unit must take a Battle-shock test, subtracting 1 from the result.",
+      "source": "Wahapedia CSV / Librarius Conclave",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Librarius Conclave – Strategic Ploy Stratagem",
+        "Librarius Conclave"
+      ]
+    },
+    {
+      "id": "strat-000009791003",
+      "name": "ARMOUR OF CONTEMPT",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+      "source": "Wahapedia CSV / Librarius Conclave",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Librarius Conclave – Strategic Ploy Stratagem",
+        "Librarius Conclave"
+      ]
+    },
+    {
+      "id": "strat-000010681005",
+      "name": "AUTO‑SENSE COORDINATION",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a Drop Pod or while targeting an enemy unit within 12\".",
+      "source": "Wahapedia CSV / Orbital Assault Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Orbital Assault Force – Battle Tactic Stratagem",
+        "Orbital Assault Force"
+      ]
+    },
+    {
+      "id": "strat-000010681003",
+      "name": "TACTICAL DECAPITATION",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll.",
+      "source": "Wahapedia CSV / Orbital Assault Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Orbital Assault Force – Battle Tactic Stratagem",
+        "Orbital Assault Force"
+      ]
+    },
+    {
+      "id": "strat-000010681006",
+      "name": "BLIND SCREEN",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS ASTARTES unit (excluding Titanic units) from your army that was selected as the target of one or more of the attacking unit’s attacks and one friendly Adeptus Astartes Smoke Vehicle or Drop Pod unit within 9\" of it.",
+      "effect": "Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack.",
+      "source": "Wahapedia CSV / Orbital Assault Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Orbital Assault Force – Strategic Ploy Stratagem",
+        "Orbital Assault Force"
+      ]
+    },
+    {
+      "id": "strat-000010681004",
+      "name": "SHOCK ONSLAUGHT",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6\" instead of up to 3\".",
+      "source": "Wahapedia CSV / Orbital Assault Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Orbital Assault Force – Strategic Ploy Stratagem",
+        "Orbital Assault Force"
+      ]
+    },
+    {
+      "id": "strat-000010681007",
+      "name": "ONWARD FOR THE EMPEROR",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "End of your opponent’s Fight phase.",
+      "target": "One Adeptus Astartes Infantry unit from your army that was not set up on the battlefield this turn and one friendly Transport it is able to embark within.",
+      "effect": "If your ADEPTUS ASTARTES unit is wholly within 6\" of that TRANSPORT , it can embark within it.",
+      "source": "Wahapedia CSV / Orbital Assault Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Orbital Assault Force – Strategic Ploy Stratagem",
+        "Orbital Assault Force"
+      ]
+    },
+    {
+      "id": "strat-000010681002",
+      "name": "SUPPRESSION STRAFING",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Command phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army.",
+      "effect": "Select one enemy unit visible to and within 18\" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
+      "source": "Wahapedia CSV / Orbital Assault Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Orbital Assault Force – Strategic Ploy Stratagem",
+        "Orbital Assault Force"
+      ]
+    },
+    {
       "id": "strat-000010685003",
       "name": "FURIOUS DEDICATION",
       "cp_cost": 1,
@@ -4395,9 +5257,323 @@
         "Reclamation Force – Strategic Ploy Stratagem",
         "Reclamation Force"
       ]
+    },
+    {
+      "id": "strat-000008487006",
+      "name": "RIDE HARD, RIDE FAST",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll and subtract 1 from the Wound roll.",
+      "source": "Wahapedia CSV / Stormlance Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Stormlance Task Force – Battle Tactic Stratagem",
+        "Stormlance Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008487002",
+      "name": "ARMOUR OF CONTEMPT",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+      "source": "Wahapedia CSV / Stormlance Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Stormlance Task Force – Battle Tactic Stratagem",
+        "Stormlance Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008487003",
+      "name": "BLITZING FUSILLADE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [ASSAULT] ability. If such a weapon already has this ability, until the end of the phase, that weapon has the [SUSTAINED HITS 1] ability as well.",
+      "source": "Wahapedia CSV / Stormlance Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Stormlance Task Force – Battle Tactic Stratagem",
+        "Stormlance Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008487005",
+      "name": "SHOCK ASSAULT",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "timing": "Your Charge phase.",
+      "target": "One ADEPTUS ASTARTES MOUNTED unit from your army that has not declared a charge this phase.",
+      "effect": "Until the end of the turn, you can re-roll Charge rolls made for your unit and melee weapons equipped by models in that unit have the [LANCE] ability.",
+      "source": "Wahapedia CSV / Stormlance Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Stormlance Task Force – Battle Tactic Stratagem",
+        "Stormlance Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008487007",
+      "name": "WIND-SWIFT EVASION",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
+      "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that is within 9\" of that enemy unit.",
+      "effect": "Your unit can make a Normal move of up to 6\".",
+      "source": "Wahapedia CSV / Stormlance Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Stormlance Task Force – Strategic Ploy Stratagem",
+        "Stormlance Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008487004",
+      "name": "FULL THROTTLE",
+      "cp_cost": 2,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase.",
+      "target": "One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES VEHICLE unit (excluding WALKERS) from your army.",
+      "effect": "Until the end of the phase, if your unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit, or 9\" instead if your unit is MOUNTED .",
+      "source": "Wahapedia CSV / Stormlance Task Force",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Stormlance Task Force – Wargear Stratagem",
+        "Stormlance Task Force"
+      ]
+    },
+    {
+      "id": "strat-000008491005",
+      "name": "STRIKE FROM THE SHADOWS",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit that is more than 12\" away, improve the Ballistic Skill and Armour Penetration characteristics of that attack by 1. If one or more enemy models are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test.",
+      "source": "Wahapedia CSV / Vanguard Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Vanguard Spearhead – Battle Tactic Stratagem",
+        "Vanguard Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000008491004",
+      "name": "SURGICAL STRIKES",
+      "cp_cost": 2,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.",
+      "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
+      "source": "Wahapedia CSV / Vanguard Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Vanguard Spearhead – Battle Tactic Stratagem",
+        "Vanguard Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000008491003",
+      "name": "ARMOUR OF CONTEMPT",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+      "source": "Wahapedia CSV / Vanguard Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Vanguard Spearhead – Battle Tactic Stratagem",
+        "Vanguard Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000008491007",
+      "name": "GUERRILLA TACTICS",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "End of your opponent’s Fight phase.",
+      "target": "Up to two PHOBOS and/or SCOUT SQUAD units from your army, or one other ADEPTUS ASTARTES INFANTRY unit from your army.",
+      "effect": "Remove those units from the battlefield and place them into Strategic Reserves.",
+      "source": "Wahapedia CSV / Vanguard Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Vanguard Spearhead – Strategic Ploy Stratagem",
+        "Vanguard Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000008491006",
+      "name": "CALCULATED FEINT",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "timing": "Your opponent’s Charge phase, just after an enemy unit declares a charge.",
+      "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that was selected as a target of that charge.",
+      "effect": "Your unit can make a Normal move of up to D6\", or up to 6\" instead if it is a PHOBOS or ScouT SQUAD unit.",
+      "source": "Wahapedia CSV / Vanguard Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Vanguard Spearhead – Strategic Ploy Stratagem",
+        "Vanguard Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000008491002",
+      "name": "A DEADLY PRIZE",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Start of the Command phase.",
+      "target": "One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit from your army within range of an objective marker you control.",
+      "effect": "That objective marker is said to be Sabotaged, and remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn. While an objective marker is Sabotaged and under your control, each time an enemy unit ends a Normal, Advance, Fall Back or Charge move within range of that objective marker, roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds.",
+      "source": "Wahapedia CSV / Vanguard Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Vanguard Spearhead – Wargear Stratagem",
+        "Vanguard Spearhead"
+      ]
     }
   ],
   "detachment_rules": [
+    {
+      "id": "det-000008355",
+      "name": "Combat Doctrines",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Gladius Task Force",
+      "type": "detachment",
+      "summary": "At the start of your Command phase, you can select one of the Combat Doctrines listed below. Until the start of your next Command phase, that Combat Doctrine is active and its effects apply to all ADEPTUS ASTARTES units from your army. You can only select each Combat Doctrine once per battle. Devastator Doctrine\nThe Codex Astartes details the strategic value of overwhelming firepower applied to key targets while advancing into position to eliminate threats.\nThis unit is eligible to shoot in a turn in which it Advanced .\nTactical Doctrine\nAs the warring armies close upon one another and vicious fire-fights erupt, the Codex lays out strategies for swiftly seizing the initiative and combining versatility with firepower.\nThis unit is eligible to shoot and declare a charge in a turn in which it Fell Back .\nAssault Doctrine\nThe Codex Astartes leaves no doubt that the killing blow in most engagements must be delivered with a decisive close-quarters strike. It presents plentiful tactical means to achieve this end.\nThis unit is eligible to declare a charge in a turn in which it Advanced .",
+      "source": "Wahapedia CSV / Gladius Task Force",
+      "priority": 5
+    },
+    {
+      "id": "det-000008473",
+      "name": "Shield of the Imperium",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Anvil Siege Force",
+      "type": "detachment",
+      "summary": "Ranged weapons equipped by ADEPTUS ASTARTES models from your army have the [HEAVY] ability. If such a weapon already has this ability, each time an attack is made with that weapon, if the attacking model’s unit Remained Stationary this turn, add 1 to the Wound roll.",
+      "source": "Wahapedia CSV / Anvil Siege Force",
+      "priority": 5
+    },
+    {
+      "id": "det-000008477",
+      "name": "Armoured Wrath",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Ironstorm Spearhead",
+      "type": "detachment",
+      "summary": "Once per phase for each ADEPTUS ASTARTES unit in your army, you can re-roll one Hit roll, one Wound roll or one Damage roll made for a model in that unit.",
+      "source": "Wahapedia CSV / Ironstorm Spearhead",
+      "priority": 5
+    },
+    {
+      "id": "det-000008481",
+      "name": "Close-range Eradication",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Firestorm Assault Force",
+      "type": "detachment",
+      "summary": "Ranged weapons equipped by ADEPTUS ASTARTES models from your army have the [ASSAULT] ability, and each time an attack made with such a weapon targets a unit within 12\", add 1 to the Strength characteristic of that attack.",
+      "source": "Wahapedia CSV / Firestorm Assault Force",
+      "priority": 5
+    },
+    {
+      "id": "det-000008485",
+      "name": "Lightning Assault",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Stormlance Task Force",
+      "type": "detachment",
+      "summary": "ADEPTUS ASTARTES units from your army are eligible to declare a charge in a turn in which they Advanced or Fell Back.",
+      "source": "Wahapedia CSV / Stormlance Task Force",
+      "priority": 5
+    },
+    {
+      "id": "det-000008489",
+      "name": "Shadow Masters",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Vanguard Spearhead",
+      "type": "detachment",
+      "summary": "Each time a ranged attack targets an ADEPTUS ASTARTES unit from your army, unless the attacking model is within 12\", subtract 1 from the Hit roll and the target has the Benefit of Cover against that attack.",
+      "source": "Wahapedia CSV / Vanguard Spearhead",
+      "priority": 5
+    },
+    {
+      "id": "det-000008493",
+      "name": "Extremis-level Threat",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - 1st Company Task Force",
+      "type": "detachment",
+      "summary": "Once per battle, in your Command phase, you can use this ability. If you do, until the start of your next Command phase, each time a model from your army with the Oath of Moment ability makes an attack that targets your Oath of Moment target, you can re-roll the Wound roll as well.",
+      "source": "Wahapedia CSV / 1st Company Task Force",
+      "priority": 5
+    },
+    {
+      "id": "det-000009784",
+      "name": "Psychic Disciplines",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Librarius Conclave",
+      "type": "detachment",
+      "summary": "At the start of the battle round, select one of the following Psychic Disciplines. Until the end of the battle round, that Psychic Discipline is active and its effects apply to all Adeptus Astartes Psyker units from your army.\nBiomancy Discipline\nAdd 2\" to the Move characteristic of models in this unit.\nDivination Discipline\nEach time a model in this unit makes an attack, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.\nPyromancy Discipline\nEach time a ranged attack made by a model in this unit targets an enemy unit within 12\", improve the Armour Penetration characteristic of that attack by 1.\nTelekinesis Discipline\nEach time a ranged attack targets this unit, subtract 1 from the Strength characteristic of that attack.\nTelepathy Discipline\nEach time a model in this unit makes an attack, you can ignore any or all modifiers to that attack’s Weapon Skill or Ballistic Skill characteristics and/or any or all modifiers to the Hit roll.",
+      "source": "Wahapedia CSV / Librarius Conclave",
+      "priority": 5
+    },
     {
       "id": "det-000010632",
       "name": "Mastered Doctrines",
@@ -4408,6 +5584,30 @@
       "type": "detachment",
       "summary": "At the start of up to three of your Command phases, you can select one of the Combat Doctrines listed below. Until the start of your next Command phase, that Combat Doctrine is active and its effects apply to all ADEPTUS ASTARTES units from your army. You cannot select a Combat Doctrine you have already selected this battle, unless a friendly Marneus Calgar model is on the battlefield.\nDevastator Doctrine\nThe Codex Astartes details the strategic value of overwhelming firepower.\nThis unit is eligible to shoot in a turn in which it Advanced .\nTactical Doctrine\nThe Codex lays out strategies for seizing the initiative.\nThis unit is eligible to shoot and declare a charge in a turn in which it Fell Back .\nAssault Doctrine\nThe Codex Astartes leaves no doubt that the killing blow must be delivered with a decisive close-quarters strike.\nThis unit is eligible to declare a charge in a turn in which it Advanced .\nRESTRICTIONS\nYour army can include Ultramarines units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter.",
       "source": "Wahapedia CSV / Blade of Ultramar",
+      "priority": 5
+    },
+    {
+      "id": "det-000010675",
+      "name": "Interlocking Tactics",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Bastion Task Force",
+      "type": "detachment",
+      "summary": "Adeptus Astartes Battleline units from your army:\n- Are eligible to shoot and declare a charge in a turn in which they Advanced or Fell Back.\n- Are eligible to start to perform an Action in a turn in which they Advanced or Fell Back.\nEach time an ADEPTUS ASTARTES BATTLELINE unit from your army is selected to attack, after resolving those attacks, select one enemy unit hit by one or more of those attacks. Until the end of the turn, that enemy unit is auspex scanned. Each time an ADEPTUS ASTARTES model from your army makes an attack that targets an auspex scanned unit, re-roll a Hit roll of 1.",
+      "source": "Wahapedia CSV / Bastion Task Force",
+      "priority": 5
+    },
+    {
+      "id": "det-000010679",
+      "name": "Rapid-drop Deployment",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Orbital Assault Force",
+      "type": "detachment",
+      "summary": "At the start of the Declare Battle Formations step, select a number of ADEPTUS ASTARTES units (excluding Titanic units) from your army based on the battle size, as shown below. Models in those units have the Deep Strike ability.\nBATTLE SIZE NUMBER OF UNITS Incursion 2 Strike Force 3 Onslaught 4\nEach time an ADEPTUS ASTARTES model from your army makes an attack, if it was set up on the battlefield this turn, re-roll a Wound roll of 1. If it disembarked from a Drop Pod this turn, re-roll a Hit roll of 1 as well.",
+      "source": "Wahapedia CSV / Orbital Assault Force",
       "priority": 5
     },
     {
@@ -4425,6 +5625,66 @@
   ],
   "enhancements": [
     {
+      "id": "enh-000008478002",
+      "name": "Target Augury Web",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Ironstorm Spearhead",
+      "type": "enhancement",
+      "summary": "Techmarine model only. In your Command phase, select one Adeptus Astartes Vehicle model within 6\" of the bearer. Until the start of your next Command phase, weapons equipped by that VEHICLE model have the [LETHAL HITS] ability.\n\nPoints: 30",
+      "source": "Wahapedia CSV / Ironstorm Spearhead",
+      "priority": 3
+    },
+    {
+      "id": "enh-000010680002",
+      "name": "Laurels of Thunder",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Orbital Assault Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. You can re-roll Charge rolls made for the bearer’s unit in a turn in which it was set up on the battlefield.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Orbital Assault Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000010676002",
+      "name": "Eye of the Primarch",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Bastion Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. Ranged weapons equipped by the bearer and Battleline models in the bearer’s unit have the [PRECISION] ability.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Bastion Task Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009785002",
+      "name": "Prescience",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Librarius Conclave",
+      "type": "enhancement",
+      "summary": "Adeptus Astartes Psyker model only (excluding Terminator models). Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of the bearer’s unit, the bearer’s unit can make a Normal move of up to D6\", or up to 6\" instead if the Divination Discipline is active for your army.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Librarius Conclave",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008482002",
+      "name": "Champion of Humanity",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Firestorm Assault Force",
+      "type": "enhancement",
+      "summary": "TACTICUS model only. While the bearer is leading a unit, models in that unit can ignore any or all modifiers to their characteristics and/or to any roll or test made for them (excluding modifiers to saving throws).\n\nPoints: 10",
+      "source": "Wahapedia CSV / Firestorm Assault Force",
+      "priority": 3
+    },
+    {
       "id": "enh-000010684002",
       "name": "Seals of Reconquest",
       "phases": [
@@ -4434,6 +5694,42 @@
       "type": "enhancement",
       "summary": "ADEPTUS ASTARTES model only. Models in the bearer’s unit have a 5+ invulnerable save.\n\nPoints: 20",
       "source": "Wahapedia CSV / Reclamation Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008494002",
+      "name": "The Imperium’s Sword",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - 1st Company Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. Add 1 to the Attacks characteristic of the bearers melee weapons. Once per battle, at the start of any phase, the bearer can use this Enhancement. If it does, until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by all other models in the bearer’s unit as well.\n\nPoints: 25",
+      "source": "Wahapedia CSV / 1st Company Task Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008490002",
+      "name": "The Blade Driven Deep",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Vanguard Spearhead",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES INFANTRY model only. While the bearer is leading a unit, models in that unit have the Infiltrators ability.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Vanguard Spearhead",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008353002",
+      "name": "Artificer Armour",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Gladius Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. The bearer has a Save characteristic of 2+ and the Feel No Pain 5+ ability.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Gladius Task Force",
       "priority": 3
     },
     {
@@ -4449,6 +5745,30 @@
       "priority": 3
     },
     {
+      "id": "enh-000008474002",
+      "name": "Indomitable Fury",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Anvil Siege Force",
+      "type": "enhancement",
+      "summary": "GRAVIS model only. The first time the bearer is destroyed, roll one D6 at the end of the phase. On a 2+, set the bearer back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with its full wounds remaining.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Anvil Siege Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008486002",
+      "name": "Fury of the Storm",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Stormlance Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES MOUNTED model only. Improve the Strength and Armour Penetration characteristics of the bearer’s melee weapons by 1. Each time the bearer ends a Charge move, until the end of the turn, improve the Strength and Armour Penetration characteristics of the bearers melee weapons by 2 instead.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Stormlance Task Force",
+      "priority": 3
+    },
+    {
       "id": "enh-000010684003",
       "name": "Avenging Avatar (Aura)",
       "phases": [
@@ -4461,6 +5781,66 @@
       "priority": 3
     },
     {
+      "id": "enh-000010680003",
+      "name": "Veteran of the Vanguard",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Orbital Assault Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. Models in the bearer’s unit have the Scouts 6\" ability.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Orbital Assault Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008353003",
+      "name": "The Honour Vehement",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Gladius Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. Add 1 to the Attacks and Strength characteristics of the bearer’s melee weapons. While the bearer is under the effects of the Assault Doctrine, add 2 to the Attacks and Strength characteristics of the bearers melee weapons instead.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Gladius Task Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009785003",
+      "name": "Celerity",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Librarius Conclave",
+      "type": "enhancement",
+      "summary": "Adeptus Astartes Psyker model only. The bearer’s unit is eligible to declare a charge in a turn in which it Advanced, and if the Biomancy Discipline is active for your army, it is eligible to declare a charge in a turn in which it Fell Back.\n\nPoints: 30",
+      "source": "Wahapedia CSV / Librarius Conclave",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008486003",
+      "name": "Portents of Wisdom",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Stormlance Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. While the bearer is leading a unit, you can re-roll Advance rolls made for that unit.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Stormlance Task Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000010676003",
+      "name": "Hero of the Chapter",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Bastion Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. While the bearer is leading a unit, the bearer has the Battleline keyword.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Bastion Task Force",
+      "priority": 3
+    },
+    {
       "id": "enh-000010633003",
       "name": "Oath of Macragge",
       "phases": [
@@ -4470,6 +5850,126 @@
       "type": "enhancement",
       "summary": "ADEPTUS ASTARTES model only. Add 1 to the Attacks and Strength characteristics of the bearer’s melee weapons. While the bearer is under the effects of the Assault Doctrine, add 2 to the Attacks and Strength characteristics of the bearer’s melee weapons instead.\n\nPoints: 15",
       "source": "Wahapedia CSV / Blade of Ultramar",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008490003",
+      "name": "Ghostweave Cloak",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Vanguard Spearhead",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. The bearer has the Stealth and Lone Operative abilities.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Vanguard Spearhead",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008478003",
+      "name": "The Flesh is Weak",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Ironstorm Spearhead",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. The bearer has the Feel No Pain 4+ ability.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Ironstorm Spearhead",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008494003",
+      "name": "Fear Made Manifest (Aura)",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - 1st Company Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. While an enemy unit (excluding MONSTERS and VEHICLES ) is within 6\" of the bearer, each time that unit fails a Battle-shock test, one model in that unit is destroyed (chosen by its controlling player). Once per battle, when such an enemy unit fails a Battle-shock test, you can choose for D3 models in that unit to be destroyed in this way instead.\n\nPoints: 30",
+      "source": "Wahapedia CSV / 1st Company Task Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008474003",
+      "name": "Fleet Commander",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Anvil Siege Force",
+      "type": "enhancement",
+      "summary": "CAPTAIN model only. Once per battle, at the start of your Shooting phase, you can select one point on the battlefield and place a marker on that point. At the start of your next Shooting phase, place another marker on the battlefield within 12\" of the centre of the first marker, then draw a straight line between the centre of each of these markers. Roll one D6 for each unit that line passes over or through: on a 3+, that unit suffers D3 mortal wounds. Both markers are then removed.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Anvil Siege Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008482003",
+      "name": "War-tempered Artifice",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Firestorm Assault Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES INFANTRY model only. Add 3 to the Strength characteristic of the bearer’s melee weapons.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Firestorm Assault Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000010680004",
+      "name": "Orbital Uplink Reliquary",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Orbital Assault Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. After both players have deployed their armies, select up to three ADEPTUS ASTARTES units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Orbital Assault Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008486004",
+      "name": "Feinting Withdrawal",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Stormlance Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. While the bearer is leading a unit, that unit is eligible to shoot in a turn in which it Fell Back.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Stormlance Task Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000010676004",
+      "name": "Blades of Valour",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Bastion Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. Improve the Armour Penetration characteristic of melee weapons equipped by the bearer and Battleline models in the bearer’s unit by 1.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Bastion Task Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008494004",
+      "name": "Rites of War",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - 1st Company Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES TERMINATOR model only. Improve the Objective Control characteristic of the bearer by 1. Once per battle, at the start of any phase, the bearer can use this Enhancement. If it does, until the end of the phase, add 1 to the Objective Control characteristic of all other models in the bearer’s unit as well.\n\nPoints: 10",
+      "source": "Wahapedia CSV / 1st Company Task Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008490004",
+      "name": "Execute and Redeploy",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Vanguard Spearhead",
+      "type": "enhancement",
+      "summary": "PHOBOS model only. In your Shooting phase, after the bearer’s unit has shot, if that unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". If it does, until the end of the turn, that unit is not eligible to declare a charge. This cannot allow the bearer’s unit to move more than once in your Shooting phase.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Vanguard Spearhead",
       "priority": 3
     },
     {
@@ -4497,6 +5997,102 @@
       "priority": 3
     },
     {
+      "id": "enh-000009785004",
+      "name": "Obfuscation",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Librarius Conclave",
+      "type": "enhancement",
+      "summary": "Adeptus Astartes Psyker model only. Enemy units cannot use the Fire Overwatch Stratagem to shoot at the bearer’s unit, and if the Telepathy Discipline is active for your army, the bearer’s unit cannot be targeted by ranged attacks unless the attacking model is within 18\".\n\nPoints: 20",
+      "source": "Wahapedia CSV / Librarius Conclave",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008474004",
+      "name": "Stoic Defender",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Anvil Siege Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. While the bearer is leading a unit, models in that unit have the Feel No Pain 6+ ability while they are within range of an objective marker you control and, while that unit is Battle-shocked, halve the Objective Control characteristic of models in that unit instead of changing it to 0.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Anvil Siege Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008482004",
+      "name": "Forged in Battle",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Firestorm Assault Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. While the bearer is leading a unit, once per turn, after making a Hit roll or a saving throw for a model in that unit, you can change the result of that roll to an unmodified 6.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Firestorm Assault Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008478004",
+      "name": "Adept of the Omnissiah",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Ironstorm Spearhead",
+      "type": "enhancement",
+      "summary": "TECHMARINE model only. Once per battle round, when a saving throw is failed for a friendly ADEPTUS ASTARTES VEHICLE model within 6\" of the bearer, you can change the Damage characteristic of that attack to 0.\n\nPoints: 35",
+      "source": "Wahapedia CSV / Ironstorm Spearhead",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008353004",
+      "name": "Adept of the Codex",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Gladius Task Force",
+      "type": "enhancement",
+      "summary": "CAPTAIN model only. At the start of your Command phase, if the bearer is on the battlefield, instead of selecting a Combat Doctrine to be active for your army, you can select the Tactical Doctrine. If you do, until the start of your next Command phase, that Combat Doctrine is active for the bearer’s unit only, even if you have already selected that Combat Doctrine to be active for your army this battle.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Gladius Task Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000010680005",
+      "name": "Dedicated Gunship",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Orbital Assault Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES TERMINATOR model only. Once per battle, at the end of your opponent’s Fight phase, if the bearer’s unit is not within Engagement Range of one or more enemy units, the bearer can use this Enhancement. If it does, remove the bearer’s unit from the battlefield and place it into Strategic Reserves.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Orbital Assault Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009785005",
+      "name": "Fusillade",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Librarius Conclave",
+      "type": "enhancement",
+      "summary": "Adeptus Astartes Psyker model only. Ranged weapons equipped by models in the bearer’s unit have the [ANTI-MONSTER 5+] and [ANTI-VEHICLE 5+] abilities, and:\n- The [SUSTAINED HITS 1] ability if the Pyromancy Discipline is active for your army.\n- Add 6\" to the Range characteristic of those weapons if the Telekinesis Discipline is active for your army.\n\nPoints: 35",
+      "source": "Wahapedia CSV / Librarius Conclave",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008474005",
+      "name": "Architect of War",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Anvil Siege Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. While the bearer is leading a unit, ranged weapons equipped by models in that unit have the [IGNORES COVER] ability.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Anvil Siege Force",
+      "priority": 3
+    },
+    {
       "id": "enh-000010684005",
       "name": "Liberatum",
       "phases": [
@@ -4509,6 +6105,66 @@
       "priority": 3
     },
     {
+      "id": "enh-000008478005",
+      "name": "Master of Machine War",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Ironstorm Spearhead",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. In your Command phase, select one Adeptus Astartes Vehicle model within 6\" of the bearer. Until the start of your next Command phase, that VEHICLE is eligible to shoot even if it Fell Back or Advanced this turn.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Ironstorm Spearhead",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008482005",
+      "name": "Adamantine Mantle",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Firestorm Assault Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. Each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack. If that attack was made with a Melta or Torrent weapon, change the Damage characteristic of that attack to 1 instead.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Firestorm Assault Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008486005",
+      "name": "Hunter’s Instincts",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Stormlance Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES MOUNTED model only. If the bearer’s unit is in Strategic Reserves, for the purposes of setting up that unit on the battlefield, treat the current battle round number as being one higher than it actually is.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Stormlance Task Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008490005",
+      "name": "Shadow War Veteran",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Vanguard Spearhead",
+      "type": "enhancement",
+      "summary": "PHOBOS model only. Gain following ability:\nLord of Deceit (Aura): Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12\" of this model, increase the cost of that use of that Stratagem by 1CP.\n\nPoints: 30",
+      "source": "Wahapedia CSV / Vanguard Spearhead",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008494005",
+      "name": "Iron Resolve",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - 1st Company Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES TERMINATOR model only. The bearer has the Feel No Pain 5+ ability. Once per battle, after the bearer’s unit is selected as the target of one or more attacks, the bearer can use this Enhancement. If it does, until the end of the phase, models in the bearer’s unit have the Feel No Pain 5+ ability.\n\nPoints: 15",
+      "source": "Wahapedia CSV / 1st Company Task Force",
+      "priority": 3
+    },
+    {
       "id": "enh-000010633005",
       "name": "Veteran of Behemoth",
       "phases": [
@@ -4518,6 +6174,30 @@
       "type": "enhancement",
       "summary": "ADEPTUS ASTARTES model only. While the bearer is leading a unit, ranged weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability. In addition, while the bearer’s unit is under the effects of the Devastator Doctrine, you can re-roll Advance rolls made for that unit.\n\nPoints: 25",
       "source": "Wahapedia CSV / Blade of Ultramar",
+      "priority": 3
+    },
+    {
+      "id": "enh-000010676005",
+      "name": "Bombast Omnivox",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Bastion Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. Each time you select the bearer’s unit as the target of a Stratagem, roll one D6, adding 1 if the bearer’s unit has the Battleline keyword: on a 4+, you gain 1CP.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Bastion Task Force",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008353005",
+      "name": "Fire Discipline",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Gladius Task Force",
+      "type": "enhancement",
+      "summary": "ADEPTUS ASTARTES model only. While the bearer is leading a unit, ranged weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability. In addition, while the bearer’s unit is under the effects of the Devastator Doctrine, you can reroll Advance rolls made for that unit.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Gladius Task Force",
       "priority": 3
     }
   ]

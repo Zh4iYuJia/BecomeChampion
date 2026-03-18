@@ -7,11 +7,21 @@ const ROOT = path.resolve(__dirname, '..');
 const CSV_DIR = path.join(ROOT, '10e');
 const OUT_JSON_PATH = path.join(ROOT, 'SM-UM-rules-pack.json');
 
-const PACK_VERSION = '1.0.0';
+const PACK_VERSION = '1.1.0';
 const PACK_ID = 'sm-um-rules-pack';
 const PACK_NAME = 'SM-UM-rules-pack.json';
 
-const UM_DETACHMENTS = [
+const INCLUDED_DETACHMENTS = [
+  { id: '000000750', name: 'Gladius Task Force', kind: 'generic' },
+  { id: '000000793', name: 'Anvil Siege Force', kind: 'generic' },
+  { id: '000000794', name: 'Ironstorm Spearhead', kind: 'generic' },
+  { id: '000000795', name: 'Firestorm Assault Force', kind: 'generic' },
+  { id: '000000796', name: 'Stormlance Task Force', kind: 'generic' },
+  { id: '000000797', name: 'Vanguard Spearhead', kind: 'generic' },
+  { id: '000000798', name: '1st Company Task Force', kind: 'generic' },
+  { id: '000000994', name: 'Librarius Conclave', kind: 'generic' },
+  { id: '000001130', name: 'Bastion Task Force', kind: 'generic' },
+  { id: '000001131', name: 'Orbital Assault Force', kind: 'generic' },
   { id: '000001120', name: 'Blade of Ultramar' },
   { id: '000001132', name: 'Reclamation Force' },
 ];
@@ -315,8 +325,14 @@ function buildEnhancements(rows, detachmentById) {
 }
 
 function main() {
-  const detachmentIds = new Set(UM_DETACHMENTS.map((detachment) => detachment.id));
-  const detachmentById = new Map(UM_DETACHMENTS.map((detachment) => [detachment.id, detachment.name]));
+  const detachmentIds = new Set(INCLUDED_DETACHMENTS.map((detachment) => detachment.id));
+  const detachmentById = new Map(INCLUDED_DETACHMENTS.map((detachment) => [detachment.id, detachment.name]));
+  const genericDetachmentNames = INCLUDED_DETACHMENTS
+    .filter((detachment) => detachment.kind === 'generic')
+    .map((detachment) => detachment.name);
+  const umDetachmentNames = INCLUDED_DETACHMENTS
+    .filter((detachment) => detachment.kind !== 'generic')
+    .map((detachment) => detachment.name);
 
   const sourceMap = buildSourceMap(readCsv('Source.csv'));
   const datasheets = readCsv('Datasheets.csv');
@@ -339,7 +355,7 @@ function main() {
 
   const pack = {
     $schema: 'https://becomechampion.app/schemas/rules-pack-v1.json',
-    $comment: 'BecomeChampion Rules Pack - Space Marines / Ultramarines (10th Edition). Generated from 10e CSV data. Includes Ultramarines-exclusive detachments and all compatible common Space Marines units surfaced from the current dataset; not official rules text.',
+    $comment: 'BecomeChampion Rules Pack - Space Marines / Ultramarines (10th Edition). Generated from 10e CSV data. Includes Ultramarines-exclusive detachments, compatible generic Space Marines detachments, and all compatible common Space Marines units surfaced from the current dataset; not official rules text.',
     id: PACK_ID,
     faction: 'Space Marines',
     subfaction: 'Ultramarines',
@@ -347,7 +363,7 @@ function main() {
     pack_version: PACK_VERSION,
     date: new Date().toISOString().slice(0, 10),
     author: 'Community',
-    source_note: 'Generated from current 10e CSV exports. This pack includes Ultramarines-exclusive detachments Blade of Ultramar and Reclamation Force, plus common Space Marines units that do not belong to another chapter source. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.',
+    source_note: `Generated from current 10e CSV exports. This pack includes Ultramarines-exclusive detachments ${umDetachmentNames.join(', ')}, plus generic Space Marines detachments ${genericDetachmentNames.join(', ')} and common Space Marines units that do not belong to another chapter source. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.`,
     units,
     stratagems,
     detachment_rules: detachmentRules,

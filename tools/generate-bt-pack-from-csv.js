@@ -5,15 +5,54 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const CSV_DIR = path.join(ROOT, '10e');
-const BASE_PACK_PATH = path.join(ROOT, 'sample-rules-pack.json');
-const OUT_JSON_PATH = path.join(ROOT, 'sample-rules-pack.json');
-const OUT_JS_PATH = path.join(ROOT, 'sample-pack.js');
+const OUT_JSON_PATH = path.join(ROOT, 'rulepacks', 'SM-BT-rules-pack.json');
 
-const DETACHMENTS = [
+const PACK_VERSION = '1.0.0';
+const PACK_ID = 'sm-bt-rules-pack';
+const PACK_NAME = 'SM-BT-rules-pack.json';
+
+const INCLUDED_DETACHMENTS = [
+  { id: '000000750', name: 'Gladius Task Force', kind: 'generic' },
+  { id: '000000793', name: 'Anvil Siege Force', kind: 'generic' },
+  { id: '000000794', name: 'Ironstorm Spearhead', kind: 'generic' },
+  { id: '000000795', name: 'Firestorm Assault Force', kind: 'generic' },
+  { id: '000000796', name: 'Stormlance Task Force', kind: 'generic' },
+  { id: '000000797', name: 'Vanguard Spearhead', kind: 'generic' },
+  { id: '000001130', name: 'Bastion Task Force', kind: 'generic' },
+  { id: '000001131', name: 'Orbital Assault Force', kind: 'generic' },
   { id: '000001006', name: 'Wrathful Procession' },
-  { id: '000000750', name: 'Gladius Task Force' },
-  { id: '000001130', name: 'Bastion Task Force' },
+  { id: '000001091', name: 'Companions of Vehemence' },
+  { id: '000001092', name: 'Vindication Task Force' },
+  { id: '000001093', name: 'Godhammer Assault Force' },
 ];
+
+const OTHER_CHAPTER_KEYWORDS = new Set([
+  'Blood Angels',
+  'Dark Angels',
+  'Deathwatch',
+  'Deathwing',
+  'Imperial Fists',
+  'Inner Circle',
+  'Iron Hands',
+  'Raven Guard',
+  'Ravenwing',
+  'Salamanders',
+  'Space Wolves',
+  'Ultramarines',
+  'White Scars',
+]);
+
+const BANNED_GENERIC_DATASHEETS = new Set([
+  'Gladiator Lancer',
+  'Gladiator Reaper',
+  'Gladiator Valiant',
+  'Impulsor',
+  'Land Raider Crusader',
+  'Repulsor',
+  'Repulsor Executioner',
+  'Sternguard Veteran Squad',
+  'Terminator Squad',
+]);
 
 function readCsv(fileName) {
   const raw = fs.readFileSync(path.join(CSV_DIR, fileName), 'utf8');
@@ -21,14 +60,17 @@ function readCsv(fileName) {
   if (lines.length < 2) return [];
 
   const headers = splitRow(lines[0]);
+  if (headers.length > 0) {
+    headers[0] = headers[0].replace(/^\uFEFF/, '');
+  }
   const rows = [];
-  for (let i = 1; i < lines.length; i += 1) {
-    const parts = splitRow(lines[i]);
-    const obj = {};
-    for (let j = 0; j < headers.length; j += 1) {
-      obj[headers[j]] = (parts[j] || '').trim();
+  for (let index = 1; index < lines.length; index += 1) {
+    const parts = splitRow(lines[index]);
+    const row = {};
+    for (let col = 0; col < headers.length; col += 1) {
+      row[headers[col]] = (parts[col] || '').trim();
     }
-    rows.push(obj);
+    rows.push(row);
   }
   return rows;
 }
@@ -42,8 +84,8 @@ function splitRow(line) {
 }
 
 function stripHtml(input) {
-  const text = String(input || '')
-    .replace(/<br\s*\/?\s*>/gi, '\n')
+  return String(input || '')
+    .replace(/<br\s*\/??\s*>/gi, '\n')
     .replace(/<\/p>/gi, '\n')
     .replace(/<\/li>/gi, '\n')
     .replace(/<li>/gi, ' - ')
@@ -59,7 +101,6 @@ function stripHtml(input) {
     .replace(/\n{3,}/g, '\n\n')
     .replace(/[ \t]{2,}/g, ' ')
     .trim();
-  return text;
 }
 
 function slugify(text) {
@@ -70,113 +111,313 @@ function slugify(text) {
 }
 
 function mapPhases(phaseRaw) {
-  const p = String(phaseRaw || '').toLowerCase();
+  const phase = String(phaseRaw || '').toLowerCase();
   const phases = [];
 
-  if (p.includes('command')) phases.push('command');
-  if (p.includes('movement')) phases.push('movement');
-  if (p.includes('shooting')) phases.push('shooting');
-  if (p.includes('charge')) phases.push('charge');
-  if (p.includes('fight')) phases.push('fight');
-  if (p.includes('battle-shock') || p.includes('battleshock')) phases.push('battleshock');
+  if (phase.includes('command')) phases.push('command');
+  if (phase.includes('movement')) phases.push('movement');
+  if (phase.includes('shooting')) phases.push('shooting');
+  if (phase.includes('charge')) phases.push('charge');
+  if (phase.includes('fight')) phases.push('fight');
+  if (phase.includes('battle-shock') || phase.includes('battleshock')) phases.push('battleshock');
 
-  if (phases.length === 0 || p.includes('any')) {
-    return ['any'];
+  return phases.length > 0 ? [...new Set(phases)] : ['any'];
+}
+
+function inferPhasesFromText(name, description) {
+  const text = `${name || ''}\n${stripHtml(description || '')}`.toLowerCase();
+  const phases = [];
+
+  if (/command phase|battle-shock step of your command phase/.test(text)) phases.push('command');
+  if (/movement phase|normal move|advance move|fall back move|ends a move/.test(text)) phases.push('movement');
+  if (/shooting phase|ranged attack|selected to shoot|has shot/.test(text)) phases.push('shooting');
+  if (/charge phase|charge move|declare a charge/.test(text)) phases.push('charge');
+  if (/fight phase|melee attack|selected to fight|pile-?in|consolidation/.test(text)) phases.push('fight');
+  if (/battle-shock|battleshocked|leadership test/.test(text)) phases.push('battleshock');
+
+  return phases.length > 0 ? [...new Set(phases)] : ['any'];
+}
+
+function inferAbilityType(sourceType, description) {
+  const source = String(sourceType || '').toLowerCase();
+  const text = stripHtml(description || '').toLowerCase();
+
+  if (source.includes('wargear')) return 'wargear';
+  if (/just after|opponent's|enemy unit|selected as the target|was selected as the target/.test(text)) return 'reaction';
+  if (/once per battle|once per turn|at the start of|in your |your command phase|select one/.test(text)) return 'active';
+  return 'passive';
+}
+
+function inferOncePer(description) {
+  const text = stripHtml(description || '').toLowerCase();
+  const match = text.match(/once per (battle round|battle|turn|phase)/);
+  return match ? match[1] : undefined;
+}
+
+function extractTiming(description) {
+  const text = stripHtml(description || '').replace(/\s+/g, ' ').trim();
+  const patterns = [
+    /At the start of your [^.]+/i,
+    /At the end of your [^.]+/i,
+    /In your [^.]+/i,
+    /Your opponent'?s [^.]+/i,
+    /Fight phase[^.]*/i,
+    /Shooting phase[^.]*/i,
+    /Movement phase[^.]*/i,
+    /Charge phase[^.]*/i,
+    /Battle-shock[^.]*/i,
+    /While this [^.]+/i,
+  ];
+
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (match) return match[0].trim();
   }
-  return [...new Set(phases)];
+
+  return text.slice(0, 120) || 'See rule text';
 }
 
-function buildStratagemTiming(turn, phase) {
-  const t = stripHtml(turn || 'Either player\'s turn');
-  const p = stripHtml(phase || 'Any phase');
-  return `${t} - ${p}`;
+function extractRuleSection(description, label) {
+  const text = stripHtml(description || '').replace(/\s+/g, ' ').trim();
+  const pattern = new RegExp(`${label}:\\s*(.+?)(?=\\b(?:WHEN|TARGET|EFFECT|RESTRICTIONS):|$)`, 'i');
+  const match = text.match(pattern);
+  return match ? match[1].trim() : '';
 }
 
-function main() {
-  const basePack = JSON.parse(fs.readFileSync(BASE_PACK_PATH, 'utf8'));
-  const detachmentIds = new Set(DETACHMENTS.map((d) => d.id));
-  const detachmentById = new Map(DETACHMENTS.map((d) => [d.id, d.name]));
-  const detachmentSummary = DETACHMENTS.map((d) => d.name).join(' + ');
+function buildSourceMap(rows) {
+  return new Map(rows.map((row) => [row.id, row]));
+}
 
-  const stratagemRows = readCsv('Stratagems.csv')
-    .filter((r) => detachmentIds.has(r.detachment_id));
+function buildKeywordMap(rows) {
+  const byDatasheetId = new Map();
+  for (const row of rows) {
+    const list = byDatasheetId.get(row.datasheet_id) || [];
+    list.push(row.keyword);
+    byDatasheetId.set(row.datasheet_id, list);
+  }
+  return byDatasheetId;
+}
 
-  const detachmentAbilityRows = readCsv('Detachment_abilities.csv')
-    .filter((r) => detachmentIds.has(r.detachment_id));
+function buildAbilityMap(rows) {
+  const byDatasheetId = new Map();
+  for (const row of rows) {
+    const list = byDatasheetId.get(row.datasheet_id) || [];
+    list.push(row);
+    byDatasheetId.set(row.datasheet_id, list);
+  }
+  return byDatasheetId;
+}
 
-  const enhancementRows = readCsv('Enhancements.csv')
-    .filter((r) => detachmentIds.has(r.detachment_id));
+function getSourceName(sourceRow) {
+  return String(sourceRow?.name || '');
+}
 
-  const stratagems = stratagemRows.map((r) => {
-    const name = stripHtml(r.name);
-    const effect = stripHtml(r.description);
-    const cp = Number(r.cp_cost);
-    const detachmentName = detachmentById.get(r.detachment_id) || stripHtml(r.detachment) || 'Unknown Detachment';
+function isBtCompatibleSource(sourceRow) {
+  return /space marines|black templars/i.test(getSourceName(sourceRow));
+}
+
+function isBtSource(sourceRow) {
+  return /black templars/i.test(getSourceName(sourceRow));
+}
+
+function isPsykerUnit(datasheet, keywords) {
+  const keywordSet = new Set(keywords || []);
+  return keywordSet.has('Psyker') || /librarian/i.test(String(datasheet?.name || ''));
+}
+
+function isBtOrCommonUnit(datasheet, keywords, sourceRow) {
+  if (!datasheet || datasheet.faction_id !== 'SM') return false;
+  if (!isBtCompatibleSource(sourceRow)) return false;
+
+  const sourceName = getSourceName(sourceRow);
+  const keywordSet = new Set((keywords || []).filter(Boolean));
+  if (isPsykerUnit(datasheet, keywords)) return false;
+
+  if (/^space marines/i.test(sourceName) && BANNED_GENERIC_DATASHEETS.has(stripHtml(datasheet.name))) {
+    return false;
+  }
+
+  if (keywordSet.has('Black Templars')) return true;
+
+  for (const keyword of OTHER_CHAPTER_KEYWORDS) {
+    if (keywordSet.has(keyword)) return false;
+  }
+
+  return true;
+}
+
+function buildUnitAbility(unitName, row, sourceName) {
+  const name = stripHtml(row.name);
+  const summary = stripHtml(row.description);
+  if (!name || !summary) return null;
+
+  const sourceType = String(row.type || '');
+  if (!/datasheet|wargear/i.test(sourceType)) return null;
+
+  const phases = inferPhasesFromText(name, summary);
+  return {
+    id: `unit-${slugify(unitName)}-${slugify(name)}`,
+    name,
+    phases,
+    timing: extractTiming(summary),
+    type: inferAbilityType(sourceType, summary),
+    once_per: inferOncePer(summary),
+    summary,
+    source: sourceName,
+    priority: phases.includes('any') ? 2 : 3,
+  };
+}
+
+function buildUnits(datasheets, abilityMap, keywordMap, sourceMap) {
+  const unitsByName = new Map();
+
+  for (const datasheet of datasheets) {
+    const keywords = [...new Set(keywordMap.get(datasheet.id) || [])];
+    const sourceRow = sourceMap.get(datasheet.source_id);
+    if (!isBtOrCommonUnit(datasheet, keywords, sourceRow)) continue;
+
+    const sourceName = getSourceName(sourceRow) || datasheet.source_id || 'Wahapedia CSV';
+    const abilities = (abilityMap.get(datasheet.id) || [])
+      .map((row) => buildUnitAbility(datasheet.name, row, sourceName))
+      .filter(Boolean);
+
+    if (abilities.length === 0) continue;
+
+    const unit = {
+      id: `unit-${datasheet.id}`,
+      name: stripHtml(datasheet.name),
+      keywords,
+      abilities,
+    };
+
+    const existing = unitsByName.get(unit.name);
+    if (!existing) {
+      unitsByName.set(unit.name, unit);
+      continue;
+    }
+
+    const existingSource = sourceMap.get(existing.id.replace(/^unit-/, ''));
+    if (isBtSource(sourceRow) && !isBtSource(existingSource)) {
+      unitsByName.set(unit.name, unit);
+    }
+  }
+
+  return [...unitsByName.values()].sort((left, right) => left.name.localeCompare(right.name));
+}
+
+function buildStratagems(rows, detachmentById) {
+  return rows.map((row) => {
+    const detachmentName = detachmentById.get(row.detachment_id) || stripHtml(row.detachment) || 'Unknown Detachment';
+    const timing = extractRuleSection(row.description, 'WHEN') || `${stripHtml(row.turn)} - ${stripHtml(row.phase)}`;
+    const target = extractRuleSection(row.description, 'TARGET') || 'See rule text';
+    const effect = extractRuleSection(row.description, 'EFFECT') || stripHtml(row.description);
+    const cpCost = Number(row.cp_cost);
+
     return {
-      id: `strat-${r.id || slugify(name)}`,
-      name,
-      cp_cost: Number.isFinite(cp) ? cp : 1,
-      phases: mapPhases(r.phase),
-      timing: buildStratagemTiming(r.turn, r.phase),
-      target: '见规则原文 TARGET 段落',
+      id: `strat-${row.id || slugify(row.name)}`,
+      name: stripHtml(row.name),
+      cp_cost: Number.isFinite(cpCost) ? cpCost : 1,
+      phases: mapPhases(row.phase),
+      timing,
+      target,
       effect,
       source: `Wahapedia CSV / ${detachmentName}`,
       once_per: 'phase',
       priority: 4,
-      tags: [stripHtml(r.type || 'stratagem'), detachmentName],
+      tags: [stripHtml(row.type || 'Stratagem'), detachmentName],
     };
   });
+}
 
-  const detachmentRules = detachmentAbilityRows.map((r) => {
-    const detachmentName = detachmentById.get(r.detachment_id) || stripHtml(r.detachment) || 'Unknown Detachment';
-    return {
-      id: `det-${r.id || slugify(r.name)}`,
-      name: stripHtml(r.name),
-      phases: ['any'],
-      timing: `编队规则 - ${detachmentName}`,
-      type: 'detachment',
-      summary: stripHtml(r.description),
-      source: `Wahapedia CSV / ${detachmentName}`,
-      priority: 5,
-    };
-  });
+function buildDetachmentRules(rows, detachmentById) {
+  return rows
+    .filter((row) => !/^restrictions$/i.test(stripHtml(row.name)))
+    .map((row) => {
+      const detachmentName = detachmentById.get(row.detachment_id) || stripHtml(row.detachment) || 'Unknown Detachment';
+      return {
+        id: `det-${row.id || slugify(row.name)}`,
+        name: stripHtml(row.name),
+        phases: ['any'],
+        timing: `Detachment Rule - ${detachmentName}`,
+        type: 'detachment',
+        summary: stripHtml(row.description),
+        source: `Wahapedia CSV / ${detachmentName}`,
+        priority: 5,
+      };
+    });
+}
 
-  const enhancements = enhancementRows.map((r) => {
-    const cost = String(r.cost || '').trim();
-    const summaryBase = stripHtml(r.description);
-    const summary = cost ? `${summaryBase}\n\n点数: ${cost}` : summaryBase;
-    const detachmentName = detachmentById.get(r.detachment_id) || stripHtml(r.detachment) || 'Unknown Detachment';
+function buildEnhancements(rows, detachmentById) {
+  return rows.map((row) => {
+    const detachmentName = detachmentById.get(row.detachment_id) || stripHtml(row.detachment) || 'Unknown Detachment';
+    const cost = String(row.cost || '').trim();
+    const summaryBase = stripHtml(row.description);
     return {
-      id: `enh-${r.id || slugify(r.name)}`,
-      name: stripHtml(r.name),
+      id: `enh-${row.id || slugify(row.name)}`,
+      name: stripHtml(row.name),
       phases: ['any'],
-      timing: `建军阶段 - ${detachmentName}`,
+      timing: `Army Roster - ${detachmentName}`,
       type: 'enhancement',
-      summary,
+      summary: cost ? `${summaryBase}\n\nPoints: ${cost}` : summaryBase,
       source: `Wahapedia CSV / ${detachmentName}`,
       priority: 3,
     };
   });
+}
 
-  const out = {
-    ...basePack,
-    $comment: 'BecomeChampion Rules Pack - Black Templars (10th Edition). Generated from 10e CSV data with summarized text for Wrathful Procession, Gladius Task Force, and Bastion Task Force; not official rules text.',
-    id: 'bt-multi-detachments-10th-v1.2',
-    subfaction: detachmentSummary,
-    pack_version: '1.2.0',
+function main() {
+  const detachmentIds = new Set(INCLUDED_DETACHMENTS.map((detachment) => detachment.id));
+  const detachmentById = new Map(INCLUDED_DETACHMENTS.map((detachment) => [detachment.id, detachment.name]));
+  const genericDetachmentNames = INCLUDED_DETACHMENTS
+    .filter((detachment) => detachment.kind === 'generic')
+    .map((detachment) => detachment.name);
+  const btDetachmentNames = INCLUDED_DETACHMENTS
+    .filter((detachment) => detachment.kind !== 'generic')
+    .map((detachment) => detachment.name);
+
+  const sourceMap = buildSourceMap(readCsv('Source.csv'));
+  const datasheets = readCsv('Datasheets.csv');
+  const keywordMap = buildKeywordMap(readCsv('Datasheets_keywords.csv'));
+  const abilityMap = buildAbilityMap(readCsv('Datasheets_abilities.csv'));
+
+  const stratagemRows = readCsv('Stratagems.csv')
+    .filter((row) => detachmentIds.has(row.detachment_id));
+
+  const detachmentAbilityRows = readCsv('Detachment_abilities.csv')
+    .filter((row) => detachmentIds.has(row.detachment_id));
+
+  const enhancementRows = readCsv('Enhancements.csv')
+    .filter((row) => detachmentIds.has(row.detachment_id));
+
+  const units = buildUnits(datasheets, abilityMap, keywordMap, sourceMap);
+  const stratagems = buildStratagems(stratagemRows, detachmentById);
+  const detachmentRules = buildDetachmentRules(detachmentAbilityRows, detachmentById);
+  const enhancements = buildEnhancements(enhancementRows, detachmentById);
+
+  const pack = {
+    $schema: 'https://becomechampion.app/schemas/rules-pack-v1.json',
+    $comment: 'BecomeChampion Rules Pack - Space Marines / Black Templars (10th Edition). Generated from 10e CSV data. Includes Black Templars-exclusive detachments, Black Templars-exclusive units, and all compatible common Space Marines units and detachments surfaced from the current dataset; not official rules text.',
+    id: PACK_ID,
+    faction: 'Space Marines',
+    subfaction: 'Black Templars',
+    game_version: '10th Edition',
+    pack_version: PACK_VERSION,
     date: new Date().toISOString().slice(0, 10),
-    source_note: '基于 10e CSV 数据（Wahapedia 导出）自动生成。当前默认包含 Wrathful Procession、Gladius Task Force、Bastion Task Force 的编队规则、战略点与强化；单位能力仍保留黑圣堂核心条目。请以官方规则原文为准。',
-    detachment_rules: detachmentRules,
+    author: 'Community',
+    source_note: `Generated from current 10e CSV exports. This pack includes Black Templars-exclusive detachments ${btDetachmentNames.join(', ')}, plus generic Space Marines detachments ${genericDetachmentNames.join(', ')}. Units include Black Templars-exclusive datasheets and common Space Marines datasheets compatible with Heirs of Sigismund restrictions, excluding Adeptus Astartes Psykers, 1st Company Task Force content, and generic codex datasheets explicitly banned for Black Templars armies. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.`,
+    units,
     stratagems,
+    detachment_rules: detachmentRules,
     enhancements,
   };
 
-  fs.writeFileSync(OUT_JSON_PATH, `${JSON.stringify(out, null, 2)}\n`, 'utf8');
-  fs.writeFileSync(OUT_JS_PATH, `window.BC_SAMPLE_PACK = ${JSON.stringify(out, null, 2)};\n`, 'utf8');
+  fs.writeFileSync(OUT_JSON_PATH, `${JSON.stringify(pack, null, 2)}\n`, 'utf8');
 
-  console.log(
-    `Generated ${stratagems.length} stratagems, ${detachmentRules.length} detachment rules, ${enhancements.length} enhancements from ${DETACHMENTS.length} detachments.`
-  );
+  console.log(`Generated ${PACK_NAME}`);
+  console.log(`Units: ${units.length}`);
+  console.log(`Stratagems: ${stratagems.length}`);
+  console.log(`Detachment rules: ${detachmentRules.length}`);
+  console.log(`Enhancements: ${enhancements.length}`);
 }
 
 main();
