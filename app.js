@@ -96,7 +96,7 @@ const DB = (() => {
 // ================================================================
 
 const state = {
-  view:          'home',  // 'home' | 'phase' | 'manage'
+  view:          'home',  // 'home' | 'phase' | 'manage' | 'roster'
   prevView:      'home',
   packs:         [],
   activePackId:  null,
@@ -105,7 +105,9 @@ const state = {
   detachmentFilter: 'all',
   round:         1,
   usedAbilities: new Set(),  // Set of ability IDs
+  selectedUnitsByPack: {},
   importTab:     'file',     // 'file' | 'paste'
+  rosterQuery:   '',
 };
 
 function persistState() {
@@ -114,6 +116,7 @@ function persistState() {
       activePackId:  state.activePackId,
       round:         state.round,
       usedAbilities: [...state.usedAbilities],
+      selectedUnitsByPack: state.selectedUnitsByPack,
     }));
   } catch (_) { /* storage full or private mode */ }
 }
@@ -126,6 +129,9 @@ function restoreState() {
     if (s.activePackId)  state.activePackId  = s.activePackId;
     if (s.round)         state.round         = s.round;
     if (Array.isArray(s.usedAbilities)) state.usedAbilities = new Set(s.usedAbilities);
+    if (s.selectedUnitsByPack && typeof s.selectedUnitsByPack === 'object') {
+      state.selectedUnitsByPack = s.selectedUnitsByPack;
+    }
   } catch (_) { /* corrupted */ }
 }
 
@@ -135,6 +141,43 @@ function restoreState() {
 
 function getActivePack() {
   return state.packs.find(p => p.id === state.activePackId) || null;
+}
+
+function getPackUnits(pack) {
+  return Array.isArray(pack?.units) ? pack.units : [];
+}
+
+function getStoredSelectedUnits(packId) {
+  const ids = state.selectedUnitsByPack?.[packId];
+  return Array.isArray(ids) ? ids : null;
+}
+
+function getEffectiveSelectedUnitIds(pack) {
+  if (!pack) return new Set();
+  const storedIds = getStoredSelectedUnits(pack.id);
+  if (storedIds) return new Set(storedIds);
+  return new Set(getPackUnits(pack).map(unit => unit.id));
+}
+
+function setSelectedUnitsForPack(packId, unitIds) {
+  state.selectedUnitsByPack[packId] = [...unitIds];
+  persistState();
+}
+
+function getRosterSummary(pack) {
+  const units = getPackUnits(pack);
+  const selectedUnitIds = getEffectiveSelectedUnitIds(pack);
+  return {
+    totalCount: units.length,
+    selectedCount: units.filter(unit => selectedUnitIds.has(unit.id)).length,
+    hasCustomSelection: Array.isArray(getStoredSelectedUnits(pack?.id)),
+  };
+}
+
+function getUnitGroupLabel(pack) {
+  const rawLabel = String(pack?.subfaction || pack?.faction || '当前规则包').trim();
+  const baseLabel = rawLabel.includes('+') ? String(pack?.faction || rawLabel).trim() : rawLabel;
+  return `${baseLabel} 核心`;
 }
 
 function parseDetachmentFromSource(source) {
@@ -166,7 +209,9 @@ function getDetachmentOptions(pack, abilities) {
     .map(s => s.trim())
     .forEach(add);
 
-  (abilities || []).forEach((ab) => add(ab._detachment));
+  (abilities || [])
+    .filter((ab) => ab._category !== 'unit')
+    .forEach((ab) => add(ab._detachment));
 
   return opts;
 }
@@ -178,9 +223,12 @@ function getDetachmentOptions(pack, abilities) {
 function collectPhaseAbilities(pack, phaseId) {
   if (!pack) return [];
   const out = [];
+  const selectedUnitIds = getEffectiveSelectedUnitIds(pack);
+  const unitGroupLabel = getUnitGroupLabel(pack);
 
   // 1. Unit abilities
   for (const unit of (pack.units || [])) {
+    if (!selectedUnitIds.has(unit.id)) continue;
     for (const ab of (unit.abilities || [])) {
       if (!ab.phases) continue;
       if (ab.phases.includes(phaseId) || ab.phases.includes('any')) {
@@ -188,7 +236,7 @@ function collectPhaseAbilities(pack, phaseId) {
           ...ab,
           _unit: unit.name,
           _category: 'unit',
-          _detachment: '黑圣堂核心',
+          _detachment: unitGroupLabel,
         });
       }
     }
@@ -310,6 +358,9 @@ function navigate(view, opts = {}) {
     state.filter = 'all';
     state.detachmentFilter = 'all';
   }
+  if (view === 'roster') {
+    state.rosterQuery = '';
+  }
   renderApp();
 }
 
@@ -322,6 +373,7 @@ function renderApp() {
   switch (state.view) {
     case 'phase':  app.innerHTML = renderPhaseView();  break;
     case 'manage': app.innerHTML = renderManageView(); break;
+    case 'roster': app.innerHTML = renderRosterView(); break;
     default:       app.innerHTML = renderHomeView();
   }
   bindAppEvents();
@@ -332,6 +384,7 @@ function renderApp() {
 // ─────────────────────────────────────────────────────────────────
 function renderHomeView() {
   const pack = getActivePack();
+  const rosterSummary = getRosterSummary(pack);
 
   const packCard = pack
     ? `<div class="pack-info-card">
@@ -345,6 +398,16 @@ function renderHomeView() {
           <div class="pack-empty">尚未加载规则包 — 点击"规则包"按钮导入</div>
         </div>
       </div>`;
+
+  const rosterCard = pack
+    ? `<div class="roster-summary-card">
+        <div class="roster-summary-text">
+          <div class="roster-summary-title">🧾 建军阶段</div>
+          <div class="roster-summary-meta">已选 ${rosterSummary.selectedCount}/${rosterSummary.totalCount} 个单位${rosterSummary.hasCustomSelection ? ' · 已按军表筛选' : ' · 当前默认显示全部'}</div>
+        </div>
+        <button class="btn btn-secondary" id="btn-open-roster">筛选单位</button>
+      </div>`
+    : '';
 
   const phaseButtons = PHASES.map(p => {
     const all       = pack ? collectPhaseAbilities(pack, p.id) : [];
@@ -378,6 +441,7 @@ function renderHomeView() {
 
     <div class="main-content">
       ${packCard}
+      ${rosterCard}
 
       <div class="round-bar">
         <span class="round-label">⚔️ 当前回合</span>
@@ -395,6 +459,103 @@ function renderHomeView() {
       <button class="btn btn-ghost" id="btn-clear-used" style="flex:0 0 auto;padding:0 16px;">🔄 清空标记</button>
       <button class="btn btn-primary" id="btn-open-manage">📦 规则包</button>
     </div>`;
+}
+
+function renderRosterView() {
+  const pack = getActivePack();
+  if (!pack) {
+    return `
+      <div class="app-header">
+        <div class="header-left">
+          <button class="back-btn" id="btn-back">←</button>
+          <div class="header-titles">
+            <div class="header-title">建军阶段</div>
+            <div class="header-subtitle">Army Roster</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="empty-state">
+          <div class="empty-icon">🧾</div>
+          <div class="empty-title">尚未加载规则包</div>
+          <div class="empty-desc">请先导入并激活一个规则包，再筛选本局携带的单位。</div>
+        </div>
+      </div>`;
+  }
+
+  const units = [...getPackUnits(pack)];
+  const selectedUnitIds = getEffectiveSelectedUnitIds(pack);
+  const rosterSummary = getRosterSummary(pack);
+  const query = state.rosterQuery.trim().toLowerCase();
+
+  units.sort((left, right) => {
+    const selectedDiff = Number(selectedUnitIds.has(right.id)) - Number(selectedUnitIds.has(left.id));
+    if (selectedDiff !== 0) return selectedDiff;
+    return left.name.localeCompare(right.name);
+  });
+
+  const visibleUnits = units.filter((unit) => {
+    if (!query) return true;
+    return unit.name.toLowerCase().includes(query)
+      || (unit.keywords || []).some(keyword => String(keyword).toLowerCase().includes(query));
+  });
+
+  const unitCards = visibleUnits.length === 0
+    ? `<div class="empty-state" style="padding:28px 16px">
+        <div class="empty-icon">🔎</div>
+        <div class="empty-title">没有匹配的单位</div>
+        <div class="empty-desc">试试搜索别名、关键词，或清空搜索条件。</div>
+      </div>`
+    : visibleUnits.map((unit) => renderRosterUnitCard(unit, selectedUnitIds.has(unit.id))).join('');
+
+  return `
+    <div class="app-header">
+      <div class="header-left">
+        <button class="back-btn" id="btn-back">←</button>
+        <div class="header-titles">
+          <div class="header-title">建军阶段</div>
+          <div class="header-subtitle">${rosterSummary.selectedCount}/${rosterSummary.totalCount} 已选单位</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="pack-info-card">
+        <div class="pack-info-text">
+          <div class="pack-name">📚 ${esc(pack.faction)}${pack.subfaction ? ' · ' + esc(pack.subfaction) : ''}</div>
+          <div class="pack-version">后续阶段只显示这里勾选单位的单位能力；战略点、编队规则和强化仍全部保留。</div>
+        </div>
+      </div>
+
+      <input class="roster-search-input" id="roster-search" type="search" placeholder="搜索单位名或关键词..." value="${esc(state.rosterQuery)}">
+
+      <div class="roster-toolbar">
+        <button class="btn btn-secondary" id="btn-roster-select-all">全选</button>
+        <button class="btn btn-ghost" id="btn-roster-clear-all">清空</button>
+      </div>
+
+      <div class="roster-list">${unitCards}</div>
+    </div>
+
+    <div class="bottom-bar">
+      <button class="btn btn-primary" id="btn-roster-done">完成建军</button>
+    </div>`;
+}
+
+function renderRosterUnitCard(unit, isSelected) {
+  const keywords = (unit.keywords || []).slice(0, 4).map(keyword => `<span class="roster-keyword">${esc(keyword)}</span>`).join('');
+  const abilityCount = Array.isArray(unit.abilities) ? unit.abilities.length : 0;
+
+  return `
+    <button class="roster-unit-card ${isSelected ? 'is-selected' : ''}" data-roster-unit-id="${esc(unit.id)}">
+      <span class="roster-unit-check">${isSelected ? '✓' : ''}</span>
+      <span class="roster-unit-body">
+        <span class="roster-unit-name">${esc(unit.name)}</span>
+        <span class="roster-unit-meta">${abilityCount} 项能力</span>
+        <span class="roster-keywords">${keywords}</span>
+      </span>
+    </button>`;
 }
 
 // ─────────────────────────────────────────────────────────────────
@@ -563,7 +724,7 @@ function renderManageView() {
       <div class="section-heading">🔧 数据操作</div>
       <div class="manage-actions">
         <button class="btn btn-secondary btn-full" id="btn-export-data">📥 导出全部数据（备份）</button>
-        <button class="btn btn-secondary btn-full" id="btn-import-sample">✨ 使用样例规则包（bt常用分队）</button>
+        <button class="btn btn-secondary btn-full" id="btn-import-sample">✨ 使用样例规则包（黑色圣堂）</button>
         <button class="btn btn-secondary btn-full" id="btn-dl-sample">📄 下载示例规则包</button>
         <button class="btn btn-danger btn-full"    id="btn-clear-used-manage">🔄 清空所有已用标记</button>
       </div>
@@ -673,7 +834,18 @@ function bindModalEvents() {
 
 function bindAppEvents() {
   const app = document.getElementById('app');
+  if (app.dataset.eventsBound === 'true') return;
   app.addEventListener('click', handleAppClick);
+  app.addEventListener('input', handleAppInput);
+  app.dataset.eventsBound = 'true';
+}
+
+function handleAppInput(e) {
+  const target = e.target;
+  if (target.id === 'roster-search') {
+    state.rosterQuery = target.value || '';
+    renderApp();
+  }
 }
 
 function handleAppClick(e) {
@@ -688,6 +860,15 @@ function handleAppClick(e) {
   // Manage navigation
   if (t.closest('#hdr-manage') || t.closest('#btn-open-manage')) {
     navigate('manage');
+    return;
+  }
+
+  if (t.closest('#btn-open-roster')) {
+    if (!getActivePack()) {
+      toast('请先导入并激活规则包', 'info');
+      return;
+    }
+    navigate('roster');
     return;
   }
 
@@ -717,6 +898,12 @@ function handleAppClick(e) {
   if (detachmentChip) {
     state.detachmentFilter = detachmentChip.dataset.detachmentFilter || 'all';
     renderApp();
+    return;
+  }
+
+  const rosterUnit = t.closest('[data-roster-unit-id]');
+  if (rosterUnit) {
+    toggleRosterUnit(rosterUnit.dataset.rosterUnitId);
     return;
   }
 
@@ -757,6 +944,9 @@ function handleAppClick(e) {
   if (t.closest('#btn-export-data'))  { exportData();       return; }
   if (t.closest('#btn-import-sample')) { importSamplePack(); return; }
   if (t.closest('#btn-dl-sample'))    { downloadSample();   return; }
+  if (t.closest('#btn-roster-select-all')) { selectAllRosterUnits(); return; }
+  if (t.closest('#btn-roster-clear-all')) { clearRosterUnits(); return; }
+  if (t.closest('#btn-roster-done')) { navigate('home'); return; }
 }
 
 // ================================================================
@@ -800,6 +990,34 @@ function clearAllUsed() {
   state.usedAbilities.clear();
   persistState();
   toast('✓ 已清空所有标记', 'success');
+  renderApp();
+}
+
+function toggleRosterUnit(unitId) {
+  const pack = getActivePack();
+  if (!pack || !unitId) return;
+
+  const selectedUnitIds = getEffectiveSelectedUnitIds(pack);
+  if (selectedUnitIds.has(unitId)) selectedUnitIds.delete(unitId);
+  else selectedUnitIds.add(unitId);
+
+  setSelectedUnitsForPack(pack.id, selectedUnitIds);
+  renderApp();
+}
+
+function selectAllRosterUnits() {
+  const pack = getActivePack();
+  if (!pack) return;
+  setSelectedUnitsForPack(pack.id, new Set(getPackUnits(pack).map(unit => unit.id)));
+  toast('✓ 已选中全部单位', 'success');
+  renderApp();
+}
+
+function clearRosterUnits() {
+  const pack = getActivePack();
+  if (!pack) return;
+  setSelectedUnitsForPack(pack.id, new Set());
+  toast('✓ 已清空单位筛选', 'success');
   renderApp();
 }
 
@@ -852,7 +1070,7 @@ async function importSamplePack() {
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     data = await resp.json();
   } catch (_) {
-    data = window.BC_SAMPLE_PACK || SAMPLE_PACK || null;
+    data = window.BC_SAMPLE_PACK || null;
   }
 
   if (!data) {
@@ -888,6 +1106,7 @@ async function deletePack(id) {
   try {
     await DB.remove(id);
     state.packs = state.packs.filter(p => p.id !== id);
+    delete state.selectedUnitsByPack[id];
     if (state.activePackId === id) {
       state.activePackId = state.packs[0]?.id || null;
     }
@@ -913,6 +1132,7 @@ function exportData() {
       activePackId:  state.activePackId,
       round:         state.round,
       usedAbilities: [...state.usedAbilities],
+      selectedUnitsByPack: state.selectedUnitsByPack,
     },
   };
   triggerDownload(
@@ -923,7 +1143,7 @@ function exportData() {
 }
 
 function downloadSample() {
-  const pack = window.BC_SAMPLE_PACK || SAMPLE_PACK;
+  const pack = window.BC_SAMPLE_PACK || null;
   if (!pack) {
     toast('示例规则包不可用', 'error');
     return;

@@ -732,6 +732,152 @@ input, textarea { font-family: inherit; }
   padding-bottom: 20px;
 }
 
+/* ============ ROSTER / ARMY BUILDING ============ */
+.roster-summary-card {
+  background: linear-gradient(180deg, rgba(15,52,96,0.88), rgba(22,33,62,0.96));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.roster-summary-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.roster-summary-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.roster-summary-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 3px;
+}
+
+.roster-search-input {
+  width: 100%;
+  min-height: 46px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 14px;
+  padding: 0 14px;
+  margin-bottom: 12px;
+}
+
+.roster-search-input:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+}
+
+.roster-toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.roster-toolbar .btn {
+  flex: 1;
+}
+
+.roster-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.roster-unit-card {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 13px 14px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: left;
+}
+
+.roster-unit-card:hover {
+  border-color: var(--border-hover);
+  background: rgba(15,52,96,0.55);
+}
+
+.roster-unit-card.is-selected {
+  border-color: var(--accent-gold);
+  background: var(--accent-gold-bg);
+}
+
+.roster-unit-check {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #000;
+  font-size: 12px;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+.roster-unit-card.is-selected .roster-unit-check {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+.roster-unit-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+}
+
+.roster-unit-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.roster-unit-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.roster-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.roster-keyword {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(201,162,39,0.08);
+  border: 1px solid rgba(201,162,39,0.18);
+  color: var(--text-secondary);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
 /* ============ EMPTY STATE ============ */
 .empty-state {
   text-align: center;
