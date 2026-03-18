@@ -12,7 +12,7 @@
 4. 回合追踪：支持 1-5 回合计数。
 5. 双层筛选：
    1. 按类别筛选（全部、单位能力、战略点、编队规则）。
-   2. 按编队筛选（全部、Wrathful Procession、Gladius Task Force、Bastion Task Force）。
+   2. 按编队筛选（全部、Gladius Task Force、Bastion Task Force等）。
 6. 规则包管理：导入、切换、删除、导出备份。
 7. 离线能力：IndexedDB + localStorage 存储数据，Service Worker 缓存外壳。
 
