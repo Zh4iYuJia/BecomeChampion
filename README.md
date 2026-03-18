@@ -162,6 +162,7 @@ BecomeChampion/
 1. 本项目不存储官方 Codex 原文。
 2. 规则文本为社区数据的摘要与结构化展示，仅供对局辅助。
 3. Warhammer 40,000 相关知识产权归 Games Workshop 所有。
+4. 本项目采用 MIT 许可证。
 
 ---
 
