@@ -26,7 +26,7 @@
 
 1. 克隆或下载本仓库。
 2. 打开 [index.html](index.html) 即可使用。
-3. 进入规则包管理，导入 [sample-rules-pack.json](sample-rules-pack.json) 或直接使用内置下载样例。
+3. 进入规则包管理，可手动导入 [sample-rules-pack.json](sample-rules-pack.json)，也可点击“使用样例规则包”一键自动导入。
 4. 返回主页点击阶段按钮开始使用。
 
 说明：
@@ -92,7 +92,7 @@ BecomeChampion/
 2. [style.css](style.css)：移动端样式与组件外观。
 3. [sw.js](sw.js)：离线缓存逻辑。
 4. [sample-rules-pack.json](sample-rules-pack.json)：可导入的示例规则包。
-5. [sample-pack.js](sample-pack.js)：内置样例数据（供下载按钮使用）。
+5. [sample-pack.js](sample-pack.js)：内置样例数据（供一键导入和下载按钮回退使用）。
 6. [tools/generate-bt-pack-from-csv.js](tools/generate-bt-pack-from-csv.js)：CSV 到规则包的转换器。
 
 ## 规则包格式（简版）

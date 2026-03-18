@@ -563,6 +563,7 @@ function renderManageView() {
       <div class="section-heading">🔧 数据操作</div>
       <div class="manage-actions">
         <button class="btn btn-secondary btn-full" id="btn-export-data">📥 导出全部数据（备份）</button>
+        <button class="btn btn-secondary btn-full" id="btn-import-sample">✨ 使用样例规则包（bt常用分队）</button>
         <button class="btn btn-secondary btn-full" id="btn-dl-sample">📄 下载示例规则包</button>
         <button class="btn btn-danger btn-full"    id="btn-clear-used-manage">🔄 清空所有已用标记</button>
       </div>
@@ -754,6 +755,7 @@ function handleAppClick(e) {
 
   // Export / download
   if (t.closest('#btn-export-data'))  { exportData();       return; }
+  if (t.closest('#btn-import-sample')) { importSamplePack(); return; }
   if (t.closest('#btn-dl-sample'))    { downloadSample();   return; }
 }
 
@@ -839,6 +841,34 @@ async function importFromText(text) {
     renderApp();
   } catch (err) {
     toast(`保存规则包失败: ${err.message}`, 'error');
+  }
+}
+
+async function importSamplePack() {
+  let data = null;
+
+  try {
+    const resp = await fetch('./sample-rules-pack.json', { cache: 'no-store' });
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    data = await resp.json();
+  } catch (_) {
+    data = window.BC_SAMPLE_PACK || SAMPLE_PACK || null;
+  }
+
+  if (!data) {
+    toast('样例规则包不可用', 'error');
+    return;
+  }
+
+  try {
+    await DB.put(data);
+    state.packs = await DB.getAll();
+    state.activePackId = data.id;
+    persistState();
+    toast(`✓ 已载入样例规则包「${data.faction}」`, 'success');
+    renderApp();
+  } catch (err) {
+    toast(`载入样例规则包失败: ${err.message}`, 'error');
   }
 }
 
