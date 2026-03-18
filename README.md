@@ -128,6 +128,7 @@ BecomeChampion/
 1. 更新 10e CSV 后，执行生成脚本刷新默认包。
 2. 打开页面后在“规则包管理”里验证导入与筛选行为。
 3. 需要发布新默认包时，更新 pack_version 与 source_note。
+ 4. 如果本次发布修改了 [index.html](index.html)、[app.js](app.js)、[style.css](style.css)、[sample-pack.js](sample-pack.js)、[sample-rules-pack.json](sample-rules-pack.json)、[manifest.json](manifest.json) 或 [icon.svg](icon.svg)，请同时更新 [sw.js](sw.js) 中的 `CACHE_NAME`。当前离线缓存采用固定版本号，未同步 bump 缓存版本时，GitHub Pages 已更新但客户端仍可能继续读取旧缓存。
 
 ## 版权与声明
 
@@ -267,6 +268,7 @@ Common maintenance actions:
 1. After updating 10e CSV, execute generation script to refresh default pack.
 2. After opening page, verify import and filtering behavior in "Rules Pack Management".
 3. When releasing new default pack, update pack_version and source_note.
+ 4. If a release changes [index.html](index.html), [app.js](app.js), [style.css](style.css), [sample-pack.js](sample-pack.js), [sample-rules-pack.json](sample-rules-pack.json), [manifest.json](manifest.json), or [icon.svg](icon.svg), also bump `CACHE_NAME` in [sw.js](sw.js). The offline shell currently uses a fixed cache version, so GitHub Pages can be updated while clients continue serving old cached assets unless the cache version changes.
 
 ## Copyright and Disclaimer
 
