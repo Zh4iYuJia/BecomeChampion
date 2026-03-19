@@ -8,7 +8,7 @@
 // CONSTANTS
 // ================================================================
 
-const APP_VERSION = '1.0.0';
+const APP_VERSION = '1.1.0';
 const DB_NAME     = 'BecomeChampionDB';
 const DB_VER      = 1;
 const STORE_PACKS = 'rulesPacks';
@@ -581,36 +581,47 @@ function renderPhaseView() {
     ? detachmentFiltered
     : detachmentFiltered.filter(a => a._category === state.filter);
 
-  const filterChips = FILTER_DEFS.map(f => {
-    const cnt = f.id === 'all'
-      ? detachmentFiltered.length
-      : detachmentFiltered.filter(a => a._category === f.id).length;
-    if (f.id !== 'all' && cnt === 0) return '';
-    return `<button class="filter-chip ${state.filter === f.id ? 'active' : ''}"
-               data-filter="${f.id}"
+  const availableFilters = FILTER_DEFS
+    .map((filterDef) => {
+      const count = filterDef.id === 'all'
+        ? detachmentFiltered.length
+        : detachmentFiltered.filter(a => a._category === filterDef.id).length;
+
+      return {
+        ...filterDef,
+        count,
+        visible: filterDef.id === 'all' || count > 0,
+      };
+    })
+    .filter(filterDef => filterDef.visible);
+
+  if (!availableFilters.some(filterDef => filterDef.id === state.filter)) {
+    state.filter = 'all';
+  }
+
+  const filterChips = availableFilters.map(filterDef => {
+    return `<button class="filter-chip ${state.filter === filterDef.id ? 'active' : ''}"
+               data-filter="${filterDef.id}"
                style="--phase-color:${phase.color}">
-              ${f.label}${cnt > 0 ? ` (${cnt})` : ''}
+              ${filterDef.label}${filterDef.count > 0 ? ` (${filterDef.count})` : ''}
             </button>`;
   }).join('');
 
-  const detachmentChips = detachments.length <= 1
+  const detachmentSelect = detachments.length <= 1
     ? ''
     : `
-      <div class="detachment-bar">
-        <span class="detachment-label">按编队筛选</span>
-        <button class="detachment-chip ${state.detachmentFilter === 'all' ? 'active' : ''}"
-                data-detachment-filter="all"
-                style="--phase-color:${phase.color}">
-          全部 (${allAbs.length})
-        </button>
-        ${detachments.map(name => {
-          const cnt = allAbs.filter(a => a._detachment === name).length;
-          return `<button class="detachment-chip ${state.detachmentFilter === name ? 'active' : ''}"
-                    data-detachment-filter="${esc(name)}"
-                    style="--phase-color:${phase.color}">
-                    ${esc(name)} (${cnt})
-                  </button>`;
-        }).join('')}
+      <div class="detachment-bar" style="--phase-color:${phase.color}">
+        <label class="detachment-label" for="detachment-filter">按编队筛选</label>
+        <div class="select-wrap">
+          <select id="detachment-filter" class="detachment-select">
+            <option value="all" ${state.detachmentFilter === 'all' ? 'selected' : ''}>全部 (${allAbs.length})</option>
+            ${detachments.map(name => {
+              const cnt = allAbs.filter(a => a._detachment === name).length;
+              return `<option value="${esc(name)}" ${state.detachmentFilter === name ? 'selected' : ''}>${esc(name)} (${cnt})</option>`;
+            }).join('')}
+          </select>
+          <span class="select-arrow" aria-hidden="true"></span>
+        </div>
       </div>`;
 
   const usedInPhase = allAbs.filter(a => state.usedAbilities.has(a.id)).length;
@@ -635,7 +646,7 @@ function renderPhaseView() {
     </div>
 
     <div class="main-content">
-      ${detachmentChips}
+      ${detachmentSelect}
       <div class="filter-bar">${filterChips}</div>
       <div class="ability-list">${cards}</div>
     </div>`;
@@ -644,6 +655,7 @@ function renderPhaseView() {
 function renderAbilityCard(ab, phaseColor) {
   const isUsed   = state.usedAbilities.has(ab.id);
   const typeMeta = ABILITY_TYPE_META[ab.type] || ABILITY_TYPE_META.active;
+  const detailText = String(ab.summary || '').trim();
 
   const accentColor =
     ab._category === 'stratagem'  ? '#43a047' :
@@ -656,10 +668,12 @@ function renderAbilityCard(ab, phaseColor) {
   const timingHtml = ab.timing
     ? `<div class="ability-timing">⏱ ${esc(ab.timing)}</div>` : '';
 
-  const unitHtml = ab._unit
-    ? `<div class="ability-unit">📌 ${esc(ab._unit)}</div>`
-    : ab._target
-    ? `<div class="ability-unit">🎯 目标: ${esc(ab._target)}</div>`
+  const detailHtml = detailText
+    ? `
+      <details class="ability-details">
+        <summary class="ability-details-toggle">规则详情</summary>
+        <div class="ability-summary">${esc(detailText)}</div>
+      </details>`
     : '';
 
   return `
@@ -668,9 +682,8 @@ function renderAbilityCard(ab, phaseColor) {
         <span class="ability-name">${esc(ab.name)}</span>
         <span class="type-badge ${typeMeta.cls}">${typeMeta.label}</span>
       </div>
-      ${unitHtml}
       ${timingHtml}
-      <div class="ability-summary">${esc(ab.summary || '')}</div>
+      ${detailHtml}
       <div class="ability-card-footer">
         <span class="ability-source">${esc(ab.source || '')}</span>
         ${cpBadge}
@@ -837,6 +850,7 @@ function bindAppEvents() {
   if (app.dataset.eventsBound === 'true') return;
   app.addEventListener('click', handleAppClick);
   app.addEventListener('input', handleAppInput);
+  app.addEventListener('change', handleAppChange);
   app.dataset.eventsBound = 'true';
 }
 
@@ -845,6 +859,15 @@ function handleAppInput(e) {
   if (target.id === 'roster-search') {
     state.rosterQuery = target.value || '';
     renderApp();
+  }
+}
+
+function handleAppChange(e) {
+  const target = e.target;
+  if (target.id === 'detachment-filter') {
+    state.detachmentFilter = target.value || 'all';
+    renderApp();
+    return;
   }
 }
 
@@ -885,18 +908,9 @@ function handleAppClick(e) {
     return;
   }
 
-  // Filter chips
   const chip = t.closest('.filter-chip');
   if (chip) {
     state.filter = chip.dataset.filter;
-    renderApp();
-    return;
-  }
-
-  // Detachment chips
-  const detachmentChip = t.closest('.detachment-chip');
-  if (detachmentChip) {
-    state.detachmentFilter = detachmentChip.dataset.detachmentFilter || 'all';
     renderApp();
     return;
   }
