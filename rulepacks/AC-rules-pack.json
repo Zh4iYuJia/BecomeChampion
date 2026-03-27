@@ -1,0 +1,2232 @@
+{
+  "$schema": "https://becomechampion.app/schemas/rules-pack-v1.json",
+  "$comment": "BecomeChampion Rules Pack - Adeptus Custodes (10th Edition). Generated from 10e CSV data. Includes core Adeptus Custodes detachments, Adeptus Custodes datasheets, Sisters of Silence datasheets that share the faction, and Forge World Adeptus Custodes units surfaced from the current dataset; not official rules text.",
+  "id": "ac-rules-pack",
+  "faction": "Adeptus Custodes",
+  "game_version": "10th Edition",
+  "pack_version": "1.0.0",
+  "date": "2026-03-27",
+  "author": "Community",
+  "source_note": "Generated from current 10e CSV exports. This pack includes Adeptus Custodes detachments Shield Host, Talons Of The Emperor, Null Maiden Vigil, Auric Champions, Solar Spearhead, Lions of the Emperor. Units include Adeptus Custodes faction datasheets from the main faction pack and Adeptus Custodes (Forge World), including Sisters of Silence datasheets that are part of the faction dataset. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+  "units": [
+    {
+      "id": "unit-000001560",
+      "name": "Agamatus Custodians",
+      "keywords": [
+        "Adeptus Custodes",
+        "Imperium",
+        "Agamatus Custodians",
+        "Fly",
+        "Mounted"
+      ],
+      "abilities": [
+        {
+          "id": "unit-agamatus-custodians-turbo-boost",
+          "name": "Turbo-boost",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move chara",
+          "type": "passive",
+          "summary": "Each time this unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 2
+        },
+        {
+          "id": "unit-agamatus-custodians-implacable-vanguard",
+          "name": "Implacable Vanguard",
+          "phases": [
+            "movement",
+            "shooting",
+            "charge"
+          ],
+          "timing": "in your Shooting phase, after this unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\"",
+          "type": "reaction",
+          "once_per": "battle",
+          "summary": "Once per battle, in your Shooting phase, after this unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". If it does, until the end of the turn, this unit is not eligible to declare a charge.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002088",
+      "name": "Aleya",
+      "keywords": [
+        "Adeptus Custodes",
+        "Character",
+        "Imperium",
+        "Anathema Psykana",
+        "Aleya",
+        "Infantry",
+        "Epic Hero"
+      ],
+      "abilities": [
+        {
+          "id": "unit-aleya-tactical-perception",
+          "name": "Tactical Perception",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, models in that unit have the Fights First ability",
+          "type": "passive",
+          "summary": "While this model is leading a unit, models in that unit have the Fights First ability.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-aleya-tenacious-spirit",
+          "name": "Tenacious Spirit",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength, and add 1 to the Wound roll as well if that unit is Below Half-strength",
+          "type": "passive",
+          "summary": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll if that unit is below its Starting Strength, and add 1 to the Wound roll as well if that unit is Below Half-strength.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-aleya-daughter-of-the-abyss",
+          "name": "Daughter of the Abyss",
+          "phases": [
+            "any"
+          ],
+          "timing": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.",
+          "type": "passive",
+          "summary": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001453",
+      "name": "Allarus Custodians",
+      "keywords": [
+        "Adeptus Custodes",
+        "Infantry",
+        "Imperium",
+        "Allarus Custodians",
+        "Terminator"
+      ],
+      "abilities": [
+        {
+          "id": "unit-allarus-custodians-vexilla",
+          "name": "Vexilla",
+          "phases": [
+            "any"
+          ],
+          "timing": "Add 1 to the Objective Control characteristic of models in the bearer’s unit.",
+          "type": "wargear",
+          "summary": "Add 1 to the Objective Control characteristic of models in the bearer’s unit.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-allarus-custodians-slayers-of-tyrants",
+          "name": "Slayers of Tyrants",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time a model in this unit makes an attack that targets a CHARACTER , MONSTER or VEHICLE unit, you can re-roll the W",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes an attack that targets a CHARACTER , MONSTER or VEHICLE unit, you can re-roll the Wound roll.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-allarus-custodians-from-golden-light",
+          "name": "From Golden Light",
+          "phases": [
+            "any"
+          ],
+          "timing": "at the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves",
+          "type": "reaction",
+          "once_per": "battle",
+          "summary": "Once per battle, at the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000002524",
+      "name": "Anathema Psykana Rhino",
+      "keywords": [
+        "Adeptus Custodes",
+        "Rhino",
+        "Vehicle",
+        "Transport",
+        "Dedicated Transport",
+        "Smoke",
+        "Imperium",
+        "Anathema Psykana"
+      ],
+      "abilities": [
+        {
+          "id": "unit-anathema-psykana-rhino-daughters-of-the-abyss",
+          "name": "Daughters of the Abyss",
+          "phases": [
+            "any"
+          ],
+          "timing": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.",
+          "type": "passive",
+          "summary": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-anathema-psykana-rhino-self-repair",
+          "name": "Self Repair",
+          "phases": [
+            "command"
+          ],
+          "timing": "At the start of your Command phase, this model regains 1 lost wound",
+          "type": "active",
+          "summary": "At the start of your Command phase, this model regains 1 lost wound.",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        },
+        {
+          "id": "unit-anathema-psykana-rhino-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001558",
+      "name": "Aquilon Custodians",
+      "keywords": [
+        "Adeptus Custodes",
+        "Infantry",
+        "Terminator",
+        "Imperium",
+        "Aquilon Custodians"
+      ],
+      "abilities": [
+        {
+          "id": "unit-aquilon-custodians-heavy-assault-infantry",
+          "name": "Heavy Assault Infantry",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, re-roll a Wound roll of 1",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, re-roll a Wound roll of 1.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 3
+        },
+        {
+          "id": "unit-aquilon-custodians-from-golden-light",
+          "name": "From Golden Light",
+          "phases": [
+            "any"
+          ],
+          "timing": "at the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves",
+          "type": "reaction",
+          "once_per": "battle",
+          "summary": "Once per battle, at the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001680",
+      "name": "Ares Gunship",
+      "keywords": [
+        "Adeptus Custodes",
+        "Fly",
+        "Aircraft",
+        "Vehicle",
+        "Ares Gunship",
+        "Imperium"
+      ],
+      "abilities": [
+        {
+          "id": "unit-ares-gunship-infernus-firebombs",
+          "name": "Infernus Firebombs",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Each time this model ends a Normal move, you can select one enemy unit it moved over during that move. Until the end of ",
+          "type": "reaction",
+          "summary": "Each time this model ends a Normal move, you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover. In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002518",
+      "name": "Blade Champion",
+      "keywords": [
+        "Adeptus Custodes",
+        "Infantry",
+        "Blade Champion",
+        "Imperium",
+        "Character"
+      ],
+      "abilities": [
+        {
+          "id": "unit-blade-champion-swift-onslaught",
+          "name": "Swift Onslaught",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, you can re-roll Charge rolls made for that unit",
+          "type": "passive",
+          "summary": "While this model is leading a unit, you can re-roll Charge rolls made for that unit",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-blade-champion-martial-inspiration",
+          "name": "Martial Inspiration",
+          "phases": [
+            "charge"
+          ],
+          "timing": "in your Charge phase, this model’s unit is eligible to declare a charge in a turn which it Advanced",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, in your Charge phase, this model’s unit is eligible to declare a charge in a turn which it Advanced.",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000001460",
+      "name": "Caladius Grav-tank",
+      "keywords": [
+        "Adeptus Custodes",
+        "Imperium",
+        "Caladius Grav-tank",
+        "Vehicle",
+        "Fly"
+      ],
+      "abilities": [
+        {
+          "id": "unit-caladius-grav-tank-advanced-firepower",
+          "name": "Advanced Firepower",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this model makes an attack with its twin iliastus accelerator cannon that targets an enemy unit (excluding MON",
+          "type": "reaction",
+          "summary": "Each time this model makes an attack with its twin iliastus accelerator cannon that targets an enemy unit (excluding MONSTERS and VEHICLES ), that attack has the [LETHAL HITS] ability. Each time this model makes an attack with its twin arachnus heavy blaze cannon that targets an enemy MONSTER or VEHICLE unit, that attack has the [LETHAL HITS] ability.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001458",
+      "name": "Contemptor-achillus Dreadnought",
+      "keywords": [
+        "Adeptus Custodes",
+        "Imperium",
+        "Vehicle",
+        "Walker",
+        "Contemptor-Achillus Dreadnought"
+      ],
+      "abilities": [
+        {
+          "id": "unit-contemptor-achillus-dreadnought-dread-foe",
+          "name": "Dread Foe",
+          "phases": [
+            "charge",
+            "fight"
+          ],
+          "timing": "Each time this model is selected to fight, you can select one enemy unit within Engagement Range of it and roll one D6, ",
+          "type": "reaction",
+          "summary": "Each time this model is selected to fight, you can select one enemy unit within Engagement Range of it and roll one D6, adding 2 to the result if this model made a Charge move this turn: on a 4-5, that enemy unit suffers D3 mortal wounds; on a 6+, that enemy unit suffers 3 mortal wounds.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000001557",
+      "name": "Contemptor-galatus Dreadnought",
+      "keywords": [
+        "Adeptus Custodes",
+        "Imperium",
+        "Contemptor-Galatus Dreadnought",
+        "Walker",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-contemptor-galatus-dreadnought-galatus-shield",
+          "name": "Galatus Shield",
+          "phases": [
+            "fight"
+          ],
+          "timing": "Each time a melee attack targets this model, subtract 1 from the Wound roll.",
+          "type": "passive",
+          "summary": "Each time a melee attack targets this model, subtract 1 from the Wound roll.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000001461",
+      "name": "Coronus Grav-carrier",
+      "keywords": [
+        "Adeptus Custodes",
+        "Transport",
+        "Fly",
+        "Coronus Grav-carrier",
+        "Imperium",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-coronus-grav-carrier-fire-support",
+          "name": "Fire Support",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time a friendly model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000882",
+      "name": "Custodian Guard",
+      "keywords": [
+        "Adeptus Custodes",
+        "Imperium",
+        "Custodian Guard",
+        "Battleline",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-custodian-guard-praesidium-shield",
+          "name": "Praesidium Shield",
+          "phases": [
+            "any"
+          ],
+          "timing": "Add 1 to the bearer’s Wounds characteristic.",
+          "type": "wargear",
+          "summary": "Add 1 to the bearer’s Wounds characteristic.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-custodian-guard-vexilla",
+          "name": "Vexilla",
+          "phases": [
+            "any"
+          ],
+          "timing": "Add 1 to the Objective Control characteristic of models in the bearer’s unit.",
+          "type": "wargear",
+          "summary": "Add 1 to the Objective Control characteristic of models in the bearer’s unit.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-custodian-guard-stand-vigil",
+          "name": "Stand Vigil",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-custodian-guard-sentinel-storm",
+          "name": "Sentinel Storm",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "in your Shooting phase, after this unit has shot, it can shoot again",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, in your Shooting phase, after this unit has shot, it can shoot again.",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000001559",
+      "name": "Custodian Guard With Adrasite And Pyrithite Spears",
+      "keywords": [
+        "Adeptus Custodes",
+        "Custodian Guard with Adrasite and Pyrithite Spears",
+        "Imperium",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-custodian-guard-with-adrasite-and-pyrithite-spears-stand-vigil",
+          "name": "Stand Vigil",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes an attack, re-roll a Wound roll of 1. While this unit is within range of an objective marker you control, you can re-roll the Wound roll instead.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 2
+        },
+        {
+          "id": "unit-custodian-guard-with-adrasite-and-pyrithite-spears-no-foe-shall-stand",
+          "name": "No Foe Shall Stand",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "at the start of your Shooting phase, this unit can use this ability",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, at the start of your Shooting phase, this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [LETHAL HITS] and [IGNORES COVER] abilities.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000001450",
+      "name": "Custodian Wardens",
+      "keywords": [
+        "Adeptus Custodes",
+        "Imperium",
+        "Infantry",
+        "Custodian Wardens"
+      ],
+      "abilities": [
+        {
+          "id": "unit-custodian-wardens-vexilla",
+          "name": "Vexilla",
+          "phases": [
+            "any"
+          ],
+          "timing": "Add 1 to the Objective Control characteristic of models in the bearer’s unit.",
+          "type": "wargear",
+          "summary": "Add 1 to the Objective Control characteristic of models in the bearer’s unit.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-custodian-wardens-resolute-will",
+          "name": "Resolute Will",
+          "phases": [
+            "any"
+          ],
+          "timing": "While a CHARACTER is leading this unit, each time an attack targets this unit, if the Strength characteristic of that at",
+          "type": "passive",
+          "summary": "While a CHARACTER is leading this unit, each time an attack targets this unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of this unit, subtract 1 from the Wound roll.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-custodian-wardens-living-fortress",
+          "name": "Living Fortress",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle, at the start of any phase, this unit can use this ability. If it does, until the end of the phase, mode",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, at the start of any phase, this unit can use this ability. If it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000002520",
+      "name": "Knight-centura",
+      "keywords": [
+        "Adeptus Custodes",
+        "Infantry",
+        "Character",
+        "Knight-Centura",
+        "Anathema Psykana",
+        "Imperium"
+      ],
+      "abilities": [
+        {
+          "id": "unit-knight-centura-seeker-s-instincts",
+          "name": "Seeker’s Instincts",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, add 2\" to the Move characteristic of models in that unit and add 2 to Advance and Charge rolls made for that unit",
+          "type": "passive",
+          "summary": "While this model is leading a unit, add 2\" to the Move characteristic of models in that unit and add 2 to Advance and Charge rolls made for that unit.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-knight-centura-daughter-of-the-abyss",
+          "name": "Daughter of the Abyss",
+          "phases": [
+            "any"
+          ],
+          "timing": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.",
+          "type": "passive",
+          "summary": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-knight-centura-corner-the-quarry",
+          "name": "Corner the Quarry",
+          "phases": [
+            "battleshock"
+          ],
+          "timing": "Battle-shocked, subtract 1 from each of those tests",
+          "type": "reaction",
+          "summary": "Each time an enemy unit (excluding MONSTERS and VEHICLES ) that is within Engagement Range of this model’s unit Falls Back, all models in that enemy unit must take a Desperate Escape test. When doing so, if that enemy unit is Battle-shocked, subtract 1 from each of those tests.",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000001564",
+      "name": "Orion Assault Dropship",
+      "keywords": [
+        "Adeptus Custodes",
+        "Fly",
+        "Imperium",
+        "Orion Assault Dropship",
+        "Vehicle",
+        "Transport",
+        "Aircraft"
+      ],
+      "abilities": [
+        {
+          "id": "unit-orion-assault-dropship-assault-dropship",
+          "name": "Assault Dropship",
+          "phases": [
+            "any"
+          ],
+          "timing": "If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in ",
+          "type": "passive",
+          "summary": "If a unit disembarks from this TRANSPORT before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001562",
+      "name": "Pallas Grav-attack",
+      "keywords": [
+        "Adeptus Custodes",
+        "Imperium",
+        "Pallas Grav-attack",
+        "Vehicle",
+        "Fly"
+      ],
+      "abilities": [
+        {
+          "id": "unit-pallas-grav-attack-merciless-hunter",
+          "name": "Merciless Hunter",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "In your Shooting phase, each time this model makes an attack that targets an enemy unit that is Below Half-strength, add 1 to the Wound roll",
+          "type": "reaction",
+          "summary": "In your Shooting phase, each time this model makes an attack that targets an enemy unit that is Below Half-strength, add 1 to the Wound roll.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002521",
+      "name": "Prosecutors",
+      "keywords": [
+        "Adeptus Custodes",
+        "Prosecutors",
+        "Anathema Psykana",
+        "Imperium",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-prosecutors-daughters-of-the-abyss",
+          "name": "Daughters of the Abyss",
+          "phases": [
+            "any"
+          ],
+          "timing": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.",
+          "type": "passive",
+          "summary": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-prosecutors-purity-of-execution",
+          "name": "Purity of Execution",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a model in this unit makes a ranged attack that targets a PSYKER unit, that attack has the [PRECISION] and [DE",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes a ranged attack that targets a PSYKER unit, that attack has the [PRECISION] and [DEVASTATING WOUNDS] abilities.",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000001563",
+      "name": "Sagittarum Custodians",
+      "keywords": [
+        "Adeptus Custodes",
+        "Infantry",
+        "Imperium",
+        "Sagittarum Custodians"
+      ],
+      "abilities": [
+        {
+          "id": "unit-sagittarum-custodians-saturation-volleys",
+          "name": "Saturation Volleys",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "In your Shooting phase, after this unit has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this unit has shot, select one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 3
+        },
+        {
+          "id": "unit-sagittarum-custodians-disintegration-beams",
+          "name": "Disintegration Beams",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "at the start of your Shooting phase, this unit can use this ability",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, at the start of your Shooting phase, this unit can use this ability. If it does, until the end of the phase, ranged weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000001447",
+      "name": "Shield-captain",
+      "keywords": [
+        "Adeptus Custodes",
+        "Infantry",
+        "Character",
+        "Imperium",
+        "Shield-Captain"
+      ],
+      "abilities": [
+        {
+          "id": "unit-shield-captain-master-of-the-stances",
+          "name": "Master of the Stances",
+          "phases": [
+            "fight"
+          ],
+          "timing": "Once per battle, when this models unit is selected to fight, it can use this ability. if it does until that fight is res",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, when this models unit is selected to fight, it can use this ability. if it does until that fight is resolved, both Ka’tah Stances are active for that unit, instead of only one.",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        },
+        {
+          "id": "unit-shield-captain-strategic-mastery",
+          "name": "Strategic Mastery",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle round, you can select one model from your army with this ability. That model’s unit can be targeted with",
+          "type": "active",
+          "once_per": "battle round",
+          "summary": "Once per battle round, you can select one model from your army with this ability. That model’s unit can be targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-shield-captain-praesidium-shield",
+          "name": "Praesidium shield",
+          "phases": [
+            "any"
+          ],
+          "timing": "Add 1 to the bearer’s Wounds characteristic.",
+          "type": "wargear",
+          "summary": "Add 1 to the bearer’s Wounds characteristic.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001448",
+      "name": "Shield-captain In Allarus Terminator Armour",
+      "keywords": [
+        "Adeptus Custodes",
+        "Infantry",
+        "Imperium",
+        "Shield-Captain",
+        "Terminator",
+        "Character"
+      ],
+      "abilities": [
+        {
+          "id": "unit-shield-captain-in-allarus-terminator-armour-auramite-and-adamantine",
+          "name": "Auramite and Adamantine",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle, at the start of any phase, this model can use this ability If it does, until the end of the phase, each",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, at the start of any phase, this model can use this ability If it does, until the end of the phase, each time an attack is allocated to this model, change the Damage characteristic of that attack to 1.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-shield-captain-in-allarus-terminator-armour-strategic-mastery",
+          "name": "Strategic Mastery",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle round, you can select one model from your army with this ability and target that model’s unit with a Str",
+          "type": "active",
+          "once_per": "battle round",
+          "summary": "Once per battle round, you can select one model from your army with this ability and target that model’s unit with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001449",
+      "name": "Shield-captain On Dawneagle Jetbike",
+      "keywords": [
+        "Adeptus Custodes",
+        "Character",
+        "Fly",
+        "Imperium",
+        "Dawneagle Jetbike",
+        "Shield-Captain",
+        "Mounted"
+      ],
+      "abilities": [
+        {
+          "id": "unit-shield-captain-on-dawneagle-jetbike-sweeping-advance",
+          "name": "Sweeping Advance",
+          "phases": [
+            "movement",
+            "fight"
+          ],
+          "timing": "Fight phase, if this model’s unit has fought this phase, if it is within Engagement Range of one or more enemy units, it can make a Fall Back move or, if it is not within Engagement Range of one or more enemy units, it can make a Normal move",
+          "type": "reaction",
+          "once_per": "battle",
+          "summary": "Once per battle, at the end of the Fight phase, if this model’s unit has fought this phase, if it is within Engagement Range of one or more enemy units, it can make a Fall Back move or, if it is not within Engagement Range of one or more enemy units, it can make a Normal move",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        },
+        {
+          "id": "unit-shield-captain-on-dawneagle-jetbike-strategic-mastery",
+          "name": "Strategic Mastery",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle round, you can select one model from your army with this ability and target that model’s unit with a Str",
+          "type": "active",
+          "once_per": "battle round",
+          "summary": "Once per battle round, you can select one model from your army with this ability and target that model’s unit with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001479",
+      "name": "Telemon Heavy Dreadnought",
+      "keywords": [
+        "Adeptus Custodes",
+        "Telemon Heavy Dreadnought",
+        "Imperium",
+        "Walker",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-telemon-heavy-dreadnought-guardian-eternal",
+          "name": "Guardian Eternal",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
+          "type": "passive",
+          "summary": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 2
+        },
+        {
+          "id": "unit-telemon-heavy-dreadnought-devoted-to-destruction",
+          "name": "Devoted to Destruction",
+          "phases": [
+            "any"
+          ],
+          "timing": "If this model is equipped with 2 Telemon caestus weapons in addition to its armoured feet weapon, add 2 to the Attacks c",
+          "type": "passive",
+          "summary": "If this model is equipped with 2 Telemon caestus weapons in addition to its armoured feet weapon, add 2 to the Attacks characteristic of those Telemon caestus weapons.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001446",
+      "name": "Trajann Valoris",
+      "keywords": [
+        "Adeptus Custodes",
+        "Infantry",
+        "Character",
+        "Imperium",
+        "Epic Hero",
+        "Trajann Valoris"
+      ],
+      "abilities": [
+        {
+          "id": "unit-trajann-valoris-captain-general",
+          "name": "Captain-General",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack’s Ballistic skill or Weapon skill characteristics and/or all modifiers to the Hit roll",
+          "type": "passive",
+          "summary": "While this model is leading a unit, each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack’s Ballistic skill or Weapon skill characteristics and/or all modifiers to the Hit roll",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-trajann-valoris-moment-shackle",
+          "name": "Moment Shackle",
+          "phases": [
+            "fight"
+          ],
+          "timing": "Fight phase, you can select one of the following to take effect until the end of the phase: - This model’s Watcher’s Axe melee weapon has an Attacks characteristic of 12",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, at the start of the Fight phase, you can select one of the following to take effect until the end of the phase:\n- This model’s Watcher’s Axe melee weapon has an Attacks characteristic of 12.\n- This model has a 2+ invulnerable save.",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002519",
+      "name": "Valerian",
+      "keywords": [
+        "Adeptus Custodes",
+        "Valerian",
+        "Epic Hero",
+        "Infantry",
+        "Character",
+        "Imperium",
+        "Shield-Captain"
+      ],
+      "abilities": [
+        {
+          "id": "unit-valerian-golden-laurels",
+          "name": "Golden Laurels",
+          "phases": [
+            "fight"
+          ],
+          "timing": "While this model is leading a unit, each time a melee attack targets that unit, worsen the Armour Penetration characteristic of that attack by 1",
+          "type": "passive",
+          "summary": "While this model is leading a unit, each time a melee attack targets that unit, worsen the Armour Penetration characteristic of that attack by 1.",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        },
+        {
+          "id": "unit-valerian-hero-of-lion-s-gate",
+          "name": "Hero of Lion’s Gate",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle, after making a Hit roll, Wound roll or saving throw for this model, you can change the result of that r",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, after making a Hit roll, Wound roll or saving throw for this model, you can change the result of that roll to an unmodified 6.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001561",
+      "name": "Venatari Custodians",
+      "keywords": [
+        "Adeptus Custodes",
+        "Venatari Custodians",
+        "Imperium",
+        "Jump Pack",
+        "Fly",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-venatari-custodians-tarsis-buckler",
+          "name": "Tarsis Buckler",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer has a Wounds characteristic of 4.",
+          "type": "wargear",
+          "summary": "The bearer has a Wounds characteristic of 4.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 2
+        },
+        {
+          "id": "unit-venatari-custodians-strike-from-the-skies",
+          "name": "Strike from the Skies",
+          "phases": [
+            "charge"
+          ],
+          "timing": "This unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
+          "type": "passive",
+          "summary": "This unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 3
+        },
+        {
+          "id": "unit-venatari-custodians-swooping-dive",
+          "name": "Swooping Dive",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, and can do so even if you have alrea",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase.",
+          "source": "Adeptus Custodes (Forge World)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000883",
+      "name": "Venerable Contemptor Dreadnought",
+      "keywords": [
+        "Adeptus Custodes",
+        "Walker",
+        "Imperium",
+        "Venerable Contemptor Dreadnought",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-venerable-contemptor-dreadnought-unyielding-ancient",
+          "name": "Unyielding Ancient",
+          "phases": [
+            "any"
+          ],
+          "timing": "The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the en",
+          "type": "reaction",
+          "summary": "The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000884",
+      "name": "Venerable Land Raider",
+      "keywords": [
+        "Adeptus Custodes",
+        "Smoke",
+        "Transport",
+        "Imperium",
+        "Vehicle",
+        "Venerable Land Raider"
+      ],
+      "abilities": [
+        {
+          "id": "unit-venerable-land-raider-assault-ramp",
+          "name": "Assault Ramp",
+          "phases": [
+            "movement",
+            "charge"
+          ],
+          "timing": "Each time a unit disembarks from this model after it has made a Normal move, that unit is still eligible to declare a ch",
+          "type": "passive",
+          "summary": "Each time a unit disembarks from this model after it has made a Normal move, that unit is still eligible to declare a charge this turn.",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        },
+        {
+          "id": "unit-venerable-land-raider-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001454",
+      "name": "Vertus Praetors",
+      "keywords": [
+        "Adeptus Custodes",
+        "Mounted",
+        "Fly",
+        "Imperium",
+        "Vertus Praetors"
+      ],
+      "abilities": [
+        {
+          "id": "unit-vertus-praetors-turbo-boost",
+          "name": "Turbo-boost",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move chara",
+          "type": "passive",
+          "summary": "Each time this unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-vertus-praetors-quicksilver-execution",
+          "name": "Quicksilver Execution",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Once per battle, after this unit ends a Normal Move or Advance move, you can select one enemy unit (excluding MONSTER an",
+          "type": "reaction",
+          "once_per": "battle",
+          "summary": "Once per battle, after this unit ends a Normal Move or Advance move, you can select one enemy unit (excluding MONSTER and VEHICLE units) that it moved over during that move, then roll one D6 for each model in this unit: for each 2+, that enemy unit suffers 2 mortal wounds.",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002522",
+      "name": "Vigilators",
+      "keywords": [
+        "Adeptus Custodes",
+        "Anathema Psykana",
+        "Infantry",
+        "Imperium",
+        "Vigilators"
+      ],
+      "abilities": [
+        {
+          "id": "unit-vigilators-daughters-of-the-abyss",
+          "name": "Daughters of the Abyss",
+          "phases": [
+            "any"
+          ],
+          "timing": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.",
+          "type": "passive",
+          "summary": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-vigilators-deft-parry",
+          "name": "Deft Parry",
+          "phases": [
+            "fight"
+          ],
+          "timing": "Each time a melee attack targets this unit, subtract 1 from the Hit roll.",
+          "type": "passive",
+          "summary": "Each time a melee attack targets this unit, subtract 1 from the Hit roll.",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002523",
+      "name": "Witchseekers",
+      "keywords": [
+        "Adeptus Custodes",
+        "Witchseekers",
+        "Infantry",
+        "Imperium",
+        "Anathema Psykana"
+      ],
+      "abilities": [
+        {
+          "id": "unit-witchseekers-daughters-of-the-abyss",
+          "name": "Daughters of the Abyss",
+          "phases": [
+            "any"
+          ],
+          "timing": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.",
+          "type": "passive",
+          "summary": "Models in this unit have the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.",
+          "source": "Adeptus Custodes",
+          "priority": 2
+        },
+        {
+          "id": "unit-witchseekers-sanctified-flames",
+          "name": "Sanctified Flames",
+          "phases": [
+            "shooting",
+            "battleshock"
+          ],
+          "timing": "In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test.",
+          "source": "Adeptus Custodes",
+          "priority": 3
+        }
+      ]
+    }
+  ],
+  "stratagems": [
+    {
+      "id": "strat-000008931007",
+      "name": "SHOULDER THE MANTLE",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase, before the Reinforcements step.",
+      "target": "One Adeptus Custodes Character model from your army that is not leading a unit.",
+      "effect": "Select one friendly unit (excluding Battle-shocked and Attached units) within 2\" horizontally and 5\" vertically of your model that it could lead (as described in the Leader section of its datasheet). Your model attaches to that unit as a Leader. Change that unit’s Starting Strength accordingly.",
+      "source": "Wahapedia CSV / Auric Champions",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Auric Champions – Epic Deed Stratagem",
+        "Auric Champions"
+      ]
+    },
+    {
+      "id": "strat-000008931002",
+      "name": "SLAYER OF CHAMPIONS",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase.",
+      "target": "One Adeptus Custodes Character unit from your army that has just destroyed the unit you selected at the start of your Command phase as the target of your Assemblage of Might ability.",
+      "effect": "Select one enemy unit on the battlefield Until the start of your next Command phase, each time an ADEPTUS CUSTODES CHARACTER model from your army makes an attack that target that enemy unit, add 1 to the Wound roll In addition, if the destroyed unit was a CHARACTER unit, gain 1CP.",
+      "source": "Wahapedia CSV / Auric Champions",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Auric Champions – Epic Deed Stratagem",
+        "Auric Champions"
+      ]
+    },
+    {
+      "id": "strat-000008931003",
+      "name": "SUPERHUMAN RESERVES",
+      "cp_cost": 2,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase, just after an Adeptus Custodes Warlord model from your army has used an ability on its datasheet or from an Enhancement that says it can only be used Once per battle.",
+      "target": "That Adeptus Custodes Warlord model.",
+      "effect": "Your model can use its Once per battle’ ability one additional time during this battle (but not in the same phase).",
+      "source": "Wahapedia CSV / Auric Champions",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Auric Champions – Epic Deed Stratagem",
+        "Auric Champions"
+      ]
+    },
+    {
+      "id": "strat-000008931004",
+      "name": "THE EMPEROR’S AUSPICE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One Adeptus Custodes Character unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, CHARACTER models in your unit have the Feel No Pain 4+ ability.",
+      "source": "Wahapedia CSV / Auric Champions",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Auric Champions – Epic Deed Stratagem",
+        "Auric Champions"
+      ]
+    },
+    {
+      "id": "strat-000008931005",
+      "name": "EARNING OF A NAME",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "Up to two Adeptus Custodes Character units from your army that have not been selected to fight this phase.",
+      "effect": "Until the end of the phase, each time a CHARACTER model in either of your units makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll and you can re-roll the Wound roll.",
+      "source": "Wahapedia CSV / Auric Champions",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Auric Champions – Epic Deed Stratagem",
+        "Auric Champions"
+      ]
+    },
+    {
+      "id": "strat-000008931006",
+      "name": "VIGIL UNENDING",
+      "cp_cost": 2,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "One Adeptus Custodes Character model from your army that was just destroyed and has not fought this phase. You can use this Stratagem on that unit even though it was just destroyed.",
+      "effect": "Do not remove your destroyed model from play. The destroyed model can fight after the attacking unit has finished making attacks, and is then removed from play.",
+      "source": "Wahapedia CSV / Auric Champions",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Auric Champions – Epic Deed Stratagem",
+        "Auric Champions"
+      ]
+    },
+    {
+      "id": "strat-000009988004",
+      "name": "PEERLESS WARRIOR",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "One ADEPTUS CUSTODES unit from your army that has not been selected to fight this phase.",
+      "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
+      "source": "Wahapedia CSV / Lions of the Emperor",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Lions of the Emperor – Battle Tactic Stratagem",
+        "Lions of the Emperor"
+      ]
+    },
+    {
+      "id": "strat-000009988005",
+      "name": "UNLEASH THE LIONS",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Your Command phase.",
+      "target": "One Allarus Custodians or Aquilon Custodians unit from your army that is on the battlefield.",
+      "effect": "That unit is split into separate units, each containing one model. These new units each have a Starting Strength of 1.",
+      "source": "Wahapedia CSV / Lions of the Emperor",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Lions of the Emperor – Strategic Ploy Stratagem",
+        "Lions of the Emperor"
+      ]
+    },
+    {
+      "id": "strat-000009988003",
+      "name": "DEFIANT TO THE LAST",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS CUSTODES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6, adding 2 to the result if that model has the CHARACTER keyword. On a 4+, do not remove it from play; the destroyed model can fight after the attacking unit has finished making its attacks (when doing so, it is treated as having 1 wound remaining), and is then removed from play.",
+      "source": "Wahapedia CSV / Lions of the Emperor",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Lions of the Emperor – Strategic Ploy Stratagem",
+        "Lions of the Emperor"
+      ]
+    },
+    {
+      "id": "strat-000009988002",
+      "name": "GILDED CHAMPION",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase, just after an Adeptus Custodes Character model from your army has used an ability on its datasheet that states it can only be used ‘once per battle’.",
+      "target": "That ADEPTUS CUSTODES CHARACTER model.",
+      "effect": "Your model can use that ‘once per battle’ ability one additional time during the battle (but not in the same phase).",
+      "source": "Wahapedia CSV / Lions of the Emperor",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Lions of the Emperor – Strategic Ploy Stratagem",
+        "Lions of the Emperor"
+      ]
+    },
+    {
+      "id": "strat-000009988007",
+      "name": "SWIFT AS THE EAGLE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has shot.",
+      "target": "One ADEPTUS CUSTODES unit from your army (excluding VEHICLE units) that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Your unit can make a Normal move of up to D6\".",
+      "source": "Wahapedia CSV / Lions of the Emperor",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Lions of the Emperor – Strategic Ploy Stratagem",
+        "Lions of the Emperor"
+      ]
+    },
+    {
+      "id": "strat-000009988006",
+      "name": "MANOEUVRE AND FIRE",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase, just after an ADEPTUS CUSTODES unit from your army Falls Back.",
+      "target": "That ADEPTUS CUSTODES unit.",
+      "effect": "Until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
+      "source": "Wahapedia CSV / Lions of the Emperor",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Lions of the Emperor – Strategic Ploy Stratagem",
+        "Lions of the Emperor"
+      ]
+    },
+    {
+      "id": "strat-000008927006",
+      "name": "PURGATION SWEEP",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One Witchseekers unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, add 1 to the Attacks characteristic of Torrent weapons equipped by models in your unit. If such a weapon targets a PSYKER or Battle-shocked unit this phase, add 2 to its Attacks characteristic instead.",
+      "source": "Wahapedia CSV / Null Maiden Vigil",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Null Maiden Vigil – Battle Tactic Stratagem",
+        "Null Maiden Vigil"
+      ]
+    },
+    {
+      "id": "strat-000008927004",
+      "name": "ANATHEMA BLADEMASTERY",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "One Vigilators unit from your army that has not been selected to fight this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes a melee attack, you can re-roll the Hit roll If the target of that attack is Battle-shocked or a PSYKER , you can re-roll the Wound roll as well.",
+      "source": "Wahapedia CSV / Null Maiden Vigil",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Null Maiden Vigil – Battle Tactic Stratagem",
+        "Null Maiden Vigil"
+      ]
+    },
+    {
+      "id": "strat-000008927003",
+      "name": "WITCH HUNTERS",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One Anathema Psykana unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Select either the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have the selected ability, but models in your unit can only target PSYKER units with their attacks.",
+      "source": "Wahapedia CSV / Null Maiden Vigil",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Null Maiden Vigil – Battle Tactic Stratagem",
+        "Null Maiden Vigil"
+      ]
+    },
+    {
+      "id": "strat-000008927005",
+      "name": "PSY-CHAFF VOLLEY",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One Prosecutors unit from your army that has just shot.",
+      "effect": "Select one enemy unit hit by one or more of those attacks. Until the start of your next turn, while your unit is on the battlefield, that enemy unit is prosecuted. While a unit is prosecuted, each time an Anathema Psykana model makes an attack against that unit, improve the Armour Penetration characteristic of that attack by 1. While a PSYKER or Battle-shocked unit is prosecuted, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
+      "source": "Wahapedia CSV / Null Maiden Vigil",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Null Maiden Vigil – Strategic Ploy Stratagem",
+        "Null Maiden Vigil"
+      ]
+    },
+    {
+      "id": "strat-000008927007",
+      "name": "PSYCHIC ABOMINATIONS",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One Anathema Psykana Infantry unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, your unit has the Stealth ability, and Battle-shocked and PSYKER models can only select your unit as a target of a ranged attack if they are within 12\".",
+      "source": "Wahapedia CSV / Null Maiden Vigil",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Null Maiden Vigil – Strategic Ploy Stratagem",
+        "Null Maiden Vigil"
+      ]
+    },
+    {
+      "id": "strat-000008927002",
+      "name": "DESPERATION’S PRICE",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase, just after an enemy PSYKER unit has either finished using a Psychic ability that targets a unit, or finished making Psychic Attacks.",
+      "target": "One Anathema Psykana unit from your army within 18\" of that enemy PSYKER unit.",
+      "effect": "That enemy PSYKER unit must take a Leadership test If the test is passed, that PSYKER unit is Battle-shocked; if the test is failed that PSYKER unit suffers 3 mortal wounds and is Battle-shocked.",
+      "source": "Wahapedia CSV / Null Maiden Vigil",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Null Maiden Vigil – Strategic Ploy Stratagem",
+        "Null Maiden Vigil"
+      ]
+    },
+    {
+      "id": "strat-000008394007",
+      "name": "ARCHEOTECH MUNITIONS",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One ADEPTUS CUSTODES unit from your army (excluding Anathema Psykana units) that has not been selected to shoot this phase.",
+      "effect": "Select either the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase ranged weapons equipped by models in your unit have the selected ability.",
+      "source": "Wahapedia CSV / Shield Host",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Shield Host – Wargear Stratagem",
+        "Shield Host"
+      ]
+    },
+    {
+      "id": "strat-000008394002",
+      "name": "ARCANE GENETIC ALCHEMY",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase, just after a mortal wound has been allocated to an Adeptus Custodes model from your army(excluding Anathema Psykana models).",
+      "target": "That ADEPTUS CUSTODES model’s unit.",
+      "effect": "Until the end of the phase, models in your unit have the Feel No Pain 4+ ability against mortal wounds.",
+      "source": "Wahapedia CSV / Shield Host",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Shield Host – Battle Tactic Stratagem",
+        "Shield Host"
+      ]
+    },
+    {
+      "id": "strat-000008394004",
+      "name": "UNWAVERING SENTINELS",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One Adeptus Custodes Infantry unit from your army (excluding Anathema Psykana units) that is within range of an objective marker you control and that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time a melee attack targets your unit, subtract 1 from the Hit roll.",
+      "source": "Wahapedia CSV / Shield Host",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Shield Host – Strategic Ploy Stratagem",
+        "Shield Host"
+      ]
+    },
+    {
+      "id": "strat-000008394003",
+      "name": "AVENGE THE FALLEN",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Start of the Fight phase.",
+      "target": "One ADEPTUS CUSTODES unit from your army (excluding Anathema Psykana units) that is below its Starting Strength.",
+      "effect": "Until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit. If your unit is Below Half-strength, until the end of the phase, add 2 to the Attacks characteristic of those melee weapons instead.",
+      "source": "Wahapedia CSV / Shield Host",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Shield Host – Strategic Ploy Stratagem",
+        "Shield Host"
+      ]
+    },
+    {
+      "id": "strat-000008394005",
+      "name": "MULTIPOTENTIALITY",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase.",
+      "target": "One Adeptus Custodes unit from your army that Fell Back this phase.",
+      "effect": "Until the end of your turn, that unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
+      "source": "Wahapedia CSV / Shield Host",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Shield Host – Strategic Ploy Stratagem",
+        "Shield Host"
+      ]
+    },
+    {
+      "id": "strat-000008394006",
+      "name": "VIGILANCE ETERNAL",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase.",
+      "target": "One Adeptus Custodes Battleline unit from your army (excluding Anathema Psykana units) within range of an objective marker you control.",
+      "effect": "That objective marker remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
+      "source": "Wahapedia CSV / Shield Host",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Shield Host – Strategic Ploy Stratagem",
+        "Shield Host"
+      ]
+    },
+    {
+      "id": "strat-000009754002",
+      "name": "FLAWLESS CONSTRUCTION",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One Adeptus Custodes Vehicle unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time an attack targets a model in your unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of your unit, subtract 1 from the Wound roll.",
+      "source": "Wahapedia CSV / Solar Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Solar Spearhead – Battle Tactic Stratagem",
+        "Solar Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000009754003",
+      "name": "EMPEROR’S VENGEANCE",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS CUSTODES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6, adding 1 to the result if your unit has the Walker keyword. On a 4+, do not remove it from play; The destroyed model can fight after the attacking unit has finished making its attacks (when doing so, it is assumed to have 1 wound remaining), and is then removed from play.",
+      "source": "Wahapedia CSV / Solar Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Solar Spearhead – Battle Tactic Stratagem",
+        "Solar Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000009754004",
+      "name": "WRATHFUL ADVANCE",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase, just before an ADEPTUS CUSTODES unit from your army Piles In.",
+      "target": "That ADEPTUS CUSTODES unit.",
+      "effect": "Until the end of the phase, each time a model in your unit makes a Pile-in move, it can move up to D3+3\" instead of up to 3\".",
+      "source": "Wahapedia CSV / Solar Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Solar Spearhead – Battle Tactic Stratagem",
+        "Solar Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000009754005",
+      "name": "UNSTOPPABLE",
+      "cp_cost": 1,
+      "phases": [
+        "movement",
+        "charge"
+      ],
+      "timing": "Your Movement phase or your Charge phase.",
+      "target": "One Adeptus Custodes Vehicle or Adeptus Custodes Mounted unit from your army.",
+      "effect": "Until the end of the phase, each time a model in your unit makes a move, it can move through terrain features.",
+      "source": "Wahapedia CSV / Solar Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Solar Spearhead – Strategic Ploy Stratagem",
+        "Solar Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000009754006",
+      "name": "RELENTLESS PERSECUTION",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase, just after an ADEPTUS CUSTODES VEHICLE unit from your army Advances.",
+      "target": "That Adeptus Custodes Vehicle unit.",
+      "effect": "Until the end of the turn, your unit is eligible to shoot in a turn in which it Advanced. If your unit has the Walker keyword, until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Advanced instead.",
+      "source": "Wahapedia CSV / Solar Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Solar Spearhead – Strategic Ploy Stratagem",
+        "Solar Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000009754007",
+      "name": "PUNISHMENT INESCAPABLE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One ADEPTUS CUSTODES unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability, and until the end of the phase, each time a model in your unit makes an attack, you can ignore any or all modifiers to that attack’s Ballistic Skill characteristic and/or any or all modifiers to the Hit roll.",
+      "source": "Wahapedia CSV / Solar Spearhead",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Solar Spearhead – Strategic Ploy Stratagem",
+        "Solar Spearhead"
+      ]
+    },
+    {
+      "id": "strat-000008922003",
+      "name": "TALONS INTERLOCKED",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "Up to two ADEPTUS CUSTODES INFANTRY units from your army, and one enemy unit that is an eligible target for all of those units.",
+      "effect": "Until the end of the phase, your units can only target that enemy unit, but each time a model in one of your units makes a ranged attack, improve the Strength and Armour Penetration characteristics of that attack by 1.",
+      "source": "Wahapedia CSV / Talons Of The Emperor",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Talons Of The Emperor – Battle Tactic Stratagem",
+        "Talons Of The Emperor"
+      ]
+    },
+    {
+      "id": "strat-000008922006",
+      "name": "TALONED PINCER",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
+      "target": "Up to two Adeptus Custodes units from your army that are within 9\" of that enemy unit.",
+      "effect": "Your units can make a Normal move of up to 6\".",
+      "source": "Wahapedia CSV / Talons Of The Emperor",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Talons Of The Emperor – Battle Tactic Stratagem",
+        "Talons Of The Emperor"
+      ]
+    },
+    {
+      "id": "strat-000008922005",
+      "name": "EMPEROR’S EXECUTIONERS",
+      "cp_cost": 2,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Start of the Fight phase.",
+      "target": "Up to two Adeptus Custodes units from your army.",
+      "effect": "Until the end of the phase, each time a model in one of your units targets an enemy unit that is below its Starting Strength, add 1 to the Wound roll.",
+      "source": "Wahapedia CSV / Talons Of The Emperor",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Talons Of The Emperor – Battle Tactic Stratagem",
+        "Talons Of The Emperor"
+      ]
+    },
+    {
+      "id": "strat-000008922004",
+      "name": "EMPYRIC SEVERANCE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One ADEPTUS CusTODES unit from your army that was selected as the target of one or more of the attacking unit’s attacks, and one friendly ANATHEMA PSYKANA unit within 6\" of that ADEPTUS CUSTODES unit.",
+      "effect": "Until the end of the phase, your unit has the Feel No Pain 4+ ability against Psychic attacks and mortal wounds.",
+      "source": "Wahapedia CSV / Talons Of The Emperor",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Talons Of The Emperor – Battle Tactic Stratagem",
+        "Talons Of The Emperor"
+      ]
+    },
+    {
+      "id": "strat-000008922007",
+      "name": "SHIELD OF HONOUR",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One Anathema Psykana Infantry unit from your army that was selected as the target of one or more of the attacking unit’s attacks, and one other friendly Adeptus Custodes Infantry unit (excluding ANATHEMA PSYKANA units) within 6\" of that ANATHEMA PSYKANA INFANTRY unit.",
+      "effect": "Until the end of the phase, any attack that targets your ANATHEMA PSYKANA unit must instead target your other ADEPTUS CUSTODES unit (unless it is not an eligible target).",
+      "source": "Wahapedia CSV / Talons Of The Emperor",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Talons Of The Emperor – Epic Deed Stratagem",
+        "Talons Of The Emperor"
+      ]
+    },
+    {
+      "id": "strat-000008922002",
+      "name": "HUNT AS ONE",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Start of your Movement phase.",
+      "target": "Up to two ADEPTUS CUSTODES units from your army.",
+      "effect": "Until the end of the turn, your units are eilgible to shoot and/or declare a charge in a turn in which they Fell Back.",
+      "source": "Wahapedia CSV / Talons Of The Emperor",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Talons Of The Emperor – Strategic Ploy Stratagem",
+        "Talons Of The Emperor"
+      ]
+    }
+  ],
+  "detachment_rules": [
+    {
+      "id": "det-000008393",
+      "name": "Martial Mastery",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Shield Host",
+      "type": "detachment",
+      "summary": "At the start of the battle round, you can select one of the bullet points below. If you do, until the start of the next battle round, that bullet point’s effects apply.\n- Each time an Adeptus Custodes model from your army with the Martial Ka’tah ability makes a melee attack, a successful unmodified Hit roll of 5+ scores a Critical Hit.\n- Improve the Armour Penetration characteristic of melee weapons equipped by ADEPTUS CUSTODES models from your army with the Martial Ka’tah ability by 1.",
+      "source": "Wahapedia CSV / Shield Host",
+      "priority": 5
+    },
+    {
+      "id": "det-000008920",
+      "name": "Revered Companions",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Talons Of The Emperor",
+      "type": "detachment",
+      "summary": "Anathema Psykana units from your army gain the following the ability:\nNull Aegis (Aura): While an Adeptus Custodes unit is within 6\" of this unit, models in that unit have the Feel No Pain 5+ ability against Psychic Attacks and mortal wounds.\nAll other ADEPTUS CUSTODES units from your army gain the following ability:\nDeadly Unity (Aura): While an ANATHEMA PSYKANA unit is within 6\" of this unit, each time a model in that ANATHEMA PSYKANA unit makes an attack, add 1 to the Hit roll.",
+      "source": "Wahapedia CSV / Talons Of The Emperor",
+      "priority": 5
+    },
+    {
+      "id": "det-000008924",
+      "name": "Creeping Dread (Aura)",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Null Maiden Vigil",
+      "type": "detachment",
+      "summary": "In the Battle-shock step of your opponent’s Command phase, if an enemy unit that is either a PSYKER unit or below its Starting Strength is within 12\" of one or more Anathema Psykana models from your army, that enemy unit must take a Battle-shock test. If that unit is Below Half-strength, it must subtract 1 from its Battle-shock test this phase instead.\nDesigner’s Note: This means that all enemy PSYKER units within range of this Aura ability and all enemy units within range of this Aura ability that have lost one or more models must take a Battle-shock test in your opponents Command phase, not just those that are Below Half-strength.",
+      "source": "Wahapedia CSV / Null Maiden Vigil",
+      "priority": 5
+    },
+    {
+      "id": "det-000008929",
+      "name": "Assemblage of Might",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Auric Champions",
+      "type": "detachment",
+      "summary": "At the start of your Command phase, select one unit from your opponent’s army. Until the start of your next Command phase, each time a model in an Adeptus Custodes Character unit from your army makes an attack that targets that enemy unit, add 1 to the Wound roll.",
+      "source": "Wahapedia CSV / Auric Champions",
+      "priority": 5
+    },
+    {
+      "id": "det-000009752",
+      "name": "Auric Armour",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Solar Spearhead",
+      "type": "detachment",
+      "summary": "- While an Adeptus Custodes Vehicle unit from your army is at Starting Strength, unless that unit is an Aircraft or it is Battle-shocked, add 2 to the Objective Control characteristic of models in that unit.\n- While an ADEPTUS CUSTODES VEHICLE unit from your army is below Starting Strength, each time a model in that unit makes an attack, re-roll a Hit roll of 1.\n- While an ADEPTUS CUSTODES VEHICLE unit from your army is Below Half-strength, each time a model in that unit makes an attack, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.\nMORITOI ANCIENTS\nThe Adeptus Custodes’ honoured fallen are ever eager for battle.\nAdd 2\" to the Move characteristic of models in ADEPTUS CUSTODES WALKER units from your army and add 1 to Advance and Charge rolls made for such units.\nKEYWORDS\nIn the Muster Armies step, you can select up to 2 ADEPTUS CUSTODES WALKER models from your army. The selected units gain the CHARACTER keyword.\nDesigner’s Note: This means that the selected models can be given Enhancements and one of them can be selected as your WARLORD .",
+      "source": "Wahapedia CSV / Solar Spearhead",
+      "priority": 5
+    },
+    {
+      "id": "det-000009986",
+      "name": "Against All Odds",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Lions of the Emperor",
+      "type": "detachment",
+      "summary": "Each time a model in an Adeptus Custodes unit from your army (excluding Vehicles) makes an attack, if there are no other friendly units within 6\" of that unit, add 1 to the Hit roll and add 1 to the Wound roll.",
+      "source": "Wahapedia CSV / Lions of the Emperor",
+      "priority": 5
+    }
+  ],
+  "enhancements": [
+    {
+      "id": "enh-000009753002",
+      "name": "Adamantine Talisman",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Solar Spearhead",
+      "type": "enhancement",
+      "summary": "ADEPTUS CUSTODES model only. Improve the Attacks, Strength and Damage characteristics of melee weapons equipped by the bearer by 1.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Solar Spearhead",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008395002",
+      "name": "Auric Mantle",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Shield Host",
+      "type": "enhancement",
+      "summary": "Shield-Captain or Blade Champion model only. Add 2 to the bearer’s Wounds characteristic.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Shield Host",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008926002",
+      "name": "Enhanced Voidsheen Cloak",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Null Maiden Vigil",
+      "type": "enhancement",
+      "summary": "Anathema Psykana model only. Each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack. If that attack was made by a PSYKER or Battle-shocked model, change the Damage characteristic of that attack to 1 instead.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Null Maiden Vigil",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008930002",
+      "name": "Blade Imperator",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Auric Champions",
+      "type": "enhancement",
+      "summary": "Adeptus Custodes model only. Each time the bearer’s unit ends a Charge move, select one enemy unit within Engagement Range of the bearer and roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds. Once per battle, after the bearer s unit ends a Charge move, all enemy units within 6\" of the bearer must take a Battle-shock test.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Auric Champions",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008921002",
+      "name": "Aegis Projector",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Talons Of The Emperor",
+      "type": "enhancement",
+      "summary": "ADEPTUS Custodes model only. Once per turn, the first time a saving throw is failed for the bearer’s unit, change the Damage characteristic of that attack to 0.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Talons Of The Emperor",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009987002",
+      "name": "Superior Creation",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Lions of the Emperor",
+      "type": "enhancement",
+      "summary": "Adeptus Custodes Infantry model only. The first time the bearer is destroyed, roll one D6 at the end of the phase. On a 2+, set the bearer back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with its full wounds remaining.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Lions of the Emperor",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009753003",
+      "name": "Augury Uplink",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Solar Spearhead",
+      "type": "enhancement",
+      "summary": "ADEPTUS CUSTODES model only. The bearer has the Feel No Pain 5+ ability.\n\nPoints: 35",
+      "source": "Wahapedia CSV / Solar Spearhead",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008926003",
+      "name": "Huntress’ Eye",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Null Maiden Vigil",
+      "type": "enhancement",
+      "summary": "Anathema Psykana model only. In your Command phase, select one enemy unit within 12\" of the bearer. That unit must take a Battle-shock test.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Null Maiden Vigil",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008395003",
+      "name": "Castellan’s Mark",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Shield Host",
+      "type": "enhancement",
+      "summary": "Shield-Captain model only. After both players have deployed their armies, you can select up to two Adeptus Custodes units from your army (excluding Anathema Psykana units) and redeploy all of those units. When doing so, any of those units can be placed into Strategic Reserves, regardless of how many units are already in Strategic Reserves.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Shield Host",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009987003",
+      "name": "Praesidius",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Lions of the Emperor",
+      "type": "enhancement",
+      "summary": "Adeptus Custodes model only. The bearer has the Lone Operative and Stealth abilities.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Lions of the Emperor",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008921003",
+      "name": "Champion of the Imperium",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Talons Of The Emperor",
+      "type": "enhancement",
+      "summary": "ADEPTUS CUSTODES model only. The range of the bearer’s Null Aegis or Deadly Unity ability is increased to 9\".\n\nPoints: 25",
+      "source": "Wahapedia CSV / Talons Of The Emperor",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008930003",
+      "name": "Inspirational Exemplar",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Auric Champions",
+      "type": "enhancement",
+      "summary": "Adeptus Custodes model only. The bearer has a Leadership characteristic of 5+. Once per battle, at the start of any phase, you can select one friendly ADEPTUS CUSTODES unit that is Battle-shocked and within 12\" of the bearer; that unit is no longer Battle-shocked.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Auric Champions",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008930004",
+      "name": "Martial Philosopher",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Auric Champions",
+      "type": "enhancement",
+      "summary": "Adeptus Custodes model only. The bearer’s unit is eligible to shoot and/or declare a charge in a turn in which it Fell Back. Once per battle, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of the bearer, if the bearer’s unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\".\n\nPoints: 30",
+      "source": "Wahapedia CSV / Auric Champions",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008395004",
+      "name": "From the Hall of Armouries",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Shield Host",
+      "type": "enhancement",
+      "summary": "Shield-Captain model only. Add 1 to the Strength and Damage characteristics of the bearer’s melee weapons.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Shield Host",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009753004",
+      "name": "Honoured Fallen (Aura)",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Solar Spearhead",
+      "type": "enhancement",
+      "summary": "Adeptus Custodes Vehicle model only. While a friendly Adeptus Custodes Infantry or Adeptus Custodes Mounted unit is within 6\" of the bearer, each time a model in that unit makes an attack, re-roll a Hit roll of 1.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Solar Spearhead",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009987004",
+      "name": "Fierce Conqueror",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Lions of the Emperor",
+      "type": "enhancement",
+      "summary": "Shield-Captain model only. At the start of the Fight phase, until the end of the phase, add 2 to the Attacks characteristic of melee weapons equipped by the bearer for every 5 enemy models within 6\" of the bearer (rounding down).\n\nPoints: 15",
+      "source": "Wahapedia CSV / Lions of the Emperor",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008921004",
+      "name": "Gift of Terran Artifice",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Talons Of The Emperor",
+      "type": "enhancement",
+      "summary": "ADEPTUS CUSTODES model only. Each time the bearer makes a melee attack, add 1 to the Wound roll.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Talons Of The Emperor",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008926004",
+      "name": "Oblivion Knight",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Null Maiden Vigil",
+      "type": "enhancement",
+      "summary": "Anathema Psykana model only. While the bearer is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll. If that attack targeted an enemy PSYKER unit, add 1 to the Wound roll as well.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Null Maiden Vigil",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009753005",
+      "name": "Veteran of the Kataphraktoi",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Solar Spearhead",
+      "type": "enhancement",
+      "summary": "Adeptus Custodes Infantry or Adeptus Custodes Mounted model only. In your Command phase, select one Adeptus Custodes Vehicle or ADEPTUS CUSTODES MOUNTED unit within 6\" of the bearer. Until the start of your next Command phase, that unit is eligible to shoot in a turn in which it Fell Back.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Solar Spearhead",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008395005",
+      "name": "Panoptispex",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Shield Host",
+      "type": "enhancement",
+      "summary": "Shield-Captain or Blade Champion model only. While the bearer is leading a unit, ranged weapons equipped by models in that unit have the [IGNORES cover] ability.\n\nPoints: 5",
+      "source": "Wahapedia CSV / Shield Host",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008926005",
+      "name": "Raptor Blade",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Null Maiden Vigil",
+      "type": "enhancement",
+      "summary": "Anathema Psykana model only. Add 1 to the Attacks, Strength and Damage characteristics of the bearers melee weapons. While the bearer is within Engagement Range of one or more enemy PSYKER units that are Battle-shocked, add 2 to the Attacks, Strength and Damage characteristics of the bearer’s melee weapons instead.\n\nPoints: 5",
+      "source": "Wahapedia CSV / Null Maiden Vigil",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008930005",
+      "name": "Veiled Blade",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Auric Champions",
+      "type": "enhancement",
+      "summary": "Adeptus Custodes model only. Add 2 to the Attacks characteristic of the bearers melee weapons. Once per battle, at the start of any Command phase, triple the bearer’s Objective Control characteristic until the end of the turn.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Auric Champions",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008921005",
+      "name": "Radiant Mantle",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Talons Of The Emperor",
+      "type": "enhancement",
+      "summary": "ADEPTUS CUSTODES model only. Each time an attack targets the bearer’s unit, if the attacking model is within 12\", subtract 1 from the Hit roll.\n\nPoints: 30",
+      "source": "Wahapedia CSV / Talons Of The Emperor",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009987005",
+      "name": "Admonimortis",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Lions of the Emperor",
+      "type": "enhancement",
+      "summary": "Shield-Captain model only. Improve the Strength characteristic of melee weapons equipped by the bearer by 3, and improve the Armour Penetration and Damage characteristics of those weapons by 1.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Lions of the Emperor",
+      "priority": 3
+    }
+  ]
+}

@@ -6,7 +6,7 @@
   "subfaction": "Ultramarines",
   "game_version": "10th Edition",
   "pack_version": "1.1.0",
-  "date": "2026-03-18",
+  "date": "2026-03-27",
   "author": "Community",
   "source_note": "Generated from current 10e CSV exports. This pack includes Ultramarines-exclusive detachments Blade of Ultramar, Reclamation Force, plus generic Space Marines detachments Gladius Task Force, Anvil Siege Force, Ironstorm Spearhead, Firestorm Assault Force, Stormlance Task Force, Vanguard Spearhead, 1st Company Task Force, Librarius Conclave, Bastion Task Force, Orbital Assault Force and common Space Marines units that do not belong to another chapter source. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
   "units": [

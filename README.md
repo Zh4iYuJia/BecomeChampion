@@ -58,6 +58,7 @@
 
 1. [rulepacks/SM-BT-rules-pack.json](rulepacks/SM-BT-rules-pack.json)：Black Templars 专属单位 + 通用 SM 合法单位 + 通用分队 + BT 专属分队。
 2. [rulepacks/SM-UM-rules-pack.json](rulepacks/SM-UM-rules-pack.json)：Ultramarines 专属单位 + 通用 SM 单位 + 通用分队 + UM 专属分队。
+3. [rulepacks/AC-rules-pack.json](rulepacks/AC-rules-pack.json)：Adeptus Custodes 单位 + Sisters of Silence 单位 + Forge World 禁军单位 + 6 个标准分队。
 
 ## CSV 生成流程
 
@@ -71,18 +72,21 @@
 
 1. [tools/generate-bt-pack-from-csv.js](tools/generate-bt-pack-from-csv.js)
 2. [tools/generate-um-pack-from-csv.js](tools/generate-um-pack-from-csv.js)
+3. [tools/generate-ac-pack-from-csv.js](tools/generate-ac-pack-from-csv.js)
 
 执行命令：
 
 ```bash
 node .\tools\generate-bt-pack-from-csv.js
 node .\tools\generate-um-pack-from-csv.js
+node .\tools\generate-ac-pack-from-csv.js
 ```
 
 脚本会输出：
 
 1. [rulepacks/SM-BT-rules-pack.json](rulepacks/SM-BT-rules-pack.json)
 2. [rulepacks/SM-UM-rules-pack.json](rulepacks/SM-UM-rules-pack.json)
+3. [rulepacks/AC-rules-pack.json](rulepacks/AC-rules-pack.json)
 
 当前脚本的设计目标：
 
@@ -103,12 +107,14 @@ BecomeChampion/
   rulepacks/
     SM-BT-rules-pack.json
     SM-UM-rules-pack.json
+    AC-rules-pack.json
   sample-rules-pack.json
   sample-pack.js
   10e/
   tools/
     generate-bt-pack-from-csv.js
     generate-um-pack-from-csv.js
+    generate-ac-pack-from-csv.js
 ```
 
 关键文件说明：
@@ -121,6 +127,7 @@ BecomeChampion/
 6. [rulepacks](rulepacks)：独立生成的规则包目录。
 7. [tools/generate-bt-pack-from-csv.js](tools/generate-bt-pack-from-csv.js)：Black Templars 规则包生成器。
 8. [tools/generate-um-pack-from-csv.js](tools/generate-um-pack-from-csv.js)：Ultramarines 规则包生成器。
+9. [tools/generate-ac-pack-from-csv.js](tools/generate-ac-pack-from-csv.js)：Adeptus Custodes 规则包生成器。
 
 ## 规则包格式（简版）
 
@@ -216,6 +223,7 @@ Currently generated packs:
 
 1. [rulepacks/SM-BT-rules-pack.json](rulepacks/SM-BT-rules-pack.json): Black Templars exclusive units + BT-legal generic Space Marines units + generic detachments + BT-exclusive detachments.
 2. [rulepacks/SM-UM-rules-pack.json](rulepacks/SM-UM-rules-pack.json): Ultramarines exclusive units + generic Space Marines units + generic detachments + UM-exclusive detachments.
+3. [rulepacks/AC-rules-pack.json](rulepacks/AC-rules-pack.json): Adeptus Custodes units + Sisters of Silence units + Custodes Forge World units + 6 standard detachments.
 
 ## CSV Generation Process
 
@@ -229,18 +237,21 @@ Generation scripts:
 
 1. [tools/generate-bt-pack-from-csv.js](tools/generate-bt-pack-from-csv.js)
 2. [tools/generate-um-pack-from-csv.js](tools/generate-um-pack-from-csv.js)
+3. [tools/generate-ac-pack-from-csv.js](tools/generate-ac-pack-from-csv.js)
 
 Execution command:
 
 ```bash
 node .\tools\generate-bt-pack-from-csv.js
 node .\tools\generate-um-pack-from-csv.js
+node .\tools\generate-ac-pack-from-csv.js
 ```
 
 The scripts will output:
 
 1. [rulepacks/SM-BT-rules-pack.json](rulepacks/SM-BT-rules-pack.json)
 2. [rulepacks/SM-UM-rules-pack.json](rulepacks/SM-UM-rules-pack.json)
+3. [rulepacks/AC-rules-pack.json](rulepacks/AC-rules-pack.json)
 
 Current script goals:
 
@@ -261,12 +272,14 @@ BecomeChampion/
   rulepacks/
     SM-BT-rules-pack.json
     SM-UM-rules-pack.json
+    AC-rules-pack.json
   sample-rules-pack.json
   sample-pack.js
   10e/
   tools/
     generate-bt-pack-from-csv.js
     generate-um-pack-from-csv.js
+    generate-ac-pack-from-csv.js
 ```
 
 Key file descriptions:
@@ -279,6 +292,7 @@ Key file descriptions:
 6. [rulepacks](rulepacks): Directory for standalone generated rules packs.
 7. [tools/generate-bt-pack-from-csv.js](tools/generate-bt-pack-from-csv.js): Black Templars rules-pack generator.
 8. [tools/generate-um-pack-from-csv.js](tools/generate-um-pack-from-csv.js): Ultramarines rules-pack generator.
+9. [tools/generate-ac-pack-from-csv.js](tools/generate-ac-pack-from-csv.js): Adeptus Custodes rules-pack generator.
 
 ## Rules Pack Format (Simplified)
 

@@ -5,42 +5,20 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const CSV_DIR = path.join(ROOT, '10e');
-const OUT_JSON_PATH = path.join(ROOT, 'rulepacks', 'SM-UM-rules-pack.json');
+const OUT_JSON_PATH = path.join(ROOT, 'rulepacks', 'AC-rules-pack.json');
 
-const PACK_VERSION = '1.1.0';
-const PACK_ID = 'sm-um-rules-pack';
-const PACK_NAME = 'SM-UM-rules-pack.json';
+const PACK_VERSION = '1.0.0';
+const PACK_ID = 'ac-rules-pack';
+const PACK_NAME = 'AC-rules-pack.json';
 
 const INCLUDED_DETACHMENTS = [
-  { id: '000000750', name: 'Gladius Task Force', kind: 'generic' },
-  { id: '000000793', name: 'Anvil Siege Force', kind: 'generic' },
-  { id: '000000794', name: 'Ironstorm Spearhead', kind: 'generic' },
-  { id: '000000795', name: 'Firestorm Assault Force', kind: 'generic' },
-  { id: '000000796', name: 'Stormlance Task Force', kind: 'generic' },
-  { id: '000000797', name: 'Vanguard Spearhead', kind: 'generic' },
-  { id: '000000798', name: '1st Company Task Force', kind: 'generic' },
-  { id: '000000994', name: 'Librarius Conclave', kind: 'generic' },
-  { id: '000001130', name: 'Bastion Task Force', kind: 'generic' },
-  { id: '000001131', name: 'Orbital Assault Force', kind: 'generic' },
-  { id: '000001120', name: 'Blade of Ultramar' },
-  { id: '000001132', name: 'Reclamation Force' },
+  { id: '000000765', name: 'Shield Host' },
+  { id: '000000861', name: 'Talons Of The Emperor' },
+  { id: '000000862', name: 'Null Maiden Vigil' },
+  { id: '000000863', name: 'Auric Champions' },
+  { id: '000000986', name: 'Solar Spearhead' },
+  { id: '000001029', name: 'Lions of the Emperor' },
 ];
-
-const OTHER_CHAPTER_KEYWORDS = new Set([
-  'Black Templars',
-  'Blood Angels',
-  'Dark Angels',
-  'Deathwatch',
-  'Deathwing',
-  'Imperial Fists',
-  'Iron Hands',
-  'Inner Circle',
-  'Raven Guard',
-  'Ravenwing',
-  'Salamanders',
-  'Space Wolves',
-  'White Scars',
-]);
 
 function readCsv(fileName) {
   const raw = fs.readFileSync(path.join(CSV_DIR, fileName), 'utf8');
@@ -51,6 +29,7 @@ function readCsv(fileName) {
   if (headers.length > 0) {
     headers[0] = headers[0].replace(/^\uFEFF/, '');
   }
+
   const rows = [];
   for (let index = 1; index < lines.length; index += 1) {
     const parts = splitRow(lines[index]);
@@ -60,6 +39,7 @@ function readCsv(fileName) {
     }
     rows.push(row);
   }
+
   return rows;
 }
 
@@ -196,23 +176,13 @@ function buildAbilityMap(rows) {
   return byDatasheetId;
 }
 
-function isSpaceMarinesSource(sourceRow) {
-  if (!sourceRow) return false;
-  return /space marines|ultramarines/i.test(sourceRow.name || '');
+function isCustodesSource(sourceRow) {
+  return /adeptus custodes/i.test(String(sourceRow?.name || ''));
 }
 
-function isUmOrCommonUnit(datasheet, keywords, sourceRow) {
-  if (!datasheet || datasheet.faction_id !== 'SM') return false;
-  if (!isSpaceMarinesSource(sourceRow)) return false;
-
-  const keywordSet = new Set((keywords || []).filter(Boolean));
-  if (keywordSet.has('Ultramarines')) return true;
-
-  for (const keyword of OTHER_CHAPTER_KEYWORDS) {
-    if (keywordSet.has(keyword)) return false;
-  }
-
-  return true;
+function isCustodesUnit(datasheet, sourceRow) {
+  if (!datasheet || datasheet.faction_id !== 'AC') return false;
+  return isCustodesSource(sourceRow);
 }
 
 function buildUnitAbility(unitName, row, sourceName) {
@@ -243,7 +213,7 @@ function buildUnits(datasheets, abilityMap, keywordMap, sourceMap) {
   for (const datasheet of datasheets) {
     const keywords = [...new Set(keywordMap.get(datasheet.id) || [])];
     const sourceRow = sourceMap.get(datasheet.source_id);
-    if (!isUmOrCommonUnit(datasheet, keywords, sourceRow)) continue;
+    if (!isCustodesUnit(datasheet, sourceRow)) continue;
 
     const sourceName = sourceRow?.name || datasheet.source_id || 'Wahapedia CSV';
     const abilities = (abilityMap.get(datasheet.id) || [])
@@ -311,6 +281,7 @@ function buildEnhancements(rows, detachmentById) {
     const detachmentName = detachmentById.get(row.detachment_id) || stripHtml(row.detachment) || 'Unknown Detachment';
     const cost = String(row.cost || '').trim();
     const summaryBase = stripHtml(row.description);
+
     return {
       id: `enh-${row.id || slugify(row.name)}`,
       name: stripHtml(row.name),
@@ -327,12 +298,7 @@ function buildEnhancements(rows, detachmentById) {
 function main() {
   const detachmentIds = new Set(INCLUDED_DETACHMENTS.map((detachment) => detachment.id));
   const detachmentById = new Map(INCLUDED_DETACHMENTS.map((detachment) => [detachment.id, detachment.name]));
-  const genericDetachmentNames = INCLUDED_DETACHMENTS
-    .filter((detachment) => detachment.kind === 'generic')
-    .map((detachment) => detachment.name);
-  const umDetachmentNames = INCLUDED_DETACHMENTS
-    .filter((detachment) => detachment.kind !== 'generic')
-    .map((detachment) => detachment.name);
+  const detachmentNames = INCLUDED_DETACHMENTS.map((detachment) => detachment.name);
 
   const sourceMap = buildSourceMap(readCsv('Source.csv'));
   const datasheets = readCsv('Datasheets.csv');
@@ -355,15 +321,14 @@ function main() {
 
   const pack = {
     $schema: 'https://becomechampion.app/schemas/rules-pack-v1.json',
-    $comment: 'BecomeChampion Rules Pack - Space Marines / Ultramarines (10th Edition). Generated from 10e CSV data. Includes Ultramarines-exclusive detachments, compatible generic Space Marines detachments, and all compatible common Space Marines units surfaced from the current dataset; not official rules text.',
+    $comment: 'BecomeChampion Rules Pack - Adeptus Custodes (10th Edition). Generated from 10e CSV data. Includes core Adeptus Custodes detachments, Adeptus Custodes datasheets, Sisters of Silence datasheets that share the faction, and Forge World Adeptus Custodes units surfaced from the current dataset; not official rules text.',
     id: PACK_ID,
-    faction: 'Space Marines',
-    subfaction: 'Ultramarines',
+    faction: 'Adeptus Custodes',
     game_version: '10th Edition',
     pack_version: PACK_VERSION,
     date: new Date().toISOString().slice(0, 10),
     author: 'Community',
-    source_note: `Generated from current 10e CSV exports. This pack includes Ultramarines-exclusive detachments ${umDetachmentNames.join(', ')}, plus generic Space Marines detachments ${genericDetachmentNames.join(', ')} and common Space Marines units that do not belong to another chapter source. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.`,
+    source_note: `Generated from current 10e CSV exports. This pack includes Adeptus Custodes detachments ${detachmentNames.join(', ')}. Units include Adeptus Custodes faction datasheets from the main faction pack and Adeptus Custodes (Forge World), including Sisters of Silence datasheets that are part of the faction dataset. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.`,
     units,
     stratagems,
     detachment_rules: detachmentRules,
