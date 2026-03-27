@@ -652,10 +652,19 @@ function renderPhaseView() {
     </div>`;
 }
 
+function getAbilitySourceLabel(ab) {
+  if (!ab) return '';
+  if (ab._category === 'unit') return ab._unit || ab.source || '';
+  if (ab._category === 'stratagem') return '战略';
+  if (ab._category === 'detachment') return ab._detachment || ab.source || '';
+  return ab.source || '';
+}
+
 function renderAbilityCard(ab, phaseColor) {
   const isUsed   = state.usedAbilities.has(ab.id);
   const typeMeta = ABILITY_TYPE_META[ab.type] || ABILITY_TYPE_META.active;
   const detailText = String(ab.summary || '').trim();
+  const sourceLabel = getAbilitySourceLabel(ab);
 
   const accentColor =
     ab._category === 'stratagem'  ? '#43a047' :
@@ -685,7 +694,7 @@ function renderAbilityCard(ab, phaseColor) {
       ${timingHtml}
       ${detailHtml}
       <div class="ability-card-footer">
-        <span class="ability-source">${esc(ab.source || '')}</span>
+        <span class="ability-source">${esc(sourceLabel)}</span>
         ${cpBadge}
         <button class="used-btn" data-used-id="${esc(ab.id)}">
           ${isUsed ? '✓ 已使用' : '标记已用'}
