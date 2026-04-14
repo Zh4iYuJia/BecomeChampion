@@ -783,6 +783,18 @@ input, textarea { font-family: inherit; }
 .pack-del-btn:hover { color: var(--danger); }
 .pack-del-btn:active { transform: scale(0.9); }
 
+.pack-official-badge {
+  color: #c9a227;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  min-width: 48px;
+  text-align: center;
+  flex-shrink: 0;
+  padding: 4px 6px;
+}
+
 /* ============ MANAGE ACTIONS ============ */
 .manage-actions {
   display: flex;

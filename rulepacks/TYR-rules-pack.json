@@ -1,0 +1,2841 @@
+{
+  "$schema": "https://becomechampion.app/schemas/rules-pack-v1.json",
+  "$comment": "BecomeChampion Rules Pack - Tyranids (10th Edition). Generated from 10e CSV data. Includes core Tyranid detachments and datasheets from the Tyranids faction pack and Forge World sources; not official rules text.",
+  "id": "tyr-rules-pack",
+  "faction": "Tyranids",
+  "game_version": "10th Edition",
+  "pack_version": "1.0.0",
+  "date": "2026-04-14",
+  "author": "Community",
+  "source_note": "Generated from current 10e CSV exports. This pack includes Tyranid detachments Invasion Fleet, Crusher Stampede, Unending Swarm, Assimilation Swarm, Vanguard Onslaught, Synaptic Nexus. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+  "units": [
+    {
+      "id": "unit-000000503",
+      "name": "Barbed Hierodule",
+      "keywords": [
+        "Tyranids",
+        "Monster",
+        "Great Devourer",
+        "Barbed Hierodule"
+      ],
+      "abilities": [
+        {
+          "id": "unit-barbed-hierodule-overgrown-barbs",
+          "name": "Overgrown Barbs",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "In your Shooting phase, after this model has shot, select one enemy unit (excluding TITANIC units) that was hit by one or more of those attacks",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this model has shot, select one enemy unit (excluding TITANIC units) that was hit by one or more of those attacks. Until the start of your next turn, while this model is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
+          "source": "Tyranids (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002686",
+      "name": "Barbgaunts",
+      "keywords": [
+        "Tyranids",
+        "Infantry",
+        "Barbgaunts",
+        "Great Devourer"
+      ],
+      "abilities": [
+        {
+          "id": "unit-barbgaunts-disruption-bombardment",
+          "name": "Disruption Bombardment",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "In your Shooting phase, after this unit has shot, select one enemy INFANTRY unit hit by one or more of those attacks",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this unit has shot, select one enemy INFANTRY unit hit by one or more of those attacks. Until the end of your opponent’s next turn, that enemy unit is disrupted. While a unit is disrupted, subtract 2 from its Move characteristic and subtract 2 from Advance and Charge rolls made for it.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000491",
+      "name": "Biovores",
+      "keywords": [
+        "Tyranids",
+        "Infantry",
+        "Great Devourer",
+        "Biovores"
+      ],
+      "abilities": [
+        {
+          "id": "unit-biovores-seed-spore-mines",
+          "name": "Seed Spore Mines",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "in your Shooting phase, when selected to shoot, one unit with this ability can use it instead of making any attacks with its ranged weapons",
+          "type": "reaction",
+          "once_per": "turn",
+          "summary": "Once per turn, in your Shooting phase, when selected to shoot, one unit with this ability can use it instead of making any attacks with its ranged weapons. If it does, you can add one new Spore Mines unit to your army and set it up anywhere on the battlefield that is wholly within 48\" of this unit and more than 9\" horizontally away from all enemy units. That SPORE MINES unit contains 1 model for each model in this unit.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000463",
+      "name": "Broodlord",
+      "keywords": [
+        "Tyranids",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Synapse",
+        "Infantry",
+        "Character",
+        "Psyker",
+        "Broodlord"
+      ],
+      "abilities": [
+        {
+          "id": "unit-broodlord-vicious-insight",
+          "name": "Vicious Insight",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability",
+          "type": "passive",
+          "summary": "While this model is leading a unit, weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-broodlord-hypnotic-gaze-psychic",
+          "name": "Hypnotic Gaze (Psychic)",
+          "phases": [
+            "fight"
+          ],
+          "timing": "Fight phase, select one enemy unit within Engagement Range of this model",
+          "type": "reaction",
+          "summary": "At the start of the Fight phase, select one enemy unit within Engagement Range of this model. Until the end of the phase, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000490",
+      "name": "Carnifexes",
+      "keywords": [
+        "Tyranids",
+        "Great Devourer",
+        "Monster",
+        "Carnifexes"
+      ],
+      "abilities": [
+        {
+          "id": "unit-carnifexes-blistering-assault",
+          "name": "Blistering Assault",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time an enemy unit is selected to shoot, after that unit has shot, if any models from this unit lost one or more wo",
+          "type": "reaction",
+          "summary": "Each time an enemy unit is selected to shoot, after that unit has shot, if any models from this unit lost one or more wounds as a result of those attacks, this unit can make a Blistering Assault move. If it does, roll one D6, adding 2 to the result: each model in this unit can be moved a distance in inches up to the result, but this unit must finish that move as close as possible to the closest enemy unit. When doing so, those models can be moved within Engagement Range of that enemy unit. Each unit can only make one Blistering Assault move per phase.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000479",
+      "name": "Deathleaper",
+      "keywords": [
+        "Tyranids",
+        "Deathleaper",
+        "Vanguard Invader",
+        "Great Devourer",
+        "Epic Hero",
+        "Character",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-deathleaper-feeder-tendrils",
+          "name": "Feeder Tendrils",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this model destroys an enemy CHARACTER model, you gain 1CP.",
+          "type": "passive",
+          "summary": "Each time this model destroys an enemy CHARACTER model, you gain 1CP.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-deathleaper-fear-of-the-unseen-aura",
+          "name": "Fear of the Unseen (Aura)",
+          "phases": [
+            "command",
+            "battleshock"
+          ],
+          "timing": "Battle-shock step of your opponent’s Command phase, if such an enemy unit is below its Starting Strength, it must take a Battle-shock test",
+          "type": "reaction",
+          "summary": "While an enemy unit is within 6\" of this model, worsen the Leadership characteristic of models in that unit by 1. In addition, in the Battle-shock step of your opponent’s Command phase, if such an enemy unit is below its Starting Strength, it must take a Battle-shock test.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000500",
+      "name": "Dimachaeron",
+      "keywords": [
+        "Tyranids",
+        "Monster",
+        "Dimachaeron",
+        "Great Devourer"
+      ],
+      "abilities": [
+        {
+          "id": "unit-dimachaeron-digestion-spine",
+          "name": "Digestion Spine",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this model fights, after it has resolved its attacks, if one or more enemy models (excluding VEHICLE models) w",
+          "type": "passive",
+          "summary": "Each time this model fights, after it has resolved its attacks, if one or more enemy models (excluding VEHICLE models) were destroyed as the result of those attacks, this model regains up to D3 wounds.",
+          "source": "Tyranids (Warhammer Legends)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000495",
+      "name": "Exocrine",
+      "keywords": [
+        "Tyranids",
+        "Monster",
+        "Great Devourer",
+        "Exocrine"
+      ],
+      "abilities": [
+        {
+          "id": "unit-exocrine-symbiotic-targeting",
+          "name": "Symbiotic Targeting",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time a friendly TYRANIDS model makes an attack that targets that unit, re-roll a Hit roll of 1.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000484",
+      "name": "Gargoyles",
+      "keywords": [
+        "Tyranids",
+        "Fly",
+        "Battleline",
+        "Infantry",
+        "Endless Multitude",
+        "Vanguard Invader",
+        "Gargoyles",
+        "Great Devourer"
+      ],
+      "abilities": [
+        {
+          "id": "unit-gargoyles-winged-swarm",
+          "name": "Winged Swarm",
+          "phases": [
+            "movement",
+            "shooting",
+            "charge"
+          ],
+          "timing": "In your Shooting phase, after this unit has shot, if it is not within Engagement Range of any enemy units, it can make a Normal move of up to 6\"",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this unit has shot, if it is not within Engagement Range of any enemy units, it can make a Normal move of up to 6\". If it does, until the end of the turn, this unit is not eligible to declare a charge.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000467",
+      "name": "Genestealers",
+      "keywords": [
+        "Tyranids",
+        "Vanguard Invader",
+        "Genestealers",
+        "Great Devourer",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-genestealers-vanguard-predator",
+          "name": "Vanguard Predator",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target is within range of one or more ob",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target is within range of one or more objective markers, re-roll a Wound roll of 1 as well.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000485",
+      "name": "Harpy",
+      "keywords": [
+        "Tyranids",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Harpy",
+        "Monster",
+        "Fly",
+        "Aircraft"
+      ],
+      "abilities": [
+        {
+          "id": "unit-harpy-spore-mine-cysts",
+          "name": "Spore Mine Cysts",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Each time this model ends a Normal move, you can select one of the following: - Select one enemy unit it moved over duri",
+          "type": "reaction",
+          "summary": "Each time this model ends a Normal move, you can select one of the following:\n- Select one enemy unit it moved over during that move and roll six D6: for each 3+, that unit suffers 1 mortal wound.\n- Add one new Spore Mines unit containing D3 models to your army and set it up anywhere on the battlefield that is wholly within 6\" of this model and more than 9\" horizontally away from all enemy units. You cannot select this option for more than one model per turn.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000504",
+      "name": "Harridan",
+      "keywords": [
+        "Tyranids",
+        "Fly",
+        "Titanic",
+        "Aircraft",
+        "Transport",
+        "Great Devourer",
+        "Harridan",
+        "Monster"
+      ],
+      "abilities": [
+        {
+          "id": "unit-harridan-frenzied-metabolism",
+          "name": "Frenzied Metabolism",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this model is selected to shoot, you can use this ability. If you do, until the end of the phase, each time th",
+          "type": "passive",
+          "summary": "Each time this model is selected to shoot, you can use this ability. If you do, until the end of the phase, each time this model makes an attack, add 1 to the Wound roll. After resolving those attacks, roll one D6: on a 2+, this model suffers D3 mortal wounds.",
+          "source": "Tyranids (Forge World)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000478",
+      "name": "Haruspex",
+      "keywords": [
+        "Tyranids",
+        "Monster",
+        "Haruspex",
+        "Harvester",
+        "Great Devourer"
+      ],
+      "abilities": [
+        {
+          "id": "unit-haruspex-grisly-spectacle",
+          "name": "Grisly Spectacle",
+          "phases": [
+            "fight",
+            "battleshock"
+          ],
+          "timing": "Battle-shock test",
+          "type": "reaction",
+          "summary": "Each time this model is selected to fight, after resolving its attacks, if one or more enemy units were destroyed by those attacks, each enemy unit within 6\" of this model must take a Battle-shock test.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000505",
+      "name": "Hierophant",
+      "keywords": [
+        "Tyranids",
+        "Monster",
+        "Titanic",
+        "Towering",
+        "Transport",
+        "Great Devourer",
+        "Hierophant"
+      ],
+      "abilities": [
+        {
+          "id": "unit-hierophant-apex-beast",
+          "name": "Apex-beast",
+          "phases": [
+            "battleshock"
+          ],
+          "timing": "Battle-shocked, add 1 to the Hit roll",
+          "type": "passive",
+          "summary": "Each time this model makes an attack that targets a unit that is Battle-shocked, add 1 to the Hit roll.",
+          "source": "Tyranids (Forge World)",
+          "priority": 3
+        },
+        {
+          "id": "unit-hierophant-stalking-forward",
+          "name": "Stalking Forward",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Each time this model makes a Normal, Advance or Fall Back move, it can move over models (excluding TITANIC models) and t",
+          "type": "passive",
+          "summary": "Each time this model makes a Normal, Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there.",
+          "source": "Tyranids (Forge World)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000486",
+      "name": "Hive Crone",
+      "keywords": [
+        "Tyranids",
+        "Monster",
+        "Hive Crone",
+        "Vanguard Invader",
+        "Great Devourer",
+        "Aircraft",
+        "Fly"
+      ],
+      "abilities": [
+        {
+          "id": "unit-hive-crone-airborne-predator",
+          "name": "Airborne Predator",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll.",
+          "type": "passive",
+          "summary": "Each time this model makes a ranged attack that targets a unit that can FLY , add 1 to the Hit roll.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000472",
+      "name": "Hive Guard",
+      "keywords": [
+        "Tyranids",
+        "Infantry",
+        "Great Devourer",
+        "Hive Guard"
+      ],
+      "abilities": [
+        {
+          "id": "unit-hive-guard-defensive-stance",
+          "name": "Defensive Stance",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time you target this unit with the Fire Overwatch Stratagem, while resolving that Stratagem, hits are scored on unm",
+          "type": "passive",
+          "summary": "Each time you target this unit with the Fire Overwatch Stratagem, while resolving that Stratagem, hits are scored on unmodified Hit rolls of 5+, or unmodified Hit rolls of 4+ instead if this unit is within range of an objective marker.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000460",
+      "name": "Hive Tyrant",
+      "keywords": [
+        "Tyranids",
+        "Psyker",
+        "Great Devourer",
+        "Synapse",
+        "Hive Tyrant",
+        "Monster",
+        "Character"
+      ],
+      "abilities": [
+        {
+          "id": "unit-hive-tyrant-will-of-the-hive-mind",
+          "name": "Will of the Hive Mind",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle round, one model from your army with this ability can use it when a friendly TYRANIDS unit within 12\" of",
+          "type": "active",
+          "once_per": "battle round",
+          "summary": "Once per battle round, one model from your army with this ability can use it when a friendly TYRANIDS unit within 12\" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-hive-tyrant-onslaught-aura-psychic",
+          "name": "Onslaught (Aura, Psychic)",
+          "phases": [
+            "any"
+          ],
+          "timing": "While a friendly TYRANIDS unit is within 6\" of this model, ranged weapons equipped by models in that unit have the [ASSA",
+          "type": "passive",
+          "summary": "While a friendly TYRANIDS unit is within 6\" of this model, ranged weapons equipped by models in that unit have the [ASSAULT] and [LETHAL HITS] abilities.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000469",
+      "name": "Hormagaunts",
+      "keywords": [
+        "Tyranids",
+        "Battleline",
+        "Infantry",
+        "Great Devourer",
+        "Endless Multitude",
+        "Hormagaunts"
+      ],
+      "abilities": [
+        {
+          "id": "unit-hormagaunts-bounding-leap",
+          "name": "Bounding Leap",
+          "phases": [
+            "charge"
+          ],
+          "timing": "This unit is eligible to declare a charge in a turn in which it Advanced.",
+          "type": "passive",
+          "summary": "This unit is eligible to declare a charge in a turn in which it Advanced.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000004117",
+      "name": "Hyperadapted Raveners",
+      "keywords": [
+        "Tyranids",
+        "Vanguard Invader",
+        "Synapse",
+        "Character",
+        "Hyperadapted Raveners",
+        "Burrowers",
+        "Great Devourer",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-hyperadapted-raveners-alpha-invader",
+          "name": "Alpha Invader",
+          "phases": [
+            "any"
+          ],
+          "timing": "Weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.",
+          "type": "passive",
+          "summary": "Weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-hyperadapted-raveners-hypersensory-array",
+          "name": "Hypersensory Array",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle round, you can target this unit with the Rapid Ingress or Heroic Intervention Stratagem for 0CP, and can",
+          "type": "active",
+          "once_per": "battle round",
+          "summary": "Once per battle round, you can target this unit with the Rapid Ingress or Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000473",
+      "name": "Lictor",
+      "keywords": [
+        "Tyranids",
+        "Lictor",
+        "Vanguard Invader",
+        "Infantry",
+        "Great Devourer"
+      ],
+      "abilities": [
+        {
+          "id": "unit-lictor-feeder-tendrils",
+          "name": "Feeder Tendrils",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this model destroys an enemy CHARACTER model, you gain 1CP.",
+          "type": "passive",
+          "summary": "Each time this model destroys an enemy CHARACTER model, you gain 1CP.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-lictor-pheromone-trail",
+          "name": "Pheromone Trail",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle round, you can target one model with this ability with the Rapid Ingress Stratagem for 0CP.",
+          "type": "active",
+          "once_per": "battle round",
+          "summary": "Once per battle round, you can target one model with this ability with the Rapid Ingress Stratagem for 0CP.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000499",
+      "name": "Malanthrope",
+      "keywords": [
+        "Tyranids",
+        "Malanthrope",
+        "Synapse",
+        "Infantry",
+        "Great Devourer",
+        "Fly",
+        "Character"
+      ],
+      "abilities": [
+        {
+          "id": "unit-malanthrope-enhanced-toxic-miasma",
+          "name": "Enhanced Toxic Miasma",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, the range of that unit’s Foul Spores Aura ability is increased to 9\"",
+          "type": "passive",
+          "summary": "While this model is leading a unit, the range of that unit’s Foul Spores Aura ability is increased to 9\".",
+          "source": "Tyranids (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-malanthrope-prey-adaptation",
+          "name": "Prey Adaptation",
+          "phases": [
+            "fight"
+          ],
+          "timing": "Each time this model's unit is selected to fight, select one of the following abilities to apply to all melee weapons eq",
+          "type": "active",
+          "summary": "Each time this model's unit is selected to fight, select one of the following abilities to apply to all melee weapons equipped by models in that unit until the end of the phase:\n- [SUSTAINED HITS 1]\n- [LANCE]\n- [LETHAL HITS]",
+          "source": "Tyranids (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000474",
+      "name": "Maleceptor",
+      "keywords": [
+        "Tyranids",
+        "Synapse",
+        "Great Devourer",
+        "Maleceptor",
+        "Psyker",
+        "Monster"
+      ],
+      "abilities": [
+        {
+          "id": "unit-maleceptor-encephalic-diffusion-aura-psychic",
+          "name": "Encephalic Diffusion (Aura, Psychic)",
+          "phases": [
+            "any"
+          ],
+          "timing": "While an enemy unit is within 6\" of this model, each time a model in that unit makes an attack, subtract 1 from the Hit ",
+          "type": "reaction",
+          "summary": "While an enemy unit is within 6\" of this model, each time a model in that unit makes an attack, subtract 1 from the Hit roll, and, if that enemy unit is Below Half-strength, subtract 1 from the Wound roll as well.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000494",
+      "name": "Mawloc",
+      "keywords": [
+        "Tyranids",
+        "Vanguard Invader",
+        "Burrower",
+        "Mawloc",
+        "Great Devourer",
+        "Monster"
+      ],
+      "abilities": [
+        {
+          "id": "unit-mawloc-terror-from-the-deep",
+          "name": "Terror From The Deep",
+          "phases": [
+            "battleshock"
+          ],
+          "timing": "Battle-shock test",
+          "type": "reaction",
+          "summary": "Each time this model is set up on the battlefield using the Deep Strike ability, roll one D6 for each enemy unit within 12\" of this model: on a 2-4, that unit suffers D3 mortal wounds; on a 5+, that unit suffers 3 mortal wounds and must take a Battle-shock test.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000487",
+      "name": "Mucolid Spores",
+      "keywords": [
+        "Tyranids",
+        "Fly",
+        "Beast",
+        "Mucolid Spores",
+        "Great Devourer"
+      ],
+      "abilities": [
+        {
+          "id": "unit-mucolid-spores-bio-minefield",
+          "name": "Bio-minefield",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Enemy units cannot start or end an Advance move within 6\" of this unit.",
+          "type": "reaction",
+          "summary": "Enemy units cannot start or end an Advance move within 6\" of this unit.",
+          "source": "Tyranids",
+          "priority": 3
+        },
+        {
+          "id": "unit-mucolid-spores-floating-death",
+          "name": "Floating Death",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Each time this unit or an enemy unit ends a move, for each model in this unit that is within 3\" of one or more enemy uni",
+          "type": "reaction",
+          "summary": "Each time this unit or an enemy unit ends a move, for each model in this unit that is within 3\" of one or more enemy units, select one of those enemy units. That model in this unit is destroyed, then roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers D6 mortal wounds.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002687",
+      "name": "Neurogaunts",
+      "keywords": [
+        "Tyranids",
+        "Neurogaunts",
+        "Endless Multitude",
+        "Great Devourer",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-neurogaunts-neurocytes",
+          "name": "Neurocytes",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this unit is within Synapse Range of a friendly TYRANIDS unit (excluding NEUROGAUNT units), it has the Synapse keyword",
+          "type": "passive",
+          "summary": "While this unit is within Synapse Range of a friendly TYRANIDS unit (excluding NEUROGAUNT units), it has the Synapse keyword.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000002753",
+      "name": "Neurolictor",
+      "keywords": [
+        "Tyranids",
+        "Synapse",
+        "Infantry",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Neurolictor"
+      ],
+      "abilities": [
+        {
+          "id": "unit-neurolictor-feeder-tendrils",
+          "name": "Feeder Tendrils",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this model destroys an enemy CHARACTER model, you gain 1CP.",
+          "type": "passive",
+          "summary": "Each time this model destroys an enemy CHARACTER model, you gain 1CP.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-neurolictor-neural-disruption",
+          "name": "Neural Disruption",
+          "phases": [
+            "command",
+            "battleshock"
+          ],
+          "timing": "In your Command phase, select one enemy unit within 12\" of this model",
+          "type": "reaction",
+          "summary": "In your Command phase, select one enemy unit within 12\" of this model. That unit must take a Battle-shock test.",
+          "source": "Tyranids",
+          "priority": 3
+        },
+        {
+          "id": "unit-neurolictor-psychological-saboteur-aura",
+          "name": "Psychological Saboteur (Aura)",
+          "phases": [
+            "battleshock"
+          ],
+          "timing": "Battle-shocked: - Each time a model in that unit makes an attack, subtract 1 from the Hit roll",
+          "type": "reaction",
+          "summary": "While an enemy unit is within 12\" of this model, if that unit is Battle-shocked:\n- Each time a model in that unit makes an attack, subtract 1 from the Hit roll.\n- Each time a friendly TYRANIDS model makes an attack that targets that unit, add 1 to the Wound roll.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002688",
+      "name": "Neurotyrant",
+      "keywords": [
+        "Tyranids",
+        "Neurotyrant",
+        "Synapse",
+        "Great Devourer",
+        "Psyker",
+        "Fly",
+        "Character",
+        "Monster"
+      ],
+      "abilities": [
+        {
+          "id": "unit-neurotyrant-node-lash-psychic",
+          "name": "Node Lash (Psychic)",
+          "phases": [
+            "battleshock"
+          ],
+          "timing": "Battle-shocked, add 1 to the Wound roll as well",
+          "type": "passive",
+          "summary": "While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll. If the target is Battle-shocked, add 1 to the Wound roll as well.",
+          "source": "Tyranids",
+          "priority": 3
+        },
+        {
+          "id": "unit-neurotyrant-psychic-terror-psychic",
+          "name": "Psychic Terror (Psychic)",
+          "phases": [
+            "battleshock"
+          ],
+          "timing": "Battle-shock test each enemy unit on the battlefield must take as a result",
+          "type": "reaction",
+          "summary": "If one or more models from your army with this ability are on the battlefield when you unleash the Shadow in the Warp, subtract 1 from the Battle-shock test each enemy unit on the battlefield must take as a result.",
+          "source": "Tyranids",
+          "priority": 3
+        },
+        {
+          "id": "unit-neurotyrant-neuroloids",
+          "name": "Neuroloids",
+          "phases": [
+            "command"
+          ],
+          "timing": "In your Command phase, you can select up to two friendly TYRANIDS units within 18\" of this model’s unit",
+          "type": "active",
+          "summary": "In your Command phase, you can select up to two friendly TYRANIDS units within 18\" of this model’s unit. Until the start of your next Command phase, the selected units are always considered to be within Synapse Range of your army.\nDesigner’s Note: Place a Neuroloid token next to each selected unit to remind you.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002752",
+      "name": "Norn Assimilator",
+      "keywords": [
+        "Tyranids",
+        "Monster",
+        "Great Devourer",
+        "Synapse",
+        "Harvester",
+        "Norn Assimilator"
+      ],
+      "abilities": [
+        {
+          "id": "unit-norn-assimilator-singular-purpose",
+          "name": "Singular Purpose",
+          "phases": [
+            "any"
+          ],
+          "timing": "while this model is within range of that objective marker, it has the Feel No Pain 5+ ability and an Objective Control characteristic of 15",
+          "type": "reaction",
+          "summary": "At the start of the first battle round, select one of the following:\n- Select one enemy unit. Until the end of the battle, each time this model makes an attack that targets that unit, you can re-roll the Hit roll and you can re-roll the Wound roll.\n- Select one objective marker. Until the end of the battle, while this model is within range of that objective marker, it has the Feel No Pain 5+ ability and an Objective Control characteristic of 15.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-norn-assimilator-harpoon-barbs",
+          "name": "Harpoon Barbs",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per turn, when an enemy unit within Engagement Range of this model is selected to Fall Back, roll one D6: on a 2+, ",
+          "type": "reaction",
+          "once_per": "turn",
+          "summary": "Once per turn, when an enemy unit within Engagement Range of this model is selected to Fall Back, roll one D6: on a 2+, that unit suffers D6 mortal wounds.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-norn-assimilator-harpooned",
+          "name": "Harpooned",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "After the bearer has shot with this weapon, select one enemy MONSTER or VEHICLE unit hit by one or more of those attacks",
+          "type": "wargear",
+          "summary": "After the bearer has shot with this weapon, select one enemy MONSTER or VEHICLE unit hit by one or more of those attacks. Until the end of the turn, each time the bearer selects that unit as a target of a charge, add 2 to the Charge roll.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002751",
+      "name": "Norn Emissary",
+      "keywords": [
+        "Tyranids",
+        "Norn Emissary",
+        "Synapse",
+        "Great Devourer",
+        "Psyker",
+        "Monster"
+      ],
+      "abilities": [
+        {
+          "id": "unit-norn-emissary-singular-purpose",
+          "name": "Singular Purpose",
+          "phases": [
+            "any"
+          ],
+          "timing": "while this model is within range of that objective marker, it has the Feel No Pain 5+ ability and an Objective Control characteristic of 15",
+          "type": "reaction",
+          "summary": "At the start of the first battle round, select one of the following:\n- Select one enemy unit. Until the end of the battle, each time this model makes an attack that targets that unit, you can re-roll the Hit roll and you can re-roll the Wound roll.\n- Select one objective marker. Until the end of the battle, while this model is within range of that objective marker, it has the Feel No Pain 5+ ability and an Objective Control characteristic of 15.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-norn-emissary-unnatural-resilience",
+          "name": "Unnatural Resilience",
+          "phases": [
+            "any"
+          ],
+          "timing": "This model has the Feel No Pain 4+ ability against mortal wounds.",
+          "type": "passive",
+          "summary": "This model has the Feel No Pain 4+ ability against mortal wounds.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000462",
+      "name": "Old One Eye",
+      "keywords": [
+        "Tyranids",
+        "Character",
+        "Epic Hero",
+        "Monster",
+        "Great Devourer",
+        "Old One Eye"
+      ],
+      "abilities": [
+        {
+          "id": "unit-old-one-eye-alpha-leader",
+          "name": "Alpha Leader",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, each time a model in that unit makes an attack, you can re-roll the Hit roll",
+          "type": "passive",
+          "summary": "While this model is leading a unit, each time a model in that unit makes an attack, you can re-roll the Hit roll.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-old-one-eye-unstoppable-monster",
+          "name": "Unstoppable Monster",
+          "phases": [
+            "command"
+          ],
+          "timing": "At the start of each player’s Command phase, this model regains up to D3 lost wounds.",
+          "type": "active",
+          "summary": "At the start of each player’s Command phase, this model regains up to D3 lost wounds.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002529",
+      "name": "Parasite Of Mortrex",
+      "keywords": [
+        "Tyranids",
+        "Fly",
+        "Synapse",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Parasite of Mortrex",
+        "Infantry",
+        "Character"
+      ],
+      "abilities": [
+        {
+          "id": "unit-parasite-of-mortrex-parasitic-infection",
+          "name": "Parasitic Infection",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time an INFANTRY model is destroyed by an attack made with this model’s barbed ovipositor, after this model has fin",
+          "type": "reaction",
+          "summary": "Each time an INFANTRY model is destroyed by an attack made with this model’s barbed ovipositor, after this model has finished making its attacks, you can add one new Ripper Swarms unit to your army consisting of D3 models and set it up within 3\" of this model. If you do, that RIPPER SWARMS unit can be set up within Engagement Range of the destroyed model’s unit (but not within Engagement Range of any other enemy units).",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-parasite-of-mortrex-it-itches",
+          "name": "It Itches!",
+          "phases": [
+            "fight",
+            "battleshock"
+          ],
+          "timing": "Fight phase, select one enemy unit within Engagement Range of this model",
+          "type": "reaction",
+          "summary": "At the start of the Fight phase, select one enemy unit within Engagement Range of this model. That enemy unit must take a Battle-shock test.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002689",
+      "name": "Psychophage",
+      "keywords": [
+        "Tyranids",
+        "Great Devourer",
+        "Smoke",
+        "Psychophage",
+        "Monster",
+        "Harvester"
+      ],
+      "abilities": [
+        {
+          "id": "unit-psychophage-bio-stimulus",
+          "name": "Bio-stimulus",
+          "phases": [
+            "shooting",
+            "fight"
+          ],
+          "timing": "In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks",
+          "type": "reaction",
+          "once_per": "turn",
+          "summary": "In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the turn, each time a friendly TYRANIDS unit makes a melee attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per turn.",
+          "source": "Tyranids",
+          "priority": 3
+        },
+        {
+          "id": "unit-psychophage-feeding-frenzy",
+          "name": "Feeding Frenzy",
+          "phases": [
+            "fight"
+          ],
+          "timing": "Each time this model makes a melee attack that targets a unit that is below its Starting Strength, add 1 to the Hit roll",
+          "type": "passive",
+          "summary": "Each time this model makes a melee attack that targets a unit that is below its Starting Strength, add 1 to the Hit roll. If that target is also Below Half-strength, add 1 to the Wound roll as well.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000477",
+      "name": "Pyrovores",
+      "keywords": [
+        "Tyranids",
+        "Infantry",
+        "Great Devourer",
+        "Pyrovores",
+        "Harvester"
+      ],
+      "abilities": [
+        {
+          "id": "unit-pyrovores-burning-spray",
+          "name": "Burning Spray",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, that enemy unit cannot have the Benefit of Cover.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000482",
+      "name": "Raveners",
+      "keywords": [
+        "Tyranids",
+        "Vanguard Invader",
+        "Burrowers",
+        "Raveners",
+        "Infantry",
+        "Great Devourer"
+      ],
+      "abilities": [
+        {
+          "id": "unit-raveners-death-from-below",
+          "name": "Death From Below",
+          "phases": [
+            "any"
+          ],
+          "timing": "At the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves",
+          "type": "reaction",
+          "summary": "At the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000470",
+      "name": "Ripper Swarms",
+      "keywords": [
+        "Tyranids",
+        "Swarm",
+        "Great Devourer",
+        "Harvester",
+        "Ripper Swarms"
+      ],
+      "abilities": [
+        {
+          "id": "unit-ripper-swarms-chitinous-horrors-aura",
+          "name": "Chitinous Horrors (Aura)",
+          "phases": [
+            "any"
+          ],
+          "timing": "While an enemy unit is within Engagement Range of this unit, halve the Objective Control characteristic of models in tha",
+          "type": "reaction",
+          "summary": "While an enemy unit is within Engagement Range of this unit, halve the Objective Control characteristic of models in that enemy unit.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000002690",
+      "name": "Screamer-killer",
+      "keywords": [
+        "Tyranids",
+        "Screamer-Killer",
+        "Great Devourer",
+        "Monster"
+      ],
+      "abilities": [
+        {
+          "id": "unit-screamer-killer-death-scream",
+          "name": "Death Scream",
+          "phases": [
+            "shooting",
+            "battleshock"
+          ],
+          "timing": "In your Shooting phase, after this model has shot, select one unit hit by one or more of those attacks",
+          "type": "active",
+          "summary": "In your Shooting phase, after this model has shot, select one unit hit by one or more of those attacks. That unit must take a Battle-shock test, subtracting 1 from that test.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000506",
+      "name": "Scythed Hierodule",
+      "keywords": [
+        "Tyranids",
+        "Scythed Hierodule",
+        "Great Devourer",
+        "Monster"
+      ],
+      "abilities": [
+        {
+          "id": "unit-scythed-hierodule-irresistible-force",
+          "name": "Irresistible Force",
+          "phases": [
+            "charge"
+          ],
+          "timing": "This model is eligible to declare a charge in a turn in which it Fell Back.",
+          "type": "passive",
+          "summary": "This model is eligible to declare a charge in a turn in which it Fell Back.",
+          "source": "Tyranids (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000483",
+      "name": "Sky-slasher Swarms",
+      "keywords": [
+        "Tyranids",
+        "Sky-slasher Swarms",
+        "Fly",
+        "Swarm",
+        "Great Devourer"
+      ],
+      "abilities": [
+        {
+          "id": "unit-sky-slasher-swarms-chitinous-horrors",
+          "name": "Chitinous Horrors",
+          "phases": [
+            "any"
+          ],
+          "timing": "While an enemy unit is within Engagement Range of one or more units with this ability, halve the Objective Control chara",
+          "type": "reaction",
+          "summary": "While an enemy unit is within Engagement Range of one or more units with this ability, halve the Objective Control characteristic of models in that enemy unit.",
+          "source": "Tyranids (Warhammer Legends)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000488",
+      "name": "Spore Mines",
+      "keywords": [
+        "Tyranids",
+        "Spore Mines",
+        "Great Devourer",
+        "Beast",
+        "Fly"
+      ],
+      "abilities": [
+        {
+          "id": "unit-spore-mines-bio-minefield",
+          "name": "Bio-minefield",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Enemy units cannot start or end an Advance move within 6\" of this unit.",
+          "type": "reaction",
+          "summary": "Enemy units cannot start or end an Advance move within 6\" of this unit.",
+          "source": "Tyranids",
+          "priority": 3
+        },
+        {
+          "id": "unit-spore-mines-floating-death",
+          "name": "Floating Death",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Each time this unit or an enemy unit ends a move, for each model in this unit that is within 3\" of one or more enemy uni",
+          "type": "reaction",
+          "summary": "Each time this unit or an enemy unit ends a move, for each model in this unit that is within 3\" of one or more enemy units, select one of those enemy units. That model in this unit is destroyed, then roll one D6: on a 2-5, that enemy unit suffers 1 mortal wound; on a 6, that enemy unit suffers D3 mortal wounds.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000498",
+      "name": "Sporocyst",
+      "keywords": [
+        "Tyranids",
+        "Great Devourer",
+        "Sporocyst",
+        "Monster"
+      ],
+      "abilities": [
+        {
+          "id": "unit-sporocyst-seed-mucolids",
+          "name": "Seed Mucolids",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "in your Shooting phase, when selected to shoot, one unit with this ability can use it instead of making any attacks with its ranged weapons",
+          "type": "reaction",
+          "once_per": "turn",
+          "summary": "Once per turn, in your Shooting phase, when selected to shoot, one unit with this ability can use it instead of making any attacks with its ranged weapons. If it does, you can add one new Mucolid Spores unit containing 1 model to your army and set it up anywhere on the battlefield that is wholly within 18\" of this model and more than 9\" horizontally away from all enemy units.",
+          "source": "Tyranids",
+          "priority": 3
+        },
+        {
+          "id": "unit-sporocyst-hive-defences",
+          "name": "Hive Defences",
+          "phases": [
+            "any"
+          ],
+          "timing": "You can target this model with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted a d",
+          "type": "active",
+          "once_per": "turn",
+          "summary": "You can target this model with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn. This model can only be targeted with that Stratagem once per turn.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000468",
+      "name": "Termagants",
+      "keywords": [
+        "Tyranids",
+        "Infantry",
+        "Battleline",
+        "Great Devourer",
+        "Endless Multitude",
+        "Termagants"
+      ],
+      "abilities": [
+        {
+          "id": "unit-termagants-skulking-horrors",
+          "name": "Skulking Horrors",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this unit, if this unit is not w",
+          "type": "reaction",
+          "once_per": "turn",
+          "summary": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this unit, if this unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D6\".",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000465",
+      "name": "Tervigon",
+      "keywords": [
+        "Tyranids",
+        "Tervigon",
+        "Monster",
+        "Synapse",
+        "Great Devourer",
+        "Psyker",
+        "Character"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tervigon-spawn-termagants",
+          "name": "Spawn Termagants",
+          "phases": [
+            "command"
+          ],
+          "timing": "In your Command phase, you can select one friendly Termagants unit within 6\" of this model and return up to D3+3 destroyed models to that unit",
+          "type": "active",
+          "once_per": "phase",
+          "summary": "In your Command phase, you can select one friendly Termagants unit within 6\" of this model and return up to D3+3 destroyed models to that unit. A TERMAGANTS unit cannot be selected for this ability more than once per phase.",
+          "source": "Tyranids",
+          "priority": 3
+        },
+        {
+          "id": "unit-tervigon-brood-progenitor-aura-psychic",
+          "name": "Brood Progenitor (Aura, Psychic)",
+          "phases": [
+            "any"
+          ],
+          "timing": "While a friendly Termagants unit is within 6\" of this model, ranged weapons equipped by models in that unit have the [LE",
+          "type": "passive",
+          "summary": "While a friendly Termagants unit is within 6\" of this model, ranged weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000461",
+      "name": "The Swarmlord",
+      "keywords": [
+        "Tyranids",
+        "Character",
+        "Epic Hero",
+        "Psyker",
+        "Great Devourer",
+        "Synapse",
+        "Hive Tyrant",
+        "The Swarmlord",
+        "Monster"
+      ],
+      "abilities": [
+        {
+          "id": "unit-the-swarmlord-hive-commander",
+          "name": "Hive Commander",
+          "phases": [
+            "command"
+          ],
+          "timing": "At the start of your Command phase, if this model is on the battlefield, you gain 1CP",
+          "type": "active",
+          "summary": "At the start of your Command phase, if this model is on the battlefield, you gain 1CP.",
+          "source": "Tyranids",
+          "priority": 3
+        },
+        {
+          "id": "unit-the-swarmlord-malign-presence-aura",
+          "name": "Malign Presence (Aura)",
+          "phases": [
+            "any"
+          ],
+          "timing": "If this model is your WARLORD , each time your opponent targets a unit from their army with a Stratagem, if that unit is",
+          "type": "passive",
+          "summary": "If this model is your WARLORD , each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12\" of this model, increase the cost of that use of that Stratagem by 1CP.\nDesigner’s Note: This ability takes precedence over the Lord of Deceit ability presented in the Balance Dataslate June 2024.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-the-swarmlord-domination-of-the-hive-mind-aura",
+          "name": "Domination of the Hive Mind (Aura)",
+          "phases": [
+            "any"
+          ],
+          "timing": "in your army’s Synapse Range",
+          "type": "active",
+          "summary": "While a friendly TYRANIDS unit is within 9\" of this model, that unit is within your army’s Synapse Range.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000497",
+      "name": "Toxicrene",
+      "keywords": [
+        "Tyranids",
+        "Toxicrene",
+        "Monster",
+        "Great Devourer"
+      ],
+      "abilities": [
+        {
+          "id": "unit-toxicrene-grasping-tendrils",
+          "name": "Grasping Tendrils",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time an enemy unit (excluding TITANIC units) within Engagement Range of one or more units from your army with this ",
+          "type": "reaction",
+          "summary": "Each time an enemy unit (excluding TITANIC units) within Engagement Range of one or more units from your army with this ability is selected to Fall Back, you can roll one D6: on a 3+, that enemy unit must Remain Stationary instead.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-toxicrene-hypertoxic-miasma-aura",
+          "name": "Hypertoxic Miasma (Aura)",
+          "phases": [
+            "movement"
+          ],
+          "timing": "At the end of your Movement phase, roll one D6 for each enemy unit within 6\" of this model: on a 2-3, that unit suffers 1 mortal wound; on a 4-5, that unit suffers D3 mortal wounds; on a 6, that unit suffers D6 mortal wounds",
+          "type": "reaction",
+          "summary": "At the end of your Movement phase, roll one D6 for each enemy unit within 6\" of this model: on a 2-3, that unit suffers 1 mortal wound; on a 4-5, that unit suffers D3 mortal wounds; on a 6, that unit suffers D6 mortal wounds.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000493",
+      "name": "Trygon",
+      "keywords": [
+        "Tyranids",
+        "Burrower",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Monster",
+        "Trygon"
+      ],
+      "abilities": [
+        {
+          "id": "unit-trygon-subterranean-tunnels",
+          "name": "Subterranean Tunnels",
+          "phases": [
+            "movement",
+            "charge"
+          ],
+          "timing": "In your Movement phase, when this model is set up on the battlefield using the Deep Strike ability, it can use a subterranean tunnel",
+          "type": "reaction",
+          "summary": "In your Movement phase, when this model is set up on the battlefield using the Deep Strike ability, it can use a subterranean tunnel. If it does, this model can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000004202",
+      "name": "Tyranid Prime with Lash Whip",
+      "keywords": [
+        "Tyranids",
+        "Synapse",
+        "Tyranid Prime with Lash Whip",
+        "Infantry",
+        "Character",
+        "Great Devourer"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tyranid-prime-with-lash-whip-alpha-warrior",
+          "name": "Alpha Warrior",
+          "phases": [
+            "any"
+          ],
+          "timing": "Weapons equipped by models in this model’s unit have the [SUSTAINED HITS 1] ability.",
+          "type": "passive",
+          "summary": "Weapons equipped by models in this model’s unit have the [SUSTAINED HITS 1] ability.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-tyranid-prime-with-lash-whip-aggressive-leader-beast",
+          "name": "Aggressive Leader-beast",
+          "phases": [
+            "shooting",
+            "battleshock"
+          ],
+          "timing": "In your opponent’s Shooting phase, each time an enemy unit has shot, if any models from this unit were destroyed as a result of those attacks, this unit can make a Surge move",
+          "type": "reaction",
+          "summary": "In your opponent’s Shooting phase, each time an enemy unit has shot, if any models from this unit were destroyed as a result of those attacks, this unit can make a Surge move. To do so, roll one D6: models in this unit move a number of inches up to this result, but this unit must end that move as close as possible to the closest enemy unit (excluding AIRCRAFT ). When doing so, those models can be moved within Engagement Range of that enemy unit. This unit cannot make a Surge move while it is Battle-shocked or within Engagement Range of one or more enemy units, and can only make one Surge move per phase.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002691",
+      "name": "Tyranid Warriors With Melee Bio-weapons",
+      "keywords": [
+        "Tyranids",
+        "Tyranid Warriors with Melee Bio-weapons",
+        "Great Devourer",
+        "Infantry",
+        "Synapse"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tyranid-warriors-with-melee-bio-weapons-adaptive-instincts",
+          "name": "Adaptive Instincts",
+          "phases": [
+            "fight"
+          ],
+          "timing": "Fight phase, select one of the following: - Aggression Imperative: Until the end of the phase, each time a model in this unit makes an attack, re-roll a Hit roll of 1",
+          "type": "active",
+          "summary": "At the start of the Fight phase, select one of the following:\n- Aggression Imperative: Until the end of the phase, each time a model in this unit makes an attack, re-roll a Hit roll of 1.\n- Bioregeneration: Until the end of the phase, each time a saving throw is made for a model in this unit, re-roll a saving throw of 1.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002692",
+      "name": "Tyranid Warriors With Ranged Bio-weapons",
+      "keywords": [
+        "Tyranids",
+        "Tyranid Warriors with Ranged Bio-weapons",
+        "Synapse",
+        "Great Devourer",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tyranid-warriors-with-ranged-bio-weapons-adaptable-predators",
+          "name": "Adaptable Predators",
+          "phases": [
+            "charge"
+          ],
+          "timing": "This unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
+          "type": "passive",
+          "summary": "This unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000489",
+      "name": "Tyrannocyte",
+      "keywords": [
+        "Tyranids",
+        "Great Devourer",
+        "Dedicated Transport",
+        "Transport",
+        "Fly",
+        "Monster",
+        "Tyrannocyte",
+        "Vanguard Invader"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tyrannocyte-aerial-seeding",
+          "name": "Aerial Seeding",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Movement phase, regardless of any mission rules",
+          "type": "passive",
+          "summary": "This model must start the battle in Reserves, but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. Any units embarked within this model must immediately disembark after it has been set up on the battlefield, and they must be set up more than 9\" away from all enemy models. After this model has been set up on the battlefield, no units can embark within it.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000496",
+      "name": "Tyrannofex",
+      "keywords": [
+        "Tyranids",
+        "Monster",
+        "Great Devourer",
+        "Tyrannofex"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tyrannofex-resilient-organism",
+          "name": "Resilient Organism",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle, when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000471",
+      "name": "Tyrant Guard",
+      "keywords": [
+        "Tyranids",
+        "Great Devourer",
+        "Infantry",
+        "Tyrant Guard"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tyrant-guard-guardian-organism",
+          "name": "Guardian Organism",
+          "phases": [
+            "any"
+          ],
+          "timing": "While a Character model is leading this unit, that CHARACTER has the Feel No Pain 5+ ability.",
+          "type": "passive",
+          "summary": "While a Character model is leading this unit, that CHARACTER has the Feel No Pain 5+ ability.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000476",
+      "name": "Venomthropes",
+      "keywords": [
+        "Tyranids",
+        "Great Devourer",
+        "Venomthropes",
+        "Fly",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-venomthropes-foul-spores-aura",
+          "name": "Foul Spores (Aura)",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "While a friendly TYRANIDS unit is within 6\" of this unit, each time a ranged attack targets that unit, models in that un",
+          "type": "passive",
+          "summary": "While a friendly TYRANIDS unit is within 6\" of this unit, each time a ranged attack targets that unit, models in that unit have the Benefit of Cover against that attack. In addition, while a friendly TYRANIDS unit (excluding Monsters) is within 6\" of this unit, models in that unit have the Stealth ability.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002693",
+      "name": "Von Ryan’s Leapers",
+      "keywords": [
+        "Tyranids",
+        "Infantry",
+        "Vanguard Invader",
+        "Von Ryan’s Leapers",
+        "Great Devourer"
+      ],
+      "abilities": [
+        {
+          "id": "unit-von-ryan-s-leapers-pouncing-leap",
+          "name": "Pouncing Leap",
+          "phases": [
+            "any"
+          ],
+          "timing": "You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already used tha",
+          "type": "passive",
+          "summary": "You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000002528",
+      "name": "Winged Hive Tyrant",
+      "keywords": [
+        "Tyranids",
+        "Hive Tyrant",
+        "Fly",
+        "Monster",
+        "Character",
+        "Psyker",
+        "Winged Hive Tyrant",
+        "Great Devourer",
+        "Synapse",
+        "Vanguard Invader"
+      ],
+      "abilities": [
+        {
+          "id": "unit-winged-hive-tyrant-will-of-the-hive-mind",
+          "name": "Will of the Hive Mind",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle round, one model from your army with this ability can use it when a friendly TYRANIDS unit within 12\" of",
+          "type": "active",
+          "once_per": "battle round",
+          "summary": "Once per battle round, one model from your army with this ability can use it when a friendly TYRANIDS unit within 12\" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-winged-hive-tyrant-paroxysm-psychic",
+          "name": "Paroxysm (Psychic)",
+          "phases": [
+            "fight"
+          ],
+          "timing": "Fight phase, you can select one enemy unit within 12\" of and visible to this model and roll one D6: on a 1, this PSYKER suffers D3 mortal wounds; on a 2+, until the end of the phase, subtract 1 from the Attacks characteristic of weapons equipped by models in that unit",
+          "type": "reaction",
+          "summary": "At the start of the Fight phase, you can select one enemy unit within 12\" of and visible to this model and roll one D6: on a 1, this PSYKER suffers D3 mortal wounds; on a 2+, until the end of the phase, subtract 1 from the Attacks characteristic of weapons equipped by models in that unit.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002694",
+      "name": "Winged Tyranid Prime",
+      "keywords": [
+        "Tyranids",
+        "Character",
+        "Infantry",
+        "Fly",
+        "Great Devourer",
+        "Synapse",
+        "Vanguard Invader",
+        "Winged Tyranid Prime"
+      ],
+      "abilities": [
+        {
+          "id": "unit-winged-tyranid-prime-alpha-warrior",
+          "name": "Alpha Warrior",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability",
+          "type": "passive",
+          "summary": "While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
+          "source": "Tyranids",
+          "priority": 2
+        },
+        {
+          "id": "unit-winged-tyranid-prime-death-blow",
+          "name": "Death Blow",
+          "phases": [
+            "fight"
+          ],
+          "timing": "If this model is destroyed by a melee attack, if it has not fought this phase, roll one D6: on a 4+, do not remove it fr",
+          "type": "passive",
+          "summary": "If this model is destroyed by a melee attack, if it has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.",
+          "source": "Tyranids",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000475",
+      "name": "Zoanthropes",
+      "keywords": [
+        "Tyranids",
+        "Fly",
+        "Infantry",
+        "Zoanthropes",
+        "Synapse",
+        "Great Devourer",
+        "Psyker"
+      ],
+      "abilities": [
+        {
+          "id": "unit-zoanthropes-spirit-leech-aura-psychic",
+          "name": "Spirit Leech (Aura, Psychic)",
+          "phases": [
+            "battleshock"
+          ],
+          "timing": "Battle-shock test, it suffers D3 mortal wounds and one model in this unit regains up to D3 lost wounds",
+          "type": "reaction",
+          "summary": "While an enemy unit is within 6\" of this unit, if this unit contains a Neurothrope, each time that enemy unit fails a Battle-shock test, it suffers D3 mortal wounds and one model in this unit regains up to D3 lost wounds.",
+          "source": "Tyranids",
+          "priority": 3
+        },
+        {
+          "id": "unit-zoanthropes-warp-field-aura-psychic",
+          "name": "Warp Field (Aura, Psychic)",
+          "phases": [
+            "any"
+          ],
+          "timing": "While a friendly Tyranids unit is within 6\" of this unit, models in that unit have a 6+ invulnerable save.",
+          "type": "passive",
+          "summary": "While a friendly Tyranids unit is within 6\" of this unit, models in that unit have a 6+ invulnerable save.",
+          "source": "Tyranids",
+          "priority": 2
+        }
+      ]
+    }
+  ],
+  "stratagems": [
+    {
+      "id": "strat-000008413007",
+      "name": "RAPACIOUS HUNGER",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Your Fight phase.",
+      "target": "One TYRANIDS unit from your army that just destroyed an enemy unit.",
+      "effect": "Your unit immediately Regenerates (See Feed the Swarm). When doing so, if your unit is a Harvester unit and you choose for one model to regain up to D3 lost wounds, that model regains up to 3 lost wounds instead.",
+      "source": "Wahapedia CSV / Assimilation Swarm",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Assimilation Swarm – Battle Tactic Stratagem",
+        "Assimilation Swarm"
+      ]
+    },
+    {
+      "id": "strat-000008413002",
+      "name": "BROODGUARD IMPULSE",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase.",
+      "target": "One Harvester unit from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
+      "effect": "Until the end of the battle, each time a friendly TYRANIDS model makes an attack that targets the enemy unit that just destroyed your HARVESTER unit, add 1 to the Wound roll.",
+      "source": "Wahapedia CSV / Assimilation Swarm",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Assimilation Swarm – Epic Deed Stratagem",
+        "Assimilation Swarm"
+      ]
+    },
+    {
+      "id": "strat-000008413005",
+      "name": "ABLATIVE CARAPACE",
+      "cp_cost": 2,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One Harvester unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, models in your unit have the Feel No Pain 5+ ability. If your unit is within range of an objective marker you control, until the end of the phase models in your unit have the Feel No Pain 4+ ability instead.",
+      "source": "Wahapedia CSV / Assimilation Swarm",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Assimilation Swarm – Epic Deed Stratagem",
+        "Assimilation Swarm"
+      ]
+    },
+    {
+      "id": "strat-000008413003",
+      "name": "RECLAIM BIOMASS",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase, when a TYRANIDS unit from your army is destroyed, before the last model in it is removed from play.",
+      "target": "One Harvester unit from your army that is within 6\" of that destroyed unit.",
+      "effect": "Regenerate one friendly TYRANIDS unit within 6\" of your HARVESTER unit (See Feed the Swarm).",
+      "source": "Wahapedia CSV / Assimilation Swarm",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Assimilation Swarm – Strategic Ploy Stratagem",
+        "Assimilation Swarm"
+      ]
+    },
+    {
+      "id": "strat-000008413004",
+      "name": "TYRANNOFORMED",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Command phase.",
+      "target": "One Harvester unit from your army that is within range of an objective marker you control.",
+      "effect": "That objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
+      "source": "Wahapedia CSV / Assimilation Swarm",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Assimilation Swarm – Strategic Ploy Stratagem",
+        "Assimilation Swarm"
+      ]
+    },
+    {
+      "id": "strat-000008413006",
+      "name": "SECURE BIOMASS",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "One TYRANIDS unit from your army that has not been selected to fight this phase.",
+      "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [LETHAL HITS] ability. If your unit is a Harvester unit, each time a model in that unit makes a melee attack, a successful unmodified Hit roll of 5+ scores a Critical Hit as well.",
+      "source": "Wahapedia CSV / Assimilation Swarm",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Assimilation Swarm – Strategic Ploy Stratagem",
+        "Assimilation Swarm"
+      ]
+    },
+    {
+      "id": "strat-000008422004",
+      "name": "SAVAGE ROAR",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One Tyranids Monster unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "That enemy unit must take a Battle-shock test and, until the end of the phase, each time a model in that enemy unit makes an attack that targets your unit, subtract 1 from the Hit roll. If that Battle-shock test was failed, subtract 1 from the Wound roll as well.",
+      "source": "Wahapedia CSV / Crusher Stampede",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Crusher Stampede – Battle Tactic Stratagem",
+        "Crusher Stampede"
+      ]
+    },
+    {
+      "id": "strat-000008422006",
+      "name": "SWARM-GUIDED SALVOES",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One Tyranids Monster unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability, and until the end of the phase each time a model in your unit makes an attack, you can ignore any or all modifiers to that model’s Ballistic Skill characteristic and any or all modifiers to the Hit roll.",
+      "source": "Wahapedia CSV / Crusher Stampede",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Crusher Stampede – Battle Tactic Stratagem",
+        "Crusher Stampede"
+      ]
+    },
+    {
+      "id": "strat-000008422003",
+      "name": "RAMPAGING MONSTROSITIES",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "One Tyranids Monster unit from your army that has not been selected to fight this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack, you can re-roll the Hit roll.",
+      "source": "Wahapedia CSV / Crusher Stampede",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Crusher Stampede – Battle Tactic Stratagem",
+        "Crusher Stampede"
+      ]
+    },
+    {
+      "id": "strat-000008422007",
+      "name": "MASSIVE IMPACT",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "timing": "Your Charge phase, just after a Tyranids Monster model from your army ends a Charge move.",
+      "target": "That TYRANIDS MONSTER model.",
+      "effect": "Select one enemy unit within Engagement Range of your model and roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.",
+      "source": "Wahapedia CSV / Crusher Stampede",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Crusher Stampede – Epic Deed Stratagem",
+        "Crusher Stampede"
+      ]
+    },
+    {
+      "id": "strat-000008422005",
+      "name": "UNTRAMMELLED FEROCITY",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase.",
+      "target": "One Tyranids Monster unit from your army that has not been selected to move this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes a Normal, Advance or Fall Back move, it can move through models (excluding TITANIC models) and sections of terrain features that are 4\" or less in height. When doing so: - It can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them. - It can also move through sections of terrain features that are more than 4\" in height, but if it does, after its unit has moved, roll one D6: on a 1, your unit is Battle-shocked.",
+      "source": "Wahapedia CSV / Crusher Stampede",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Crusher Stampede – Strategic Ploy Stratagem",
+        "Crusher Stampede"
+      ]
+    },
+    {
+      "id": "strat-000008422002",
+      "name": "CORROSIVE VISCERA",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after a Tyranids Monster model from your army with the Deadly Demise ability that cannot FLY is destroyed.",
+      "target": "That TYRANIDS MONSTER model. You can use this Stratagem on that model even though it was just destroyed.",
+      "effect": "Do not roll one D6 to determine whether mortal wounds are inflicted by your model’s Deadly Demise ability. Instead, mortal wounds are automatically inflicted.",
+      "source": "Wahapedia CSV / Crusher Stampede",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Crusher Stampede – Strategic Ploy Stratagem",
+        "Crusher Stampede"
+      ]
+    },
+    {
+      "id": "strat-000008349003",
+      "name": "ADRENAL SURGE",
+      "cp_cost": 2,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "Up to two TYRANIDS units from your army that are within Synapse Range of your army and are eligible to fight, or one other TYRANIDS unit from your army that is eligible to fight.",
+      "effect": "Until the end of the phase, each time a model in any of those selected units makes an attack, an unmodified Hit roll of 5+ scores a Critical Hit.",
+      "source": "Wahapedia CSV / Invasion Fleet",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Invasion Fleet – Battle Tactic Stratagem",
+        "Invasion Fleet"
+      ]
+    },
+    {
+      "id": "strat-000008349002",
+      "name": "RAPID REGENERATION",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One TYRANIDS unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, models in your unit have the Feel No Pain 6+ ability. If your unit is within Synapse Range of your army, models in your unit have the Feel No Pain 5+ ability instead.",
+      "source": "Wahapedia CSV / Invasion Fleet",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Invasion Fleet – Battle Tactic Stratagem",
+        "Invasion Fleet"
+      ]
+    },
+    {
+      "id": "strat-000008349005",
+      "name": "OVERRUN",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase, just before a TYRANIDS unit from your army Consolidates.",
+      "target": "That TYRANIDS unit.",
+      "effect": "Until the end of the phase, each time your unit Consolidates, models in it can move an additional 3\" as long as your unit can end that move within Engagement Range of one or more enemy units. If your unit is within Synapse Range of your army and not within Engagement Range of any enemy units, instead of making that Consolidation move, it can make a Normal move of up to 6\".",
+      "source": "Wahapedia CSV / Invasion Fleet",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Invasion Fleet – Strategic Ploy Stratagem",
+        "Invasion Fleet"
+      ]
+    },
+    {
+      "id": "strat-000008349006",
+      "name": "PREDATORY IMPERATIVE",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Your Command phase.",
+      "target": "Up to two TYRANIDS units from your army that are within Synapse Range of your army, or one other TYRANIDS unit from your army.",
+      "effect": "Select one Hyper-adaptation. Until the start of your next Command phase, that Hyper-adaptation is active for those selected units in addition to any other that may be active for your army.",
+      "source": "Wahapedia CSV / Invasion Fleet",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Invasion Fleet – Strategic Ploy Stratagem",
+        "Invasion Fleet"
+      ]
+    },
+    {
+      "id": "strat-000008349007",
+      "name": "ENDLESS SWARM",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Your Command phase.",
+      "target": "Up to two Endless Multitude units from your army that are within Synapse Range of your army, or one other ENDLESS MULTITUDE unit from your army.",
+      "effect": "You can return up to D3+3 destroyed models to each of the selected units.",
+      "source": "Wahapedia CSV / Invasion Fleet",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Invasion Fleet – Strategic Ploy Stratagem",
+        "Invasion Fleet"
+      ]
+    },
+    {
+      "id": "strat-000008349004",
+      "name": "DEATH FRENZY",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One TYRANIDS unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.",
+      "source": "Wahapedia CSV / Invasion Fleet",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Invasion Fleet – Strategic Ploy Stratagem",
+        "Invasion Fleet"
+      ]
+    },
+    {
+      "id": "strat-000008556005",
+      "name": "REINFORCED HIVE NODE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One Synapse unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+      "source": "Wahapedia CSV / Synaptic Nexus",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Synaptic Nexus – Battle Tactic Stratagem",
+        "Synaptic Nexus"
+      ]
+    },
+    {
+      "id": "strat-000008556004",
+      "name": "IRRESISTIBLE WILL",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One Synapse unit from your army that has not been selected to shoot or fight this phase, and one enemy unit within 24\" of and visible to the SYNAPSE unit.",
+      "effect": "Until the end of the phase, each time a friendly TYRANIDS model makes an attack that targets that enemy unit, if the attacking model’s unit is within 6\" of your SYNAPSE unit, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.",
+      "source": "Wahapedia CSV / Synaptic Nexus",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Synaptic Nexus – Battle Tactic Stratagem",
+        "Synaptic Nexus"
+      ]
+    },
+    {
+      "id": "strat-000008556003",
+      "name": "SYNAPTIC CHANNELLING",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Command phase.",
+      "target": "One Synapse unit from your army.",
+      "effect": "Until the end of the turn, while a friendly TYRANIDS unit is within 9\" of the selected unit, that unit is within Synapse Range of your army.",
+      "source": "Wahapedia CSV / Synaptic Nexus",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Synaptic Nexus – Battle Tactic Stratagem",
+        "Synaptic Nexus"
+      ]
+    },
+    {
+      "id": "strat-000008556006",
+      "name": "IMPERATIVE DOMINANCE",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Your Command phase.",
+      "target": "One TYRANIDS unit from your army that is within Synapse Range of your army.",
+      "effect": "Select one Synaptic Imperative, even if you have already selected that imperative this battle. Until the start of your next Command phase, that Synaptic Imperative is active for your unit instead of any other Synaptic Imperative that is active for your army.",
+      "source": "Wahapedia CSV / Synaptic Nexus",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Synaptic Nexus – Strategic Ploy Stratagem",
+        "Synaptic Nexus"
+      ]
+    },
+    {
+      "id": "strat-000008556007",
+      "name": "OVERRIDE INSTINCTS",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase.",
+      "target": "One TYRANIDS unit from your army that is within Synapse Range of your army and made a Fall Back move this phase.",
+      "effect": "Your unit is eligible to shoot and declare a charge this turn.",
+      "source": "Wahapedia CSV / Synaptic Nexus",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Synaptic Nexus – Strategic Ploy Stratagem",
+        "Synaptic Nexus"
+      ]
+    },
+    {
+      "id": "strat-000008556002",
+      "name": "THE SMOTHERING SHADOW",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase, just after an enemy unit fails a Battle-shock test.",
+      "target": "One Synapse unit from your army within 12\" of that enemy unit.",
+      "effect": "Roll six D6: for each 3+, that enemy unit suffers 1 mortal wound.",
+      "source": "Wahapedia CSV / Synaptic Nexus",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Synaptic Nexus – Strategic Ploy Stratagem",
+        "Synaptic Nexus"
+      ]
+    },
+    {
+      "id": "strat-000008409005",
+      "name": "SWARMING MASSES",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One Endless Multitude unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Until the end of the phase, weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability, and If your unit contains 15 or more models, each time a model in your unit makes an attack, an unmodified Hit roll of 5+ scores a Critical Hit.",
+      "source": "Wahapedia CSV / Unending Swarm",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Unending Swarm – Battle Tactic Stratagem",
+        "Unending Swarm"
+      ]
+    },
+    {
+      "id": "strat-000008409004",
+      "name": "TEEMING MASSES",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One Endless Multitude unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll.",
+      "source": "Wahapedia CSV / Unending Swarm",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Unending Swarm – Battle Tactic Stratagem",
+        "Unending Swarm"
+      ]
+    },
+    {
+      "id": "strat-000008409006",
+      "name": "BOUNDING ADVANCE",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase.",
+      "target": "One Endless Multitude unit from your army.",
+      "effect": "Until the end of the phase, each time your unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit.",
+      "source": "Wahapedia CSV / Unending Swarm",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Unending Swarm – Battle Tactic Stratagem",
+        "Unending Swarm"
+      ]
+    },
+    {
+      "id": "strat-000008409002",
+      "name": "SYNAPTIC GOADING",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase, just before an Endless Multitude unit from your army that is within Synapse Range of your army makes a Surge move.",
+      "target": "That ENDLESS MULTITUDE unit.",
+      "effect": "When making that Surge move, you can re-roll the D6 to determine how far your unit moves, and your unit can end that move as close as possible to the closest objective marker (instead of as close as possible to the closest enemy unit]. All other rules for making Surge moves still apply.",
+      "source": "Wahapedia CSV / Unending Swarm",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Unending Swarm – Strategic Ploy Stratagem",
+        "Unending Swarm"
+      ]
+    },
+    {
+      "id": "strat-000008409003",
+      "name": "UNENDING WAVES",
+      "cp_cost": 2,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase.",
+      "target": "One Endless Multitude unit from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
+      "effect": "Add a new unit to your army identical to your destroyed unit, in Strategic Reserves, at its Starting Strength.",
+      "source": "Wahapedia CSV / Unending Swarm",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Unending Swarm – Strategic Ploy Stratagem",
+        "Unending Swarm"
+      ]
+    },
+    {
+      "id": "strat-000008409007",
+      "name": "PRESERVATION IMPERATIVE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One Endless Multitude unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, your unit is treated as containing fewer than five models for the purpose of the [BLAST] ability.",
+      "source": "Wahapedia CSV / Unending Swarm",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Unending Swarm – Strategic Ploy Stratagem",
+        "Unending Swarm"
+      ]
+    },
+    {
+      "id": "strat-000008418003",
+      "name": "ASSASSIN BEASTS",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "One Vanguard Invader Infantry unit from your army that has not been selected to fight this phase.",
+      "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
+      "source": "Wahapedia CSV / Vanguard Onslaught",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Vanguard Onslaught – Battle Tactic Stratagem",
+        "Vanguard Onslaught"
+      ]
+    },
+    {
+      "id": "strat-000008418002",
+      "name": "SURPRISE ASSAULT",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase, just after a Vanguard Invader unit from your army has selected its targets.",
+      "target": "That VANGUARD INVADER unit.",
+      "effect": "Select one enemy unit that was selected as the target of one or more of your unit’s attacks. That enemy unit must take a Battle-shock test. Until the end of the phase, each time a model in your unit makes an attack that targets that enemy unit, add 1 to the Hit roll. If the Battle-shock test was failed, add 1 to the Wound roll as well.",
+      "source": "Wahapedia CSV / Vanguard Onslaught",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Vanguard Onslaught – Battle Tactic Stratagem",
+        "Vanguard Onslaught"
+      ]
+    },
+    {
+      "id": "strat-000008418006",
+      "name": "UNSEEN LURKERS",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One Vanguard Invader unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, your unit can only be selected as the target of a ranged attack if the attacking model is within 18\" or, if your unit has the Lone Operative ability, if the attacking model is within 6\". Your opponent can select new targets for the attacking unit’s attacks.",
+      "source": "Wahapedia CSV / Vanguard Onslaught",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Vanguard Onslaught – Strategic Ploy Stratagem",
+        "Vanguard Onslaught"
+      ]
+    },
+    {
+      "id": "strat-000008418005",
+      "name": "HYPERSENSORY SCILLIA",
+      "cp_cost": 2,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
+      "target": "Up to two Vanguard Invader units from your army that are within 9\" of that enemy unit, or one other Tyranids Infantry unit from your army that is within 9\" of that enemy unit.",
+      "effect": "Those selected units can each make a Normal move of up to 6\".",
+      "source": "Wahapedia CSV / Vanguard Onslaught",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Vanguard Onslaught – Strategic Ploy Stratagem",
+        "Vanguard Onslaught"
+      ]
+    },
+    {
+      "id": "strat-000008418004",
+      "name": "SEEDED BROODS",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase.",
+      "target": "One TYRANIDS unit from your army that is in Reserves, or up to two Vanguard Invader units from your army that are in Reserves.",
+      "effect": "Until the end of the phase, for the purposes of setting up those selected units on the battlefield, treat the current battle round number as being one higher than it actually is.",
+      "source": "Wahapedia CSV / Vanguard Onslaught",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Vanguard Onslaught – Strategic Ploy Stratagem",
+        "Vanguard Onslaught"
+      ]
+    },
+    {
+      "id": "strat-000008418007",
+      "name": "INVISIBLE HUNTER",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "End of your opponent’s Fight phase.",
+      "target": "Up to two Vanguard Invader units from your army, or one Tyranids Infantry unit from your army.",
+      "effect": "Remove the targeted units from the battlefield and place them into Strategic Reserves.",
+      "source": "Wahapedia CSV / Vanguard Onslaught",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Vanguard Onslaught – Strategic Ploy Stratagem",
+        "Vanguard Onslaught"
+      ]
+    }
+  ],
+  "detachment_rules": [
+    {
+      "id": "det-000008356",
+      "name": "Hyper-adaptations",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Invasion Fleet",
+      "type": "detachment",
+      "summary": "At the start of the first battle round, select one of the following Hyper-adaptations to be active for TYRANIDS units from your army until the end of the battle:\nSwarming Instincts\nEach time a TYRANIDS model with this Hyper-adaptation makes an attack that targets an INFANTRY or SWARM unit, that attack has the [SUSTAINED HITS 1] ability.\nHyper-aggression\nEach time a TYRANIDS model with this Hyper-adaptation makes an attack that targets a MONSTER or VEHICLE unit, that attack has the [LETHAL HITS] ability.\nHive Predators\nEach time a TYRANIDS model with this Hyper-adaptation makes an attack that targets a CHARACTER unit, on a Critical Hit , that attack has the [PRECISION] ability.",
+      "source": "Wahapedia CSV / Invasion Fleet",
+      "priority": 5
+    },
+    {
+      "id": "det-000008403",
+      "name": "Enraged Behemoths",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Crusher Stampede",
+      "type": "detachment",
+      "summary": "Each time a Tyranids Monster model from your army makes an attack, add 1 to the Hit roll if that model’s unit is below its Starting Strength, and add 1 to the Wound roll as well if that model’s unit is Below Half-strength. In addition, while a TYRANIDS MONSTER unit from your army (excluding Battle-shocked units) is at its Starting Strength, add 2 to the Objective Control characteristic of models in that unit.",
+      "source": "Wahapedia CSV / Crusher Stampede",
+      "priority": 5
+    },
+    {
+      "id": "det-000008407",
+      "name": "Insurmountable Odds",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Unending Swarm",
+      "type": "detachment",
+      "summary": "Each time an enemy unit is selected to shoot, after that unit has finished making its attacks, if one or more models from one or more Endless Multitude units from your army were destroyed as a result of those attacks, each such unit can make a Surge move. To do so, roll one D6: that unit can be moved a distance in inches up to the result, but that unit must end that move as close as possible to the closest enemy unit (excluding AIRCRAFT ). When doing so, those models can be moved within Engagement Range of enemy units. A unit cannot make a Surge move while it is Battle-shocked.",
+      "source": "Wahapedia CSV / Unending Swarm",
+      "priority": 5
+    },
+    {
+      "id": "det-000008411",
+      "name": "Feed the Swarm",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Assimilation Swarm",
+      "type": "detachment",
+      "summary": "In your Command phase, each Harvester unit from your army can Regenerate one friendly TYRANIDS unit that is within 6\" of it. A unit can only be regenerated once per phase. Each time a unit regenerates, do one of the following:\n- One model in that unit regains up to D3+1 lost wounds.\n- One destroyed Infantry model (excluding Characters) is returned to that unit with its full wounds remaining. If that unit is an Endless Multitude unit, up to 3 destroyed models are returned instead.",
+      "source": "Wahapedia CSV / Assimilation Swarm",
+      "priority": 5
+    },
+    {
+      "id": "det-000008415",
+      "name": "Questing Tendrils",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Vanguard Onslaught",
+      "type": "detachment",
+      "summary": "TYRANIDS units with this ability are eligible to charge in a turn in which they Fell Back. Vanguard Invader units with this ability are eligible to charge in a turn in which they Advanced.",
+      "source": "Wahapedia CSV / Vanguard Onslaught",
+      "priority": 5
+    },
+    {
+      "id": "det-000008420",
+      "name": "Synaptic Imperatives",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Synaptic Nexus",
+      "type": "detachment",
+      "summary": "At the start of the battle round, you can select one of the Synaptic Imperatives shown below. Until the end of the battle round, that Synaptic Imperative is active for your army and while a TYRANIDS unit from your army is within Synapse Range of your army, it will benefit from it. Each Synaptic Imperative can only be selected once per battle.\n- Synaptic Augmentation: While this unit is within Synapse Range of your army, models in this unit have a 5+ invulnerable save.\n- Surging Vitality: While this unit is within Synapse Range of your army, add 1 to Advance and Charge rolls made for this unit.\n- Goaded to Slaughter: While this unit is within Synapse Range of your army, each time a model in this unit makes a melee attack, add 1 to the Hit roll.",
+      "source": "Wahapedia CSV / Synaptic Nexus",
+      "priority": 5
+    }
+  ],
+  "enhancements": [
+    {
+      "id": "enh-000008421002",
+      "name": "Power of the Hive Mind",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Synaptic Nexus",
+      "type": "enhancement",
+      "summary": "Tyranids Psyker model only. Improve the Strength and Armour Penetration characteristics of psychic weapons equipped by the bearer by 1.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Synaptic Nexus",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008348002",
+      "name": "Alien Cunning",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Invasion Fleet",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. After both players have deployed their armies, select up to three TYRANIDS units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves.\n\nPoints: 30",
+      "source": "Wahapedia CSV / Invasion Fleet",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008412002",
+      "name": "Regenerating Monstrosity",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Assimilation Swarm",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only (excluding Monsters models). The bearer’s unit can be regenerated up to twice per phase, instead of once.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Assimilation Swarm",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008404002",
+      "name": "Ominous Presence",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Crusher Stampede",
+      "type": "enhancement",
+      "summary": "Tyranids Monster model only. Add 3 to the bearer’s Objective Control characteristic.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Crusher Stampede",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008417002",
+      "name": "Hunting Grounds",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Vanguard Onslaught",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. While the bearer is on the battlefield, each time your opponent sets up a Reserves unit on the battlefield, roll one D6: on a 2+, that unit must take a Battle-shock test.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Vanguard Onslaught",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008408002",
+      "name": "Relentless Hunger",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Unending Swarm",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. Add 2\" to the Move characteristic of models in the bearer’s unit.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Unending Swarm",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008404003",
+      "name": "Enraged Reserves",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Crusher Stampede",
+      "type": "enhancement",
+      "summary": "Tyranids Monster model only. If the bearer is destroyed by a melee attack, if it has not fought this phase, roll one D6: on a 3+, do not remove it from play. It can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Crusher Stampede",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008348003",
+      "name": "Perfectly Adapted",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Invasion Fleet",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. Once per turn, you can re-roll one Hit roll, one Wound roll, one Damage roll, one Advance roll, one Charge roll or one saving throw made for the bearer.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Invasion Fleet",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008408003",
+      "name": "Naturalised Camouflage",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Unending Swarm",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. At the start of the first battle round, select up to three friendly Endless Multitude units within 9\" of the bearer. Until the end of the battle round, each time a ranged attack targets one of those units, models in that unit have the Benefit of Cover against that attack.\n\nPoints: 30",
+      "source": "Wahapedia CSV / Unending Swarm",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008412003",
+      "name": "Instinctive Defence",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Assimilation Swarm",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. While the bearer is within 6\" of one or more friendly Harvester units, you can target the bearer’s unit with the Heroic Intervention Stratagem for 0CP. In addition, while the bearer is within 6\" of one or more friendly HARVESTER units, models in the bearer’s unit have the Fights First ability.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Assimilation Swarm",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008417003",
+      "name": "Chameleonic",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Vanguard Onslaught",
+      "type": "enhancement",
+      "summary": "Vanguard Invader model only. The bearer has the Stealth ability and each time a ranged attack targets the bearer’s unit, models in that unit have the Benefit of Cover against that attack.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Vanguard Onslaught",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008421003",
+      "name": "Psychostatic Disruption",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Synaptic Nexus",
+      "type": "enhancement",
+      "summary": "Tyranids Synapse model only. Enemy units that arrive on the battlefield from Reserves cannot be set up within 12\" of the bearer. In addition, once per battle, during the first or second battle round, when your opponent declares that a unit will arrive on the battlefield from Strategic Reserves, the bearer can use this Enhancement. If it does, roll one D6: on a 4+, that enemy unit cannot arrive on the battlefield this turn.\n\nPoints: 30",
+      "source": "Wahapedia CSV / Synaptic Nexus",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008412004",
+      "name": "Biophagic Flow (Aura)",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Assimilation Swarm",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. While a friendly Harvester model is within 12\" of the bearer, when using the Feed the Swarm ability, that HARVESTER model can Regenerate one friendly TYRANIDS unit that is within 9\" of it, instead of one within 6\".\n\nPoints: 10",
+      "source": "Wahapedia CSV / Assimilation Swarm",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008417004",
+      "name": "Stalker",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Vanguard Onslaught",
+      "type": "enhancement",
+      "summary": "Vanguard Invader model only. At the start of the battle, select one enemy unit. Each time the bearer makes an attack that targets that enemy unit, add 1 to the Hit roll and add 1 to the Wound roll.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Vanguard Onslaught",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008408004",
+      "name": "Piercing Talons",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Unending Swarm",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. Each time a model in the bearer’s unit makes an attack, on a Critical Wound, improve the Armour Penetration characteristic of that attack by 1.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Unending Swarm",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008404004",
+      "name": "Null Nodules",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Crusher Stampede",
+      "type": "enhancement",
+      "summary": "Tyranids Monster model only. Once per battle, when a Psychic Attack is allocated to the bearer, it can use this ability. If it does, until the end of the phase, the bearer has the Feel No Pain 5+ ability against Psychic Attacks.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Crusher Stampede",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008348004",
+      "name": "Synaptic Linchpin",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Invasion Fleet",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. While a friendly TYRANIDS unit is within 9\" of the bearer, that unit is within Synapse Range of your army.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Invasion Fleet",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008421004",
+      "name": "Synaptic Control",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Synaptic Nexus",
+      "type": "enhancement",
+      "summary": "Tyranids Synapse model only. Each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Synaptic Nexus",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008417005",
+      "name": "Neuronode",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Vanguard Onslaught",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. After both players have deployed their armies, you can select up to three Vanguard Invader units from your army and redeploy all of those units. When doing so, any of those units can be placed into Strategic Reserves, regardless of how many units are already in Strategic Reserves.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Vanguard Onslaught",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008421005",
+      "name": "The Dirgeheart of Kharis (Aura)",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Synaptic Nexus",
+      "type": "enhancement",
+      "summary": "Tyranids Synapse model only. While an enemy unit is within 9\" of the bearer, worsen that units Leadership characteristic by 1.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Synaptic Nexus",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008404005",
+      "name": "Monstrous Nemesis",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Crusher Stampede",
+      "type": "enhancement",
+      "summary": "Tyranids Monster model only. Each time the bearer makes a melee attack that targets a MONSTER or VEHICLE unit, add 1 to the Wound roll.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Crusher Stampede",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008348005",
+      "name": "Adaptive Biology",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Invasion Fleet",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. The bearer has the Feel No Pain 5+ ability. At the start of any turn, if the bearer has fewer than its starting number of wounds remaining, until the end of the battle, it has the Feel No Pain 4+ ability instead.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Invasion Fleet",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008408005",
+      "name": "Adrenalised Onslaught",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Unending Swarm",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. Each time the bearer’s unit Piles In or Consolidates, models in this unit can move an additional 3\".\n\nPoints: 15",
+      "source": "Wahapedia CSV / Unending Swarm",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008412005",
+      "name": "Parasitic Biomorphology",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Assimilation Swarm",
+      "type": "enhancement",
+      "summary": "TYRANIDS model only. Add 1 to the Strength characteristic of melee weapons equipped by models in the bearer’s unit. The first time the bearer’s unit destroys an enemy unit in the Fight phase while the bearer is within 6\" of one or more friendly Harvester units, until the end of the battle, add 1 to the Attacks characteristic of melee weapons equipped by models in the bearer’s unit.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Assimilation Swarm",
+      "priority": 3
+    }
+  ]
+}

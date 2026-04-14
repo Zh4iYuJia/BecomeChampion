@@ -16,6 +16,7 @@
    2. 按编队筛选（全部、Gladius Task Force、Bastion Task Force等）。
 7. 规则包管理：导入、切换、删除、导出备份。
 8. 离线能力：IndexedDB + localStorage 存储数据，Service Worker 缓存外壳。
+9. 内置规则包：6 个规则包（AC、TYR、TAU、IK、SM-BT、SM-UM）嵌入页面，免导入直接一键激活，`file://` 本地运行同样可用。
 
 ## 项目优势
 
@@ -37,7 +38,7 @@
 
 1. 克隆或下载本仓库。
 2. 打开 [index.html](index.html) 即可使用。
-3. 进入规则包管理，可手动导入规则包，也可点击“使用样例规则包（黑色圣堂）”一键自动导入测试规则。
+3. 进入规则包管理，"📦 内置规则包"区域直接点击即可一键激活（无需手动导入）；也可上传自定义 JSON 规则包。
 4. 进入“建军阶段”勾选本局实际携带单位。
 5. 返回主页点击阶段按钮开始使用。
 
@@ -54,11 +55,16 @@
 
 另外，仓库现在支持把完整规则包生成为独立 JSON 文件，放在 [rulepacks](rulepacks) 目录中，便于手动导入、备份和版本管理。
 
+所有内置规则包同时打包为 [builtin-packs.js](builtin-packs.js)，以 `window.BC_BUILTIN_PACKS` 全局变量嵌入页面，使 `file://` 协议下也能直接激活，无需服务器。
+
 当前已生成规则包：
 
 1. [rulepacks/SM-BT-rules-pack.json](rulepacks/SM-BT-rules-pack.json)：Black Templars 专属单位 + 通用 SM 合法单位 + 通用分队 + BT 专属分队。
 2. [rulepacks/SM-UM-rules-pack.json](rulepacks/SM-UM-rules-pack.json)：Ultramarines 专属单位 + 通用 SM 单位 + 通用分队 + UM 专属分队。
 3. [rulepacks/AC-rules-pack.json](rulepacks/AC-rules-pack.json)：Adeptus Custodes 单位 + Sisters of Silence 单位 + Forge World 禁军单位 + 6 个标准分队。
+4. [rulepacks/TYR-rules-pack.json](rulepacks/TYR-rules-pack.json)：Tyranids 所有单位 + 6 个标准分队（不含登舰分队）。
+5. [rulepacks/TAU-rules-pack.json](rulepacks/TAU-rules-pack.json)：T'au Empire 所有单位 + 6 个标准分队。
+6. [rulepacks/IK-rules-pack.json](rulepacks/IK-rules-pack.json)：Imperial Knights 所有单位 + 5 个标准分队。
 
 ## CSV 生成流程
 
@@ -73,6 +79,9 @@
 1. [tools/generate-bt-pack-from-csv.js](tools/generate-bt-pack-from-csv.js)
 2. [tools/generate-um-pack-from-csv.js](tools/generate-um-pack-from-csv.js)
 3. [tools/generate-ac-pack-from-csv.js](tools/generate-ac-pack-from-csv.js)
+4. [tools/generate-tyr-pack-from-csv.js](tools/generate-tyr-pack-from-csv.js)
+5. [tools/generate-tau-pack-from-csv.js](tools/generate-tau-pack-from-csv.js)
+6. [tools/generate-ik-pack-from-csv.js](tools/generate-ik-pack-from-csv.js)
 
 执行命令：
 
@@ -80,6 +89,9 @@
 node .\tools\generate-bt-pack-from-csv.js
 node .\tools\generate-um-pack-from-csv.js
 node .\tools\generate-ac-pack-from-csv.js
+node .\tools\generate-tyr-pack-from-csv.js
+node .\tools\generate-tau-pack-from-csv.js
+node .\tools\generate-ik-pack-from-csv.js
 ```
 
 脚本会输出：
@@ -87,6 +99,15 @@ node .\tools\generate-ac-pack-from-csv.js
 1. [rulepacks/SM-BT-rules-pack.json](rulepacks/SM-BT-rules-pack.json)
 2. [rulepacks/SM-UM-rules-pack.json](rulepacks/SM-UM-rules-pack.json)
 3. [rulepacks/AC-rules-pack.json](rulepacks/AC-rules-pack.json)
+4. [rulepacks/TYR-rules-pack.json](rulepacks/TYR-rules-pack.json)
+5. [rulepacks/TAU-rules-pack.json](rulepacks/TAU-rules-pack.json)
+6. [rulepacks/IK-rules-pack.json](rulepacks/IK-rules-pack.json)
+
+**更新内置包：** 每次重新生成任意规则包后，需执行以下命令同步 [builtin-packs.js](builtin-packs.js)：
+
+```bash
+node .\tools\bundle-builtin-packs.js
+```
 
 当前脚本的设计目标：
 
@@ -104,17 +125,25 @@ BecomeChampion/
   sw.js
   manifest.json
   icon.svg
+  sample-rules-pack.json
+  sample-pack.js
+  builtin-packs.js          ← 所有内置包的 JS 嵌入包（由 bundle 脚本生成）
   rulepacks/
     SM-BT-rules-pack.json
     SM-UM-rules-pack.json
     AC-rules-pack.json
-  sample-rules-pack.json
-  sample-pack.js
+    TYR-rules-pack.json
+    TAU-rules-pack.json
+    IK-rules-pack.json
   10e/
   tools/
     generate-bt-pack-from-csv.js
     generate-um-pack-from-csv.js
     generate-ac-pack-from-csv.js
+    generate-tyr-pack-from-csv.js
+    generate-tau-pack-from-csv.js
+    generate-ik-pack-from-csv.js
+    bundle-builtin-packs.js   ← 打包所有规则包为 builtin-packs.js
 ```
 
 关键文件说明：
@@ -124,10 +153,15 @@ BecomeChampion/
 3. [sw.js](sw.js)：离线缓存逻辑。
 4. [sample-rules-pack.json](sample-rules-pack.json)：可导入的示例规则包。
 5. [sample-pack.js](sample-pack.js)：内置样例数据（供一键导入和下载按钮回退使用）。
-6. [rulepacks](rulepacks)：独立生成的规则包目录。
-7. [tools/generate-bt-pack-from-csv.js](tools/generate-bt-pack-from-csv.js)：Black Templars 规则包生成器。
-8. [tools/generate-um-pack-from-csv.js](tools/generate-um-pack-from-csv.js)：Ultramarines 规则包生成器。
-9. [tools/generate-ac-pack-from-csv.js](tools/generate-ac-pack-from-csv.js)：Adeptus Custodes 规则包生成器。
+6. [builtin-packs.js](builtin-packs.js)：所有内置规则包 JSON 的 JS 嵌入包，`window.BC_BUILTIN_PACKS` 全局变量；由 `bundle-builtin-packs.js` 生成，支持 `file://` 直接访问。
+7. [rulepacks](rulepacks)：独立生成的规则包目录。
+8. [tools/generate-bt-pack-from-csv.js](tools/generate-bt-pack-from-csv.js)：Black Templars 规则包生成器。
+9. [tools/generate-um-pack-from-csv.js](tools/generate-um-pack-from-csv.js)：Ultramarines 规则包生成器。
+10. [tools/generate-ac-pack-from-csv.js](tools/generate-ac-pack-from-csv.js)：Adeptus Custodes 规则包生成器。
+11. [tools/generate-tyr-pack-from-csv.js](tools/generate-tyr-pack-from-csv.js)：Tyranids 规则包生成器。
+12. [tools/generate-tau-pack-from-csv.js](tools/generate-tau-pack-from-csv.js)：T'au Empire 规则包生成器。
+13. [tools/generate-ik-pack-from-csv.js](tools/generate-ik-pack-from-csv.js)：Imperial Knights 规则包生成器。
+14. [tools/bundle-builtin-packs.js](tools/bundle-builtin-packs.js)：将所有 rulepacks JSON 打包为 builtin-packs.js 的工具脚本。
 
 ## 规则包格式（简版）
 
@@ -159,10 +193,10 @@ BecomeChampion/
 
 常用维护动作：
 
-1. 更新 10e CSV 后，执行对应生成脚本刷新 [rulepacks](rulepacks) 中的独立规则包。
-2. 打开页面后在“规则包管理”里导入目标规则包，并验证“建军阶段”筛选与阶段视图行为。
+1. 更新 10e CSV 后，执行对应生成脚本刷新 [rulepacks](rulepacks) 中的独立规则包，然后执行 `node .\tools\bundle-builtin-packs.js` 重新生成 [builtin-packs.js](builtin-packs.js)。
+2. 打开页面后在"规则包管理"里点击"📦 内置规则包"区域的条目直接激活，并验证"建军阶段"筛选与阶段视图行为。
 3. 需要发布新规则包时，更新 pack_version 与 source_note。
- 4. 如果本次发布修改了 [index.html](index.html)、[app.js](app.js)、[style.css](style.css)、[sample-pack.js](sample-pack.js)、[sample-rules-pack.json](sample-rules-pack.json)、[manifest.json](manifest.json) 或 [icon.svg](icon.svg)，请同时更新 [sw.js](sw.js) 中的 `CACHE_NAME`。当前离线缓存采用固定版本号，未同步 bump 缓存版本时，GitHub Pages 已更新但客户端仍可能继续读取旧缓存。
+4. 如果本次发布修改了 [index.html](index.html)、[app.js](app.js)、[style.css](style.css)、[sample-pack.js](sample-pack.js)、[builtin-packs.js](builtin-packs.js)、[manifest.json](manifest.json) 或 [icon.svg](icon.svg)，请同时更新 [sw.js](sw.js) 中的 `CACHE_NAME`。当前离线缓存采用固定版本号，未同步 bump 缓存版本时，GitHub Pages 已更新但客户端仍可能继续读取旧缓存。
 
 ## 版权与声明
 
@@ -202,7 +236,7 @@ Core Goal: Quickly view available rules by phase during games, check used abilit
 
 1. Clone or download this repository.
 2. Open [index.html](index.html) to use.
-3. Go to Rules Pack Management, import [sample-rules-pack.json](sample-rules-pack.json) or directly use the built-in Black Templars sample.
+3. Go to Rules Pack Management — click any entry in the "📦 Built-in Packs" section to activate it instantly (no import needed); or upload a custom JSON rules pack.
 4. Go to the roster step and select the units actually brought to the game.
 5. Return to home and click phase buttons to start using.
 
@@ -219,11 +253,16 @@ The built-in sample remains Black Templars themed and is intentionally unchanged
 
 In addition, the repository now supports generating standalone rules packs into [rulepacks](rulepacks) for manual import, backup and versioning.
 
+All built-in packs are also bundled into [builtin-packs.js](builtin-packs.js) as `window.BC_BUILTIN_PACKS`, embedded via `<script>` tag so they work on `file://` without any server.
+
 Currently generated packs:
 
 1. [rulepacks/SM-BT-rules-pack.json](rulepacks/SM-BT-rules-pack.json): Black Templars exclusive units + BT-legal generic Space Marines units + generic detachments + BT-exclusive detachments.
 2. [rulepacks/SM-UM-rules-pack.json](rulepacks/SM-UM-rules-pack.json): Ultramarines exclusive units + generic Space Marines units + generic detachments + UM-exclusive detachments.
 3. [rulepacks/AC-rules-pack.json](rulepacks/AC-rules-pack.json): Adeptus Custodes units + Sisters of Silence units + Custodes Forge World units + 6 standard detachments.
+4. [rulepacks/TYR-rules-pack.json](rulepacks/TYR-rules-pack.json): Tyranids all units + 6 standard detachments (boarding excluded).
+5. [rulepacks/TAU-rules-pack.json](rulepacks/TAU-rules-pack.json): T'au Empire all units + 6 standard detachments.
+6. [rulepacks/IK-rules-pack.json](rulepacks/IK-rules-pack.json): Imperial Knights all units + 5 standard detachments.
 
 ## CSV Generation Process
 
@@ -238,6 +277,9 @@ Generation scripts:
 1. [tools/generate-bt-pack-from-csv.js](tools/generate-bt-pack-from-csv.js)
 2. [tools/generate-um-pack-from-csv.js](tools/generate-um-pack-from-csv.js)
 3. [tools/generate-ac-pack-from-csv.js](tools/generate-ac-pack-from-csv.js)
+4. [tools/generate-tyr-pack-from-csv.js](tools/generate-tyr-pack-from-csv.js)
+5. [tools/generate-tau-pack-from-csv.js](tools/generate-tau-pack-from-csv.js)
+6. [tools/generate-ik-pack-from-csv.js](tools/generate-ik-pack-from-csv.js)
 
 Execution command:
 
@@ -245,6 +287,9 @@ Execution command:
 node .\tools\generate-bt-pack-from-csv.js
 node .\tools\generate-um-pack-from-csv.js
 node .\tools\generate-ac-pack-from-csv.js
+node .\tools\generate-tyr-pack-from-csv.js
+node .\tools\generate-tau-pack-from-csv.js
+node .\tools\generate-ik-pack-from-csv.js
 ```
 
 The scripts will output:
@@ -252,6 +297,15 @@ The scripts will output:
 1. [rulepacks/SM-BT-rules-pack.json](rulepacks/SM-BT-rules-pack.json)
 2. [rulepacks/SM-UM-rules-pack.json](rulepacks/SM-UM-rules-pack.json)
 3. [rulepacks/AC-rules-pack.json](rulepacks/AC-rules-pack.json)
+4. [rulepacks/TYR-rules-pack.json](rulepacks/TYR-rules-pack.json)
+5. [rulepacks/TAU-rules-pack.json](rulepacks/TAU-rules-pack.json)
+6. [rulepacks/IK-rules-pack.json](rulepacks/IK-rules-pack.json)
+
+**Updating the built-in bundle:** After regenerating any pack, re-run the bundle script to keep [builtin-packs.js](builtin-packs.js) in sync:
+
+```bash
+node .\tools\bundle-builtin-packs.js
+```
 
 Current script goals:
 
@@ -269,17 +323,25 @@ BecomeChampion/
   sw.js
   manifest.json
   icon.svg
+  sample-rules-pack.json
+  sample-pack.js
+  builtin-packs.js          ← JS bundle of all built-in packs (generated by bundle script)
   rulepacks/
     SM-BT-rules-pack.json
     SM-UM-rules-pack.json
     AC-rules-pack.json
-  sample-rules-pack.json
-  sample-pack.js
+    TYR-rules-pack.json
+    TAU-rules-pack.json
+    IK-rules-pack.json
   10e/
   tools/
     generate-bt-pack-from-csv.js
     generate-um-pack-from-csv.js
     generate-ac-pack-from-csv.js
+    generate-tyr-pack-from-csv.js
+    generate-tau-pack-from-csv.js
+    generate-ik-pack-from-csv.js
+    bundle-builtin-packs.js   ← bundles all rulepacks into builtin-packs.js
 ```
 
 Key file descriptions:
@@ -289,10 +351,15 @@ Key file descriptions:
 3. [sw.js](sw.js): Offline caching logic.
 4. [sample-rules-pack.json](sample-rules-pack.json): Importable sample rules pack.
 5. [sample-pack.js](sample-pack.js): Built-in sample data used by the sample import/download fallback.
-6. [rulepacks](rulepacks): Directory for standalone generated rules packs.
-7. [tools/generate-bt-pack-from-csv.js](tools/generate-bt-pack-from-csv.js): Black Templars rules-pack generator.
-8. [tools/generate-um-pack-from-csv.js](tools/generate-um-pack-from-csv.js): Ultramarines rules-pack generator.
-9. [tools/generate-ac-pack-from-csv.js](tools/generate-ac-pack-from-csv.js): Adeptus Custodes rules-pack generator.
+6. [builtin-packs.js](builtin-packs.js): JS bundle of all built-in pack JSON as `window.BC_BUILTIN_PACKS`; generated by `bundle-builtin-packs.js`, works on `file://`.
+7. [rulepacks](rulepacks): Directory for standalone generated rules packs.
+8. [tools/generate-bt-pack-from-csv.js](tools/generate-bt-pack-from-csv.js): Black Templars rules-pack generator.
+9. [tools/generate-um-pack-from-csv.js](tools/generate-um-pack-from-csv.js): Ultramarines rules-pack generator.
+10. [tools/generate-ac-pack-from-csv.js](tools/generate-ac-pack-from-csv.js): Adeptus Custodes rules-pack generator.
+11. [tools/generate-tyr-pack-from-csv.js](tools/generate-tyr-pack-from-csv.js): Tyranids rules-pack generator.
+12. [tools/generate-tau-pack-from-csv.js](tools/generate-tau-pack-from-csv.js): T'au Empire rules-pack generator.
+13. [tools/generate-ik-pack-from-csv.js](tools/generate-ik-pack-from-csv.js): Imperial Knights rules-pack generator.
+14. [tools/bundle-builtin-packs.js](tools/bundle-builtin-packs.js): Bundles all rulepacks JSON into builtin-packs.js.
 
 ## Rules Pack Format (Simplified)
 

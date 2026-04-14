@@ -1,0 +1,3733 @@
+{
+  "$schema": "https://becomechampion.app/schemas/rules-pack-v1.json",
+  "$comment": "BecomeChampion Rules Pack - T'au Empire (10th Edition). Generated from 10e CSV data. Includes core T'au detachments and datasheets from the T'au Empire faction pack and Forge World sources; not official rules text.",
+  "id": "tau-rules-pack",
+  "faction": "T'au Empire",
+  "game_version": "10th Edition",
+  "pack_version": "1.0.0",
+  "date": "2026-04-14",
+  "author": "Community",
+  "source_note": "Generated from current 10e CSV exports. This pack includes T'au Empire detachments Kauyon, Mont'ka, Retaliation Cadre, Kroot Hunting Pack, Auxiliary Cadre, Experimental Prototype Cadre. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+  "units": [
+    {
+      "id": "unit-000000408",
+      "name": "Aun’shi",
+      "keywords": [
+        "T’au Empire",
+        "Infantry",
+        "Character",
+        "Epic Hero",
+        "Ethereal",
+        "Aun’Shi"
+      ],
+      "abilities": [
+        {
+          "id": "unit-aun-shi-inspirational-defiance",
+          "name": "Inspirational Defiance",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit",
+          "type": "passive",
+          "summary": "While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-aun-shi-martial-warrior",
+          "name": "Martial Warrior",
+          "phases": [
+            "fight"
+          ],
+          "timing": "Each time this model is selected to fight, select one of the following abilities to be active while resolving those atta",
+          "type": "active",
+          "summary": "Each time this model is selected to fight, select one of the following abilities to be active while resolving those attacks:\n- Direct Grace: Fidelity has the [PRECISION] ability.\n- Forceful Strike: Fidelity has the [DEVASTATING WOUNDS] ability.\n- Whirling Stance: Fidelity has the [SUSTAINED HITS 2] ability instead of [SUSTAINED HITS 1].",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000409",
+      "name": "Aun’va",
+      "keywords": [
+        "T’au Empire",
+        "Epic Hero",
+        "Ethereal",
+        "Aun’Va",
+        "Character",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-aun-va-duality-shield",
+          "name": "Duality Shield",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle, each time an attack targets this unit, it can use this ability. If it does, until the end of the phase,",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, each time an attack targets this unit, it can use this ability. If it does, until the end of the phase, models in this unit have a 2+ invulnerable save.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-aun-va-paradox-of-duality",
+          "name": "Paradox of Duality",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time an attack targets this unit, subtract 1 from the Hit roll and subtract 1 from the Wound roll.",
+          "type": "passive",
+          "summary": "Each time an attack targets this unit, subtract 1 from the Hit roll and subtract 1 from the Wound roll.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-aun-va-supreme-loyalty-aura",
+          "name": "Supreme Loyalty (Aura)",
+          "phases": [
+            "battleshock"
+          ],
+          "timing": "Battle-shock or Leadership test, add 1 to that test",
+          "type": "passive",
+          "summary": "While a friendly T’AU EMPIRE unit is within 6\" of this unit, each time that unit takes a Battle-shock or Leadership test, add 1 to that test.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000455",
+      "name": "AX-1-0 Tiger Shark",
+      "keywords": [
+        "T’au Empire",
+        "AX-1-0 Tiger Shark",
+        "Fly",
+        "Aircraft",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-ax-1-0-tiger-shark-titan-hunter",
+          "name": "Titan Hunter",
+          "phases": [
+            "any"
+          ],
+          "timing": "This model’s twin heavy rail cannon and seeker missiles have the [ANTI-TITANIC 3+] ability while targeting a unit within",
+          "type": "passive",
+          "summary": "This model’s twin heavy rail cannon and seeker missiles have the [ANTI-TITANIC 3+] ability while targeting a unit within half range.",
+          "source": "T’au Empire (Forge World)",
+          "priority": 2
+        },
+        {
+          "id": "unit-ax-1-0-tiger-shark-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "T’au Empire (Forge World)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000453",
+      "name": "Barracuda",
+      "keywords": [
+        "T’au Empire",
+        "Barracuda",
+        "Aircraft",
+        "Vehicle",
+        "Fly"
+      ],
+      "abilities": [
+        {
+          "id": "unit-barracuda-agile-dogfighter",
+          "name": "Agile Dogfighter",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time an attack targets this model, subtract 1 from the Hit roll.",
+          "type": "passive",
+          "summary": "Each time an attack targets this model, subtract 1 from the Hit roll.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-barracuda-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000412",
+      "name": "Breacher Team",
+      "keywords": [
+        "T’au Empire",
+        "Markerlight",
+        "Infantry",
+        "Breacher Team",
+        "Fire Warrior",
+        "Battleline",
+        "Grenades"
+      ],
+      "abilities": [
+        {
+          "id": "unit-breacher-team-breach-and-clear",
+          "name": "Breach and Clear",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a model in this unit makes a ranged attack that targets an enemy unit within range of an objective marker, you",
+          "type": "reaction",
+          "summary": "Each time a model in this unit makes a ranged attack that targets an enemy unit within range of an objective marker, you can re-roll the Wound roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-breacher-team-ds8-support-turret",
+          "name": "DS8 Support Turret",
+          "phases": [
+            "movement"
+          ],
+          "timing": "In your Movement phase, if this unit Remains Stationary, until the start of your next Movement phase, its Fire Warrior Shas’ui model is equipped with the support turret missile system weapon",
+          "type": "active",
+          "summary": "In your Movement phase, if this unit Remains Stationary, until the start of your next Movement phase, its Fire Warrior Shas’ui model is equipped with the support turret missile system weapon.\nDesigner’s Note: Place a Support Turret token next to this unit to remind you.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000433",
+      "name": "Broadside Battlesuits",
+      "keywords": [
+        "T’au Empire",
+        "Vehicle",
+        "Walker",
+        "Broadside",
+        "Battlesuit"
+      ],
+      "abilities": [
+        {
+          "id": "unit-broadside-battlesuits-advanced-armour",
+          "name": "Advanced Armour",
+          "phases": [
+            "any"
+          ],
+          "timing": "Models in this unit have the Feel No Pain 4+ ability against mortal wounds.",
+          "type": "passive",
+          "summary": "Models in this unit have the Feel No Pain 4+ ability against mortal wounds.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-broadside-battlesuits-weapon-support-system",
+          "name": "Weapon Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "type": "wargear",
+          "summary": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-broadside-battlesuits-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000405",
+      "name": "Cadre Fireblade",
+      "keywords": [
+        "T’au Empire",
+        "Cadre Fireblade",
+        "Infantry",
+        "Character",
+        "Grenades"
+      ],
+      "abilities": [
+        {
+          "id": "unit-cadre-fireblade-volley-fire",
+          "name": "Volley Fire",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, add 1 to the Attacks characteristic of ranged weapons equipped by models in that unit",
+          "type": "passive",
+          "summary": "While this model is leading a unit, add 1 to the Attacks characteristic of ranged weapons equipped by models in that unit.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-cadre-fireblade-crack-shot",
+          "name": "Crack Shot",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this model makes a ranged attack, on a Critical Wound, that attack has an Armour Penetration characteristic of",
+          "type": "passive",
+          "summary": "Each time this model makes a ranged attack, on a Critical Wound, that attack has an Armour Penetration characteristic of -3.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000406",
+      "name": "Commander Farsight",
+      "keywords": [
+        "T’au Empire",
+        "Character",
+        "Vehicle",
+        "Walker",
+        "Fly",
+        "Battlesuit",
+        "Commander Farsight",
+        "Epic Hero"
+      ],
+      "abilities": [
+        {
+          "id": "unit-commander-farsight-way-of-the-short-blade",
+          "name": "Way of the Short Blade",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, each time a model in that unit makes an attack that targets an enemy unit within 9\", add 1 to the Wound roll",
+          "type": "reaction",
+          "summary": "While this model is leading a unit, each time a model in that unit makes an attack that targets an enemy unit within 9\", add 1 to the Wound roll.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-commander-farsight-puretide-s-teachings",
+          "name": "Puretide's Teachings",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle round, you can target this model’s unit with a Stratagem. If it does, reduce the CP cost of that use of ",
+          "type": "active",
+          "once_per": "battle round",
+          "summary": "Once per battle round, you can target this model’s unit with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000402",
+      "name": "Commander In Coldstar Battlesuit",
+      "keywords": [
+        "T’au Empire",
+        "Battlesuit",
+        "Commander in Coldstar Battlesuit",
+        "Vehicle",
+        "Walker",
+        "Character",
+        "Fly"
+      ],
+      "abilities": [
+        {
+          "id": "unit-commander-in-coldstar-battlesuit-coldstar-commander",
+          "name": "Coldstar Commander",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, models in that unit have a Move characteristic of 12\" and ranged weapons equipped by models in that unit have the [ASSAULT] ability",
+          "type": "passive",
+          "summary": "While this model is leading a unit, models in that unit have a Move characteristic of 12\" and ranged weapons equipped by models in that unit have the [ASSAULT] ability.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-commander-in-coldstar-battlesuit-battlesuit-support-system",
+          "name": "Battlesuit Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this",
+          "type": "wargear",
+          "summary": "The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this wargear can make ranged attacks.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-commander-in-coldstar-battlesuit-shield-generator",
+          "name": "Shield Generator",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer has a 4+ invulnerable save.",
+          "type": "wargear",
+          "summary": "The bearer has a 4+ invulnerable save.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-commander-in-coldstar-battlesuit-weapon-support-system",
+          "name": "Weapon Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "type": "wargear",
+          "summary": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000001477",
+      "name": "Commander In Crisis Battlesuit",
+      "keywords": [
+        "T’au Empire",
+        "Walker",
+        "Fly",
+        "Character",
+        "Battlesuit",
+        "Commander in Crisis Battlesuit",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-commander-in-crisis-battlesuit-crisis-commander",
+          "name": "Crisis Commander",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "While this model is leading a unit, each time a model in that unit makes a ranged attack, re-roll a Hit roll of 1",
+          "type": "passive",
+          "summary": "While this model is leading a unit, each time a model in that unit makes a ranged attack, re-roll a Hit roll of 1.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-commander-in-crisis-battlesuit-battlesuit-support-system",
+          "name": "Battlesuit Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this",
+          "type": "wargear",
+          "summary": "The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this wargear can make ranged attacks.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-commander-in-crisis-battlesuit-shield-generator",
+          "name": "Shield Generator",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer has a 4+ invulnerable save.",
+          "type": "wargear",
+          "summary": "The bearer has a 4+ invulnerable save.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-commander-in-crisis-battlesuit-weapon-support-system",
+          "name": "Weapon Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "type": "wargear",
+          "summary": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000001478",
+      "name": "Commander In Enforcer Battlesuit",
+      "keywords": [
+        "T’au Empire",
+        "Character",
+        "Battlesuit",
+        "Commander in Enforcer Battlesuit",
+        "Vehicle",
+        "Walker",
+        "Fly"
+      ],
+      "abilities": [
+        {
+          "id": "unit-commander-in-enforcer-battlesuit-enforcer-commander",
+          "name": "Enforcer Commander",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "While this model is leading a unit, each time a ranged attack targets that unit, worsen the Armour Penetration characteristic of that attack by 1",
+          "type": "passive",
+          "summary": "While this model is leading a unit, each time a ranged attack targets that unit, worsen the Armour Penetration characteristic of that attack by 1.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-commander-in-enforcer-battlesuit-battlesuit-support-system",
+          "name": "Battlesuit Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this",
+          "type": "wargear",
+          "summary": "The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this wargear can make ranged attacks.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-commander-in-enforcer-battlesuit-shield-generator",
+          "name": "Shield Generator",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer has a 4+ invulnerable save.",
+          "type": "wargear",
+          "summary": "The bearer has a 4+ invulnerable save.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-commander-in-enforcer-battlesuit-weapon-support-system",
+          "name": "Weapon Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "type": "wargear",
+          "summary": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000407",
+      "name": "Commander Shadowsun",
+      "keywords": [
+        "T’au Empire",
+        "Infantry",
+        "Fly",
+        "Character",
+        "Epic Hero",
+        "Battlesuit",
+        "Commander Shadowsun"
+      ],
+      "abilities": [
+        {
+          "id": "unit-commander-shadowsun-advanced-guardian-drone",
+          "name": "Advanced Guardian Drone",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a ranged attack targets the bearer, subtract 1 from the Wound roll.",
+          "type": "wargear",
+          "summary": "Each time a ranged attack targets the bearer, subtract 1 from the Wound roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-commander-shadowsun-agile-combatant",
+          "name": "Agile Combatant",
+          "phases": [
+            "any"
+          ],
+          "timing": "This model is eligible to shoot in a turn in which it Fell Back.",
+          "type": "passive",
+          "summary": "This model is eligible to shoot in a turn in which it Fell Back.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-commander-shadowsun-command-link-drone-aura",
+          "name": "Command-link Drone (Aura)",
+          "phases": [
+            "any"
+          ],
+          "timing": "While a friendly T’AU EMPIRE unit is within 6\" of the bearer, each time you select that unit as the target of a Stratage",
+          "type": "wargear",
+          "summary": "While a friendly T’AU EMPIRE unit is within 6\" of the bearer, each time you select that unit as the target of a Stratagem, roll one D6: on a 5+, you gain 1CP.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-commander-shadowsun-hero-of-the-empire-aura",
+          "name": "Hero of the Empire (Aura)",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "While a friendly T’AU EMPIRE unit is within 6\" of this model, each time a model in that unit makes a ranged attack, re-r",
+          "type": "passive",
+          "summary": "While a friendly T’AU EMPIRE unit is within 6\" of this model, each time a model in that unit makes a ranged attack, re-roll a Hit roll of 1.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000418",
+      "name": "Crisis Battlesuits",
+      "keywords": [
+        "T’au Empire",
+        "Crisis",
+        "Battlesuit",
+        "Fly",
+        "Walker",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-crisis-battlesuits-battlesuit-support-system",
+          "name": "Battlesuit Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this",
+          "type": "wargear",
+          "summary": "The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this wargear can make ranged attacks.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-crisis-battlesuits-shield-generator",
+          "name": "Shield Generator",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer has a 4+ invulnerable save.",
+          "type": "wargear",
+          "summary": "The bearer has a 4+ invulnerable save.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-crisis-battlesuits-weapon-support-system",
+          "name": "Weapon Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "type": "wargear",
+          "summary": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-crisis-battlesuits-turbo-jets",
+          "name": "Turbo-jets",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Mov",
+          "type": "passive",
+          "summary": "Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000003700",
+      "name": "Crisis Fireknife Battlesuits",
+      "keywords": [
+        "T’au Empire",
+        "Fireknife",
+        "Crisis",
+        "Battlesuit",
+        "Fly",
+        "Walker",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-crisis-fireknife-battlesuits-fireknife",
+          "name": "Fireknife",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If that attack targets a unit that is at ",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If that attack targets a unit that is at its Starting Strength, you can re-roll the Hit roll instead.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-crisis-fireknife-battlesuits-weapon-support-system",
+          "name": "Weapon Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a model in this unit makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000003701",
+      "name": "Crisis Starscythe Battlesuits",
+      "keywords": [
+        "T’au Empire",
+        "Walker",
+        "Vehicle",
+        "Starscythe",
+        "Crisis",
+        "Battlesuit",
+        "Fly"
+      ],
+      "abilities": [
+        {
+          "id": "unit-crisis-starscythe-battlesuits-starscythe",
+          "name": "Starscythe",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a model in this unit makes a ranged attack (excluding attacks that target MONSTERS and VEHICLES ), improve the",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes a ranged attack (excluding attacks that target MONSTERS and VEHICLES ), improve the Armour Penetration characteristic of that attack by 1.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-crisis-starscythe-battlesuits-battlesuit-support-system",
+          "name": "Battlesuit Support System",
+          "phases": [
+            "any"
+          ],
+          "timing": "This unit is eligible to shoot in a turn in which it Fell Back.",
+          "type": "passive",
+          "summary": "This unit is eligible to shoot in a turn in which it Fell Back.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000003699",
+      "name": "Crisis Sunforge Battlesuits",
+      "keywords": [
+        "T’au Empire",
+        "Sunforge",
+        "Crisis",
+        "Battlesuit",
+        "Fly",
+        "Walker",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-crisis-sunforge-battlesuits-sunforge",
+          "name": "Sunforge",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a model in this unit makes a ranged attack that targets a MONSTER or VEHICLE unit, you can re-roll the Wound r",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes a ranged attack that targets a MONSTER or VEHICLE unit, you can re-roll the Wound roll and you can re-roll the Damage roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000410",
+      "name": "Darkstrider",
+      "keywords": [
+        "T’au Empire",
+        "Infantry",
+        "Character",
+        "Epic Hero",
+        "Markerlight",
+        "Darkstrider"
+      ],
+      "abilities": [
+        {
+          "id": "unit-darkstrider-structural-analyser",
+          "name": "Structural Analyser",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "While this model is leading a unit, each time a model in that unit makes a ranged attack, add 1 to the Wound roll",
+          "type": "passive",
+          "summary": "While this model is leading a unit, each time a model in that unit makes a ranged attack, add 1 to the Wound roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-darkstrider-jammer-array",
+          "name": "Jammer Array",
+          "phases": [
+            "any"
+          ],
+          "timing": "Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this model.",
+          "type": "reaction",
+          "summary": "Enemy units that are set up on the battlefield from Reserves cannot be set up within 12\" of this model.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000424",
+      "name": "Devilfish",
+      "keywords": [
+        "T’au Empire",
+        "Vehicle",
+        "Fly",
+        "Dedicated Transport",
+        "Devilfish",
+        "Transport"
+      ],
+      "abilities": [
+        {
+          "id": "unit-devilfish-rapid-deployment",
+          "name": "Rapid Deployment",
+          "phases": [
+            "movement",
+            "charge"
+          ],
+          "timing": "Units can disembark from this TRANSPORT after it has Advanced. Units that do so count as having made a Normal move that ",
+          "type": "passive",
+          "summary": "Units can disembark from this TRANSPORT after it has Advanced. Units that do so count as having made a Normal move that phase, and cannot declare a charge in the same turn, but can otherwise act normally in the remainder of the turn.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-devilfish-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000459",
+      "name": "Drone Sentry Turret",
+      "keywords": [
+        "T’au Empire",
+        "Fortification",
+        "Vehicle",
+        "Drone Sentry Turret"
+      ],
+      "abilities": [
+        {
+          "id": "unit-drone-sentry-turret-sentinel-protocols",
+          "name": "Sentinel Protocols",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time you select this FORTIFICATION for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 5+ ",
+          "type": "passive",
+          "summary": "Each time you select this FORTIFICATION for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 5+ when resolving that Stratagem.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-drone-sentry-turret-reinforced-cover",
+          "name": "Reinforced Cover",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking un",
+          "type": "passive",
+          "summary": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model has the Benefit of Cover against that attack.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-drone-sentry-turret-fortification",
+          "name": "Fortification",
+          "phases": [
+            "shooting",
+            "battleshock"
+          ],
+          "timing": "Battle-shocked, except for those that will move over enemy models when doing so",
+          "type": "reaction",
+          "summary": "While an enemy unit is only within Engagement Range of one or more Fortifications from your army:\n- That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll.\n- Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000404",
+      "name": "Ethereal",
+      "keywords": [
+        "T’au Empire",
+        "Ethereal",
+        "Character",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-ethereal-hover-drone",
+          "name": "Hover Drone",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can FLY and has a Move characteristic of 10\".",
+          "type": "wargear",
+          "summary": "The bearer can FLY and has a Move characteristic of 10\".",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-ethereal-failure-is-not-an-option",
+          "name": "Failure Is Not an Option",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability",
+          "type": "passive",
+          "summary": "While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-ethereal-coordinated-leadership",
+          "name": "Coordinated Leadership",
+          "phases": [
+            "command"
+          ],
+          "timing": "At the end of your Command phase, roll one D6: on a 4+, you gain 1CP",
+          "type": "active",
+          "summary": "At the end of your Command phase, roll one D6: on a 4+, you gain 1CP.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000428",
+      "name": "Firesight Team",
+      "keywords": [
+        "T’au Empire",
+        "Firesight Team",
+        "Markerlight",
+        "Infantry",
+        "Character"
+      ],
+      "abilities": [
+        {
+          "id": "unit-firesight-team-precise-targeting",
+          "name": "Precise Targeting",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time a model in this unit makes an attack that targets a Spotted unit, you can re-roll the Hit roll.",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes an attack that targets a Spotted unit, you can re-roll the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000420",
+      "name": "Ghostkeel Battlesuit",
+      "keywords": [
+        "T’au Empire",
+        "Vehicle",
+        "Smoke",
+        "Battlesuit",
+        "Ghostkeel",
+        "Fly",
+        "Walker"
+      ],
+      "abilities": [
+        {
+          "id": "unit-ghostkeel-battlesuit-battlesuit-support-system",
+          "name": "Battlesuit Support System",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer is eligible to shoot in a turn in which it Fell Back but it loses the SMOKE keyword.",
+          "type": "wargear",
+          "summary": "The bearer is eligible to shoot in a turn in which it Fell Back but it loses the SMOKE keyword.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-ghostkeel-battlesuit-stealth-drones",
+          "name": "Stealth Drones",
+          "phases": [
+            "any"
+          ],
+          "timing": "Twice per battle, after an attack has been allocated to this model, you can change the Damage characteristic of that att",
+          "type": "passive",
+          "summary": "Twice per battle, after an attack has been allocated to this model, you can change the Damage characteristic of that attack to 0.\nDesigner’s Note: Place two Stealth Drone tokens next to the unit, removing one each time this ability has been used.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001392",
+      "name": "Great Knarloc",
+      "keywords": [
+        "T’au Empire",
+        "Monster",
+        "Kroot",
+        "Great Knarloc"
+      ],
+      "abilities": [
+        {
+          "id": "unit-great-knarloc-loping-stride",
+          "name": "Loping Stride",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this model Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Mo",
+          "type": "passive",
+          "summary": "Each time this model Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of this model.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-great-knarloc-baggage-harness-aura",
+          "name": "Baggage Harness (Aura)",
+          "phases": [
+            "any"
+          ],
+          "timing": "While a friendly Kroot unit is within 3\" of the bearer, ranged weapons equipped by models in that unit have the [SUSTAIN",
+          "type": "wargear",
+          "summary": "While a friendly Kroot unit is within 3\" of the bearer, ranged weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-great-knarloc-hooked",
+          "name": "Hooked",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time the bearer makes an attack with this weapon that targets a MONSTER or VEHICLE unit, if a hit is scored, until ",
+          "type": "wargear",
+          "summary": "Each time the bearer makes an attack with this weapon that targets a MONSTER or VEHICLE unit, if a hit is scored, until the end of the turn, if the bearer selects that unit as a target of a charge, add 2 to Charge rolls made for the bearer and enemy units cannot use the Fire Overwatch Stratagem to shoot at the bearer.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000432",
+      "name": "Hammerhead Gunship",
+      "keywords": [
+        "T’au Empire",
+        "Vehicle",
+        "Fly",
+        "Hammerhead Gunship"
+      ],
+      "abilities": [
+        {
+          "id": "unit-hammerhead-gunship-armour-hunter",
+          "name": "Armour Hunter",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this model makes an attack that targets a MONSTER or VEHICLE , add 1 to the Hit roll.",
+          "type": "passive",
+          "summary": "Each time this model makes an attack that targets a MONSTER or VEHICLE , add 1 to the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-hammerhead-gunship-targeting-array",
+          "name": "Targeting Array",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this model is selected to shoot, you can re-roll one Hit roll or you can re-roll one Wound roll when resolving",
+          "type": "passive",
+          "summary": "Each time this model is selected to shoot, you can re-roll one Hit roll or you can re-roll one Wound roll when resolving those attacks.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-hammerhead-gunship-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000449",
+      "name": "Heavy Gun Drones",
+      "keywords": [
+        "T’au Empire",
+        "Heavy Gun Drones",
+        "Vehicle",
+        "Fly"
+      ],
+      "abilities": [
+        {
+          "id": "unit-heavy-gun-drones-drone-escort",
+          "name": "Drone Escort",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "in your opponent’s Shooting phase, when a friendly T’AU EMPIRE unit within 6\" of this unit is selected as the target of an attack, one unit from your army with this ability can use it",
+          "type": "reaction",
+          "once_per": "turn",
+          "summary": "Once per turn, in your opponent’s Shooting phase, when a friendly T’AU EMPIRE unit within 6\" of this unit is selected as the target of an attack, one unit from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, the unit using this ability can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-heavy-gun-drones-markerlight",
+          "name": "Markerlight",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer has the Markerlight keyword.",
+          "type": "wargear",
+          "summary": "The bearer has the Markerlight keyword.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000001391",
+      "name": "Knarloc Riders",
+      "keywords": [
+        "T’au Empire",
+        "Mounted",
+        "Kroot",
+        "Knarloc Riders"
+      ],
+      "abilities": [
+        {
+          "id": "unit-knarloc-riders-thunderous-pounce",
+          "name": "Thunderous Pounce",
+          "phases": [
+            "charge"
+          ],
+          "timing": "Each time this unit ends a Charge move, until the end of the turn, Knarloc beak and talons equipped by models in this un",
+          "type": "passive",
+          "summary": "Each time this unit ends a Charge move, until the end of the turn, Knarloc beak and talons equipped by models in this unit have the [LANCE] ability.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000413",
+      "name": "Kroot Carnivores",
+      "keywords": [
+        "T’au Empire",
+        "Infantry",
+        "Grenades",
+        "Carnivores",
+        "Kroot"
+      ],
+      "abilities": [
+        {
+          "id": "unit-kroot-carnivores-fieldcraft",
+          "name": "Fieldcraft",
+          "phases": [
+            "command"
+          ],
+          "timing": "At the end of your Command phase, if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn",
+          "type": "active",
+          "summary": "At the end of your Command phase, if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000002588",
+      "name": "Kroot Farstalkers",
+      "keywords": [
+        "T’au Empire",
+        "Kroot",
+        "Infantry",
+        "Farstalkers",
+        "Grenades"
+      ],
+      "abilities": [
+        {
+          "id": "unit-kroot-farstalkers-pech-ra",
+          "name": "Pech’ra",
+          "phases": [
+            "any"
+          ],
+          "timing": "Ranged weapons equipped by the bearer’s unit have the [IGNORES COVER] ability.",
+          "type": "wargear",
+          "summary": "Ranged weapons equipped by the bearer’s unit have the [IGNORES COVER] ability.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-kroot-farstalkers-bounty-hunters",
+          "name": "Bounty Hunters",
+          "phases": [
+            "any"
+          ],
+          "timing": "At the start of the battle, select one unit from your opponent’s army. Each time a model in this unit makes an attack th",
+          "type": "active",
+          "summary": "At the start of the battle, select one unit from your opponent’s army. Each time a model in this unit makes an attack that targets that unit, that attack has the [LETHAL HITS] and [PRECISION] abilities.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000003704",
+      "name": "Kroot Flesh Shaper",
+      "keywords": [
+        "T’au Empire",
+        "Flesh Shaper",
+        "Infantry",
+        "Character",
+        "Kroot",
+        "Shaper"
+      ],
+      "abilities": [
+        {
+          "id": "unit-kroot-flesh-shaper-ritual-butchery",
+          "name": "Ritual Butchery",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability",
+          "type": "passive",
+          "summary": "While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-kroot-flesh-shaper-rites-of-feasting",
+          "name": "Rites of Feasting",
+          "phases": [
+            "fight"
+          ],
+          "timing": "Fight phase, until the end of the battle, models in that unit have the Feel No Pain 5+ ability instead",
+          "type": "reaction",
+          "summary": "While this model is leading a unit, models in that unit have the Feel No Pain 6+ ability. If that unit destroys one or more enemy units in the Fight phase, until the end of the battle, models in that unit have the Feel No Pain 5+ ability instead.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000415",
+      "name": "Kroot Hounds",
+      "keywords": [
+        "T’au Empire",
+        "Kroot",
+        "Beasts",
+        "Hounds"
+      ],
+      "abilities": [
+        {
+          "id": "unit-kroot-hounds-loping-pounce",
+          "name": "Loping Pounce",
+          "phases": [
+            "command",
+            "charge"
+          ],
+          "timing": "At the start of your Command phase, if this unit is within 6\" of one or more friendly Kroot Infantry units, then until the end of the turn, this unit is eligible to declare a charge in a turn in which it Advanced",
+          "type": "active",
+          "summary": "At the start of your Command phase, if this unit is within 6\" of one or more friendly Kroot Infantry units, then until the end of the turn, this unit is eligible to declare a charge in a turn in which it Advanced.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-kroot-hounds-hunting-hounds",
+          "name": "Hunting Hounds",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this unit is within 12\" of one or more friendly Kroot Character models, the Objective Control characteristic of models in this unit is 1",
+          "type": "passive",
+          "summary": "While this unit is within 12\" of one or more friendly Kroot Character models, the Objective Control characteristic of models in this unit is 1.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000003705",
+      "name": "Kroot Lone-Spear",
+      "keywords": [
+        "T’au Empire",
+        "Kroot",
+        "Lone-Spear",
+        "Mounted",
+        "Character"
+      ],
+      "abilities": [
+        {
+          "id": "unit-kroot-lone-spear-advanced-scouting",
+          "name": "Advanced Scouting",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this model makes a ranged attack that hits an enemy unit, until the end of the turn, each time another Kroot m",
+          "type": "reaction",
+          "summary": "Each time this model makes a ranged attack that hits an enemy unit, until the end of the turn, each time another Kroot model from your army makes an attack that targets that enemy unit, you can re-roll the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-kroot-lone-spear-fire-and-fade",
+          "name": "Fire and Fade",
+          "phases": [
+            "movement",
+            "shooting",
+            "charge"
+          ],
+          "timing": "In your Shooting phase, after this model has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\"",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this model has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". If it does, until the end of the turn, this model is not eligible to declare a charge.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000003702",
+      "name": "Kroot Trail Shaper",
+      "keywords": [
+        "T’au Empire",
+        "Infantry",
+        "Trail Shaper",
+        "Shaper",
+        "Character",
+        "Kroot"
+      ],
+      "abilities": [
+        {
+          "id": "unit-kroot-trail-shaper-trail-finding",
+          "name": "Trail Finding",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this model’s unit, if this model",
+          "type": "reaction",
+          "once_per": "turn",
+          "summary": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this model’s unit, if this model’s unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D6\".",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-kroot-trail-shaper-kroot-ambush",
+          "name": "Kroot Ambush",
+          "phases": [
+            "any"
+          ],
+          "timing": "After both players have deployed their armies, you can redeploy this model’s unit and one other friendly Kroot unit. Whe",
+          "type": "passive",
+          "summary": "After both players have deployed their armies, you can redeploy this model’s unit and one other friendly Kroot unit. When doing so, any of those units can be placed into Strategic Reserves, regardless of how many units are already in Strategic Reserves.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000003703",
+      "name": "Kroot War Shaper",
+      "keywords": [
+        "T’au Empire",
+        "Shaper",
+        "War shaper",
+        "Character",
+        "Kroot",
+        "Infantry"
+      ],
+      "abilities": [
+        {
+          "id": "unit-kroot-war-shaper-war-leader",
+          "name": "War Leader",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. ",
+          "type": "active",
+          "once_per": "battle round",
+          "summary": "Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-kroot-war-shaper-root-of-honour",
+          "name": "Root of Honour",
+          "phases": [
+            "battleshock"
+          ],
+          "timing": "Battle-shocked and within 12\" of this model",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, at the start of any phase, you can select one friendly Kroot unit that is Battle-shocked and within 12\" of this model. That unit is no longer Battle-shocked.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000003706",
+      "name": "Krootox Rampagers",
+      "keywords": [
+        "T’au Empire",
+        "Grenades",
+        "Kroot",
+        "Krootox Rampagers",
+        "Mounted"
+      ],
+      "abilities": [
+        {
+          "id": "unit-krootox-rampagers-kroot-linebreakers",
+          "name": "Kroot Linebreakers",
+          "phases": [
+            "charge",
+            "battleshock"
+          ],
+          "timing": "Battle-shock test",
+          "type": "reaction",
+          "summary": "Each time this unit ends a Charge move, select one enemy unit within Engagement Range of it, then roll one D6 for each model in this unit that is within Engagement Range of that enemy unit: for each 4+, that enemy unit suffers D3 mortal wounds. If one or more enemy models are destroyed as a result of these mortal wounds, that enemy unit must take a Battle-shock test.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000414",
+      "name": "Krootox Riders",
+      "keywords": [
+        "T’au Empire",
+        "Krootox Riders",
+        "Kroot",
+        "Grenades",
+        "Mounted"
+      ],
+      "abilities": [
+        {
+          "id": "unit-krootox-riders-kroot-packmates",
+          "name": "Kroot Packmates",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "in your opponent’s Shooting phase, when a friendly Kroot Infantry unit within 6\" of this unit is selected as the target of an attack, one unit from your army with this ability can use it",
+          "type": "reaction",
+          "once_per": "turn",
+          "summary": "Once per turn, in your opponent’s Shooting phase, when a friendly Kroot Infantry unit within 6\" of this unit is selected as the target of an attack, one unit from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that unit with this ability can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000431",
+      "name": "Longstrike",
+      "keywords": [
+        "T’au Empire",
+        "Epic Hero",
+        "Longstrike",
+        "Vehicle",
+        "Fly",
+        "Character"
+      ],
+      "abilities": [
+        {
+          "id": "unit-longstrike-armour-hunter",
+          "name": "Armour Hunter",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this model makes an attack that targets a MONSTER or VEHICLE , add 1 to the Hit roll.",
+          "type": "passive",
+          "summary": "Each time this model makes an attack that targets a MONSTER or VEHICLE , add 1 to the Hit roll.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-longstrike-targeting-array",
+          "name": "Targeting Array",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this model is selected to shoot, you can re-roll one Hit roll or you can re-roll one Wound roll when resolving",
+          "type": "passive",
+          "summary": "Each time this model is selected to shoot, you can re-roll one Hit roll or you can re-roll one Wound roll when resolving its attacks.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-longstrike-xv02-pilot-battlesuit",
+          "name": "XV02 Pilot Battlesuit",
+          "phases": [
+            "command"
+          ],
+          "timing": "In your Command phase, you can select one friendly Hammerhead Gunship unit within 12\"",
+          "type": "active",
+          "summary": "In your Command phase, you can select one friendly Hammerhead Gunship unit within 12\". Until the start of your next Command phase, ranged weapons equipped by models in that unit have the [LETHAL HITS] ability.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-longstrike-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000457",
+      "name": "Manta",
+      "keywords": [
+        "T’au Empire",
+        "Transport",
+        "Markerlight",
+        "Manta",
+        "Vehicle",
+        "Aircraft",
+        "Fly",
+        "Titanic"
+      ],
+      "abilities": [
+        {
+          "id": "unit-manta-aggressive-deployment",
+          "name": "Aggressive Deployment",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time a friendly model that disembarked from this TRANSPORT this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll.",
+          "source": "T’au Empire (Forge World)",
+          "priority": 3
+        },
+        {
+          "id": "unit-manta-air-caste-colossus",
+          "name": "Air Caste Colossus",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time you target this model with a Stratagem, you must spend three times that Stratagem’s stated CP cost to do so.",
+          "type": "passive",
+          "summary": "Each time you target this model with a Stratagem, you must spend three times that Stratagem’s stated CP cost to do so.",
+          "source": "T’au Empire (Forge World)",
+          "priority": 2
+        },
+        {
+          "id": "unit-manta-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "T’au Empire (Forge World)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000456",
+      "name": "Orca Dropship",
+      "keywords": [
+        "T’au Empire",
+        "Vehicle",
+        "Aircraft",
+        "Fly",
+        "Titanic",
+        "Transport",
+        "Orca Dropship"
+      ],
+      "abilities": [
+        {
+          "id": "unit-orca-dropship-jet-pack-insertion",
+          "name": "Jet Pack Insertion",
+          "phases": [
+            "movement"
+          ],
+          "timing": "At the end of your opponent’s Movement phase, one or more units embarked within this TRANSPORT can disembark from it, provided every model in each of those disembarking units has the Deep Strike ability",
+          "type": "passive",
+          "summary": "At the end of your opponent’s Movement phase, one or more units embarked within this TRANSPORT can disembark from it, provided every model in each of those disembarking units has the Deep Strike ability.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000422",
+      "name": "Pathfinder Team",
+      "keywords": [
+        "T’au Empire",
+        "Infantry",
+        "Grenades",
+        "Pathfinder Team",
+        "Markerlight"
+      ],
+      "abilities": [
+        {
+          "id": "unit-pathfinder-team-target-uploaded",
+          "name": "Target Uploaded",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time a model in this unit makes an attack that targets their Spotted unit, improve the Ballistic Skill characterist",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes an attack that targets their Spotted unit, improve the Ballistic Skill characteristic of that attack by 1 and that attack has the [IGNORES COVER] ability.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-pathfinder-team-grav-inhibitor-drone",
+          "name": "Grav-inhibitor Drone",
+          "phases": [
+            "any"
+          ],
+          "timing": "Subtract 2 from Charge rolls made for any enemy unit that declares a charge against the bearer’s unit (this is not cumul",
+          "type": "wargear",
+          "summary": "Subtract 2 from Charge rolls made for any enemy unit that declares a charge against the bearer’s unit (this is not cumulative with any other reductions to that Charge roll).",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-pathfinder-team-pulse-accelerator-drone",
+          "name": "Pulse Accelerator Drone",
+          "phases": [
+            "any"
+          ],
+          "timing": "Add 6\" to the Range characteristic of pulse carbines equipped by models in the bearer’s unit.",
+          "type": "wargear",
+          "summary": "Add 6\" to the Range characteristic of pulse carbines equipped by models in the bearer’s unit.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-pathfinder-team-recon-drone",
+          "name": "Recon Drone",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer is equipped with 1 drone burst cannon and the bearer’s unit has the Infiltrators ability.",
+          "type": "wargear",
+          "summary": "The bearer is equipped with 1 drone burst cannon and the bearer’s unit has the Infiltrators ability.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000423",
+      "name": "Piranhas",
+      "keywords": [
+        "T’au Empire",
+        "Vehicle",
+        "Fly",
+        "Piranhas"
+      ],
+      "abilities": [
+        {
+          "id": "unit-piranhas-drone-harassment-tactics",
+          "name": "Drone Harassment Tactics",
+          "phases": [
+            "movement",
+            "battleshock"
+          ],
+          "timing": "At the end of your Movement phase, select one enemy unit within 12\" of this unit; that enemy unit must take a Battle-shock test",
+          "type": "reaction",
+          "summary": "At the end of your Movement phase, select one enemy unit within 12\" of this unit; that enemy unit must take a Battle-shock test.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-piranhas-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000445",
+      "name": "R’varna Battlesuit",
+      "keywords": [
+        "T’au Empire",
+        "R’varna",
+        "Battlesuit",
+        "Fly",
+        "Walker",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-r-varna-battlesuit-battlesuit-support-system",
+          "name": "Battlesuit Support System",
+          "phases": [
+            "any"
+          ],
+          "timing": "This model is eligible to shoot in a turn in which it Fell Back.",
+          "type": "passive",
+          "summary": "This model is eligible to shoot in a turn in which it Fell Back.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-r-varna-battlesuit-nova-shielding",
+          "name": "Nova Shielding",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Once per battle, when this model is selected as the target of a ranged attack, it can use this ability. If it does, unti",
+          "type": "reaction",
+          "once_per": "battle",
+          "summary": "Once per battle, when this model is selected as the target of a ranged attack, it can use this ability. If it does, until the end of the phase, each time an attack targets this model, if the Strength characteristic of that attack is greater than the Toughness characteristic of this model, subtract 1 from the Wound roll.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-r-varna-battlesuit-weapon-support-system",
+          "name": "Weapon Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this model makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "type": "passive",
+          "summary": "Each time this model makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000425",
+      "name": "Razorshark Strike Fighter",
+      "keywords": [
+        "T’au Empire",
+        "Vehicle",
+        "Aircraft",
+        "Fly",
+        "Razorshark Strike Fighter"
+      ],
+      "abilities": [
+        {
+          "id": "unit-razorshark-strike-fighter-ground-strike-fighter",
+          "name": "Ground Strike Fighter",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this model makes a ranged attack that targets an enemy unit that cannot FLY , add 1 to the Hit roll.",
+          "type": "reaction",
+          "summary": "Each time this model makes a ranged attack that targets an enemy unit that cannot FLY , add 1 to the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-razorshark-strike-fighter-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000452",
+      "name": "Remora Stealth Drones",
+      "keywords": [
+        "T’au Empire",
+        "Vehicle",
+        "Fly",
+        "Markerlight",
+        "Remora Stealth Drones"
+      ],
+      "abilities": [
+        {
+          "id": "unit-remora-stealth-drones-aerial-disengagement",
+          "name": "Aerial Disengagement",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this unit, if this unit is not w",
+          "type": "reaction",
+          "once_per": "turn",
+          "summary": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this unit, if this unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\".",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-remora-stealth-drones-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000458",
+      "name": "Remote Sensor Tower",
+      "keywords": [
+        "T’au Empire",
+        "Fortification",
+        "Remote sensor tower"
+      ],
+      "abilities": [
+        {
+          "id": "unit-remote-sensor-tower-orbital-comms-array-aura",
+          "name": "Orbital Comms Array (Aura)",
+          "phases": [
+            "any"
+          ],
+          "timing": "While a friendly T’AU EMPIRE unit is within 6\" of this FORTIFICATION , each time you target that unit with a Stratagem, ",
+          "type": "passive",
+          "summary": "While a friendly T’AU EMPIRE unit is within 6\" of this FORTIFICATION , each time you target that unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-remote-sensor-tower-reinforced-cover",
+          "name": "Reinforced Cover",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking un",
+          "type": "passive",
+          "summary": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model has the Benefit of Cover against that attack.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-remote-sensor-tower-fortification",
+          "name": "Fortification",
+          "phases": [
+            "shooting",
+            "battleshock"
+          ],
+          "timing": "Battle-shocked, except for those that will move over enemy models when doing so",
+          "type": "reaction",
+          "summary": "While an enemy unit is only within Engagement Range of one or more Fortifications from your army:\n- That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll.\n- Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000421",
+      "name": "Riptide Battlesuit",
+      "keywords": [
+        "T’au Empire",
+        "Vehicle",
+        "Walker",
+        "Fly",
+        "Battlesuit",
+        "Riptide"
+      ],
+      "abilities": [
+        {
+          "id": "unit-riptide-battlesuit-battlesuit-support-system",
+          "name": "Battlesuit Support System",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer is eligible to shoot in a turn in which it Fell Back.",
+          "type": "passive",
+          "summary": "The bearer is eligible to shoot in a turn in which it Fell Back.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-riptide-battlesuit-nova-charge",
+          "name": "Nova Charge",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "in your Shooting phase, select one ranged weapon equipped by this model",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, when this unit is selected to shoot in your Shooting phase, select one ranged weapon equipped by this model. Until the end of the phase, that weapon has the [DEVASTATING WOUNDS] ability.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-riptide-battlesuit-weapon-support-system",
+          "name": "Weapon Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "type": "passive",
+          "summary": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000439",
+      "name": "Shas’o R’alai",
+      "keywords": [
+        "T’au Empire",
+        "Epic Hero",
+        "Vehicle",
+        "Walker",
+        "Fly",
+        "Character",
+        "Markerlight",
+        "Battlesuit",
+        "Shas'o R'alai"
+      ],
+      "abilities": [
+        {
+          "id": "unit-shas-o-r-alai-blacklight-marker-drones",
+          "name": "Blacklight Marker Drones",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Twice per battle, when this unit is an Observer unit, until the end of the phase, each time a ranged attack is made by a",
+          "type": "wargear",
+          "summary": "Twice per battle, when this unit is an Observer unit, until the end of the phase, each time a ranged attack is made by a model in their Guided unit that targets their Spotted unit, re-roll a Wound roll of 1.\nDesigner’s Note: Place two Blacklight Marker Drone tokens next to this model, removing one each time this ability has been used.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-shas-o-r-alai-eclipse-field-generator",
+          "name": "Eclipse Field Generator",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is leading a unit, models in that unit have a 5+ invulnerable save",
+          "type": "passive",
+          "summary": "While this model is leading a unit, models in that unit have a 5+ invulnerable save.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-shas-o-r-alai-assassin",
+          "name": "Assassin",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this model makes an attack that targets a Character unit, you can re-roll the Hit roll.",
+          "type": "passive",
+          "summary": "Each time this model makes an attack that targets a Character unit, you can re-roll the Hit roll.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000430",
+      "name": "Sky Ray Gunship",
+      "keywords": [
+        "T’au Empire",
+        "Sky Ray Gunship",
+        "Vehicle",
+        "Fly",
+        "Markerlight"
+      ],
+      "abilities": [
+        {
+          "id": "unit-sky-ray-gunship-velocity-tracker",
+          "name": "Velocity Tracker",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this model makes a ranged attack that targets a unit that can FLY , you can re-roll the Hit roll.",
+          "type": "passive",
+          "summary": "Each time this model makes a ranged attack that targets a unit that can FLY , you can re-roll the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-sky-ray-gunship-targeting-array",
+          "name": "Targeting Array",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this unit is selected to shoot, you can re-roll one Hit roll or you can re-roll one Wound roll when resolving ",
+          "type": "passive",
+          "summary": "Each time this unit is selected to shoot, you can re-roll one Hit roll or you can re-roll one Wound roll when resolving those attacks.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000417",
+      "name": "Stealth Battlesuits",
+      "keywords": [
+        "T’au Empire",
+        "Stealth",
+        "Infantry",
+        "Markerlight",
+        "Grenades",
+        "Battlesuit",
+        "Fly"
+      ],
+      "abilities": [
+        {
+          "id": "unit-stealth-battlesuits-forward-observers",
+          "name": "Forward Observers",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this unit is an Observer unit, until the end of the phase, each time a ranged attack is made by a model in a G",
+          "type": "passive",
+          "summary": "Each time this unit is an Observer unit, until the end of the phase, each time a ranged attack is made by a model in a Guided unit that targets their Spotted unit, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-stealth-battlesuits-homing-beacon",
+          "name": "Homing Beacon",
+          "phases": [
+            "any"
+          ],
+          "timing": "Once per battle, you can use the Rapid Ingress Stratagem for 0CP. The target must be set up within 3\" of the bearer’s un",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "Once per battle, you can use the Rapid Ingress Stratagem for 0CP. The target must be set up within 3\" of the bearer’s unit and more than 9\" away from all enemy units.\nDesigner’s Note: Place a Homing Beacon token next to this unit, removing it once this ability is used.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000434",
+      "name": "Stormsurge",
+      "keywords": [
+        "T’au Empire",
+        "Stormsurge",
+        "Towering",
+        "Walker",
+        "Titanic",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-stormsurge-heavy-walker",
+          "name": "Heavy Walker",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Each time this model makes a Normal, Advance or Fall Back move, it can move over models (excluding TITANIC models) and t",
+          "type": "passive",
+          "summary": "Each time this model makes a Normal, Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-stormsurge-support-system",
+          "name": "Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this model makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "type": "passive",
+          "summary": "Each time this model makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-stormsurge-titan-killer",
+          "name": "Titan-killer",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this model makes a ranged attack that targets a Titanic or TOWERING unit, you can re-roll the Hit roll.",
+          "type": "passive",
+          "summary": "Each time this model makes a ranged attack that targets a Titanic or TOWERING unit, you can re-roll the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000411",
+      "name": "Strike Team",
+      "keywords": [
+        "T’au Empire",
+        "Infantry",
+        "Battleline",
+        "Markerlight",
+        "Fire Warrior",
+        "Grenades",
+        "Strike Team"
+      ],
+      "abilities": [
+        {
+          "id": "unit-strike-team-suppression-volley",
+          "name": "Suppression Volley",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "In your Shooting phase, after this unit has shot, select one enemy INFANTRY unit hit by one or more of those attacks",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this unit has shot, select one enemy INFANTRY unit hit by one or more of those attacks. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-strike-team-ds8-support-turret",
+          "name": "DS8 Support Turret",
+          "phases": [
+            "movement"
+          ],
+          "timing": "In your Movement phase, if this unit Remains Stationary, until the start of your next Movement phase, its Fire Warrior Shas’ui model is equipped with the support turret missile system weapon",
+          "type": "active",
+          "summary": "In your Movement phase, if this unit Remains Stationary, until the start of your next Movement phase, its Fire Warrior Shas’ui model is equipped with the support turret missile system weapon.\nDesigner’s Note: Place a Support Turret token next to this unit to remind you.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000426",
+      "name": "Sun Shark Bomber",
+      "keywords": [
+        "T’au Empire",
+        "Sun Shark Bomber",
+        "Fly",
+        "Aircraft",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-sun-shark-bomber-pulse-bombs",
+          "name": "Pulse Bombs",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Each time this model ends a Normal move, you can select one enemy unit it moved over during that move and roll six D6: f",
+          "type": "reaction",
+          "summary": "Each time this model ends a Normal move, you can select one enemy unit it moved over during that move and roll six D6: for each 4+, that unit suffers 1 mortal wound.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-sun-shark-bomber-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000446",
+      "name": "Ta’unar Supremacy Armour",
+      "keywords": [
+        "T’au Empire",
+        "Ta’unar Supremacy Armour",
+        "Towering",
+        "Titanic",
+        "Walker",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-ta-unar-supremacy-armour-coordinated-strike",
+          "name": "Coordinated Strike",
+          "phases": [
+            "any"
+          ],
+          "timing": "While this model is a Guided unit, each time it makes an attack that targets its Spotted unit, re-roll a Hit roll of 1",
+          "type": "passive",
+          "summary": "While this model is a Guided unit, each time it makes an attack that targets its Spotted unit, re-roll a Hit roll of 1.",
+          "source": "T’au Empire (Forge World)",
+          "priority": 2
+        },
+        {
+          "id": "unit-ta-unar-supremacy-armour-super-heavy-walker",
+          "name": "Super-heavy Walker",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Each time this model makes a Normal, Advance or Fall Back move, it can move over models (excluding TITANIC models) and t",
+          "type": "passive",
+          "summary": "Each time this model makes a Normal, Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4\" or less in height as if they were not there.",
+          "source": "T’au Empire (Forge World)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000447",
+      "name": "Tetras",
+      "keywords": [
+        "T’au Empire",
+        "Vehicle",
+        "Fly",
+        "Markerlight",
+        "Tetras"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tetras-high-intensity-markerlights",
+          "name": "High-intensity Markerlights",
+          "phases": [
+            "any"
+          ],
+          "timing": "Each time this unit is an Observer unit, until the end of the phase, each time a model in its Guided unit makes an attac",
+          "type": "passive",
+          "summary": "Each time this unit is an Observer unit, until the end of the phase, each time a model in its Guided unit makes an attack that targets their Spotted unit, you can re-roll the Hit roll.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000004203",
+      "name": "The Twin Lance",
+      "keywords": [
+        "T’au Empire",
+        "Vehicle",
+        "Walker",
+        "Fly",
+        "Character",
+        "Epic Hero",
+        "Battlesuit",
+        "The Twin Lance"
+      ],
+      "abilities": [
+        {
+          "id": "unit-the-twin-lance-exemplars-of-mont-ka",
+          "name": "Exemplars of Mont’ka",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, that attack has the [SUST",
+          "type": "passive",
+          "summary": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, that attack has the [SUSTAINED HITS 1] and [IGNORES COVER] abilities.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-the-twin-lance-neocapacitor-shields",
+          "name": "Neocapacitor Shields",
+          "phases": [
+            "charge",
+            "battleshock"
+          ],
+          "timing": "At the start of your opponent’s Charge phase, you can select one enemy unit (excluding MONSTER and VEHICLE units) within 12\" of this unit",
+          "type": "reaction",
+          "summary": "At the start of your opponent’s Charge phase, you can select one enemy unit (excluding MONSTER and VEHICLE units) within 12\" of this unit. That unit must take a Battle-shock test and, until the end of the turn, subtract 1 from Charge rolls made for that unit.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-the-twin-lance-retro-thrusters",
+          "name": "Retro-thrusters",
+          "phases": [
+            "movement",
+            "fight"
+          ],
+          "timing": "Fight phase, this unit can either make a Normal move of up to 6\" or a Fall Back move",
+          "type": "passive",
+          "summary": "At the end of the Fight phase, this unit can either make a Normal move of up to 6\" or a Fall Back move.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-the-twin-lance-mv15-gun-drone",
+          "name": "MV15 Gun Drone",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer is equipped with 1 twin pulse blaster.",
+          "type": "wargear",
+          "summary": "The bearer is equipped with 1 twin pulse blaster.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000435",
+      "name": "Tidewall Droneport",
+      "keywords": [
+        "T’au Empire",
+        "Fly",
+        "Transport",
+        "Vehicle",
+        "Tidewall Droneport",
+        "Fortification"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tidewall-droneport-droneport",
+          "name": "Droneport",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this FORTIFICATION is selected to shoot, its drone defender’s weapon will target and resolve attacks against e",
+          "type": "reaction",
+          "summary": "Each time this FORTIFICATION is selected to shoot, its drone defender’s weapon will target and resolve attacks against every enemy unit that is an eligible target to this FORTIFICATION .",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-tidewall-droneport-fortification",
+          "name": "Fortification",
+          "phases": [
+            "shooting",
+            "battleshock"
+          ],
+          "timing": "Battle-shocked, except for those that will move over enemy models when doing so",
+          "type": "reaction",
+          "summary": "While an enemy unit is only within Engagement Range of one or more Fortifications from your army:\n- That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll.\n- Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-tidewall-droneport-tidewall-cover",
+          "name": "Tidewall Cover",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking un",
+          "type": "passive",
+          "summary": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this Fortification, that model has the Benefit of Cover against that attack.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000437",
+      "name": "Tidewall Gunrig",
+      "keywords": [
+        "T’au Empire",
+        "Tidewall Gunrig",
+        "Fortification",
+        "Fly",
+        "Transport",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tidewall-gunrig-fortification",
+          "name": "Fortification",
+          "phases": [
+            "shooting",
+            "battleshock"
+          ],
+          "timing": "Battle-shocked, except for those that will move over enemy models when doing so",
+          "type": "reaction",
+          "summary": "While an enemy unit is only within Engagement Range of one or more Fortifications from your army:\n- That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll.\n- Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-tidewall-gunrig-tidewall-cover",
+          "name": "Tidewall Cover",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking un",
+          "type": "passive",
+          "summary": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model has the Benefit of Cover against that attack.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000436",
+      "name": "Tidewall Shieldline",
+      "keywords": [
+        "T’au Empire",
+        "Fly",
+        "Fortification",
+        "Tidewall Shieldline",
+        "Transport",
+        "Vehicle"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tidewall-shieldline-fortification",
+          "name": "Fortification",
+          "phases": [
+            "shooting",
+            "battleshock"
+          ],
+          "timing": "Battle-shocked, except for those that will move over enemy models when doing so",
+          "type": "reaction",
+          "summary": "While an enemy unit is only within Engagement Range of one or more Fortifications from your army:\n- That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll.\n- Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-tidewall-shieldline-tidewall-cover",
+          "name": "Tidewall Cover",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking un",
+          "type": "passive",
+          "summary": "Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model has the Benefit of Cover against that attack.",
+          "source": "T’au Empire",
+          "priority": 3
+        },
+        {
+          "id": "unit-tidewall-shieldline-tidewall-defence-platform",
+          "name": "Tidewall Defence Platform",
+          "phases": [
+            "any"
+          ],
+          "timing": "If equipped with a Tidewall defence platform, this FORTIFICATION has a Wounds characteristic of 15.",
+          "type": "passive",
+          "summary": "If equipped with a Tidewall defence platform, this FORTIFICATION has a Wounds characteristic of 15.",
+          "source": "T’au Empire",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000454",
+      "name": "Tiger Shark",
+      "keywords": [
+        "T’au Empire",
+        "Fly",
+        "Vehicle",
+        "Aircraft",
+        "Tiger Shark"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tiger-shark-transport-bay",
+          "name": "Transport Bay",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer has the TRANSPORT keyword and has a transport capacity of 12 TACTICAL DRONES models.",
+          "type": "wargear",
+          "summary": "The bearer has the TRANSPORT keyword and has a transport capacity of 12 TACTICAL DRONES models.",
+          "source": "T’au Empire (Forge World)",
+          "priority": 2
+        },
+        {
+          "id": "unit-tiger-shark-strafing-run",
+          "name": "Strafing Run",
+          "phases": [
+            "shooting",
+            "battleshock"
+          ],
+          "timing": "In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks that cannot FLY",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks that cannot FLY . That enemy unit must take a Battle-shock test.",
+          "source": "T’au Empire (Forge World)",
+          "priority": 3
+        },
+        {
+          "id": "unit-tiger-shark-one-shot",
+          "name": "One Shot",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer can only shoot with this weapon once per battle.",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "The bearer can only shoot with this weapon once per battle.",
+          "source": "T’au Empire (Forge World)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000448",
+      "name": "Tx42 Piranha",
+      "keywords": [
+        "T’au Empire",
+        "TX42 Piranha",
+        "Vehicle",
+        "Fly"
+      ],
+      "abilities": [
+        {
+          "id": "unit-tx42-piranha-outflank",
+          "name": "Outflank",
+          "phases": [
+            "any"
+          ],
+          "timing": "in your opponent’s deployment zone (all other restrictions still apply)",
+          "type": "active",
+          "summary": "When this unit arrives from Strategic Reserves, it can be set up within your opponent’s deployment zone (all other restrictions still apply).",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "id": "unit-000000427",
+      "name": "Vespid Stingwings",
+      "keywords": [
+        "T’au Empire",
+        "Infantry",
+        "Fly",
+        "Vespid Stingwings"
+      ],
+      "abilities": [
+        {
+          "id": "unit-vespid-stingwings-airborne-agility",
+          "name": "Airborne Agility",
+          "phases": [
+            "any"
+          ],
+          "timing": "At the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves",
+          "type": "reaction",
+          "summary": "At the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.",
+          "source": "T’au Empire",
+          "priority": 2
+        },
+        {
+          "id": "unit-vespid-stingwings-oversight-drone",
+          "name": "Oversight Drone",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Once per battle, when the bearer’s unit is selected to shoot, until the end of the phase, ranged weapons equipped by mod",
+          "type": "wargear",
+          "once_per": "battle",
+          "summary": "Once per battle, when the bearer’s unit is selected to shoot, until the end of the phase, ranged weapons equipped by models in this unit have the [IGNORES COVER] ability.\nDesigner’s Note: Place an Oversight Drone token next to the bearer, removing it once this ability has been used.",
+          "source": "T’au Empire",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000443",
+      "name": "Xv9 Hazard Battlesuits",
+      "keywords": [
+        "T’au Empire",
+        "Vehicle",
+        "Walker",
+        "Fly",
+        "Battlesuit",
+        "XV9 Hazard"
+      ],
+      "abilities": [
+        {
+          "id": "unit-xv9-hazard-battlesuits-battlesuit-support-system",
+          "name": "Battlesuit Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this",
+          "type": "wargear",
+          "summary": "The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this wargear can make ranged attacks.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-xv9-hazard-battlesuits-shield-generator",
+          "name": "Shield Generator",
+          "phases": [
+            "any"
+          ],
+          "timing": "The bearer has a 4+ invulnerable save.",
+          "type": "wargear",
+          "summary": "The bearer has a 4+ invulnerable save.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-xv9-hazard-battlesuits-weapon-support-system",
+          "name": "Weapon Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "type": "wargear",
+          "summary": "Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-xv9-hazard-battlesuits-photon-casters",
+          "name": "Photon Casters",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "In your Shooting phase, after this unit has shot, if an enemy INFANTRY unit was hit by one or more of those attacks, until the end of your opponent’s next turn, that enemy unit is stunned",
+          "type": "reaction",
+          "summary": "In your Shooting phase, after this unit has shot, if an enemy INFANTRY unit was hit by one or more of those attacks, until the end of your opponent’s next turn, that enemy unit is stunned. While a unit is stunned, subtract 2 from that unit’s Move characteristic, and subtract 2 from Advance and Charge rolls made for that unit.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    },
+    {
+      "id": "unit-000000444",
+      "name": "Y’vahra Battlesuit",
+      "keywords": [
+        "T’au Empire",
+        "Walker",
+        "Vehicle",
+        "Fly",
+        "Battlesuit",
+        "Y’vahra"
+      ],
+      "abilities": [
+        {
+          "id": "unit-y-vahra-battlesuit-battlesuit-support-system",
+          "name": "Battlesuit Support System",
+          "phases": [
+            "any"
+          ],
+          "timing": "This model is eligible to shoot in a turn in which it Fell Back.",
+          "type": "passive",
+          "summary": "This model is eligible to shoot in a turn in which it Fell Back.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 2
+        },
+        {
+          "id": "unit-y-vahra-battlesuit-nova-burst",
+          "name": "Nova Burst",
+          "phases": [
+            "movement"
+          ],
+          "timing": "Once per battle, before this model makes a Normal, Advance or Fall Back move, it can use this ability. If it does, until",
+          "type": "active",
+          "once_per": "battle",
+          "summary": "Once per battle, before this model makes a Normal, Advance or Fall Back move, it can use this ability. If it does, until the end of the phase, it has a Move characteristic of 18\".",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        },
+        {
+          "id": "unit-y-vahra-battlesuit-weapon-support-system",
+          "name": "Weapon Support System",
+          "phases": [
+            "shooting"
+          ],
+          "timing": "Each time this model makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "type": "passive",
+          "summary": "Each time this model makes a ranged attack, you can ignore any or all modifiers to the Hit roll.",
+          "source": "T’au Empire (Warhammer Legends)",
+          "priority": 3
+        }
+      ]
+    }
+  ],
+  "stratagems": [
+    {
+      "id": "strat-000009840007",
+      "name": "GUIDED FIRE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One T’AU EMPIRE unit from your army (excluding Kroot and Vespid Stingwings units) that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, add 1 to the Strength characteristic of ranged weapons equipped by models in your unit. If your unit is wholly within 9\" of one or more KROOT or VESPID STINGWINGS units from your army, add 2 to the Strength characteristic of ranged weapons equipped by models in your unit instead.",
+      "source": "Wahapedia CSV / Auxiliary Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Auxiliary Cadre – Battle Tactic Stratagem",
+        "Auxiliary Cadre"
+      ]
+    },
+    {
+      "id": "strat-000009840006",
+      "name": "ALIEN EXPERTISE",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase.",
+      "target": "One T’AU EMPIRE unit from your army.",
+      "effect": "Until the end of the turn, your unit is eligible to shoot in a turn in which it Advanced. If it is a Kroot or Vespid Stingwings unit, until the end of the turn, your unit is eligible to declare a charge in a turn in which it Advanced as well.",
+      "source": "Wahapedia CSV / Auxiliary Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Auxiliary Cadre – Battle Tactic Stratagem",
+        "Auxiliary Cadre"
+      ]
+    },
+    {
+      "id": "strat-000009840003",
+      "name": "MULTISENSORY SCANNING",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack, re-roll a Wound roll of 1. If it is a Kroot or Vespid Stingwings unit, you can re-roll the Wound roll instead.",
+      "source": "Wahapedia CSV / Auxiliary Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Auxiliary Cadre – Battle Tactic Stratagem",
+        "Auxiliary Cadre"
+      ]
+    },
+    {
+      "id": "strat-000009840005",
+      "name": "PHEROMONE WAYPOINTS",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase.",
+      "target": "One Kroot or Vespid Stingwings unit from your army that has not been selected to move this phase.",
+      "effect": "Until the end of the phase, each time your unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit.",
+      "source": "Wahapedia CSV / Auxiliary Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Auxiliary Cadre – Strategic Ploy Stratagem",
+        "Auxiliary Cadre"
+      ]
+    },
+    {
+      "id": "strat-000009840004",
+      "name": "INTERLOCKING MANOUEVRES",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "End of the Fight phase.",
+      "target": "One T’AU EMPIRE unit from your army that was eligible to fight this phase.",
+      "effect": "If your unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". Otherwise, your unit can make a Fall Back move. It cannot embark within a Transport at the end of this move if it disembarked from a TRANSPORT this turn.",
+      "source": "Wahapedia CSV / Auxiliary Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Auxiliary Cadre – Strategic Ploy Stratagem",
+        "Auxiliary Cadre"
+      ]
+    },
+    {
+      "id": "strat-000009840002",
+      "name": "EXPERIMENTAL MODIFICATIONS",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One Kroot or Vespid Stingwings unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "Until the end of the phase, improve the Armour Penetration characteristic of weapons equipped by models in your unit by 1.",
+      "source": "Wahapedia CSV / Auxiliary Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Auxiliary Cadre – Strategic Ploy Stratagem",
+        "Auxiliary Cadre"
+      ]
+    },
+    {
+      "id": "strat-000009984004",
+      "name": "EXPERIMENTAL WEAPONRY",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, each time you roll one or more dice to determine the number of attacks made with a weapon equipped by a model in your unit, you can re-roll the result.",
+      "source": "Wahapedia CSV / Experimental Prototype Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Experimental Prototype Cadre – Battle Tactic Stratagem",
+        "Experimental Prototype Cadre"
+      ]
+    },
+    {
+      "id": "strat-000009984003",
+      "name": "REACTIVE IMPACT DAMPENERS",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One T’au Empire Battlesuit unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time an attack targets your unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of your unit, subtract 1 from the Wound roll.",
+      "source": "Wahapedia CSV / Experimental Prototype Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Experimental Prototype Cadre – Battle Tactic Stratagem",
+        "Experimental Prototype Cadre"
+      ]
+    },
+    {
+      "id": "strat-000009984002",
+      "name": "AUTOMATED REPAIR DRONES",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "timing": "Command phase.",
+      "target": "One T’au Empire Battlesuit unit from your army.",
+      "effect": "Select one BATTLESUIT model in your unit: that model regains up to D3+1 lost wounds.",
+      "source": "Wahapedia CSV / Experimental Prototype Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Experimental Prototype Cadre – Strategic Ploy Stratagem",
+        "Experimental Prototype Cadre"
+      ]
+    },
+    {
+      "id": "strat-000009984007",
+      "name": "NEUROWEB SYSTEM JAMMER",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One T’au Empire Crisis unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, your unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
+      "source": "Wahapedia CSV / Experimental Prototype Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Experimental Prototype Cadre – Wargear Stratagem",
+        "Experimental Prototype Cadre"
+      ]
+    },
+    {
+      "id": "strat-000009984006",
+      "name": "THREAT ASSESSMENT ANALYSER",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase.",
+      "effect": "Select the [SUSTAINED HITS 1] or [LETHAL HITS] ability. Until the end of the phase, ranged weapons equipped by models in your unit have the selected ability. You can instead select the [SUSTAINED HITS 1], [LETHAL HITS] and [HAZARDOUS] abilities to apply to those weapons until the end of the phase.",
+      "source": "Wahapedia CSV / Experimental Prototype Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Experimental Prototype Cadre – Wargear Stratagem",
+        "Experimental Prototype Cadre"
+      ]
+    },
+    {
+      "id": "strat-000009984005",
+      "name": "EXPERIMENTAL AMMUNITION",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase.",
+      "effect": "Select one of the following to apply to your unit until the end of the phase: - Improve the Strength characteristic of ranged weapons equipped by models in your unit by 1. - Improve the Strength and Armour Penetration characteristics of ranged weapons equipped by models in your unit by 1, and those weapons have the [HAZARDOUS] ability.",
+      "source": "Wahapedia CSV / Experimental Prototype Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Experimental Prototype Cadre – Wargear Stratagem",
+        "Experimental Prototype Cadre"
+      ]
+    },
+    {
+      "id": "strat-000008443004",
+      "name": "COORDINATE TO ENGAGE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One T’AU EMPIRE unit from your army that has just been selected as an Observer unit (see For the Greater Good).",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets their Spotted unit, improve the Ballistic Skill characteristic of that attack by 1 and, if your unit has the Markerlight keyword, that attack has the [IGNORES COVER] ability.",
+      "source": "Wahapedia CSV / Kauyon",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Kauyon – Battle Tactic Stratagem",
+        "Kauyon"
+      ]
+    },
+    {
+      "id": "strat-000008443007",
+      "name": "WALL OF MIRRORS",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "End of your opponent’s Fight phase.",
+      "target": "One Stealth, Ghostkeel or Commander Shadowsun unit from your army.",
+      "effect": "Remove your unit from the battlefield and place it into Strategic Reserves.",
+      "source": "Wahapedia CSV / Kauyon",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Kauyon – Battle Tactic Stratagem",
+        "Kauyon"
+      ]
+    },
+    {
+      "id": "strat-000008443003",
+      "name": "POINT-BLANK AMBUSH",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit within 9\", improve the Armour Penetration characteristic of that attack by 1.",
+      "source": "Wahapedia CSV / Kauyon",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Kauyon – Battle Tactic Stratagem",
+        "Kauyon"
+      ]
+    },
+    {
+      "id": "strat-000008443002",
+      "name": "A TEMPTING TRAP",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase. The first time you use this Stratagem, you must also select one objective marker that is not in your opponent’s deployment zone; until the end of the battle, this becomes your Trap objective marker.",
+      "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit within range of your Trap objective marker, add 1 to the Wound roll.",
+      "source": "Wahapedia CSV / Kauyon",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Kauyon – Battle Tactic Stratagem",
+        "Kauyon"
+      ]
+    },
+    {
+      "id": "strat-000008443006",
+      "name": "PHOTON GRENADES",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "timing": "Your opponent’s Charge phase, just after an enemy unit has declared a charge.",
+      "target": "One T’au Empire Grenades unit from your army that was selected as one of the targets of that charge.",
+      "effect": "That enemy unit must immediately take a Battle-shock test, and until the end of the phase, subtract 2 from Charge rolls made for that enemy unit.",
+      "source": "Wahapedia CSV / Kauyon",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Kauyon – Wargear Stratagem",
+        "Kauyon"
+      ]
+    },
+    {
+      "id": "strat-000008443005",
+      "name": "COMBAT EMBARKATION",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "timing": "Your opponent’s Charge phase, just after an enemy unit has declared a charge.",
+      "target": "One T’au Empire Infantry unit from your army that was selected as one of the targets of that charge, and one friendly Transport.",
+      "effect": "Your unit can embark within that TRANSPORT . If it does, your opponent can select new targets for that charge.",
+      "source": "Wahapedia CSV / Kauyon",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Kauyon – Wargear Stratagem",
+        "Kauyon"
+      ]
+    },
+    {
+      "id": "strat-000008822003",
+      "name": "A TRAP WELL LAID",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your Shooting phase or the Fight phase.",
+      "target": "One Kroot unit from your army that has not been selected to shoot or fight this phase.",
+      "effect": "After your unit has resolved its attacks this phase, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a KROOT model from your army makes an attack that targets that enemy unit, unless the attacking unit is Battle-shocked, improve the Armour Penetration characteristic of that attack by 1.",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Kroot Hunting Pack – Battle Tactic Stratagem",
+        "Kroot Hunting Pack"
+      ]
+    },
+    {
+      "id": "strat-000008822002",
+      "name": "JOIN THE HUNT",
+      "cp_cost": 2,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase.",
+      "target": "One Kroot Infantry or Kroot Hounds unit from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
+      "effect": "Add a new unit to your army identical to your destroyed unit, in Strategic Reserves, at its Starting Strength.",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Kroot Hunting Pack – Battle Tactic Stratagem",
+        "Kroot Hunting Pack"
+      ]
+    },
+    {
+      "id": "strat-000008822007",
+      "name": "HIDDEN HUNTERS",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One Kroot unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, your unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Kroot Hunting Pack – Strategic Ploy Stratagem",
+        "Kroot Hunting Pack"
+      ]
+    },
+    {
+      "id": "strat-000008822006",
+      "name": "GUERRILLA WARRIORS",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase, just after a Kroot unit from your army Falls Back.",
+      "target": "That KROOT unit.",
+      "effect": "Until the end of the turn, your unit is eligible to shoot and declare a charge.",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Kroot Hunting Pack – Strategic Ploy Stratagem",
+        "Kroot Hunting Pack"
+      ]
+    },
+    {
+      "id": "strat-000008822005",
+      "name": "THE GRISLY FEAST",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "timing": "Fight phase.",
+      "target": "One Kroot unit from your army that destroyed one or more enemy units this phase.",
+      "effect": "In your opponent’s next Command phase, each enemy unit within 6\" of your unit must take a Battle-shock test. If the unit taking that test is Below Half-strength, subtract 1 from that test. Enemy units affected by this Stratagem do not need to take any other Battle-shock tests in the same phase.",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Kroot Hunting Pack – Strategic Ploy Stratagem",
+        "Kroot Hunting Pack"
+      ]
+    },
+    {
+      "id": "strat-000008822004",
+      "name": "EMP GRENADES",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy VEHICLE unit is selected to shoot or fight.",
+      "target": "One Kroot Grenades unit from your army within 8\" of that enemy VEHICLE unit.",
+      "effect": "Until the end of the phase, worsen the Weapon Skill and Ballistic Skill characteristics of that enemy VEHICLE unit’s weapons by 1.",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Kroot Hunting Pack – Wargear Stratagem",
+        "Kroot Hunting Pack"
+      ]
+    },
+    {
+      "id": "strat-000008812004",
+      "name": "FOCUSED FIRE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Start of your Shooting phase.",
+      "target": "Two T’AU EMPIRE units from your army that have not been selected to shoot this phase, and one enemy unit.",
+      "effect": "Until the end of the phase, each time a model in either of your units makes an attack, it can only target that enemy unit (and only if it is an eligible target for that attack), and when resolving that attack, improve the Armour Penetration characteristic by 1.",
+      "source": "Wahapedia CSV / Mont'ka",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Mont’ka – Battle Tactic Stratagem",
+        "Mont'ka"
+      ]
+    },
+    {
+      "id": "strat-000008812003",
+      "name": "AGGRESSIVE MOBILITY",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase.",
+      "target": "One T’AU EMPIRE unit from your army that has not been selected to move this phase.",
+      "effect": "Until the end of the phase, if your unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit.",
+      "source": "Wahapedia CSV / Mont'ka",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Mont’ka – Battle Tactic Stratagem",
+        "Mont'ka"
+      ]
+    },
+    {
+      "id": "strat-000008812002",
+      "name": "PINPOINT COUNTER-OFFENSIVE",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase.",
+      "target": "One T’AU EMPIRE unit (excluding Kroot units) from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
+      "effect": "Until the end of the battle, each time a T’AU EMPIRE unit (excluding KROOT units) from your army makes an attack that targets the enemy unit that just destroyed your unit, you can re-roll the Hit roll.",
+      "source": "Wahapedia CSV / Mont'ka",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Mont’ka – Battle Tactic Stratagem",
+        "Mont'ka"
+      ]
+    },
+    {
+      "id": "strat-000008812005",
+      "name": "COMBAT DEBARKATION",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One T’au Empire Infantry unit from your army that disembarked from a TRANSPORT this turn.",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets the closest enemy unit, you can re-roll the Wound roll.",
+      "source": "Wahapedia CSV / Mont'ka",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Mont’ka – Battle Tactic Stratagem",
+        "Mont'ka"
+      ]
+    },
+    {
+      "id": "strat-000008812006",
+      "name": "PULSE ONSLAUGHT",
+      "cp_cost": 2,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One T’au Empire Infantry unit (excluding Kroot units) from your army that has just shot, and one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks.",
+      "effect": "Until the end of your opponent’s next turn, that enemy unit is shaken. While a unit is shaken, subtract 2 from its Move characteristic and subtract 2 from Advance and Charge rolls made for it.",
+      "source": "Wahapedia CSV / Mont'ka",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Mont’ka – Strategic Ploy Stratagem",
+        "Mont'ka"
+      ]
+    },
+    {
+      "id": "strat-000008812007",
+      "name": "COUNTERFIRE DEFENCE SYSTEMS",
+      "cp_cost": 2,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One T’AU EMPIRE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, each time an attack is allocated to your unit, subtract 1 from the Damage characteristic of that attack.",
+      "source": "Wahapedia CSV / Mont'ka",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Mont’ka – Wargear Stratagem",
+        "Mont'ka"
+      ]
+    },
+    {
+      "id": "strat-000008816005",
+      "name": "THE ARRO’KON PROTOCOL",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One T’au Empire Battlesuit unit from your army that has not been selected to shoot this phase.",
+      "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit that contains 6 or more models, that attack has the [SUSTAINED HITS 1] ability. If that attack targets an enemy unit that contains 11 or more models, it has the [SUSTAINED HITS 2] ability instead.",
+      "source": "Wahapedia CSV / Retaliation Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Retaliation Cadre – Battle Tactic Stratagem",
+        "Retaliation Cadre"
+      ]
+    },
+    {
+      "id": "strat-000008816002",
+      "name": "FAIL-SAFE DETONATOR",
+      "cp_cost": 2,
+      "phases": [
+        "any"
+      ],
+      "timing": "Any phase, just after a T’au Empire Battlesuit model from your army is destroyed.",
+      "target": "That destroyed model’s unit. You can use this Stratagem on that unit even if that unit was just destroyed.",
+      "effect": "Before removing your model from play, if it has the Deadly Demise ability, do not roll for that ability; instead, you can choose whether the result of that roll is a 1 or a 6. If your model does not have the Deadly Demise ability, roll one D6 for each unit within 6\" of it: on a 4+, that unit suffers D3 mortal wounds.",
+      "source": "Wahapedia CSV / Retaliation Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Retaliation Cadre – Epic Deed Stratagem",
+        "Retaliation Cadre"
+      ]
+    },
+    {
+      "id": "strat-000008816006",
+      "name": "THE TORCHSTAR GAMBIT",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "timing": "Your Shooting phase.",
+      "target": "One T’au Empire Battlesuit unit from your army that can FLY whose attacks have been resolved this phase.",
+      "effect": "If your unit is not within Engagement Range of one or more enemy units, it can make a Normal move. If it does, your unit cannot declare a charge this turn",
+      "source": "Wahapedia CSV / Retaliation Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Retaliation Cadre – Strategic Ploy Stratagem",
+        "Retaliation Cadre"
+      ]
+    },
+    {
+      "id": "strat-000008816007",
+      "name": "GRAV-INHIBITOR FIELD",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "timing": "Your opponent’s Charge phase, just after an enemy unit has declared a charge.",
+      "target": "One T’au Empire Battlesuit unit from your army that was selected as a target of that charge.",
+      "effect": "That enemy unit must immediately take a Battle-shock test and you must roll one D6 for each model in that enemy unit: for each 6, that enemy unit suffers 1 mortal wound.",
+      "source": "Wahapedia CSV / Retaliation Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Retaliation Cadre – Strategic Ploy Stratagem",
+        "Retaliation Cadre"
+      ]
+    },
+    {
+      "id": "strat-000008816004",
+      "name": "THE SHORTENED BLADE",
+      "cp_cost": 2,
+      "phases": [
+        "movement"
+      ],
+      "timing": "Your Movement phase.",
+      "target": "One T’au Empire Battlesuit unit from your army that is arriving using the Deep Strike ability this phase.",
+      "effect": "Your unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy models.",
+      "source": "Wahapedia CSV / Retaliation Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Retaliation Cadre – Strategic Ploy Stratagem",
+        "Retaliation Cadre"
+      ]
+    },
+    {
+      "id": "strat-000008816003",
+      "name": "STIMM INJECTORS",
+      "cp_cost": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
+      "target": "One T’au Empire Battlesuit unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, models in your unit have the Feel No Pain 6+ ability.",
+      "source": "Wahapedia CSV / Retaliation Cadre",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Retaliation Cadre – Wargear Stratagem",
+        "Retaliation Cadre"
+      ]
+    }
+  ],
+  "detachment_rules": [
+    {
+      "id": "det-000008441",
+      "name": "Patient Hunter",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Kauyon",
+      "type": "detachment",
+      "summary": "During the third, fourth and fifth battle rounds, ranged weapons equipped by T’au Empire models from your army have the [SUSTAINED HITS 1] ability. During the third, fourth and fifth battle rounds, while a unit is a Guided unit (see For the Greater Good), each time a ranged attack is made by a model in that unit that targets a Spotted unit, you can ignore any or all modifiers to that attack’s Ballistic skill characteristics and/or all modifiers to the Hit roll.",
+      "source": "Wahapedia CSV / Kauyon",
+      "priority": 5
+    },
+    {
+      "id": "det-000008810",
+      "name": "Killing Blow",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Mont'ka",
+      "type": "detachment",
+      "summary": "During the first, second and third battle rounds, ranged weapons equipped by T’AU EMPIRE models from your army have the [ASSAULT] ability. During the first, second and third battle rounds, while a unit is a Guided unit, its ranged weapons have the [LETHAL HITS] ability.",
+      "source": "Wahapedia CSV / Mont'ka",
+      "priority": 5
+    },
+    {
+      "id": "det-000008814",
+      "name": "Bonded Heroes",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Retaliation Cadre",
+      "type": "detachment",
+      "summary": "Each time a T’au Empire Battlesuit model from your army makes a ranged attack that targets a unit within 12\", improve the Strength characteristic of that attack by 1. If that attack targets a unit within 9\", improve the Armour Penetration characteristic of that attack by 1 as well.",
+      "source": "Wahapedia CSV / Retaliation Cadre",
+      "priority": 5
+    },
+    {
+      "id": "det-000008818",
+      "name": "Hunter’s Instincts",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Kroot Hunting Pack",
+      "type": "detachment",
+      "summary": "Each time a Kroot model from your army makes an attack, add 1 to the Hit roll if the target of that attack is below its Starting Strength, and add 1 to the Wound roll as well if the target of that attack is Below Half-strength.",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "priority": 5
+    },
+    {
+      "id": "det-000008819",
+      "name": "Skirmish Fighters",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Kroot Hunting Pack",
+      "type": "detachment",
+      "summary": "Kroot models from your army have a 6+ invulnerable save against melee attacks and a 5+ invulnerable save against ranged attacks.",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "priority": 5
+    },
+    {
+      "id": "det-000008820",
+      "name": "KEYWORDS",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Kroot Hunting Pack",
+      "type": "detachment",
+      "summary": "If you select this Detachment, Kroot Carnivore units from your army have the Battleline keyword.",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "priority": 5
+    },
+    {
+      "id": "det-000009838",
+      "name": "Integrated Command Structure",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Auxiliary Cadre",
+      "type": "detachment",
+      "summary": "Kroot and Vespid Stingwings units from your army have the following ability:\nTargeting Triangulation (Aura): While an enemy unit is within 9\" of and visible to this unit, each time a ranged attack made by a friendly T’AU EMPIRE model (excluding KROOT , VESPID STINGWINGS and Titanic models) targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1.\nT’au Empire units (excluding KROOT and VESPID STINGWINGS units) from your army have the following ability:\nLocalised Stealth Projectors (Aura): While a friendly KROOT or VESPID STINGWINGS unit is wholly within 6\" of and visible to this unit, that KROOT or VESPID STINGWINGS unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
+      "source": "Wahapedia CSV / Auxiliary Cadre",
+      "priority": 5
+    },
+    {
+      "id": "det-000009982",
+      "name": "Superior Craftsmanship",
+      "phases": [
+        "any"
+      ],
+      "timing": "Detachment Rule - Experimental Prototype Cadre",
+      "type": "detachment",
+      "summary": "Add 6\" to the Range characteristic of ranged weapons equipped by T’AU EMPIRE models from your army",
+      "source": "Wahapedia CSV / Experimental Prototype Cadre",
+      "priority": 5
+    }
+  ],
+  "enhancements": [
+    {
+      "id": "enh-000008815002",
+      "name": "Internal Grenade Racks",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Retaliation Cadre",
+      "type": "enhancement",
+      "summary": "T’au Empire Battlesuit model only. The bearer has the Grenades keyword, and each time the bearer ends a Normal move, you can select one enemy unit that it moved over during that move. If you do, roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Retaliation Cadre",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009983002",
+      "name": "Supernova Launcher",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Experimental Prototype Cadre",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model only. Select one airbursting fragmentation projector equipped by the bearer. Improve the Strength characteristic of that weapon by 3, and improve the Armour Penetration and Damage characteristics of that weapon by 1.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Experimental Prototype Cadre",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008821002",
+      "name": "Borthrod Gland",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Kroot Hunting Pack",
+      "type": "enhancement",
+      "summary": "Kroot Flesh Shaper only. While the bearer is leading a unit, each time a model in that unit makes a melee attack, an unmodified Hit roll of 5+ scores a Critical Hit.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008442002",
+      "name": "Exemplar of the Kauyon",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Kauyon",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model only (excluding Kroot Shaper models). While the bearer is leading a unit, the Patient Hunter Detachment rule applies to that unit from the second battle round onwards instead of from the third.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Kauyon",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009839002",
+      "name": "Student of Kauyon",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Auxiliary Cadre",
+      "type": "enhancement",
+      "summary": "Kroot Shaper model only. In the Declare Battle Formations step, you can select up to three Kroot Carnivores or Kroot Farstalkers units from your army. Models in those units have the Deep Strike ability.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Auxiliary Cadre",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008811002",
+      "name": "Coordinated Exploitation",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Mont'ka",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model only (excluding Kroot Shaper models). While the bearer is leading a unit, each time that unit is an Observer unit, until the end of the phase, ranged weapons equipped by models in a Guided unit have the [SUSTAINED HITS 1] ability while targeting their Spotted unit.\n\nPoints: 40",
+      "source": "Wahapedia CSV / Mont'ka",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008821003",
+      "name": "Kroothawk Flock",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Kroot Hunting Pack",
+      "type": "enhancement",
+      "summary": "Kroot model only. Ranged weapons equipped by models in the bearer’s unit have the [IGNORES COVER] ability, and enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" horizontally of the bearer.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008442003",
+      "name": "Precision of the Patient Hunter",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Kauyon",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model only. Each time the bearer makes a ranged attack, add 1 to the Hit roll. From the third battle round onwards, add 1 to the Wound roll as well.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Kauyon",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009839003",
+      "name": "Admired Leader",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Auxiliary Cadre",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model (excluding Kroot models) only. In your Command phase, you can select one KROOT or Vespid Stingwings unit within 12\" of the bearer. If you do, until the start of your next Command phase, improve the Leadership characteristic of models in that unit by 1, and while such a unit is not Battle-shocked, add 1 to the Objective Control characteristic of models in that unit.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Auxiliary Cadre",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009983003",
+      "name": "Thermoneutronic Projector",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Experimental Prototype Cadre",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model only. Select one T’au flamer equipped by the bearer. Improve the Strength characteristic of that weapon by 2, and improve the Armour Penetration and Damage characteristics of that weapon by 1.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Experimental Prototype Cadre",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008815003",
+      "name": "Prototype Weapon System",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Retaliation Cadre",
+      "type": "enhancement",
+      "summary": "T’au Empire Battlesuit model only. Each time the bearer is selected to shoot, select either the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until those attacks are resolved, ranged weapons equipped by the bearer have the selected ability.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Retaliation Cadre",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008811003",
+      "name": "Exemplar of the Mont’ka",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Mont'ka",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model only (excluding Kroot Shaper models). While the bearer is leading a unit, the Killing Blow Detachment rule applies to that unit during the fourth battle round as well.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Mont'ka",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008811004",
+      "name": "Strategic Conqueror",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Mont'ka",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model only. At the start of the first battle round, before the first turn begins, select one objective marker on the battlefield. While a friendly T’AU EMPIRE model is within range of that objective marker and the bearer is on the battlefield, add 1 to that friendly model’s Objective Control characteristic.\n\nPoints: 15",
+      "source": "Wahapedia CSV / Mont'ka",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008442004",
+      "name": "Solid-image Projection Unit",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Kauyon",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model only. After both players have deployed their armies, select up to three T’AU EMPIRE units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves.\n\nPoints: 30",
+      "source": "Wahapedia CSV / Kauyon",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009983004",
+      "name": "Plasma Accelerator Rifle",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Experimental Prototype Cadre",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model only. Select one plasma rifle equipped by the bearer. Improve the Strength characteristic of that weapon by 2, and improve the Attacks, Armour Penetration and Damage characteristics of that weapon by 1.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Experimental Prototype Cadre",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008821004",
+      "name": "Nomadic Hunter",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Kroot Hunting Pack",
+      "type": "enhancement",
+      "summary": "Kroot Trail Shaper model only. While the bearer is leading a unit, add 3\" to the Move characteristic of models in that unit and ranged weapons equipped by models in that unit have the [ASSAULT] ability.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009839004",
+      "name": "Fanatical Convert",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Auxiliary Cadre",
+      "type": "enhancement",
+      "summary": "Kroot model only. The bearer’s unit has the For the Greater Good ability.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Auxiliary Cadre",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008815004",
+      "name": "Puretide Engram Neurochip",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Retaliation Cadre",
+      "type": "enhancement",
+      "summary": "T’au Empire Battlesuit model only. Each time you target the bearer’s unit with a Stratagem, roll one D6: on a 4+, you gain 1CP.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Retaliation Cadre",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008815005",
+      "name": "Starflare Ignition System",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Retaliation Cadre",
+      "type": "enhancement",
+      "summary": "T’au Empire Battlesuit model only. At the end of your opponent’s turn, if the bearer’s unit is not within Engagement Range of one or more enemy units, you can remove that unit from the battlefield and place it into Strategic Reserves.\n\nPoints: 20",
+      "source": "Wahapedia CSV / Retaliation Cadre",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008442005",
+      "name": "Through Unity, Devastation",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Kauyon",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model only (excluding Kroot Shaper models). While the bearer is leading a unit, each time that unit is an Observer unit, until the end of the phase, ranged weapons equipped by models in a Guided unit have the [LETHAL HITS] ability while targeting their Spotted unit.\n\nPoints: 40",
+      "source": "Wahapedia CSV / Kauyon",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009839005",
+      "name": "Transponder Lock Module",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Auxiliary Cadre",
+      "type": "enhancement",
+      "summary": "T’au Empire Walker model with the Deep Strike ability only. The bearer’s unit can be set up using the Deep Strike ability in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. During your first Movement phase, when you set up the bearer’s unit, it must be set up within 12\" of one or more friendly Kroot or Vespid Stingwings units and not within 9\" horizontally of one or more enemy units.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Auxiliary Cadre",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008821005",
+      "name": "Root-carved Weapons",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Kroot Hunting Pack",
+      "type": "enhancement",
+      "summary": "Kroot War Shaper model only. All weapons equipped by the bearer have the [PRECISION] and [DEVASTATING WOUNDS] abilities.\n\nPoints: 10",
+      "source": "Wahapedia CSV / Kroot Hunting Pack",
+      "priority": 3
+    },
+    {
+      "id": "enh-000009983005",
+      "name": "Fusion Blades",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Experimental Prototype Cadre",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model only. Select one fusion blaster equipped by the bearer. Improve the Attacks characteristic of that weapon by 1, improve the Strength characteristic of that weapon by 3, and that weapon has the [MELTA 4] ability.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Experimental Prototype Cadre",
+      "priority": 3
+    },
+    {
+      "id": "enh-000008811005",
+      "name": "Strike Swiftly",
+      "phases": [
+        "any"
+      ],
+      "timing": "Army Roster - Mont'ka",
+      "type": "enhancement",
+      "summary": "T’AU EMPIRE model only. At the start of the battle, before any moves are made using the Scouts ability, you can select up to two friendly T’AU EMPIRE units within 6\" of the bearer that do not have the Scouts ability. Until the end of the battle, all models in the selected units have the Scouts 6\" ability.\n\nPoints: 25",
+      "source": "Wahapedia CSV / Mont'ka",
+      "priority": 3
+    }
+  ]
+}

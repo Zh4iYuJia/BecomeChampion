@@ -8,11 +8,22 @@
 // CONSTANTS
 // ================================================================
 
-const APP_VERSION = '1.1.0';
+const APP_VERSION = '2.4.1';
 const DB_NAME     = 'BecomeChampionDB';
 const DB_VER      = 1;
 const STORE_PACKS = 'rulesPacks';
 const LS_KEY      = 'bc_appstate';
+
+// Official built-in packs — shown in manage view without import, lazy-loaded on activation
+const OFFICIAL_PACKS = [
+  { id: 'ac-rules-pack',    path: './rulepacks/AC-rules-pack.json',    faction: 'Adeptus Custodes', subfaction: '',               pack_version: '1.0.0', game_version: '10th Edition' },
+  { id: 'tyr-rules-pack',   path: './rulepacks/TYR-rules-pack.json',   faction: 'Tyranids',          subfaction: '',               pack_version: '1.0.0', game_version: '10th Edition' },
+  { id: 'tau-rules-pack',   path: './rulepacks/TAU-rules-pack.json',   faction: "T'au Empire",       subfaction: '',               pack_version: '1.0.0', game_version: '10th Edition' },
+  { id: 'ik-rules-pack',    path: './rulepacks/IK-rules-pack.json',    faction: 'Imperial Knights',  subfaction: '',               pack_version: '1.0.0', game_version: '10th Edition' },
+  { id: 'sm-bt-rules-pack', path: './rulepacks/SM-BT-rules-pack.json', faction: 'Space Marines',     subfaction: 'Black Templars', pack_version: '1.0.0', game_version: '10th Edition' },
+  { id: 'sm-um-rules-pack', path: './rulepacks/SM-UM-rules-pack.json', faction: 'Space Marines',     subfaction: 'Ultramarines',   pack_version: '1.1.0', game_version: '10th Edition' },
+];
+const OFFICIAL_PACK_IDS = new Set(OFFICIAL_PACKS.map(p => p.id));
 
 const PHASES = [
   { id: 'command',     nameCN: '指挥阶段',   nameEN: 'Command',      icon: '⚜️',  color: '#c9a227' },
@@ -707,13 +718,32 @@ function renderAbilityCard(ab, phaseColor) {
 // MANAGE VIEW
 // ─────────────────────────────────────────────────────────────────
 function renderManageView() {
-  const packListHtml = state.packs.length === 0
-    ? `<div class="empty-state" style="padding:20px 0">
-        <div class="empty-icon">📦</div>
-        <div class="empty-title">暂无规则包</div>
-        <div class="empty-desc">点击下方"导入规则包"按钮，<br>导入第一个 rules-pack.json</div>
-       </div>`
-    : state.packs.map(p => {
+  // Built-in section — always visible from hardcoded metadata, no import needed
+  const builtinItems = OFFICIAL_PACKS.map(op => {
+    const isActive   = op.id === state.activePackId;
+    const loadedPack = state.packs.find(p => p.id === op.id);
+    const label      = op.faction + (op.subfaction ? ' · ' + op.subfaction : '');
+    const unitCnt    = loadedPack ? (loadedPack.units || []).length : '–';
+    const stratCnt   = loadedPack ? (loadedPack.stratagems || []).length : '–';
+    const metaText   = loadedPack
+      ? `v${esc(op.pack_version)} · ${esc(op.game_version)} · ${unitCnt} 单位 · ${stratCnt} 战略`
+      : `v${esc(op.pack_version)} · ${esc(op.game_version)} · 点击激活自动加载`;
+    return `
+      <div class="pack-item ${isActive ? 'is-active-pack' : ''}" data-activate-builtin="${esc(op.id)}">
+        <div class="pack-radio">${isActive ? '✓' : ''}</div>
+        <div class="pack-item-info">
+          <div class="pack-item-name">${esc(label)}</div>
+          <div class="pack-item-meta">${metaText}</div>
+        </div>
+        <span class="pack-official-badge">内置</span>
+      </div>`;
+  }).join('');
+
+  // User-imported packs (official ones excluded)
+  const userPacks = state.packs.filter(p => !OFFICIAL_PACK_IDS.has(p.id));
+  const userPacksHtml = userPacks.length === 0
+    ? `<div style="padding:10px 0 4px;font-size:12px;color:var(--text-muted)">暂无自定义规则包 — 点击下方按钮导入</div>`
+    : userPacks.map(p => {
         const isActive = p.id === state.activePackId;
         const unitCnt  = (p.units || []).length;
         const stratCnt = (p.stratagems || []).length;
@@ -740,20 +770,21 @@ function renderManageView() {
     </div>
 
     <div class="main-content">
-      <div class="section-heading">📚 已保存规则包 (${state.packs.length})</div>
-      <div class="pack-list">${packListHtml}</div>
+      <div class="section-heading">📦 内置规则包</div>
+      <div class="pack-list">${builtinItems}</div>
+
+      <div class="section-heading">🗂 自定义规则包</div>
+      <div class="pack-list">${userPacksHtml}</div>
 
       <div class="section-heading">🔧 数据操作</div>
       <div class="manage-actions">
         <button class="btn btn-secondary btn-full" id="btn-export-data">📥 导出全部数据（备份）</button>
-        <button class="btn btn-secondary btn-full" id="btn-import-sample">✨ 使用样例规则包（黑色圣堂）</button>
-        <button class="btn btn-secondary btn-full" id="btn-dl-sample">📄 下载示例规则包</button>
         <button class="btn btn-danger btn-full"    id="btn-clear-used-manage">🔄 清空所有已用标记</button>
       </div>
     </div>
 
     <div class="bottom-bar">
-      <button class="btn btn-primary" id="btn-open-import">📂 导入规则包</button>
+      <button class="btn btn-primary" id="btn-open-import">📂 导入自定义规则包</button>
     </div>`;
 }
 
@@ -948,6 +979,13 @@ function handleAppClick(e) {
   if (t.closest('#round-dec')) { adjustRound(-1); return; }
   if (t.closest('#round-inc')) { adjustRound(+1); return; }
 
+  // Built-in pack activate (lazy-load on first click, then activate)
+  const activateBuiltinEl = t.closest('[data-activate-builtin]');
+  if (activateBuiltinEl) {
+    activateBuiltinPack(activateBuiltinEl.dataset.activateBuiltin);
+    return;
+  }
+
   // Pack activate
   const activateEl = t.closest('[data-activate-pack]');
   if (activateEl && !t.closest('[data-delete-pack]')) {
@@ -1121,7 +1159,55 @@ function setActivePack(id) {
   renderApp();
 }
 
+async function activateBuiltinPack(id) {
+  const meta = OFFICIAL_PACKS.find(p => p.id === id);
+  if (!meta) return;
+
+  // Already cached in IndexedDB — just activate
+  const cached = state.packs.find(p => p.id === id);
+  if (cached) {
+    setActivePack(id);
+    return;
+  }
+
+  // Read from inline global (window.BC_BUILTIN_PACKS), works on file:// too
+  const inlineData = window.BC_BUILTIN_PACKS && window.BC_BUILTIN_PACKS[id];
+  if (inlineData) {
+    try {
+      await DB.put(inlineData);
+      state.packs = await DB.getAll();
+      state.activePackId = id;
+      persistState();
+      toast(`✓ 已激活「${inlineData.faction}${inlineData.subfaction ? ' · ' + inlineData.subfaction : ''}」`, 'success');
+      renderApp();
+    } catch (err) {
+      toast(`激活内置规则包失败: ${err.message}`, 'error');
+    }
+    return;
+  }
+
+  // Fallback: fetch (HTTP server)
+  toast('正在加载内置规则包...', 'info', 5000);
+  try {
+    const resp = await fetch(meta.path, { cache: 'no-store' });
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    await DB.put(data);
+    state.packs = await DB.getAll();
+    state.activePackId = id;
+    persistState();
+    toast(`✓ 已激活「${data.faction}${data.subfaction ? ' · ' + data.subfaction : ''}」`, 'success');
+    renderApp();
+  } catch (err) {
+    toast(`加载内置规则包失败: ${err.message}`, 'error');
+  }
+}
+
 async function deletePack(id) {
+  if (OFFICIAL_PACK_IDS.has(id)) {
+    toast('官方内置规则包不可删除', 'info');
+    return;
+  }
   const pack = state.packs.find(p => p.id === id);
   if (!pack) return;
   if (!confirm(`确定删除规则包「${pack.faction}」？\n(此操作不可撤销)`)) return;
