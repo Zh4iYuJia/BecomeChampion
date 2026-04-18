@@ -60,11 +60,12 @@
 当前已生成规则包：
 
 1. [rulepacks/SM-BT-rules-pack.json](rulepacks/SM-BT-rules-pack.json)：Black Templars 专属单位 + 通用 SM 合法单位 + 通用分队 + BT 专属分队。
-2. [rulepacks/SM-UM-rules-pack.json](rulepacks/SM-UM-rules-pack.json)：Ultramarines 专属单位 + 通用 SM 单位 + 通用分队 + UM 专属分队。
-3. [rulepacks/AC-rules-pack.json](rulepacks/AC-rules-pack.json)：Adeptus Custodes 单位 + Sisters of Silence 单位 + Forge World 禁军单位 + 6 个标准分队。
-4. [rulepacks/TYR-rules-pack.json](rulepacks/TYR-rules-pack.json)：Tyranids 所有单位 + 6 个标准分队（不含登舰分队）。
-5. [rulepacks/TAU-rules-pack.json](rulepacks/TAU-rules-pack.json)：T'au Empire 所有单位 + 6 个标准分队。
-6. [rulepacks/IK-rules-pack.json](rulepacks/IK-rules-pack.json)：Imperial Knights 所有单位 + 5 个标准分队。
+2. [rulepacks/CN-SM-BT-rules-pack.json](rulepacks/CN-SM-BT-rules-pack.json)：黑色圣堂中文包，基于现有 SM-BT 规则包生成，主要规则文本翻译为中文并保留常见英文关键词。
+3. [rulepacks/SM-UM-rules-pack.json](rulepacks/SM-UM-rules-pack.json)：Ultramarines 专属单位 + 通用 SM 单位 + 通用分队 + UM 专属分队。
+4. [rulepacks/AC-rules-pack.json](rulepacks/AC-rules-pack.json)：Adeptus Custodes 单位 + Sisters of Silence 单位 + Forge World 禁军单位 + 6 个标准分队。
+5. [rulepacks/TYR-rules-pack.json](rulepacks/TYR-rules-pack.json)：Tyranids 所有单位 + 6 个标准分队（不含登舰分队）。
+6. [rulepacks/TAU-rules-pack.json](rulepacks/TAU-rules-pack.json)：T'au Empire 所有单位 + 6 个标准分队。
+7. [rulepacks/IK-rules-pack.json](rulepacks/IK-rules-pack.json)：Imperial Knights 所有单位 + 5 个标准分队。
 
 ## CSV 生成流程
 
@@ -77,16 +78,18 @@
 生成脚本：
 
 1. [tools/generate-bt-pack-from-csv.js](tools/generate-bt-pack-from-csv.js)
-2. [tools/generate-um-pack-from-csv.js](tools/generate-um-pack-from-csv.js)
-3. [tools/generate-ac-pack-from-csv.js](tools/generate-ac-pack-from-csv.js)
-4. [tools/generate-tyr-pack-from-csv.js](tools/generate-tyr-pack-from-csv.js)
-5. [tools/generate-tau-pack-from-csv.js](tools/generate-tau-pack-from-csv.js)
-6. [tools/generate-ik-pack-from-csv.js](tools/generate-ik-pack-from-csv.js)
+2. [tools/generate-cn-bt-pack.js](tools/generate-cn-bt-pack.js)
+3. [tools/generate-um-pack-from-csv.js](tools/generate-um-pack-from-csv.js)
+4. [tools/generate-ac-pack-from-csv.js](tools/generate-ac-pack-from-csv.js)
+5. [tools/generate-tyr-pack-from-csv.js](tools/generate-tyr-pack-from-csv.js)
+6. [tools/generate-tau-pack-from-csv.js](tools/generate-tau-pack-from-csv.js)
+7. [tools/generate-ik-pack-from-csv.js](tools/generate-ik-pack-from-csv.js)
 
 执行命令：
 
 ```bash
 node .\tools\generate-bt-pack-from-csv.js
+node .\tools\generate-cn-bt-pack.js
 node .\tools\generate-um-pack-from-csv.js
 node .\tools\generate-ac-pack-from-csv.js
 node .\tools\generate-tyr-pack-from-csv.js
@@ -97,11 +100,12 @@ node .\tools\generate-ik-pack-from-csv.js
 脚本会输出：
 
 1. [rulepacks/SM-BT-rules-pack.json](rulepacks/SM-BT-rules-pack.json)
-2. [rulepacks/SM-UM-rules-pack.json](rulepacks/SM-UM-rules-pack.json)
-3. [rulepacks/AC-rules-pack.json](rulepacks/AC-rules-pack.json)
-4. [rulepacks/TYR-rules-pack.json](rulepacks/TYR-rules-pack.json)
-5. [rulepacks/TAU-rules-pack.json](rulepacks/TAU-rules-pack.json)
-6. [rulepacks/IK-rules-pack.json](rulepacks/IK-rules-pack.json)
+2. [rulepacks/CN-SM-BT-rules-pack.json](rulepacks/CN-SM-BT-rules-pack.json)
+3. [rulepacks/SM-UM-rules-pack.json](rulepacks/SM-UM-rules-pack.json)
+4. [rulepacks/AC-rules-pack.json](rulepacks/AC-rules-pack.json)
+5. [rulepacks/TYR-rules-pack.json](rulepacks/TYR-rules-pack.json)
+6. [rulepacks/TAU-rules-pack.json](rulepacks/TAU-rules-pack.json)
+7. [rulepacks/IK-rules-pack.json](rulepacks/IK-rules-pack.json)
 
 **更新内置包：** 每次重新生成任意规则包后，需执行以下命令同步 [builtin-packs.js](builtin-packs.js)：
 
@@ -130,6 +134,7 @@ BecomeChampion/
   builtin-packs.js          ← 所有内置包的 JS 嵌入包（由 bundle 脚本生成）
   rulepacks/
     SM-BT-rules-pack.json
+    CN-SM-BT-rules-pack.json
     SM-UM-rules-pack.json
     AC-rules-pack.json
     TYR-rules-pack.json
@@ -138,6 +143,7 @@ BecomeChampion/
   10e/
   tools/
     generate-bt-pack-from-csv.js
+    generate-cn-bt-pack.js
     generate-um-pack-from-csv.js
     generate-ac-pack-from-csv.js
     generate-tyr-pack-from-csv.js

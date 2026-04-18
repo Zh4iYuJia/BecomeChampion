@@ -8,7 +8,7 @@
 // CONSTANTS
 // ================================================================
 
-const APP_VERSION = '2.4.1';
+const APP_VERSION = '2.4.2';
 const DB_NAME     = 'BecomeChampionDB';
 const DB_VER      = 1;
 const STORE_PACKS = 'rulesPacks';
@@ -21,6 +21,7 @@ const OFFICIAL_PACKS = [
   { id: 'tau-rules-pack',   path: './rulepacks/TAU-rules-pack.json',   faction: "T'au Empire",       subfaction: '',               pack_version: '1.0.0', game_version: '10th Edition' },
   { id: 'ik-rules-pack',    path: './rulepacks/IK-rules-pack.json',    faction: 'Imperial Knights',  subfaction: '',               pack_version: '1.0.0', game_version: '10th Edition' },
   { id: 'sm-bt-rules-pack', path: './rulepacks/SM-BT-rules-pack.json', faction: 'Space Marines',     subfaction: 'Black Templars', pack_version: '1.0.0', game_version: '10th Edition' },
+  { id: 'cn-sm-bt-rules-pack', path: './rulepacks/CN-SM-BT-rules-pack.json', faction: '星际战士', subfaction: '黑色圣堂', pack_version: '1.0.0-cn.1', game_version: '10th Edition' },
   { id: 'sm-um-rules-pack', path: './rulepacks/SM-UM-rules-pack.json', faction: 'Space Marines',     subfaction: 'Ultramarines',   pack_version: '1.1.0', game_version: '10th Edition' },
 ];
 const OFFICIAL_PACK_IDS = new Set(OFFICIAL_PACKS.map(p => p.id));

@@ -19,6 +19,7 @@ const PACK_FILES = [
   'TAU-rules-pack.json',
   'IK-rules-pack.json',
   'SM-BT-rules-pack.json',
+  'CN-SM-BT-rules-pack.json',
   'SM-UM-rules-pack.json',
 ];
 
