@@ -5,9 +5,9 @@
   "faction": "T'au Empire",
   "game_version": "10th Edition",
   "pack_version": "1.0.0",
-  "date": "2026-04-14",
+  "date": "2026-05-05",
   "author": "Community",
-  "source_note": "Generated from current 10e CSV exports. This pack includes T'au Empire detachments Kauyon, Mont'ka, Retaliation Cadre, Kroot Hunting Pack, Auxiliary Cadre, Experimental Prototype Cadre. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+  "source_note": "Generated from current 10e CSV exports. This pack includes T'au Empire detachments Kauyon, Mont'ka, Retaliation Cadre, Kroot Hunting Pack, Auxiliary Cadre, Experimental Prototype Cadre plus standard Core Stratagems. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
   "units": [
     {
       "id": "unit-000000408",
@@ -2688,12 +2688,235 @@
   ],
   "stratagems": [
     {
+      "id": "strat-000008335010",
+      "name": "GO TO GROUND",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One INFANTRY unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, all models in your unit have a 6+ invulnerable save and have the Benefit of Cover.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Battle Tactic Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335002",
+      "name": "COMMAND RE-ROLL",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
+      "timing": "Any phase, just after you make an Advance roll, a Charge roll, a Desperate Escape test or a Hazardous test for a unit from your army, or a Hit roll, a Wound roll, a Damage roll or a saving throw for a model in that unit, or a roll to determine the number of attacks made with a weapon equipped by a model in that unit. If you are using fast dice rolling, this Stratagem can still be used after rolling multiple rolls or saving throws at once.",
+      "target": "That unit or model from your army.",
+      "effect": "You re-roll that roll, test or saving throw. If you are using fast dice rolling, select one of those rolls or saving throws to re-roll.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Battle Tactic Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335004",
+      "name": "EPIC CHALLENGE",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
+      "timing": "Fight phase, when a CHARACTER unit from your army that is within Engagement Range of one or more Attached units is selected to fight.",
+      "target": "One CHARACTER model in your unit.",
+      "effect": "Until the end of the phase, all melee attacks made by that model have the [PRECISION] ability.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Epic Deed Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335005",
+      "name": "INSANE BRAVERY",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
+      "timing": "Battle-shock step of your Command phase, just before you take a Battle-shock test for a unit from your army.",
+      "target": "That unit from your army.",
+      "effect": "Your unit automatically passes that Battle-shock test.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Epic Deed Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335012",
+      "name": "HEROIC INTERVENTION",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "Your opponent’s Charge phase, just after an enemy unit ends a Charge move.",
+      "target": "One unit from your army that is within 6\" of that enemy unit and would be eligible to declare a charge against that enemy unit if it were your Charge phase.",
+      "effect": "Your unit now declares a charge that targets only that enemy unit, and you resolve that charge as if it were your Charge phase.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335009",
+      "name": "FIRE OVERWATCH",
+      "cp_cost": 1,
+      "phases": [
+        "movement",
+        "charge"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "Your opponent’s Movement or Charge phase, just after an enemy unit is set up or when an enemy unit starts or ends a Normal, Advance or Fall Back move, or declares a charge.",
+      "target": "One unit from your army that is within 24\" of that enemy unit and that would be eligible to shoot if it were your Shooting phase.",
+      "effect": "If that enemy unit is visible to your unit, your unit can shoot that enemy unit as if it were your Shooting phase.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335008",
+      "name": "RAPID INGRESS",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "End of your opponent’s Movement phase.",
+      "target": "One unit from your army that is in Reserves.",
+      "effect": "Your unit can arrive on the battlefield as if it were the Reinforcements step of your Movement phase, and if every model in that unit has the Deep Strike ability, you can set that unit up as described in the Deep Strike ability (even though it is not your Movement phase).",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335003",
+      "name": "COUNTER-OFFENSIVE",
+      "cp_cost": 2,
+      "phases": [
+        "fight"
+      ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
+      "timing": "Fight phase, just after an enemy unit has fought.",
+      "target": "One unit from your army that is within Engagement Range of one or more enemy units and that has not already been selected to fight this phase.",
+      "effect": "Your unit fights next.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335007",
+      "name": "TANK SHOCK",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
+      "timing": "Your Charge phase, just after a VEHICLE unit from your army ends a Charge move.",
+      "target": "That VEHICLE unit.",
+      "effect": "Select one enemy unit within Engagement Range of your unit, and select one VEHICLE model in your unit that is within Engagement Range of that enemy unit. Roll a number of D6 equal to the Toughness characteristic of the selected VEHICLE model. For each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds).",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335011",
+      "name": "SMOKESCREEN",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One SMOKE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, all models in your unit have the Benefit of Cover and the Stealth ability.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Wargear Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335006",
+      "name": "GRENADE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
+      "timing": "Your Shooting phase.",
+      "target": "One GRENADES unit from your army (excluding units that Advanced, Fell Back or have shot this turn) that is not within Engagement Range of one or more enemy units.",
+      "effect": "Select one GRENADES model in your unit and one enemy unit that is not within Engagement Range of any units from your army and is within 8\" of and visible to your GRENADES model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Wargear Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
       "id": "strat-000009840007",
       "name": "GUIDED FIRE",
       "cp_cost": 1,
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One T’AU EMPIRE unit from your army (excluding Kroot and Vespid Stingwings units) that has not been selected to shoot this phase.",
       "effect": "Until the end of the phase, add 1 to the Strength characteristic of ranged weapons equipped by models in your unit. If your unit is wholly within 9\" of one or more KROOT or VESPID STINGWINGS units from your army, add 2 to the Strength characteristic of ranged weapons equipped by models in your unit instead.",
@@ -2712,6 +2935,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Movement phase.",
       "target": "One T’AU EMPIRE unit from your army.",
       "effect": "Until the end of the turn, your unit is eligible to shoot in a turn in which it Advanced. If it is a Kroot or Vespid Stingwings unit, until the end of the turn, your unit is eligible to declare a charge in a turn in which it Advanced as well.",
@@ -2731,6 +2956,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase.",
       "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot or fight this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes an attack, re-roll a Wound roll of 1. If it is a Kroot or Vespid Stingwings unit, you can re-roll the Wound roll instead.",
@@ -2749,6 +2976,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Movement phase.",
       "target": "One Kroot or Vespid Stingwings unit from your army that has not been selected to move this phase.",
       "effect": "Until the end of the phase, each time your unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit.",
@@ -2767,6 +2996,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "End of the Fight phase.",
       "target": "One T’AU EMPIRE unit from your army that was eligible to fight this phase.",
       "effect": "If your unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". Otherwise, your unit can make a Fall Back move. It cannot embark within a Transport at the end of this move if it disembarked from a TRANSPORT this turn.",
@@ -2786,6 +3017,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase.",
       "target": "One Kroot or Vespid Stingwings unit from your army that has not been selected to shoot or fight this phase.",
       "effect": "Until the end of the phase, improve the Armour Penetration characteristic of weapons equipped by models in your unit by 1.",
@@ -2804,6 +3037,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase.",
       "effect": "Until the end of the phase, each time you roll one or more dice to determine the number of attacks made with a weapon equipped by a model in your unit, you can re-roll the result.",
@@ -2823,6 +3058,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One T’au Empire Battlesuit unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, each time an attack targets your unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of your unit, subtract 1 from the Wound roll.",
@@ -2841,6 +3078,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Command phase.",
       "target": "One T’au Empire Battlesuit unit from your army.",
       "effect": "Select one BATTLESUIT model in your unit: that model regains up to D3+1 lost wounds.",
@@ -2859,6 +3098,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
       "target": "One T’au Empire Crisis unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, your unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
@@ -2877,6 +3118,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase.",
       "effect": "Select the [SUSTAINED HITS 1] or [LETHAL HITS] ability. Until the end of the phase, ranged weapons equipped by models in your unit have the selected ability. You can instead select the [SUSTAINED HITS 1], [LETHAL HITS] and [HAZARDOUS] abilities to apply to those weapons until the end of the phase.",
@@ -2895,6 +3138,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase.",
       "effect": "Select one of the following to apply to your unit until the end of the phase: - Improve the Strength characteristic of ranged weapons equipped by models in your unit by 1. - Improve the Strength and Armour Penetration characteristics of ranged weapons equipped by models in your unit by 1, and those weapons have the [HAZARDOUS] ability.",
@@ -2913,6 +3158,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One T’AU EMPIRE unit from your army that has just been selected as an Observer unit (see For the Greater Good).",
       "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets their Spotted unit, improve the Ballistic Skill characteristic of that attack by 1 and, if your unit has the Markerlight keyword, that attack has the [IGNORES COVER] ability.",
@@ -2931,6 +3178,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "End of your opponent’s Fight phase.",
       "target": "One Stealth, Ghostkeel or Commander Shadowsun unit from your army.",
       "effect": "Remove your unit from the battlefield and place it into Strategic Reserves.",
@@ -2949,6 +3198,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit within 9\", improve the Armour Penetration characteristic of that attack by 1.",
@@ -2967,6 +3218,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase. The first time you use this Stratagem, you must also select one objective marker that is not in your opponent’s deployment zone; until the end of the battle, this becomes your Trap objective marker.",
       "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit within range of your Trap objective marker, add 1 to the Wound roll.",
@@ -2985,6 +3238,8 @@
       "phases": [
         "charge"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Charge phase, just after an enemy unit has declared a charge.",
       "target": "One T’au Empire Grenades unit from your army that was selected as one of the targets of that charge.",
       "effect": "That enemy unit must immediately take a Battle-shock test, and until the end of the phase, subtract 2 from Charge rolls made for that enemy unit.",
@@ -3003,6 +3258,8 @@
       "phases": [
         "charge"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Charge phase, just after an enemy unit has declared a charge.",
       "target": "One T’au Empire Infantry unit from your army that was selected as one of the targets of that charge, and one friendly Transport.",
       "effect": "Your unit can embark within that TRANSPORT . If it does, your opponent can select new targets for that charge.",
@@ -3022,6 +3279,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase.",
       "target": "One Kroot unit from your army that has not been selected to shoot or fight this phase.",
       "effect": "After your unit has resolved its attacks this phase, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a KROOT model from your army makes an attack that targets that enemy unit, unless the attacking unit is Battle-shocked, improve the Armour Penetration characteristic of that attack by 1.",
@@ -3040,6 +3299,8 @@
       "phases": [
         "any"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Any phase.",
       "target": "One Kroot Infantry or Kroot Hounds unit from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
       "effect": "Add a new unit to your army identical to your destroyed unit, in Strategic Reserves, at its Starting Strength.",
@@ -3058,6 +3319,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
       "target": "One Kroot unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, your unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
@@ -3076,6 +3339,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Movement phase, just after a Kroot unit from your army Falls Back.",
       "target": "That KROOT unit.",
       "effect": "Until the end of the turn, your unit is eligible to shoot and declare a charge.",
@@ -3094,6 +3359,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One Kroot unit from your army that destroyed one or more enemy units this phase.",
       "effect": "In your opponent’s next Command phase, each enemy unit within 6\" of your unit must take a Battle-shock test. If the unit taking that test is Below Half-strength, subtract 1 from that test. Enemy units affected by this Stratagem do not need to take any other Battle-shock tests in the same phase.",
@@ -3113,6 +3380,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy VEHICLE unit is selected to shoot or fight.",
       "target": "One Kroot Grenades unit from your army within 8\" of that enemy VEHICLE unit.",
       "effect": "Until the end of the phase, worsen the Weapon Skill and Ballistic Skill characteristics of that enemy VEHICLE unit’s weapons by 1.",
@@ -3131,6 +3400,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Start of your Shooting phase.",
       "target": "Two T’AU EMPIRE units from your army that have not been selected to shoot this phase, and one enemy unit.",
       "effect": "Until the end of the phase, each time a model in either of your units makes an attack, it can only target that enemy unit (and only if it is an eligible target for that attack), and when resolving that attack, improve the Armour Penetration characteristic by 1.",
@@ -3149,6 +3420,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Movement phase.",
       "target": "One T’AU EMPIRE unit from your army that has not been selected to move this phase.",
       "effect": "Until the end of the phase, if your unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit.",
@@ -3167,6 +3440,8 @@
       "phases": [
         "any"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Any phase.",
       "target": "One T’AU EMPIRE unit (excluding Kroot units) from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
       "effect": "Until the end of the battle, each time a T’AU EMPIRE unit (excluding KROOT units) from your army makes an attack that targets the enemy unit that just destroyed your unit, you can re-roll the Hit roll.",
@@ -3185,6 +3460,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One T’au Empire Infantry unit from your army that disembarked from a TRANSPORT this turn.",
       "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets the closest enemy unit, you can re-roll the Wound roll.",
@@ -3203,6 +3480,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One T’au Empire Infantry unit (excluding Kroot units) from your army that has just shot, and one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks.",
       "effect": "Until the end of your opponent’s next turn, that enemy unit is shaken. While a unit is shaken, subtract 2 from its Move characteristic and subtract 2 from Advance and Charge rolls made for it.",
@@ -3221,6 +3500,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
       "target": "One T’AU EMPIRE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, each time an attack is allocated to your unit, subtract 1 from the Damage characteristic of that attack.",
@@ -3239,6 +3520,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One T’au Empire Battlesuit unit from your army that has not been selected to shoot this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit that contains 6 or more models, that attack has the [SUSTAINED HITS 1] ability. If that attack targets an enemy unit that contains 11 or more models, it has the [SUSTAINED HITS 2] ability instead.",
@@ -3257,6 +3540,8 @@
       "phases": [
         "any"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Any phase, just after a T’au Empire Battlesuit model from your army is destroyed.",
       "target": "That destroyed model’s unit. You can use this Stratagem on that unit even if that unit was just destroyed.",
       "effect": "Before removing your model from play, if it has the Deadly Demise ability, do not roll for that ability; instead, you can choose whether the result of that roll is a 1 or a 6. If your model does not have the Deadly Demise ability, roll one D6 for each unit within 6\" of it: on a 4+, that unit suffers D3 mortal wounds.",
@@ -3275,6 +3560,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One T’au Empire Battlesuit unit from your army that can FLY whose attacks have been resolved this phase.",
       "effect": "If your unit is not within Engagement Range of one or more enemy units, it can make a Normal move. If it does, your unit cannot declare a charge this turn",
@@ -3293,6 +3580,8 @@
       "phases": [
         "charge"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Charge phase, just after an enemy unit has declared a charge.",
       "target": "One T’au Empire Battlesuit unit from your army that was selected as a target of that charge.",
       "effect": "That enemy unit must immediately take a Battle-shock test and you must roll one D6 for each model in that enemy unit: for each 6, that enemy unit suffers 1 mortal wound.",
@@ -3311,6 +3600,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Movement phase.",
       "target": "One T’au Empire Battlesuit unit from your army that is arriving using the Deep Strike ability this phase.",
       "effect": "Your unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy models.",
@@ -3330,6 +3621,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One T’au Empire Battlesuit unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, models in your unit have the Feel No Pain 6+ ability.",

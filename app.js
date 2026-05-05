@@ -8,7 +8,7 @@
 // CONSTANTS
 // ================================================================
 
-const APP_VERSION = '2.4.2';
+const APP_VERSION = '2.4.4';
 const DB_NAME     = 'BecomeChampionDB';
 const DB_VER      = 1;
 const STORE_PACKS = 'rulesPacks';
@@ -21,7 +21,7 @@ const OFFICIAL_PACKS = [
   { id: 'tau-rules-pack',   path: './rulepacks/TAU-rules-pack.json',   faction: "T'au Empire",       subfaction: '',               pack_version: '1.0.0', game_version: '10th Edition' },
   { id: 'ik-rules-pack',    path: './rulepacks/IK-rules-pack.json',    faction: 'Imperial Knights',  subfaction: '',               pack_version: '1.0.0', game_version: '10th Edition' },
   { id: 'sm-bt-rules-pack', path: './rulepacks/SM-BT-rules-pack.json', faction: 'Space Marines',     subfaction: 'Black Templars', pack_version: '1.0.0', game_version: '10th Edition' },
-  { id: 'cn-sm-bt-rules-pack', path: './rulepacks/CN-SM-BT-rules-pack.json', faction: '星际战士', subfaction: '黑色圣堂', pack_version: '1.0.0-cn.1', game_version: '10th Edition' },
+  { id: 'cn-sm-bt-rules-pack', path: './rulepacks/CN-SM-BT-rules-pack.json', faction: '星际战士', subfaction: '黑色圣堂', pack_version: '1.0.0-cn.2', game_version: '第10版' },
   { id: 'sm-um-rules-pack', path: './rulepacks/SM-UM-rules-pack.json', faction: 'Space Marines',     subfaction: 'Ultramarines',   pack_version: '1.1.0', game_version: '10th Edition' },
 ];
 const OFFICIAL_PACK_IDS = new Set(OFFICIAL_PACKS.map(p => p.id));
@@ -40,6 +40,11 @@ const FILTER_DEFS = [
   { id: 'unit',       label: '单位能力' },
   { id: 'stratagem',  label: '战略点' },
   { id: 'detachment', label: '编队规则' },
+];
+
+const TURN_CONTEXTS = [
+  { id: 'friendly', label: '我方回合' },
+  { id: 'enemy',    label: '敌方回合' },
 ];
 
 const ABILITY_TYPE_META = {
@@ -113,6 +118,7 @@ const state = {
   packs:         [],
   activePackId:  null,
   activePhase:   null,
+  turnContext:   'friendly',
   filter:        'all',
   detachmentFilter: 'all',
   round:         1,
@@ -228,6 +234,36 @@ function getDetachmentOptions(pack, abilities) {
   return opts;
 }
 
+function inferTurnScope({ turn, timing, summary, type }) {
+  const text = `${turn || ''}\n${timing || ''}\n${summary || ''}`.toLowerCase();
+
+  if (/either player'?s turn|either player’s turn|start or end of any phase|any phase/.test(text)) {
+    return 'either';
+  }
+
+  if (/your opponent'?s|opponent'?s turn|opponent’s turn/.test(text)) {
+    return 'enemy';
+  }
+
+  if (/your turn|your command phase|your movement phase|your shooting phase|your charge phase|battle-shock step of your command phase|at the start of your|at the end of your|end of your/.test(text)) {
+    return 'friendly';
+  }
+
+  if (type === 'reaction' && /enemy unit|selected as the target|selected its targets|ends a charge move|has fought|declare a charge/.test(text)) {
+    return 'enemy';
+  }
+
+  return 'either';
+}
+
+function matchesTurnContext(scope, context) {
+  const normalizedScope = scope === 'friendly' || scope === 'enemy' || scope === 'either'
+    ? scope
+    : 'either';
+  const normalizedContext = context === 'enemy' ? 'enemy' : 'friendly';
+  return normalizedScope === 'either' || normalizedScope === normalizedContext;
+}
+
 /**
  * Collect all phase-relevant abilities from a pack.
  * Returns flat list with _category ('unit'|'stratagem'|'detachment') attached.
@@ -249,6 +285,7 @@ function collectPhaseAbilities(pack, phaseId) {
           _unit: unit.name,
           _category: 'unit',
           _detachment: unitGroupLabel,
+          _turnScope: ab.turn_scope || inferTurnScope(ab),
         });
       }
     }
@@ -270,6 +307,7 @@ function collectPhaseAbilities(pack, phaseId) {
         priority:  rule.priority || 0,
         _category: 'detachment',
         _detachment: detachment || '编队规则',
+        _turnScope: rule.turn_scope || inferTurnScope(rule),
       });
     }
   }
@@ -290,6 +328,7 @@ function collectPhaseAbilities(pack, phaseId) {
         priority:  enh.priority || 0,
         _category: 'detachment',
         _detachment: detachment || '编队强化',
+        _turnScope: enh.turn_scope || inferTurnScope(enh),
       });
     }
   }
@@ -314,6 +353,12 @@ function collectPhaseAbilities(pack, phaseId) {
         _target:   strat.target,
         _category: 'stratagem',
         _detachment: detachment || '',
+        _turnScope: strat.turn_scope || inferTurnScope({
+          turn: strat.turn,
+          timing: strat.timing,
+          summary: strat.effect,
+          type: 'stratagem',
+        }),
       });
     }
   }
@@ -367,6 +412,7 @@ function navigate(view, opts = {}) {
   state.view      = view;
   if (opts.phase)  {
     state.activePhase = opts.phase;
+    state.turnContext = 'friendly';
     state.filter = 'all';
     state.detachmentFilter = 'all';
   }
@@ -577,17 +623,18 @@ function renderPhaseView() {
   const phase = PHASES.find(p => p.id === state.activePhase);
   if (!phase) return renderHomeView();
 
-  const pack       = getActivePack();
-  const allAbs     = collectPhaseAbilities(pack, phase.id);
-  const detachments = getDetachmentOptions(pack, allAbs);
+  const pack = getActivePack();
+  const allAbs = collectPhaseAbilities(pack, phase.id);
+  const turnScopedAbs = allAbs.filter(ab => matchesTurnContext(ab._turnScope, state.turnContext));
+  const detachments = getDetachmentOptions(pack, turnScopedAbs);
 
   if (state.detachmentFilter !== 'all' && !detachments.includes(state.detachmentFilter)) {
     state.detachmentFilter = 'all';
   }
 
   const detachmentFiltered = state.detachmentFilter === 'all'
-    ? allAbs
-    : allAbs.filter(a => a._category === 'unit' || a._detachment === state.detachmentFilter);
+    ? turnScopedAbs
+    : turnScopedAbs.filter(a => a._category === 'unit' || a._detachment === state.detachmentFilter);
 
   const filtered = state.filter === 'all'
     ? detachmentFiltered
@@ -619,6 +666,15 @@ function renderPhaseView() {
             </button>`;
   }).join('');
 
+  const turnContextToggle = `
+    <div class="turn-context-toggle" style="--phase-color:${phase.color}">
+      ${TURN_CONTEXTS.map(ctx => `
+        <button class="turn-context-btn ${state.turnContext === ctx.id ? 'active' : ''}"
+                data-turn-context="${ctx.id}">
+          ${ctx.label}
+        </button>`).join('')}
+    </div>`;
+
   const detachmentSelect = detachments.length <= 1
     ? ''
     : `
@@ -626,9 +682,9 @@ function renderPhaseView() {
         <label class="detachment-label" for="detachment-filter">按编队筛选</label>
         <div class="select-wrap">
           <select id="detachment-filter" class="detachment-select">
-            <option value="all" ${state.detachmentFilter === 'all' ? 'selected' : ''}>全部 (${allAbs.length})</option>
+            <option value="all" ${state.detachmentFilter === 'all' ? 'selected' : ''}>全部 (${turnScopedAbs.length})</option>
             ${detachments.map(name => {
-              const cnt = allAbs.filter(a => a._detachment === name).length;
+              const cnt = turnScopedAbs.filter(a => a._detachment === name).length;
               return `<option value="${esc(name)}" ${state.detachmentFilter === name ? 'selected' : ''}>${esc(name)} (${cnt})</option>`;
             }).join('')}
           </select>
@@ -636,7 +692,7 @@ function renderPhaseView() {
         </div>
       </div>`;
 
-  const usedInPhase = allAbs.filter(a => state.usedAbilities.has(a.id)).length;
+  const usedInPhase = turnScopedAbs.filter(a => state.usedAbilities.has(a.id)).length;
 
   const cards = filtered.length === 0
     ? `<div class="empty-state">
@@ -652,12 +708,13 @@ function renderPhaseView() {
         <button class="back-btn" id="btn-back">←</button>
         <div class="header-titles">
           <div class="header-title" style="color:${phase.color}">${phase.icon} ${phase.nameCN}</div>
-          <div class="header-subtitle">${phase.nameEN} · ${usedInPhase}/${allAbs.length} 已标记</div>
+          <div class="header-subtitle">${phase.nameEN} · ${state.turnContext === 'friendly' ? '我方回合' : '敌方回合'} · ${usedInPhase}/${turnScopedAbs.length} 已标记</div>
         </div>
       </div>
     </div>
 
     <div class="main-content">
+      ${turnContextToggle}
       ${detachmentSelect}
       <div class="filter-bar">${filterChips}</div>
       <div class="ability-list">${cards}</div>
@@ -949,6 +1006,15 @@ function handleAppClick(e) {
     return;
   }
 
+  const turnContextBtn = t.closest('[data-turn-context]');
+  if (turnContextBtn) {
+    state.turnContext = turnContextBtn.dataset.turnContext === 'enemy' ? 'enemy' : 'friendly';
+    state.filter = 'all';
+    state.detachmentFilter = 'all';
+    renderApp();
+    return;
+  }
+
   const chip = t.closest('.filter-chip');
   if (chip) {
     state.filter = chip.dataset.filter;
@@ -1164,26 +1230,31 @@ async function activateBuiltinPack(id) {
   const meta = OFFICIAL_PACKS.find(p => p.id === id);
   if (!meta) return;
 
-  // Already cached in IndexedDB — just activate
   const cached = state.packs.find(p => p.id === id);
-  if (cached) {
-    setActivePack(id);
-    return;
-  }
 
   // Read from inline global (window.BC_BUILTIN_PACKS), works on file:// too
   const inlineData = window.BC_BUILTIN_PACKS && window.BC_BUILTIN_PACKS[id];
   if (inlineData) {
     try {
+      if (cached && JSON.stringify(cached) === JSON.stringify(inlineData)) {
+        setActivePack(id);
+        return;
+      }
+
       await DB.put(inlineData);
       state.packs = await DB.getAll();
       state.activePackId = id;
       persistState();
-      toast(`✓ 已激活「${inlineData.faction}${inlineData.subfaction ? ' · ' + inlineData.subfaction : ''}」`, 'success');
+      toast(`✓ 已${cached ? '更新并激活' : '激活'}「${inlineData.faction}${inlineData.subfaction ? ' · ' + inlineData.subfaction : ''}」`, 'success');
       renderApp();
     } catch (err) {
       toast(`激活内置规则包失败: ${err.message}`, 'error');
     }
+    return;
+  }
+
+  if (cached) {
+    setActivePack(id);
     return;
   }
 

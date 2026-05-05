@@ -7,9 +7,9 @@ window.BC_BUILTIN_PACKS = {
     "faction": "Adeptus Custodes",
     "game_version": "10th Edition",
     "pack_version": "1.0.0",
-    "date": "2026-03-27",
+    "date": "2026-05-05",
     "author": "Community",
-    "source_note": "Generated from current 10e CSV exports. This pack includes Adeptus Custodes detachments Shield Host, Talons Of The Emperor, Null Maiden Vigil, Auric Champions, Solar Spearhead, Lions of the Emperor. Units include Adeptus Custodes faction datasheets from the main faction pack and Adeptus Custodes (Forge World), including Sisters of Silence datasheets that are part of the faction dataset. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+    "source_note": "Generated from current 10e CSV exports. This pack includes Adeptus Custodes detachments Shield Host, Talons Of The Emperor, Null Maiden Vigil, Auric Champions, Solar Spearhead, Lions of the Emperor plus standard Core Stratagems. Units include Adeptus Custodes faction datasheets from the main faction pack and Adeptus Custodes (Forge World), including Sisters of Silence datasheets that are part of the faction dataset. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
     "units": [
       {
         "id": "unit-000001560",
@@ -1214,12 +1214,235 @@ window.BC_BUILTIN_PACKS = {
     ],
     "stratagems": [
       {
+        "id": "strat-000008335010",
+        "name": "GO TO GROUND",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+        "target": "One INFANTRY unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+        "effect": "Until the end of the phase, all models in your unit have a 6+ invulnerable save and have the Benefit of Cover.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Battle Tactic Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335002",
+        "name": "COMMAND RE-ROLL",
+        "cp_cost": 1,
+        "phases": [
+          "any"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Any phase, just after you make an Advance roll, a Charge roll, a Desperate Escape test or a Hazardous test for a unit from your army, or a Hit roll, a Wound roll, a Damage roll or a saving throw for a model in that unit, or a roll to determine the number of attacks made with a weapon equipped by a model in that unit. If you are using fast dice rolling, this Stratagem can still be used after rolling multiple rolls or saving throws at once.",
+        "target": "That unit or model from your army.",
+        "effect": "You re-roll that roll, test or saving throw. If you are using fast dice rolling, select one of those rolls or saving throws to re-roll.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Battle Tactic Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335004",
+        "name": "EPIC CHALLENGE",
+        "cp_cost": 1,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, when a CHARACTER unit from your army that is within Engagement Range of one or more Attached units is selected to fight.",
+        "target": "One CHARACTER model in your unit.",
+        "effect": "Until the end of the phase, all melee attacks made by that model have the [PRECISION] ability.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Epic Deed Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335005",
+        "name": "INSANE BRAVERY",
+        "cp_cost": 1,
+        "phases": [
+          "command"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Battle-shock step of your Command phase, just before you take a Battle-shock test for a unit from your army.",
+        "target": "That unit from your army.",
+        "effect": "Your unit automatically passes that Battle-shock test.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Epic Deed Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335012",
+        "name": "HEROIC INTERVENTION",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Charge phase, just after an enemy unit ends a Charge move.",
+        "target": "One unit from your army that is within 6\" of that enemy unit and would be eligible to declare a charge against that enemy unit if it were your Charge phase.",
+        "effect": "Your unit now declares a charge that targets only that enemy unit, and you resolve that charge as if it were your Charge phase.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335009",
+        "name": "FIRE OVERWATCH",
+        "cp_cost": 1,
+        "phases": [
+          "movement",
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Movement or Charge phase, just after an enemy unit is set up or when an enemy unit starts or ends a Normal, Advance or Fall Back move, or declares a charge.",
+        "target": "One unit from your army that is within 24\" of that enemy unit and that would be eligible to shoot if it were your Shooting phase.",
+        "effect": "If that enemy unit is visible to your unit, your unit can shoot that enemy unit as if it were your Shooting phase.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335008",
+        "name": "RAPID INGRESS",
+        "cp_cost": 1,
+        "phases": [
+          "movement"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "End of your opponent’s Movement phase.",
+        "target": "One unit from your army that is in Reserves.",
+        "effect": "Your unit can arrive on the battlefield as if it were the Reinforcements step of your Movement phase, and if every model in that unit has the Deep Strike ability, you can set that unit up as described in the Deep Strike ability (even though it is not your Movement phase).",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335003",
+        "name": "COUNTER-OFFENSIVE",
+        "cp_cost": 2,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, just after an enemy unit has fought.",
+        "target": "One unit from your army that is within Engagement Range of one or more enemy units and that has not already been selected to fight this phase.",
+        "effect": "Your unit fights next.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335007",
+        "name": "TANK SHOCK",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Charge phase, just after a VEHICLE unit from your army ends a Charge move.",
+        "target": "That VEHICLE unit.",
+        "effect": "Select one enemy unit within Engagement Range of your unit, and select one VEHICLE model in your unit that is within Engagement Range of that enemy unit. Roll a number of D6 equal to the Toughness characteristic of the selected VEHICLE model. For each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds).",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335011",
+        "name": "SMOKESCREEN",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+        "target": "One SMOKE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+        "effect": "Until the end of the phase, all models in your unit have the Benefit of Cover and the Stealth ability.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Wargear Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335006",
+        "name": "GRENADE",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Shooting phase.",
+        "target": "One GRENADES unit from your army (excluding units that Advanced, Fell Back or have shot this turn) that is not within Engagement Range of one or more enemy units.",
+        "effect": "Select one GRENADES model in your unit and one enemy unit that is not within Engagement Range of any units from your army and is within 8\" of and visible to your GRENADES model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Wargear Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
         "id": "strat-000008931007",
         "name": "SHOULDER THE MANTLE",
         "cp_cost": 1,
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase, before the Reinforcements step.",
         "target": "One Adeptus Custodes Character model from your army that is not leading a unit.",
         "effect": "Select one friendly unit (excluding Battle-shocked and Attached units) within 2\" horizontally and 5\" vertically of your model that it could lead (as described in the Leader section of its datasheet). Your model attaches to that unit as a Leader. Change that unit’s Starting Strength accordingly.",
@@ -1238,6 +1461,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase.",
         "target": "One Adeptus Custodes Character unit from your army that has just destroyed the unit you selected at the start of your Command phase as the target of your Assemblage of Might ability.",
         "effect": "Select one enemy unit on the battlefield Until the start of your next Command phase, each time an ADEPTUS CUSTODES CHARACTER model from your army makes an attack that target that enemy unit, add 1 to the Wound roll In addition, if the destroyed unit was a CHARACTER unit, gain 1CP.",
@@ -1256,6 +1481,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, just after an Adeptus Custodes Warlord model from your army has used an ability on its datasheet or from an Enhancement that says it can only be used Once per battle.",
         "target": "That Adeptus Custodes Warlord model.",
         "effect": "Your model can use its Once per battle’ ability one additional time during this battle (but not in the same phase).",
@@ -1275,6 +1502,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One Adeptus Custodes Character unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, CHARACTER models in your unit have the Feel No Pain 4+ ability.",
@@ -1293,6 +1522,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "Up to two Adeptus Custodes Character units from your army that have not been selected to fight this phase.",
         "effect": "Until the end of the phase, each time a CHARACTER model in either of your units makes an attack that targets a MONSTER or VEHICLE unit, you can re-roll the Hit roll and you can re-roll the Wound roll.",
@@ -1311,6 +1542,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One Adeptus Custodes Character model from your army that was just destroyed and has not fought this phase. You can use this Stratagem on that unit even though it was just destroyed.",
         "effect": "Do not remove your destroyed model from play. The destroyed model can fight after the attacking unit has finished making attacks, and is then removed from play.",
@@ -1329,6 +1562,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One ADEPTUS CUSTODES unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
@@ -1347,6 +1582,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "One Allarus Custodians or Aquilon Custodians unit from your army that is on the battlefield.",
         "effect": "That unit is split into separate units, each containing one model. These new units each have a Starting Strength of 1.",
@@ -1365,6 +1602,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS CUSTODES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6, adding 2 to the result if that model has the CHARACTER keyword. On a 4+, do not remove it from play; the destroyed model can fight after the attacking unit has finished making its attacks (when doing so, it is treated as having 1 wound remaining), and is then removed from play.",
@@ -1383,6 +1622,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, just after an Adeptus Custodes Character model from your army has used an ability on its datasheet that states it can only be used ‘once per battle’.",
         "target": "That ADEPTUS CUSTODES CHARACTER model.",
         "effect": "Your model can use that ‘once per battle’ ability one additional time during the battle (but not in the same phase).",
@@ -1401,6 +1642,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has shot.",
         "target": "One ADEPTUS CUSTODES unit from your army (excluding VEHICLE units) that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Your unit can make a Normal move of up to D6\".",
@@ -1419,6 +1662,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase, just after an ADEPTUS CUSTODES unit from your army Falls Back.",
         "target": "That ADEPTUS CUSTODES unit.",
         "effect": "Until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
@@ -1437,6 +1682,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One Witchseekers unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, add 1 to the Attacks characteristic of Torrent weapons equipped by models in your unit. If such a weapon targets a PSYKER or Battle-shocked unit this phase, add 2 to its Attacks characteristic instead.",
@@ -1455,6 +1702,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One Vigilators unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a melee attack, you can re-roll the Hit roll If the target of that attack is Battle-shocked or a PSYKER , you can re-roll the Wound roll as well.",
@@ -1474,6 +1723,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One Anathema Psykana unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Select either the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have the selected ability, but models in your unit can only target PSYKER units with their attacks.",
@@ -1492,6 +1743,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One Prosecutors unit from your army that has just shot.",
         "effect": "Select one enemy unit hit by one or more of those attacks. Until the start of your next turn, while your unit is on the battlefield, that enemy unit is prosecuted. While a unit is prosecuted, each time an Anathema Psykana model makes an attack against that unit, improve the Armour Penetration characteristic of that attack by 1. While a PSYKER or Battle-shocked unit is prosecuted, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
@@ -1510,6 +1763,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One Anathema Psykana Infantry unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, your unit has the Stealth ability, and Battle-shocked and PSYKER models can only select your unit as a target of a ranged attack if they are within 12\".",
@@ -1528,6 +1783,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, just after an enemy PSYKER unit has either finished using a Psychic ability that targets a unit, or finished making Psychic Attacks.",
         "target": "One Anathema Psykana unit from your army within 18\" of that enemy PSYKER unit.",
         "effect": "That enemy PSYKER unit must take a Leadership test If the test is passed, that PSYKER unit is Battle-shocked; if the test is failed that PSYKER unit suffers 3 mortal wounds and is Battle-shocked.",
@@ -1546,6 +1803,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS CUSTODES unit from your army (excluding Anathema Psykana units) that has not been selected to shoot this phase.",
         "effect": "Select either the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase ranged weapons equipped by models in your unit have the selected ability.",
@@ -1564,6 +1823,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, just after a mortal wound has been allocated to an Adeptus Custodes model from your army(excluding Anathema Psykana models).",
         "target": "That ADEPTUS CUSTODES model’s unit.",
         "effect": "Until the end of the phase, models in your unit have the Feel No Pain 4+ ability against mortal wounds.",
@@ -1582,6 +1843,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just after an enemy unit has selected its targets.",
         "target": "One Adeptus Custodes Infantry unit from your army (excluding Anathema Psykana units) that is within range of an objective marker you control and that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time a melee attack targets your unit, subtract 1 from the Hit roll.",
@@ -1600,6 +1863,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Start of the Fight phase.",
         "target": "One ADEPTUS CUSTODES unit from your army (excluding Anathema Psykana units) that is below its Starting Strength.",
         "effect": "Until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit. If your unit is Below Half-strength, until the end of the phase, add 2 to the Attacks characteristic of those melee weapons instead.",
@@ -1618,6 +1883,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One Adeptus Custodes unit from your army that Fell Back this phase.",
         "effect": "Until the end of your turn, that unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
@@ -1636,6 +1903,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One Adeptus Custodes Battleline unit from your army (excluding Anathema Psykana units) within range of an objective marker you control.",
         "effect": "That objective marker remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
@@ -1655,6 +1924,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One Adeptus Custodes Vehicle unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time an attack targets a model in your unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of your unit, subtract 1 from the Wound roll.",
@@ -1673,6 +1944,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS CUSTODES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6, adding 1 to the result if your unit has the Walker keyword. On a 4+, do not remove it from play; The destroyed model can fight after the attacking unit has finished making its attacks (when doing so, it is assumed to have 1 wound remaining), and is then removed from play.",
@@ -1691,6 +1964,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just before an ADEPTUS CUSTODES unit from your army Piles In.",
         "target": "That ADEPTUS CUSTODES unit.",
         "effect": "Until the end of the phase, each time a model in your unit makes a Pile-in move, it can move up to D3+3\" instead of up to 3\".",
@@ -1710,6 +1985,8 @@ window.BC_BUILTIN_PACKS = {
           "movement",
           "charge"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase or your Charge phase.",
         "target": "One Adeptus Custodes Vehicle or Adeptus Custodes Mounted unit from your army.",
         "effect": "Until the end of the phase, each time a model in your unit makes a move, it can move through terrain features.",
@@ -1728,6 +2005,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase, just after an ADEPTUS CUSTODES VEHICLE unit from your army Advances.",
         "target": "That Adeptus Custodes Vehicle unit.",
         "effect": "Until the end of the turn, your unit is eligible to shoot in a turn in which it Advanced. If your unit has the Walker keyword, until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Advanced instead.",
@@ -1746,6 +2025,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS CUSTODES unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability, and until the end of the phase, each time a model in your unit makes an attack, you can ignore any or all modifiers to that attack’s Ballistic Skill characteristic and/or any or all modifiers to the Hit roll.",
@@ -1764,6 +2045,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "Up to two ADEPTUS CUSTODES INFANTRY units from your army, and one enemy unit that is an eligible target for all of those units.",
         "effect": "Until the end of the phase, your units can only target that enemy unit, but each time a model in one of your units makes a ranged attack, improve the Strength and Armour Penetration characteristics of that attack by 1.",
@@ -1782,6 +2065,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
         "target": "Up to two Adeptus Custodes units from your army that are within 9\" of that enemy unit.",
         "effect": "Your units can make a Normal move of up to 6\".",
@@ -1800,6 +2085,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Start of the Fight phase.",
         "target": "Up to two Adeptus Custodes units from your army.",
         "effect": "Until the end of the phase, each time a model in one of your units targets an enemy unit that is below its Starting Strength, add 1 to the Wound roll.",
@@ -1819,6 +2106,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS CusTODES unit from your army that was selected as the target of one or more of the attacking unit’s attacks, and one friendly ANATHEMA PSYKANA unit within 6\" of that ADEPTUS CUSTODES unit.",
         "effect": "Until the end of the phase, your unit has the Feel No Pain 4+ ability against Psychic attacks and mortal wounds.",
@@ -1837,6 +2126,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One Anathema Psykana Infantry unit from your army that was selected as the target of one or more of the attacking unit’s attacks, and one other friendly Adeptus Custodes Infantry unit (excluding ANATHEMA PSYKANA units) within 6\" of that ANATHEMA PSYKANA INFANTRY unit.",
         "effect": "Until the end of the phase, any attack that targets your ANATHEMA PSYKANA unit must instead target your other ADEPTUS CUSTODES unit (unless it is not an eligible target).",
@@ -1855,6 +2146,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Start of your Movement phase.",
         "target": "Up to two ADEPTUS CUSTODES units from your army.",
         "effect": "Until the end of the turn, your units are eilgible to shoot and/or declare a charge in a turn in which they Fell Back.",
@@ -2239,9 +2532,9 @@ window.BC_BUILTIN_PACKS = {
     "faction": "Tyranids",
     "game_version": "10th Edition",
     "pack_version": "1.0.0",
-    "date": "2026-04-14",
+    "date": "2026-05-05",
     "author": "Community",
-    "source_note": "Generated from current 10e CSV exports. This pack includes Tyranid detachments Invasion Fleet, Crusher Stampede, Unending Swarm, Assimilation Swarm, Vanguard Onslaught, Synaptic Nexus. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+    "source_note": "Generated from current 10e CSV exports. This pack includes Tyranid detachments Invasion Fleet, Crusher Stampede, Unending Swarm, Assimilation Swarm, Vanguard Onslaught, Synaptic Nexus plus standard Core Stratagems. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
     "units": [
       {
         "id": "unit-000000503",
@@ -4052,12 +4345,235 @@ window.BC_BUILTIN_PACKS = {
     ],
     "stratagems": [
       {
+        "id": "strat-000008335010",
+        "name": "GO TO GROUND",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+        "target": "One INFANTRY unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+        "effect": "Until the end of the phase, all models in your unit have a 6+ invulnerable save and have the Benefit of Cover.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Battle Tactic Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335002",
+        "name": "COMMAND RE-ROLL",
+        "cp_cost": 1,
+        "phases": [
+          "any"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Any phase, just after you make an Advance roll, a Charge roll, a Desperate Escape test or a Hazardous test for a unit from your army, or a Hit roll, a Wound roll, a Damage roll or a saving throw for a model in that unit, or a roll to determine the number of attacks made with a weapon equipped by a model in that unit. If you are using fast dice rolling, this Stratagem can still be used after rolling multiple rolls or saving throws at once.",
+        "target": "That unit or model from your army.",
+        "effect": "You re-roll that roll, test or saving throw. If you are using fast dice rolling, select one of those rolls or saving throws to re-roll.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Battle Tactic Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335004",
+        "name": "EPIC CHALLENGE",
+        "cp_cost": 1,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, when a CHARACTER unit from your army that is within Engagement Range of one or more Attached units is selected to fight.",
+        "target": "One CHARACTER model in your unit.",
+        "effect": "Until the end of the phase, all melee attacks made by that model have the [PRECISION] ability.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Epic Deed Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335005",
+        "name": "INSANE BRAVERY",
+        "cp_cost": 1,
+        "phases": [
+          "command"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Battle-shock step of your Command phase, just before you take a Battle-shock test for a unit from your army.",
+        "target": "That unit from your army.",
+        "effect": "Your unit automatically passes that Battle-shock test.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Epic Deed Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335012",
+        "name": "HEROIC INTERVENTION",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Charge phase, just after an enemy unit ends a Charge move.",
+        "target": "One unit from your army that is within 6\" of that enemy unit and would be eligible to declare a charge against that enemy unit if it were your Charge phase.",
+        "effect": "Your unit now declares a charge that targets only that enemy unit, and you resolve that charge as if it were your Charge phase.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335009",
+        "name": "FIRE OVERWATCH",
+        "cp_cost": 1,
+        "phases": [
+          "movement",
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Movement or Charge phase, just after an enemy unit is set up or when an enemy unit starts or ends a Normal, Advance or Fall Back move, or declares a charge.",
+        "target": "One unit from your army that is within 24\" of that enemy unit and that would be eligible to shoot if it were your Shooting phase.",
+        "effect": "If that enemy unit is visible to your unit, your unit can shoot that enemy unit as if it were your Shooting phase.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335008",
+        "name": "RAPID INGRESS",
+        "cp_cost": 1,
+        "phases": [
+          "movement"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "End of your opponent’s Movement phase.",
+        "target": "One unit from your army that is in Reserves.",
+        "effect": "Your unit can arrive on the battlefield as if it were the Reinforcements step of your Movement phase, and if every model in that unit has the Deep Strike ability, you can set that unit up as described in the Deep Strike ability (even though it is not your Movement phase).",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335003",
+        "name": "COUNTER-OFFENSIVE",
+        "cp_cost": 2,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, just after an enemy unit has fought.",
+        "target": "One unit from your army that is within Engagement Range of one or more enemy units and that has not already been selected to fight this phase.",
+        "effect": "Your unit fights next.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335007",
+        "name": "TANK SHOCK",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Charge phase, just after a VEHICLE unit from your army ends a Charge move.",
+        "target": "That VEHICLE unit.",
+        "effect": "Select one enemy unit within Engagement Range of your unit, and select one VEHICLE model in your unit that is within Engagement Range of that enemy unit. Roll a number of D6 equal to the Toughness characteristic of the selected VEHICLE model. For each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds).",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335011",
+        "name": "SMOKESCREEN",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+        "target": "One SMOKE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+        "effect": "Until the end of the phase, all models in your unit have the Benefit of Cover and the Stealth ability.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Wargear Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335006",
+        "name": "GRENADE",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Shooting phase.",
+        "target": "One GRENADES unit from your army (excluding units that Advanced, Fell Back or have shot this turn) that is not within Engagement Range of one or more enemy units.",
+        "effect": "Select one GRENADES model in your unit and one enemy unit that is not within Engagement Range of any units from your army and is within 8\" of and visible to your GRENADES model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Wargear Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
         "id": "strat-000008413007",
         "name": "RAPACIOUS HUNGER",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Fight phase.",
         "target": "One TYRANIDS unit from your army that just destroyed an enemy unit.",
         "effect": "Your unit immediately Regenerates (See Feed the Swarm). When doing so, if your unit is a Harvester unit and you choose for one model to regain up to D3 lost wounds, that model regains up to 3 lost wounds instead.",
@@ -4076,6 +4592,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase.",
         "target": "One Harvester unit from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
         "effect": "Until the end of the battle, each time a friendly TYRANIDS model makes an attack that targets the enemy unit that just destroyed your HARVESTER unit, add 1 to the Wound roll.",
@@ -4095,6 +4613,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One Harvester unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, models in your unit have the Feel No Pain 5+ ability. If your unit is within range of an objective marker you control, until the end of the phase models in your unit have the Feel No Pain 4+ ability instead.",
@@ -4113,6 +4633,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, when a TYRANIDS unit from your army is destroyed, before the last model in it is removed from play.",
         "target": "One Harvester unit from your army that is within 6\" of that destroyed unit.",
         "effect": "Regenerate one friendly TYRANIDS unit within 6\" of your HARVESTER unit (See Feed the Swarm).",
@@ -4131,6 +4653,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Command phase.",
         "target": "One Harvester unit from your army that is within range of an objective marker you control.",
         "effect": "That objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
@@ -4149,6 +4673,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One TYRANIDS unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [LETHAL HITS] ability. If your unit is a Harvester unit, each time a model in that unit makes a melee attack, a successful unmodified Hit roll of 5+ scores a Critical Hit as well.",
@@ -4167,6 +4693,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just after an enemy unit has selected its targets.",
         "target": "One Tyranids Monster unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "That enemy unit must take a Battle-shock test and, until the end of the phase, each time a model in that enemy unit makes an attack that targets your unit, subtract 1 from the Hit roll. If that Battle-shock test was failed, subtract 1 from the Wound roll as well.",
@@ -4185,6 +4713,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One Tyranids Monster unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability, and until the end of the phase each time a model in your unit makes an attack, you can ignore any or all modifiers to that model’s Ballistic Skill characteristic and any or all modifiers to the Hit roll.",
@@ -4203,6 +4733,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One Tyranids Monster unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack, you can re-roll the Hit roll.",
@@ -4221,6 +4753,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Charge phase, just after a Tyranids Monster model from your army ends a Charge move.",
         "target": "That TYRANIDS MONSTER model.",
         "effect": "Select one enemy unit within Engagement Range of your model and roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.",
@@ -4239,6 +4773,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One Tyranids Monster unit from your army that has not been selected to move this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a Normal, Advance or Fall Back move, it can move through models (excluding TITANIC models) and sections of terrain features that are 4\" or less in height. When doing so: - It can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them. - It can also move through sections of terrain features that are more than 4\" in height, but if it does, after its unit has moved, roll one D6: on a 1, your unit is Battle-shocked.",
@@ -4258,6 +4794,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after a Tyranids Monster model from your army with the Deadly Demise ability that cannot FLY is destroyed.",
         "target": "That TYRANIDS MONSTER model. You can use this Stratagem on that model even though it was just destroyed.",
         "effect": "Do not roll one D6 to determine whether mortal wounds are inflicted by your model’s Deadly Demise ability. Instead, mortal wounds are automatically inflicted.",
@@ -4276,6 +4814,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "Up to two TYRANIDS units from your army that are within Synapse Range of your army and are eligible to fight, or one other TYRANIDS unit from your army that is eligible to fight.",
         "effect": "Until the end of the phase, each time a model in any of those selected units makes an attack, an unmodified Hit roll of 5+ scores a Critical Hit.",
@@ -4295,6 +4835,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One TYRANIDS unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, models in your unit have the Feel No Pain 6+ ability. If your unit is within Synapse Range of your army, models in your unit have the Feel No Pain 5+ ability instead.",
@@ -4313,6 +4855,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just before a TYRANIDS unit from your army Consolidates.",
         "target": "That TYRANIDS unit.",
         "effect": "Until the end of the phase, each time your unit Consolidates, models in it can move an additional 3\" as long as your unit can end that move within Engagement Range of one or more enemy units. If your unit is within Synapse Range of your army and not within Engagement Range of any enemy units, instead of making that Consolidation move, it can make a Normal move of up to 6\".",
@@ -4331,6 +4875,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "Up to two TYRANIDS units from your army that are within Synapse Range of your army, or one other TYRANIDS unit from your army.",
         "effect": "Select one Hyper-adaptation. Until the start of your next Command phase, that Hyper-adaptation is active for those selected units in addition to any other that may be active for your army.",
@@ -4349,6 +4895,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "Up to two Endless Multitude units from your army that are within Synapse Range of your army, or one other ENDLESS MULTITUDE unit from your army.",
         "effect": "You can return up to D3+3 destroyed models to each of the selected units.",
@@ -4367,6 +4915,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just after an enemy unit has selected its targets.",
         "target": "One TYRANIDS unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.",
@@ -4386,6 +4936,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One Synapse unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -4405,6 +4957,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One Synapse unit from your army that has not been selected to shoot or fight this phase, and one enemy unit within 24\" of and visible to the SYNAPSE unit.",
         "effect": "Until the end of the phase, each time a friendly TYRANIDS model makes an attack that targets that enemy unit, if the attacking model’s unit is within 6\" of your SYNAPSE unit, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.",
@@ -4423,6 +4977,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Command phase.",
         "target": "One Synapse unit from your army.",
         "effect": "Until the end of the turn, while a friendly TYRANIDS unit is within 9\" of the selected unit, that unit is within Synapse Range of your army.",
@@ -4441,6 +4997,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "One TYRANIDS unit from your army that is within Synapse Range of your army.",
         "effect": "Select one Synaptic Imperative, even if you have already selected that imperative this battle. Until the start of your next Command phase, that Synaptic Imperative is active for your unit instead of any other Synaptic Imperative that is active for your army.",
@@ -4459,6 +5017,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One TYRANIDS unit from your army that is within Synapse Range of your army and made a Fall Back move this phase.",
         "effect": "Your unit is eligible to shoot and declare a charge this turn.",
@@ -4477,6 +5037,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, just after an enemy unit fails a Battle-shock test.",
         "target": "One Synapse unit from your army within 12\" of that enemy unit.",
         "effect": "Roll six D6: for each 3+, that enemy unit suffers 1 mortal wound.",
@@ -4496,6 +5058,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One Endless Multitude unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability, and If your unit contains 15 or more models, each time a model in your unit makes an attack, an unmodified Hit roll of 5+ scores a Critical Hit.",
@@ -4515,6 +5079,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One Endless Multitude unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll.",
@@ -4533,6 +5099,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One Endless Multitude unit from your army.",
         "effect": "Until the end of the phase, each time your unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit.",
@@ -4551,6 +5119,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, just before an Endless Multitude unit from your army that is within Synapse Range of your army makes a Surge move.",
         "target": "That ENDLESS MULTITUDE unit.",
         "effect": "When making that Surge move, you can re-roll the D6 to determine how far your unit moves, and your unit can end that move as close as possible to the closest objective marker (instead of as close as possible to the closest enemy unit]. All other rules for making Surge moves still apply.",
@@ -4569,6 +5139,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase.",
         "target": "One Endless Multitude unit from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
         "effect": "Add a new unit to your army identical to your destroyed unit, in Strategic Reserves, at its Starting Strength.",
@@ -4587,6 +5159,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One Endless Multitude unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, your unit is treated as containing fewer than five models for the purpose of the [BLAST] ability.",
@@ -4605,6 +5179,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One Vanguard Invader Infantry unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
@@ -4624,6 +5200,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase, just after a Vanguard Invader unit from your army has selected its targets.",
         "target": "That VANGUARD INVADER unit.",
         "effect": "Select one enemy unit that was selected as the target of one or more of your unit’s attacks. That enemy unit must take a Battle-shock test. Until the end of the phase, each time a model in your unit makes an attack that targets that enemy unit, add 1 to the Hit roll. If the Battle-shock test was failed, add 1 to the Wound roll as well.",
@@ -4642,6 +5220,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One Vanguard Invader unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, your unit can only be selected as the target of a ranged attack if the attacking model is within 18\" or, if your unit has the Lone Operative ability, if the attacking model is within 6\". Your opponent can select new targets for the attacking unit’s attacks.",
@@ -4660,6 +5240,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
         "target": "Up to two Vanguard Invader units from your army that are within 9\" of that enemy unit, or one other Tyranids Infantry unit from your army that is within 9\" of that enemy unit.",
         "effect": "Those selected units can each make a Normal move of up to 6\".",
@@ -4678,6 +5260,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One TYRANIDS unit from your army that is in Reserves, or up to two Vanguard Invader units from your army that are in Reserves.",
         "effect": "Until the end of the phase, for the purposes of setting up those selected units on the battlefield, treat the current battle round number as being one higher than it actually is.",
@@ -4696,6 +5280,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "End of your opponent’s Fight phase.",
         "target": "Up to two Vanguard Invader units from your army, or one Tyranids Infantry unit from your army.",
         "effect": "Remove the targeted units from the battlefield and place them into Strategic Reserves.",
@@ -5080,9 +5666,9 @@ window.BC_BUILTIN_PACKS = {
     "faction": "T'au Empire",
     "game_version": "10th Edition",
     "pack_version": "1.0.0",
-    "date": "2026-04-14",
+    "date": "2026-05-05",
     "author": "Community",
-    "source_note": "Generated from current 10e CSV exports. This pack includes T'au Empire detachments Kauyon, Mont'ka, Retaliation Cadre, Kroot Hunting Pack, Auxiliary Cadre, Experimental Prototype Cadre. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+    "source_note": "Generated from current 10e CSV exports. This pack includes T'au Empire detachments Kauyon, Mont'ka, Retaliation Cadre, Kroot Hunting Pack, Auxiliary Cadre, Experimental Prototype Cadre plus standard Core Stratagems. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
     "units": [
       {
         "id": "unit-000000408",
@@ -7763,12 +8349,235 @@ window.BC_BUILTIN_PACKS = {
     ],
     "stratagems": [
       {
+        "id": "strat-000008335010",
+        "name": "GO TO GROUND",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+        "target": "One INFANTRY unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+        "effect": "Until the end of the phase, all models in your unit have a 6+ invulnerable save and have the Benefit of Cover.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Battle Tactic Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335002",
+        "name": "COMMAND RE-ROLL",
+        "cp_cost": 1,
+        "phases": [
+          "any"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Any phase, just after you make an Advance roll, a Charge roll, a Desperate Escape test or a Hazardous test for a unit from your army, or a Hit roll, a Wound roll, a Damage roll or a saving throw for a model in that unit, or a roll to determine the number of attacks made with a weapon equipped by a model in that unit. If you are using fast dice rolling, this Stratagem can still be used after rolling multiple rolls or saving throws at once.",
+        "target": "That unit or model from your army.",
+        "effect": "You re-roll that roll, test or saving throw. If you are using fast dice rolling, select one of those rolls or saving throws to re-roll.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Battle Tactic Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335004",
+        "name": "EPIC CHALLENGE",
+        "cp_cost": 1,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, when a CHARACTER unit from your army that is within Engagement Range of one or more Attached units is selected to fight.",
+        "target": "One CHARACTER model in your unit.",
+        "effect": "Until the end of the phase, all melee attacks made by that model have the [PRECISION] ability.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Epic Deed Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335005",
+        "name": "INSANE BRAVERY",
+        "cp_cost": 1,
+        "phases": [
+          "command"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Battle-shock step of your Command phase, just before you take a Battle-shock test for a unit from your army.",
+        "target": "That unit from your army.",
+        "effect": "Your unit automatically passes that Battle-shock test.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Epic Deed Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335012",
+        "name": "HEROIC INTERVENTION",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Charge phase, just after an enemy unit ends a Charge move.",
+        "target": "One unit from your army that is within 6\" of that enemy unit and would be eligible to declare a charge against that enemy unit if it were your Charge phase.",
+        "effect": "Your unit now declares a charge that targets only that enemy unit, and you resolve that charge as if it were your Charge phase.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335009",
+        "name": "FIRE OVERWATCH",
+        "cp_cost": 1,
+        "phases": [
+          "movement",
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Movement or Charge phase, just after an enemy unit is set up or when an enemy unit starts or ends a Normal, Advance or Fall Back move, or declares a charge.",
+        "target": "One unit from your army that is within 24\" of that enemy unit and that would be eligible to shoot if it were your Shooting phase.",
+        "effect": "If that enemy unit is visible to your unit, your unit can shoot that enemy unit as if it were your Shooting phase.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335008",
+        "name": "RAPID INGRESS",
+        "cp_cost": 1,
+        "phases": [
+          "movement"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "End of your opponent’s Movement phase.",
+        "target": "One unit from your army that is in Reserves.",
+        "effect": "Your unit can arrive on the battlefield as if it were the Reinforcements step of your Movement phase, and if every model in that unit has the Deep Strike ability, you can set that unit up as described in the Deep Strike ability (even though it is not your Movement phase).",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335003",
+        "name": "COUNTER-OFFENSIVE",
+        "cp_cost": 2,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, just after an enemy unit has fought.",
+        "target": "One unit from your army that is within Engagement Range of one or more enemy units and that has not already been selected to fight this phase.",
+        "effect": "Your unit fights next.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335007",
+        "name": "TANK SHOCK",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Charge phase, just after a VEHICLE unit from your army ends a Charge move.",
+        "target": "That VEHICLE unit.",
+        "effect": "Select one enemy unit within Engagement Range of your unit, and select one VEHICLE model in your unit that is within Engagement Range of that enemy unit. Roll a number of D6 equal to the Toughness characteristic of the selected VEHICLE model. For each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds).",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335011",
+        "name": "SMOKESCREEN",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+        "target": "One SMOKE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+        "effect": "Until the end of the phase, all models in your unit have the Benefit of Cover and the Stealth ability.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Wargear Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335006",
+        "name": "GRENADE",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Shooting phase.",
+        "target": "One GRENADES unit from your army (excluding units that Advanced, Fell Back or have shot this turn) that is not within Engagement Range of one or more enemy units.",
+        "effect": "Select one GRENADES model in your unit and one enemy unit that is not within Engagement Range of any units from your army and is within 8\" of and visible to your GRENADES model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Wargear Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
         "id": "strat-000009840007",
         "name": "GUIDED FIRE",
         "cp_cost": 1,
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One T’AU EMPIRE unit from your army (excluding Kroot and Vespid Stingwings units) that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, add 1 to the Strength characteristic of ranged weapons equipped by models in your unit. If your unit is wholly within 9\" of one or more KROOT or VESPID STINGWINGS units from your army, add 2 to the Strength characteristic of ranged weapons equipped by models in your unit instead.",
@@ -7787,6 +8596,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One T’AU EMPIRE unit from your army.",
         "effect": "Until the end of the turn, your unit is eligible to shoot in a turn in which it Advanced. If it is a Kroot or Vespid Stingwings unit, until the end of the turn, your unit is eligible to declare a charge in a turn in which it Advanced as well.",
@@ -7806,6 +8617,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack, re-roll a Wound roll of 1. If it is a Kroot or Vespid Stingwings unit, you can re-roll the Wound roll instead.",
@@ -7824,6 +8637,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One Kroot or Vespid Stingwings unit from your army that has not been selected to move this phase.",
         "effect": "Until the end of the phase, each time your unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit.",
@@ -7842,6 +8657,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "End of the Fight phase.",
         "target": "One T’AU EMPIRE unit from your army that was eligible to fight this phase.",
         "effect": "If your unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". Otherwise, your unit can make a Fall Back move. It cannot embark within a Transport at the end of this move if it disembarked from a TRANSPORT this turn.",
@@ -7861,6 +8678,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One Kroot or Vespid Stingwings unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, improve the Armour Penetration characteristic of weapons equipped by models in your unit by 1.",
@@ -7879,6 +8698,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, each time you roll one or more dice to determine the number of attacks made with a weapon equipped by a model in your unit, you can re-roll the result.",
@@ -7898,6 +8719,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One T’au Empire Battlesuit unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time an attack targets your unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of your unit, subtract 1 from the Wound roll.",
@@ -7916,6 +8739,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Command phase.",
         "target": "One T’au Empire Battlesuit unit from your army.",
         "effect": "Select one BATTLESUIT model in your unit: that model regains up to D3+1 lost wounds.",
@@ -7934,6 +8759,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One T’au Empire Crisis unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, your unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
@@ -7952,6 +8779,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase.",
         "effect": "Select the [SUSTAINED HITS 1] or [LETHAL HITS] ability. Until the end of the phase, ranged weapons equipped by models in your unit have the selected ability. You can instead select the [SUSTAINED HITS 1], [LETHAL HITS] and [HAZARDOUS] abilities to apply to those weapons until the end of the phase.",
@@ -7970,6 +8799,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase.",
         "effect": "Select one of the following to apply to your unit until the end of the phase: - Improve the Strength characteristic of ranged weapons equipped by models in your unit by 1. - Improve the Strength and Armour Penetration characteristics of ranged weapons equipped by models in your unit by 1, and those weapons have the [HAZARDOUS] ability.",
@@ -7988,6 +8819,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One T’AU EMPIRE unit from your army that has just been selected as an Observer unit (see For the Greater Good).",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets their Spotted unit, improve the Ballistic Skill characteristic of that attack by 1 and, if your unit has the Markerlight keyword, that attack has the [IGNORES COVER] ability.",
@@ -8006,6 +8839,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "End of your opponent’s Fight phase.",
         "target": "One Stealth, Ghostkeel or Commander Shadowsun unit from your army.",
         "effect": "Remove your unit from the battlefield and place it into Strategic Reserves.",
@@ -8024,6 +8859,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit within 9\", improve the Armour Penetration characteristic of that attack by 1.",
@@ -8042,6 +8879,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One T’AU EMPIRE unit from your army that has not been selected to shoot this phase. The first time you use this Stratagem, you must also select one objective marker that is not in your opponent’s deployment zone; until the end of the battle, this becomes your Trap objective marker.",
         "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit within range of your Trap objective marker, add 1 to the Wound roll.",
@@ -8060,6 +8899,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Charge phase, just after an enemy unit has declared a charge.",
         "target": "One T’au Empire Grenades unit from your army that was selected as one of the targets of that charge.",
         "effect": "That enemy unit must immediately take a Battle-shock test, and until the end of the phase, subtract 2 from Charge rolls made for that enemy unit.",
@@ -8078,6 +8919,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Charge phase, just after an enemy unit has declared a charge.",
         "target": "One T’au Empire Infantry unit from your army that was selected as one of the targets of that charge, and one friendly Transport.",
         "effect": "Your unit can embark within that TRANSPORT . If it does, your opponent can select new targets for that charge.",
@@ -8097,6 +8940,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One Kroot unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "After your unit has resolved its attacks this phase, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a KROOT model from your army makes an attack that targets that enemy unit, unless the attacking unit is Battle-shocked, improve the Armour Penetration characteristic of that attack by 1.",
@@ -8115,6 +8960,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase.",
         "target": "One Kroot Infantry or Kroot Hounds unit from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
         "effect": "Add a new unit to your army identical to your destroyed unit, in Strategic Reserves, at its Starting Strength.",
@@ -8133,6 +8980,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One Kroot unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, your unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
@@ -8151,6 +9000,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase, just after a Kroot unit from your army Falls Back.",
         "target": "That KROOT unit.",
         "effect": "Until the end of the turn, your unit is eligible to shoot and declare a charge.",
@@ -8169,6 +9020,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One Kroot unit from your army that destroyed one or more enemy units this phase.",
         "effect": "In your opponent’s next Command phase, each enemy unit within 6\" of your unit must take a Battle-shock test. If the unit taking that test is Below Half-strength, subtract 1 from that test. Enemy units affected by this Stratagem do not need to take any other Battle-shock tests in the same phase.",
@@ -8188,6 +9041,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy VEHICLE unit is selected to shoot or fight.",
         "target": "One Kroot Grenades unit from your army within 8\" of that enemy VEHICLE unit.",
         "effect": "Until the end of the phase, worsen the Weapon Skill and Ballistic Skill characteristics of that enemy VEHICLE unit’s weapons by 1.",
@@ -8206,6 +9061,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Start of your Shooting phase.",
         "target": "Two T’AU EMPIRE units from your army that have not been selected to shoot this phase, and one enemy unit.",
         "effect": "Until the end of the phase, each time a model in either of your units makes an attack, it can only target that enemy unit (and only if it is an eligible target for that attack), and when resolving that attack, improve the Armour Penetration characteristic by 1.",
@@ -8224,6 +9081,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One T’AU EMPIRE unit from your army that has not been selected to move this phase.",
         "effect": "Until the end of the phase, if your unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit.",
@@ -8242,6 +9101,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase.",
         "target": "One T’AU EMPIRE unit (excluding Kroot units) from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
         "effect": "Until the end of the battle, each time a T’AU EMPIRE unit (excluding KROOT units) from your army makes an attack that targets the enemy unit that just destroyed your unit, you can re-roll the Hit roll.",
@@ -8260,6 +9121,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One T’au Empire Infantry unit from your army that disembarked from a TRANSPORT this turn.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets the closest enemy unit, you can re-roll the Wound roll.",
@@ -8278,6 +9141,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One T’au Empire Infantry unit (excluding Kroot units) from your army that has just shot, and one enemy unit (excluding MONSTERS and VEHICLES ) hit by one or more of those attacks.",
         "effect": "Until the end of your opponent’s next turn, that enemy unit is shaken. While a unit is shaken, subtract 2 from its Move characteristic and subtract 2 from Advance and Charge rolls made for it.",
@@ -8296,6 +9161,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One T’AU EMPIRE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time an attack is allocated to your unit, subtract 1 from the Damage characteristic of that attack.",
@@ -8314,6 +9181,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One T’au Empire Battlesuit unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit that contains 6 or more models, that attack has the [SUSTAINED HITS 1] ability. If that attack targets an enemy unit that contains 11 or more models, it has the [SUSTAINED HITS 2] ability instead.",
@@ -8332,6 +9201,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, just after a T’au Empire Battlesuit model from your army is destroyed.",
         "target": "That destroyed model’s unit. You can use this Stratagem on that unit even if that unit was just destroyed.",
         "effect": "Before removing your model from play, if it has the Deadly Demise ability, do not roll for that ability; instead, you can choose whether the result of that roll is a 1 or a 6. If your model does not have the Deadly Demise ability, roll one D6 for each unit within 6\" of it: on a 4+, that unit suffers D3 mortal wounds.",
@@ -8350,6 +9221,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One T’au Empire Battlesuit unit from your army that can FLY whose attacks have been resolved this phase.",
         "effect": "If your unit is not within Engagement Range of one or more enemy units, it can make a Normal move. If it does, your unit cannot declare a charge this turn",
@@ -8368,6 +9241,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Charge phase, just after an enemy unit has declared a charge.",
         "target": "One T’au Empire Battlesuit unit from your army that was selected as a target of that charge.",
         "effect": "That enemy unit must immediately take a Battle-shock test and you must roll one D6 for each model in that enemy unit: for each 6, that enemy unit suffers 1 mortal wound.",
@@ -8386,6 +9261,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One T’au Empire Battlesuit unit from your army that is arriving using the Deep Strike ability this phase.",
         "effect": "Your unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy models.",
@@ -8405,6 +9282,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One T’au Empire Battlesuit unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, models in your unit have the Feel No Pain 6+ ability.",
@@ -8813,9 +9692,9 @@ window.BC_BUILTIN_PACKS = {
     "faction": "Imperial Knights",
     "game_version": "10th Edition",
     "pack_version": "1.0.0",
-    "date": "2026-04-14",
+    "date": "2026-05-05",
     "author": "Community",
-    "source_note": "Generated from current 10e CSV exports. This pack includes Imperial Knights detachments Questor Forgepact, Valourstrike Lance, Gate Warden Lance, Questoris Companions, Spearhead-At-Arms. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+    "source_note": "Generated from current 10e CSV exports. This pack includes Imperial Knights detachments Questor Forgepact, Valourstrike Lance, Gate Warden Lance, Questoris Companions, Spearhead-At-Arms plus standard Core Stratagems. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
     "units": [
       {
         "id": "unit-000001664",
@@ -9651,12 +10530,235 @@ window.BC_BUILTIN_PACKS = {
     ],
     "stratagems": [
       {
+        "id": "strat-000008335010",
+        "name": "GO TO GROUND",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+        "target": "One INFANTRY unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+        "effect": "Until the end of the phase, all models in your unit have a 6+ invulnerable save and have the Benefit of Cover.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Battle Tactic Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335002",
+        "name": "COMMAND RE-ROLL",
+        "cp_cost": 1,
+        "phases": [
+          "any"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Any phase, just after you make an Advance roll, a Charge roll, a Desperate Escape test or a Hazardous test for a unit from your army, or a Hit roll, a Wound roll, a Damage roll or a saving throw for a model in that unit, or a roll to determine the number of attacks made with a weapon equipped by a model in that unit. If you are using fast dice rolling, this Stratagem can still be used after rolling multiple rolls or saving throws at once.",
+        "target": "That unit or model from your army.",
+        "effect": "You re-roll that roll, test or saving throw. If you are using fast dice rolling, select one of those rolls or saving throws to re-roll.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Battle Tactic Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335004",
+        "name": "EPIC CHALLENGE",
+        "cp_cost": 1,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, when a CHARACTER unit from your army that is within Engagement Range of one or more Attached units is selected to fight.",
+        "target": "One CHARACTER model in your unit.",
+        "effect": "Until the end of the phase, all melee attacks made by that model have the [PRECISION] ability.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Epic Deed Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335005",
+        "name": "INSANE BRAVERY",
+        "cp_cost": 1,
+        "phases": [
+          "command"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Battle-shock step of your Command phase, just before you take a Battle-shock test for a unit from your army.",
+        "target": "That unit from your army.",
+        "effect": "Your unit automatically passes that Battle-shock test.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Epic Deed Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335012",
+        "name": "HEROIC INTERVENTION",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Charge phase, just after an enemy unit ends a Charge move.",
+        "target": "One unit from your army that is within 6\" of that enemy unit and would be eligible to declare a charge against that enemy unit if it were your Charge phase.",
+        "effect": "Your unit now declares a charge that targets only that enemy unit, and you resolve that charge as if it were your Charge phase.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335009",
+        "name": "FIRE OVERWATCH",
+        "cp_cost": 1,
+        "phases": [
+          "movement",
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Movement or Charge phase, just after an enemy unit is set up or when an enemy unit starts or ends a Normal, Advance or Fall Back move, or declares a charge.",
+        "target": "One unit from your army that is within 24\" of that enemy unit and that would be eligible to shoot if it were your Shooting phase.",
+        "effect": "If that enemy unit is visible to your unit, your unit can shoot that enemy unit as if it were your Shooting phase.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335008",
+        "name": "RAPID INGRESS",
+        "cp_cost": 1,
+        "phases": [
+          "movement"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "End of your opponent’s Movement phase.",
+        "target": "One unit from your army that is in Reserves.",
+        "effect": "Your unit can arrive on the battlefield as if it were the Reinforcements step of your Movement phase, and if every model in that unit has the Deep Strike ability, you can set that unit up as described in the Deep Strike ability (even though it is not your Movement phase).",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335003",
+        "name": "COUNTER-OFFENSIVE",
+        "cp_cost": 2,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, just after an enemy unit has fought.",
+        "target": "One unit from your army that is within Engagement Range of one or more enemy units and that has not already been selected to fight this phase.",
+        "effect": "Your unit fights next.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335007",
+        "name": "TANK SHOCK",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Charge phase, just after a VEHICLE unit from your army ends a Charge move.",
+        "target": "That VEHICLE unit.",
+        "effect": "Select one enemy unit within Engagement Range of your unit, and select one VEHICLE model in your unit that is within Engagement Range of that enemy unit. Roll a number of D6 equal to the Toughness characteristic of the selected VEHICLE model. For each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds).",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335011",
+        "name": "SMOKESCREEN",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+        "target": "One SMOKE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+        "effect": "Until the end of the phase, all models in your unit have the Benefit of Cover and the Stealth ability.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Wargear Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335006",
+        "name": "GRENADE",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Shooting phase.",
+        "target": "One GRENADES unit from your army (excluding units that Advanced, Fell Back or have shot this turn) that is not within Engagement Range of one or more enemy units.",
+        "effect": "Select one GRENADES model in your unit and one enemy unit that is not within Engagement Range of any units from your army and is within 8\" of and visible to your GRENADES model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Wargear Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
         "id": "strat-000010498005",
         "name": "MARSHAL THE DEFENCE",
         "cp_cost": 1,
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "Up to two Imperial Knights units from your army that have not been selected to move this phase.",
         "effect": "Until the end of the phase, add 3\" to the Move characteristic of models in your units.",
@@ -9675,6 +10777,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One Imperial Knights Titanic unit from your army that Remained Stationary this turn, that is on your defensive line and that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [SUSTAINED HITS 2] ability.",
@@ -9693,6 +10797,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One Imperial Knights unit from your army that is within Engagement Range of one or more enemy units, that is on your defensive line and that has not already been selected to fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack, you can re-roll the Hit roll.",
@@ -9711,6 +10817,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One Imperial Knights unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit on your defensive line, an unmodified Hit roll of 5+ scores a Critical Hit.",
@@ -9729,6 +10837,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Start of your opponent’s Charge phase.",
         "target": "One Imperial Knights Titanic unit from your army that is on your defensive line.",
         "effect": "Until the end of the phase, each time an enemy unit selects your unit as a target of a charge, that unit must take a Battle-shock test, subtracting 1 from the result.",
@@ -9747,6 +10857,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just after an enemy unit has selected its targets.",
         "target": "One Imperial Knights unit from your army that was selected as the target of one or more of the attacking unit’s attacks and is on your defensive line.",
         "effect": "Until the end of the phase, each time an attack targets your unit, if the Strength characteristic of that attack is greaterthan the Toughness characteristic of your unit, subtract 1 from the Wound roll",
@@ -9765,6 +10877,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase, just before an Imperial Knights Character unit from your army uses a Bondsman ability.",
         "target": "That IMPERIAL KNIGHTS CHARACTER unit.",
         "effect": "When selecting targets for that use of that Bondsman ability, you can select one friendly Adeptus Mechanicus unit within 12\" of your unit in addition, or instead of selecting one Armiger model. Until the start of your next Command phase, every model in that ADEPTUS MECHANICUS unit is affected by that Bondsman ability.",
@@ -9783,6 +10897,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One Imperial Knights unit from your army or one Imperial Knights Character unit from your army and one friendly Adeptus Mechanicus unit that is within 6\" of that unit.",
         "effect": "Until the end of the phase, ranged weapons equipped by models in your units have the [ASSAULT] ability.",
@@ -9801,6 +10917,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, just after a mortal wound is allocated to an Imperial Knights or Adeptus Mechanicus unit from your army.",
         "target": "That IMPERIAL KNIGHTS or ADEPTUS MECHANICUS unit.",
         "effect": "Until the end of the phase, models in your unit have the Feel No Pain 5+ ability against mortal wounds.",
@@ -9819,6 +10937,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "One Imperial Knights unit from your army.",
         "effect": "Until the start of your next turn, your unit can ignore any or all modifiers to the following: the Weapon Skill or Ballistic Skill characteristics of weapons equipped by its models; any Hit roll or Wound roll made for it.",
@@ -9837,6 +10957,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase.",
         "target": "One Imperial Knights unit from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
         "effect": "Until the end of the battle, the enemy unit that destroyed your unit is Marked. Each time an Adeptus Mechanicus model from your army makes an attack that targets a Marked unit, that attack has the [LETHAL HITS] ability.",
@@ -9855,6 +10977,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Movement phase, just after an enemy unit is set up or ends a Normal, Advance, or Fall Back move.",
         "target": "One Imperial Knights Titanic unit from your army that is within 24\" of and visible to that enemy unit.",
         "effect": "Select one ranged weapon equipped by a model in your unit. That model can shoot at that enemy unit (and only if it is an eligible target). When doing so, that model can only make attacks with that weapon and each time it makes a ranged attack, an unmodified Hit roll of 6 is required to score a hit, irrespective of the attacking weapon’s Ballistic Skill or any modifiers.",
@@ -9873,6 +10997,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just before an Imperial Knights Titanic unit from your army Consolidates.",
         "target": "That IMPERIAL KNIGHTS TITANIC unit.",
         "effect": "Until the end of the phase, each time your unit Consolidates, models in it can move an additional 3\" provided your unit can end that move within Engagement Range of one or more enemy units.",
@@ -9892,6 +11018,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One Imperial Knights Titanic model from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, each time your model makes an attack that targets a MONSTER , TITANIC or WALKER unit, add 1 to the Hit roll and add 1 to the Wound roll.",
@@ -9910,6 +11038,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Charge phase.",
         "target": "One Imperial Knights Titanic unit from your army.",
         "effect": "Until the end of the turn, your unit is eligible to declare a charge in a turn in which it Advanced.",
@@ -9929,6 +11059,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One Imperial Knights Titanic unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, models in your unit have the Feel No Pain 6+ ability.",
@@ -9947,6 +11079,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase, just after an Imperial Knights Titanic unit from your army Falls Back.",
         "target": "That IMPERIAL KNIGHTS TITANIC unit.",
         "effect": "Until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
@@ -9965,6 +11099,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "End of your Command phase.",
         "target": "One Imperial Knights Titanic model from your army that is within range of an objective marker you control.",
         "effect": "Your Level of Control over that objective marker is 5 (unless it would otherwise be higher), until your opponent’s Level of Control over that objective marker is greater than yours at the end of a phase.",
@@ -9983,6 +11119,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Start of the Fight phase.",
         "target": "One Armiger model from your army, or one Imperial Knights Titanic model from your army, and one or more friendly ARMIGER models affected by that model’s Bondsman ability.",
         "effect": "Select one enemy unit. Until the end of the phase, each time one of your ARMIGER models makes an attack that targets that enemy unit, add 1 to the Hit roll.",
@@ -10001,6 +11139,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Start of your Shooting phase.",
         "target": "One Armiger model from your army, or one Imperial Knights Titanic model from your army, and one or more friendly ARMIGER models affected by that model’s Bondsman ability.",
         "effect": "Until the end of the phase, ranged weapons equipped by your ARMIGER models have the [RAPID FIRE 1] ability.",
@@ -10019,6 +11159,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase, just after an Imperial Knights Titanic model from your army has shot.",
         "target": "That IMPERIAL KNIGHTS TITANIC model, and one or more friendly Armiger models affected by that model’s Bondsman ability.",
         "effect": "Select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time one of your ARMIGER models makes an attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1.",
@@ -10037,6 +11179,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One Armiger unit from your army that was selected as the target of one or more of the attacking units attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -10055,6 +11199,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Start of your Shooting phase.",
         "target": "One Armiger model from your army, or one Imperial Knights Titanic model from your army, and one or more friendly ARMIGER models affected by that model’s Bondsman ability.",
         "effect": "Until the end of the phase, your ARMIGER models are eligible to shoot in a turn in which they Fell Back.",
@@ -10073,6 +11219,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "End of your opponent’s Fight phase.",
         "target": "One Armiger model from your army, or one Imperial Knights Titanic model from your army, and one or more friendly ARMIGER models affected by that model’s Bondsman ability.",
         "effect": "For each of your ARMIGER models that is within 9\" of one or more battlefield edges and not within Engagement Range of one or more enemy units, remove that ARMIGER model from the battlefield and place it into Strategic Reserves.",
@@ -10091,6 +11239,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One Imperial Knights unit from your army that has not been selected to move this phase.",
         "effect": "Until the end of the phase, add 2\" to the Move characteristic of your models and add 2 to Advance rolls made for those model’s units.",
@@ -10109,6 +11259,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One Imperial Knights model from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, the Attacks characteristic of any armoured Feet melee weapons equipped by your model is 8, the Attacks characteristic of any titanic Feet melee weapons equipped by your model is 12, and improve the Armour Penetration characteristic of those weapons by 1.",
@@ -10127,6 +11279,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One Imperial Knights unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, melee weapons equipped by your models have the [LANCE] ability.",
@@ -10145,6 +11299,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One Imperial Knights unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, ranged weapons equipped by your models have the [LETHAL HITS] ability.",
@@ -10163,6 +11319,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
         "target": "One Imperial Knights model from your army that is within 9\" of that unit.",
         "effect": "Your model can make a Normal move of up to D6\".",
@@ -10181,6 +11339,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One Imperial Knights unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, models in your unit have a 4+ invulnerable save.",
@@ -10518,9 +11678,9 @@ window.BC_BUILTIN_PACKS = {
     "subfaction": "Black Templars",
     "game_version": "10th Edition",
     "pack_version": "1.0.0",
-    "date": "2026-03-18",
+    "date": "2026-05-05",
     "author": "Community",
-    "source_note": "Generated from current 10e CSV exports. This pack includes Black Templars-exclusive detachments Wrathful Procession, Companions of Vehemence, Vindication Task Force, Godhammer Assault Force, plus generic Space Marines detachments Gladius Task Force, Anvil Siege Force, Ironstorm Spearhead, Firestorm Assault Force, Stormlance Task Force, Vanguard Spearhead, Bastion Task Force, Orbital Assault Force. Units include Black Templars-exclusive datasheets and common Space Marines datasheets compatible with Heirs of Sigismund restrictions, excluding Adeptus Astartes Psykers, 1st Company Task Force content, and generic codex datasheets explicitly banned for Black Templars armies. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+    "source_note": "Generated from current 10e CSV exports. This pack includes Black Templars-exclusive detachments Wrathful Procession, Companions of Vehemence, Vindication Task Force, Godhammer Assault Force, plus generic Space Marines detachments Gladius Task Force, Anvil Siege Force, Ironstorm Spearhead, Firestorm Assault Force, Stormlance Task Force, Vanguard Spearhead, Bastion Task Force, Orbital Assault Force and standard Core Stratagems. Units include Black Templars-exclusive datasheets and common Space Marines datasheets compatible with Heirs of Sigismund restrictions, excluding Adeptus Astartes Psykers, 1st Company Task Force content, and generic codex datasheets explicitly banned for Black Templars armies. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
     "units": [
       {
         "id": "unit-000002099",
@@ -14466,6 +15626,227 @@ window.BC_BUILTIN_PACKS = {
     ],
     "stratagems": [
       {
+        "id": "strat-000008335010",
+        "name": "GO TO GROUND",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+        "target": "One INFANTRY unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+        "effect": "Until the end of the phase, all models in your unit have a 6+ invulnerable save and have the Benefit of Cover.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Battle Tactic Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335002",
+        "name": "COMMAND RE-ROLL",
+        "cp_cost": 1,
+        "phases": [
+          "any"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Any phase, just after you make an Advance roll, a Charge roll, a Desperate Escape test or a Hazardous test for a unit from your army, or a Hit roll, a Wound roll, a Damage roll or a saving throw for a model in that unit, or a roll to determine the number of attacks made with a weapon equipped by a model in that unit. If you are using fast dice rolling, this Stratagem can still be used after rolling multiple rolls or saving throws at once.",
+        "target": "That unit or model from your army.",
+        "effect": "You re-roll that roll, test or saving throw. If you are using fast dice rolling, select one of those rolls or saving throws to re-roll.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Battle Tactic Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335004",
+        "name": "EPIC CHALLENGE",
+        "cp_cost": 1,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, when a CHARACTER unit from your army that is within Engagement Range of one or more Attached units is selected to fight.",
+        "target": "One CHARACTER model in your unit.",
+        "effect": "Until the end of the phase, all melee attacks made by that model have the [PRECISION] ability.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Epic Deed Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335005",
+        "name": "INSANE BRAVERY",
+        "cp_cost": 1,
+        "phases": [
+          "command"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Battle-shock step of your Command phase, just before you take a Battle-shock test for a unit from your army.",
+        "target": "That unit from your army.",
+        "effect": "Your unit automatically passes that Battle-shock test.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Epic Deed Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335012",
+        "name": "HEROIC INTERVENTION",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Charge phase, just after an enemy unit ends a Charge move.",
+        "target": "One unit from your army that is within 6\" of that enemy unit and would be eligible to declare a charge against that enemy unit if it were your Charge phase.",
+        "effect": "Your unit now declares a charge that targets only that enemy unit, and you resolve that charge as if it were your Charge phase.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335009",
+        "name": "FIRE OVERWATCH",
+        "cp_cost": 1,
+        "phases": [
+          "movement",
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Movement or Charge phase, just after an enemy unit is set up or when an enemy unit starts or ends a Normal, Advance or Fall Back move, or declares a charge.",
+        "target": "One unit from your army that is within 24\" of that enemy unit and that would be eligible to shoot if it were your Shooting phase.",
+        "effect": "If that enemy unit is visible to your unit, your unit can shoot that enemy unit as if it were your Shooting phase.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335008",
+        "name": "RAPID INGRESS",
+        "cp_cost": 1,
+        "phases": [
+          "movement"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "End of your opponent’s Movement phase.",
+        "target": "One unit from your army that is in Reserves.",
+        "effect": "Your unit can arrive on the battlefield as if it were the Reinforcements step of your Movement phase, and if every model in that unit has the Deep Strike ability, you can set that unit up as described in the Deep Strike ability (even though it is not your Movement phase).",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335003",
+        "name": "COUNTER-OFFENSIVE",
+        "cp_cost": 2,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, just after an enemy unit has fought.",
+        "target": "One unit from your army that is within Engagement Range of one or more enemy units and that has not already been selected to fight this phase.",
+        "effect": "Your unit fights next.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335007",
+        "name": "TANK SHOCK",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Charge phase, just after a VEHICLE unit from your army ends a Charge move.",
+        "target": "That VEHICLE unit.",
+        "effect": "Select one enemy unit within Engagement Range of your unit, and select one VEHICLE model in your unit that is within Engagement Range of that enemy unit. Roll a number of D6 equal to the Toughness characteristic of the selected VEHICLE model. For each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds).",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335011",
+        "name": "SMOKESCREEN",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+        "target": "One SMOKE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+        "effect": "Until the end of the phase, all models in your unit have the Benefit of Cover and the Stealth ability.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Wargear Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335006",
+        "name": "GRENADE",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Shooting phase.",
+        "target": "One GRENADES unit from your army (excluding units that Advanced, Fell Back or have shot this turn) that is not within Engagement Range of one or more enemy units.",
+        "effect": "Select one GRENADES model in your unit and one enemy unit that is not within Engagement Range of any units from your army and is within 8\" of and visible to your GRENADES model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Wargear Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
         "id": "strat-000008475002",
         "name": "ARMOUR OF CONTEMPT",
         "cp_cost": 1,
@@ -14473,6 +15854,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -14491,6 +15874,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets a MONSTER or VEHICLE unit, you can re-roll the Wound roll.",
@@ -14509,6 +15894,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability. If your unit Remained Stationary this turn, then until the end of the phase, each time a model in your unit makes a ranged attack, a successful unmodified Hit roll of 5+ scores a Critical Hit.",
@@ -14527,6 +15914,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "One ADEPTUS ASTARTES INFANTRY unit from your army within range of an objective marker.",
         "effect": "Until the end of the turn, double the Objective Control characteristic of models in your unit, but it must Remain Stationary this turn.",
@@ -14545,6 +15934,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.",
         "target": "One ADEPTUS ASTARTES unit from your army that had one or more of its models destroyed as a result of the attacking unit’s attacks.",
         "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
@@ -14563,6 +15954,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "End of the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that is within Engagement Range of one or more enemy units.",
         "effect": "Your unit can immediately make a Fall Back move of up to 6\".",
@@ -14582,6 +15975,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit, re-roll a Hit roll of 1. If that target is auspex scanned, re-roll a Wound roll of 1 as well.",
@@ -14601,6 +15996,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have that ability while targeting an auspex scanned unit or if the bearer has the Battleline keyword.",
@@ -14620,6 +16017,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "charge"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase or your Charge phase.",
         "target": "One ADEPTUS ASTARTES unit (excluding Battleline units) from your army.",
         "effect": "Until the end of the phase, your unit is eligible to shoot and declare a charge in a turn in which it Advanced or Fell Back. If it does, every target of that charge and every target of those attacks must be an auspex scanned unit.",
@@ -14639,6 +16038,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase, just after an Adeptus Astartes Battleline unit from your army has finished making its attacks.",
         "target": "That ADEPTUS ASTARTES BATTLELINE unit.",
         "effect": "When an enemy unit is auspex scanned as a result of those attacks this turn, if that enemy unit does not have the MONSTER or VEHICLE keywords, until the start of your next turn, it is pinned. While a unit is pinned, subtract 2 from that unit’s Move characteristic and subtract 2 from Charge rolls made for that unit.",
@@ -14658,6 +16059,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase, just after an Adeptus Astartes Battleline unit from your army finished making its attacks.",
         "target": "That ADEPTUS ASTARTES BATTLELINE unit.",
         "effect": "When an enemy unit is auspex scanned as a result of those attacks this turn, until the start of your next turn, it is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
@@ -14676,6 +16079,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One Chaplain or Judiciar unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a melee attack that targets an enemy unit, re-roll a Hit roll of 1. If that target is a MONSTER or VEHICLE unit, re-roll a Wound roll of 1 as well.",
@@ -14694,6 +16099,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One Adeptus Astartes Infantry unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6\" instead of up to 3\".",
@@ -14712,6 +16119,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One Adeptus Astartes Infantry unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
@@ -14730,6 +16139,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just before an Adeptus Astartes Infantry unit from your army Consolidates.",
         "target": "That ADEPTUS ASTARTES INFANTRY unit.",
         "effect": "Until the end of the phase, each time a model in your unit makes a Consolidation move, it does not need to end that move closer to the closest enemy model (or the closest enemy unit if the Suffer Not the Unclean to Live Vow is active for it).",
@@ -14748,6 +16159,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Charge phase, just after an enemy unit declares a charge.",
         "target": "One Adeptus Astartes Infantry unit from your army that was selected as one of the targets of that charge.",
         "effect": "That enemy unit must take a Battle-shock test, subtracting 1 from the result.",
@@ -14766,6 +16179,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
         "target": "One Chaplain or Judiciar unit from your army that is within 9\" of that enemy unit and is not within Engagement Range of one or more enemy units.",
         "effect": "Your unit can make a Retribution move. To do so, roll one D6: models in your unit move a number of inches up to the result, but your unit must end that move as close as possible to the closest enemy unit (excluding AIRCRAFT ). When doing so, those models can be moved within Engagement Range of that enemy unit.",
@@ -14785,6 +16200,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets the closest eligible target within 6\", add 1 to the Wound roll.",
@@ -14803,6 +16220,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, Torrent weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability.",
@@ -14822,6 +16241,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -14840,6 +16261,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.",
         "target": "One ADEPTUS ASTARTES TRANSPORT unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "One unit embarked within that TRANSPORT can disembark as if it were your Movement phase, and can then shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
@@ -14858,6 +16281,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that disembarked from a TRANSPORT this turn and has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets the closest eligible target within 12\", add 1 to the Hit roll. If one or more enemy models are destroyed as the result of any of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test.",
@@ -14876,6 +16301,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "End of the Fight phase.",
         "target": "One ADEPTUS ASTARTES TRANSPORT unit from your army that has no models embarked within it, and one ADEPTUS ASTARTES INFANTRY unit from your army wholly within 6\" of that TRANSPORT .",
         "effect": "Your INFANTRY unit can embark within that TRANSPORT .",
@@ -14894,6 +16321,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. If your unit is under the effects of the Devastator Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",
@@ -14913,6 +16342,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -14931,6 +16362,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army.",
         "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [LANCE] ability. If your unit is under the effects of the Assault Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",
@@ -14949,6 +16382,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.",
@@ -14967,6 +16402,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "One ADEPTUS ASTARTES unit from your army.",
         "effect": "Select the Devastator Doctrine, Tactical Doctrine or Assault Doctrine. Until the start of your next Command phase, that Combat Doctrine is active for that unit instead of any other Combat Doctrine that is active for your army, even if you have already selected that doctrine this battle.",
@@ -14985,6 +16422,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
         "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that is within 9\" of the enemy unit that just ended that move.",
         "effect": "Your unit can make a Normal move of up to D6\", or a Normal move of up to 6\" instead if it is under the effects of the Tactical Doctrine.",
@@ -15003,6 +16442,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One Adeptus Astartes Vehicle unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time an attack is allocated to a model in your unit, subtract 1 from the Damage characteristic of that attack.",
@@ -15021,6 +16462,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack, if it disembarked from a Transport this turn, re-roll a Wound roll of 1. If that TRANSPORT has the Land Raider keyword, you can re-roll the Wound roll instead.",
@@ -15039,6 +16482,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Charge phase, just after you make a Charge roll for an ADEPTUS ASTARTES unit from your army that disembarked from a Transport this turn.",
         "target": "That ADEPTUS ASTARTES unit.",
         "effect": "Until the end of the phase, each time your unit makes a Charge move, models in your unit can move through models (when doing so, its models can move within Engagement Range of enemy models, but they can only end that move within Engagement Range of enemy models if those enemy models belong to a unit that your unit declared a charge against this turn).",
@@ -15057,6 +16502,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One Adeptus Astartes Vehicle model from your army that has not been selected to move this phase.",
         "effect": "Until the end of the phase, each time your model makes a Normal or Advance move, it can move horizontally through terrain features.",
@@ -15075,6 +16522,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One Land Raider model from your army that has not been selected to move this phase.",
         "effect": "One ADEPTUS ASTARTES unit embarked within your LAND RAIDER can disembark. When doing so, models in that unit can be set up anywhere on the battlefield wholly within 6\" of your LAND RAIDER and can be set up within Engagement Range of one or more enemy units.",
@@ -15093,6 +16542,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "End of the Fight phase.",
         "target": "One Adeptus Astartes Infantry unit from your army that was eligible to fight this phase.",
         "effect": "If your unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". It cannot embark within a Transport at the end of this move if it disembarked from a TRANSPORT this turn.",
@@ -15112,6 +16563,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets a unit that is below its Starting Strength, that attack has the [SUSTAINED HITS 1] ability, and when making such an attack, if the attacking model is a VEHICLE , a successful unmodified Hit roll of 5+ scores a Critical Hit.",
@@ -15131,6 +16584,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -15149,6 +16604,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Command phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that is below its Starting Strength.",
         "effect": "Until the end of the turn, your unit can ignore any or all modifiers to its characteristics and/or to any roll or test made for it (excluding modifiers to saving throws).",
@@ -15167,6 +16624,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, just after an ADEPTUS ASTARTES VEHICLE model from your army with the Deadly Demise ability is destroyed.",
         "target": "That ADEPTUS ASTARTES VEHICLE model. You can use this Stratagem on that model even though it was just destroyed.",
         "effect": "Do not roll one D6 to determine whether mortal wounds are inflicted by your model’s Deadly Demise ability. Instead, mortal wounds are automatically inflicted.",
@@ -15185,6 +16644,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "One ADEPTUS ASTARTES WALKER model from your army.",
         "effect": "Until the start of your next Command phase, improve your model’s Move, Toughness, Leadership and Objective Control characteristics by 1 and each time your model makes an attack, add 1 to the Hit roll.",
@@ -15203,6 +16664,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.",
         "target": "One ADEPTUS ASTARTES VEHICLE unit from your army that was reduced to Below Half-strength as a result of the attacking unit’s attacks.",
         "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
@@ -15222,6 +16685,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a Drop Pod or while targeting an enemy unit within 12\".",
@@ -15241,6 +16706,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll.",
@@ -15259,6 +16726,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit (excluding Titanic units) from your army that was selected as the target of one or more of the attacking unit’s attacks and one friendly Adeptus Astartes Smoke Vehicle or Drop Pod unit within 9\" of it.",
         "effect": "Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack.",
@@ -15277,6 +16746,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6\" instead of up to 3\".",
@@ -15295,6 +16766,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "End of your opponent’s Fight phase.",
         "target": "One Adeptus Astartes Infantry unit from your army that was not set up on the battlefield this turn and one friendly Transport it is able to embark within.",
         "effect": "If your ADEPTUS ASTARTES unit is wholly within 6\" of that TRANSPORT , it can embark within it.",
@@ -15313,6 +16786,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Command phase.",
         "target": "One ADEPTUS ASTARTES unit from your army.",
         "effect": "Select one enemy unit visible to and within 18\" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
@@ -15331,6 +16806,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll and subtract 1 from the Wound roll.",
@@ -15350,6 +16827,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -15368,6 +16847,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [ASSAULT] ability. If such a weapon already has this ability, until the end of the phase, that weapon has the [SUSTAINED HITS 1] ability as well.",
@@ -15386,6 +16867,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Charge phase.",
         "target": "One ADEPTUS ASTARTES MOUNTED unit from your army that has not declared a charge this phase.",
         "effect": "Until the end of the turn, you can re-roll Charge rolls made for your unit and melee weapons equipped by models in that unit have the [LANCE] ability.",
@@ -15404,6 +16887,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
         "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that is within 9\" of that enemy unit.",
         "effect": "Your unit can make a Normal move of up to 6\".",
@@ -15422,6 +16907,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES VEHICLE unit (excluding WALKERS) from your army.",
         "effect": "Until the end of the phase, if your unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit, or 9\" instead if your unit is MOUNTED .",
@@ -15440,6 +16927,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit that is more than 12\" away, improve the Ballistic Skill and Armour Penetration characteristics of that attack by 1. If one or more enemy models are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test.",
@@ -15458,6 +16947,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
@@ -15477,6 +16968,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -15495,6 +16988,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "End of your opponent’s Fight phase.",
         "target": "Up to two PHOBOS and/or SCOUT SQUAD units from your army, or one other ADEPTUS ASTARTES INFANTRY unit from your army.",
         "effect": "Remove those units from the battlefield and place them into Strategic Reserves.",
@@ -15513,6 +17008,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Charge phase, just after an enemy unit declares a charge.",
         "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that was selected as a target of that charge.",
         "effect": "Your unit can make a Normal move of up to D6\", or up to 6\" instead if it is a PHOBOS or ScouT SQUAD unit.",
@@ -15531,6 +17028,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Start of the Command phase.",
         "target": "One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit from your army within range of an objective marker you control.",
         "effect": "That objective marker is said to be Sabotaged, and remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn. While an objective marker is Sabotaged and under your control, each time an enemy unit ends a Normal, Advance, Fall Back or Charge move within range of that objective marker, roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds.",
@@ -15549,6 +17048,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack, if that model’s unit is within range of one or more objective markers or the target unit is within range of one or more objective markers, improve the Armour Penetration characteristic of that attack by 1.",
@@ -15568,6 +17069,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability and each time a model in your unit makes an attack, you can ignore any or all modifiers to the following: that attack’s Ballistic Skill or Weapon Skill characteristic; the Hit roll.",
@@ -15586,6 +17089,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, just after an Ancient model from your army is destroyed.",
         "target": "That ANCIENT model. You can use this Stratagem on that model even though it was just destroyed.",
         "effect": "At the end of the phase, set your model back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with its full wounds remaining.",
@@ -15605,6 +17110,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit destroys an Ancient model from your army that has not been targeted with the Refusal to Yield Stratagem this phase.",
         "target": "One ADEPTUS ASTARTES unit from your army visible to that enemy unit.",
         "effect": "Until the end of the battle, each time an ADEPTUS ASTARTES model from your army makes an attack that targets that enemy unit, add 1 to the Hit roll.",
@@ -15623,6 +17130,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One Ancient unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll.",
@@ -15641,6 +17150,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "End of your opponent’s Charge phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that is within 6\" of one or more enemy units and would be eligible to declare a charge against one or more of those enemy units if it were your Charge phase.",
         "effect": "Your unit now declares a charge that only targets one or more of those enemy units, and you resolve that charge.",
@@ -15659,6 +17170,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack, re-roll a Hit roll of 1 and you can ignore any or all modifiers to the following: that attack’s Weapon Skill characteristic; the Hit roll; the Wound roll.",
@@ -15677,6 +17190,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
@@ -15695,6 +17210,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, just after a mortal wound is allocated to an ADEPTUS ASTARTES unit from your army.",
         "target": "That ADEPTUS ASTARTES unit.",
         "effect": "Until the end of the phase, models in your unit have the Feel No Pain 5+ ability against mortal wounds.",
@@ -15714,6 +17231,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -15732,6 +17251,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army.",
         "effect": "Select the Chorus of Relentless Hate, Rite of Perfervid Wrath or Chant of Deathless Devotion Litany. Until the end of the battle round, that Litany is active for your unit instead of any other Litany that is active for your army.",
@@ -15750,6 +17271,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase and is within Engagement Range of one or more enemy units.",
         "effect": "Until the end of the phase, when determining which models in your unit are eligible to fight, any models in it that are within 3\" of one or more enemy models are eligible to fight. When resolving those attacks, such models can target one of those enemy units that is within 3\" of them and within Engagement Range of their unit.",
@@ -16489,34 +18012,34 @@ window.BC_BUILTIN_PACKS = {
   },
   "cn-sm-bt-rules-pack": {
     "$schema": "https://becomechampion.app/schemas/rules-pack-v1.json",
-    "$comment": "BecomeChampion 中文规则包 - 星际战士 / 黑色圣堂（第10版）。由现有黑色圣堂规则包派生生成，保留结构化字段并将主要玩家可见文本翻译为中文；规则关键词与部分游戏术语按原文保留，仅供应用内快速提示使用，并非官方规则原文。",
+    "$comment": "BecomeChampion 中文规则包 - 星际战士 / 黑色圣堂（第10版）。本包基于现有黑色圣堂规则包重新生成，并使用公开网络翻译与术语词表对玩家可见文本进行完整中文化；关键词、单位名、能力名、战略、强化与分遣队规则均尽量统一为常见 40K 中文用语，仅供应用内对局辅助使用，并非官方规则原文。",
     "id": "cn-sm-bt-rules-pack",
     "faction": "星际战士",
     "subfaction": "黑色圣堂",
-    "game_version": "10th Edition",
-    "pack_version": "1.0.0-cn.1",
-    "date": "2026-04-18",
-    "author": "Community",
-    "source_note": "基于当前 SM-BT 黑色圣堂规则包生成的中文版本。包含黑色圣堂专属分遣队 Wrathful Procession、Companions of Vehemence、Vindication Task Force、Godhammer Assault Force，以及通用星际战士分遣队 Gladius Task Force、Anvil Siege Force、Ironstorm Spearhead、Firestorm Assault Force、Stormlance Task Force、Vanguard Spearhead、Bastion Task Force、Orbital Assault Force。单位范围与原黑色圣堂包保持一致；主要规则说明、时机、目标和效果翻译为中文，诸如 [LETHAL HITS]、Anti-X、invulnerable save X+ 等关键词可按英文理解。正式裁定请以官方出版物为准。",
+    "game_version": "第10版",
+    "pack_version": "1.0.0-cn.2",
+    "date": "2026-05-05",
+    "author": "社区",
+    "source_note": "基于现有 SM-BT 黑色圣堂规则包生成的完整中文版本。包含黑色圣堂专属分遣队与兼容的通用星际战士分遣队，单位范围与原包保持一致。文本翻译参考公开网络资料与常见 40K 社区术语，对诸如 致命命中、连击、毁灭伤害、反X、无敌豁免、深袭、先攻 等关键词做了统一处理。正式规则解释与裁定请以官方出版物为准。",
     "units": [
       {
         "id": "unit-000002099",
-        "name": "Aggressor Squad",
+        "name": "侵略者小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "步兵",
           "帝国",
-          "Aggressor Squad",
-          "Gravis"
+          "侵略者小队",
+          "重甲型"
         ],
         "abilities": [
           {
             "id": "unit-aggressor-squad-close-quarters-firepower",
-            "name": "Close-quarters Firepower",
+            "name": "近距离火力",
             "phases": [
               "shooting"
             ],
-            "timing": "本单位中的模型每次进行远程攻击并以the closest eligible target, improve the Armour Penetr",
+            "timing": "每当本单位有模型对最接近的可选目标进行远程攻击时，提升装甲穿透",
             "type": "passive",
             "summary": "本单位中的模型每次进行远程攻击并以the closest eligible target, improve the 护甲穿透属性 of that attack by 1.",
             "source": "星际战士",
@@ -16526,15 +18049,15 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002775",
-        "name": "Ancient",
+        "name": "上古",
         "keywords": [
-          "Adeptus Astartes",
-          "Tacticus",
+          "阿斯塔特修会",
+          "战术型",
           "步兵",
           "角色",
           "手雷",
           "帝国",
-          "Ancient"
+          "上古"
         ],
         "abilities": [
           {
@@ -16543,21 +18066,21 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "any"
             ],
-            "timing": "当该模型领导一个单位时，add 1 to the 目标控制（OC）属性 of 该单位中的模型",
+            "timing": "While this model is leading a unit, add 1 to the 目标控制（OC） characteristic of models in that unit",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，add 1 to the 目标控制（OC）属性 of 该单位中的模型.",
+            "summary": "While this model is leading a unit, add 1 to the 目标控制（OC） characteristic of models in that unit.",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-ancient-unbreakable-duty",
-            "name": "Unbreakable Duty",
+            "name": "坚不可摧的职责",
             "phases": [
               "any"
             ],
-            "timing": "当该模型位于目标标记范围内且/或距离战场中心 6\" 内时，该模型 拥有 Feel No Pain 4+ 能力",
+            "timing": "当该模型位于目标标记范围内且/或距离战场中心 6\" 内时，该模型 has the 无视伤害 4+ ability",
             "type": "passive",
-            "summary": "当该模型位于目标标记范围内且/或距离战场中心 6\" 内时，该模型 拥有 Feel No Pain 4+ 能力.",
+            "summary": "当该模型位于目标标记范围内且/或距离战场中心 6\" 内时，该模型 has the 无视伤害 4+ ability.",
             "source": "星际战士",
             "priority": 2
           }
@@ -16565,11 +18088,11 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002773",
-        "name": "Apothecary",
+        "name": "制药台",
         "keywords": [
-          "Adeptus Astartes",
-          "Tacticus",
-          "Apothecary",
+          "阿斯塔特修会",
+          "战术型",
+          "制药台",
           "步兵",
           "角色",
           "手雷",
@@ -16582,21 +18105,21 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "command"
             ],
-            "timing": "in your Command phase, you can return 1 destroyed model (excluding CHARACTER models) to that unit",
+            "timing": "在命令阶段，您可以将1个被销毁的模型（不包括角色模型）返回到该单元",
             "type": "active",
-            "summary": "当该模型领导一个单位时，in your Command phase, you 可以将 1 个被摧毁的模型（不包括 CHARACTER 模型）返回该单位。",
+            "summary": "当该模型领导一个单位时，在你的指挥阶段，you 可以将 1 个被摧毁的模型（不包括角色模型）返回该单位。",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-apothecary-gene-seed-recovery",
-            "name": "Gene-seed Recovery",
+            "name": "基因种子回收",
             "phases": [
               "any"
             ],
-            "timing": "当该模型的护卫单位被摧毁时，掷 1 个 D6：若为 2+，你获得 1CP",
+            "timing": "当此模型的保镖单位被摧毁时，滚动一个D6：在2 +上，你获得1CP",
             "type": "passive",
-            "summary": "当该模型的护卫单位被摧毁时，掷 1 个 D6：若为 2+，你获得 1CP",
+            "summary": "当此模型的保镖单位被摧毁时，滚动一个D6：在2 +上，你获得1CP",
             "source": "星际战士",
             "priority": 2
           }
@@ -16604,26 +18127,26 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000060",
-        "name": "Apothecary Biologis",
+        "name": "药剂师Biologis",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "Biologis",
           "角色",
-          "Gravis",
+          "重甲型",
           "帝国",
-          "Apothecary",
+          "制药台",
           "步兵"
         ],
         "abilities": [
           {
             "id": "unit-apothecary-biologis-surgical-precision",
-            "name": "Surgical Precision",
+            "name": "手术精度",
             "phases": [
               "any"
             ],
-            "timing": "当该模型领导一个单位时，weapons equipped by 该单位中的模型 拥有 [LETHAL HITS] 能力",
+            "timing": "当该型号领导一个单位时，该单位中型号装备的武器具有[致命命中]能力",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，weapons equipped by 该单位中的模型 拥有 [LETHAL HITS] 能力.",
+            "summary": "当该模型领导一个单位时，该单位中的模型装备的武器具有[致命命中]能力。",
             "source": "星际战士",
             "priority": 2
           },
@@ -16633,7 +18156,7 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "fight"
             ],
-            "timing": "如果该模型所在单位因一次近战攻击摧毁了敌方单位，until the end of the battle, 该模型 has",
+            "timing": "如果此模型的单位因近战攻击而摧毁敌方单位，则直到战斗结束，此模型具有",
             "type": "reaction",
             "summary": "如果该模型所在单位因一次近战攻击摧毁了敌方单位，until the end of the battle, 该模型 has an 目标控制（OC）属性 of 9.",
             "source": "星际战士",
@@ -16643,11 +18166,11 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001606",
-        "name": "Assault Intercessor Squad",
+        "name": "突击调解小队",
         "keywords": [
-          "Adeptus Astartes",
-          "Tacticus",
-          "Assault Intercessor Squad",
+          "阿斯塔特修会",
+          "战术型",
+          "突击调解小队",
           "手雷",
           "战线",
           "步兵",
@@ -16656,13 +18179,13 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-assault-intercessor-squad-shock-assault",
-            "name": "Shock Assault",
+            "name": "冲击突击",
             "phases": [
               "fight"
             ],
-            "timing": "本单位中的模型每次以近战攻击选择敌方单位为目标时，re-roll a 致伤掷骰 of 1. If that 敌方单位",
+            "timing": "每当此单位中的一个模型以近战攻击敌方单位时，重新滚动一个1的伤口卷。如果该敌方单位",
             "type": "reaction",
-            "summary": "本单位中的模型每次以近战攻击选择敌方单位为目标时，re-roll a 致伤掷骰 of 1. If that 敌方单位 is 位于一个目标标记范围内, you 可以重掷致伤掷骰 instead.",
+            "summary": "本单位中的模型每次以近战攻击选择敌方单位为目标时，re-roll a 致伤掷骰 of 1. If that 敌方单位 is 位于一个目标标记范围内, you can re-roll the 致伤掷骰 instead.",
             "source": "星际战士",
             "priority": 3
           }
@@ -16670,12 +18193,12 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002776",
-        "name": "Assault Intercessors With Jump Packs",
+        "name": "带有JUMP卡包的突击调解人",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
-          "Assault Intercessors With Jump Packs",
-          "Tacticus",
+          "带有JUMP卡包的突击调解人",
+          "战术型",
           "飞行",
           "跳跃背包",
           "手雷",
@@ -16684,11 +18207,11 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-assault-intercessors-with-jump-packs-hammer-of-wrath",
-            "name": "Hammer of Wrath",
+            "name": "愤怒之锤",
             "phases": [
               "charge"
             ],
-            "timing": "该单位每次结束一次冲锋移动时，select one 敌方单位 位于以下目标的接战范围内：it, then roll one D6 for each m",
+            "timing": "每当此单位结束一次充能移动时，选择其交战范围内的一个敌方单位，然后每米滚动一个D6",
             "type": "reaction",
             "summary": "该单位每次结束一次冲锋移动时，select one 敌方单位 位于以下目标的接战范围内：it, then roll one D6 for each model in 该单位 that is 位于以下目标的接战范围内：that 敌方单位: for each 4+, that 敌方单位 suffers 1 致命伤.",
             "source": "星际战士",
@@ -16698,11 +18221,11 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000061",
-        "name": "Assault Squad",
+        "name": "突击队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
-          "Assault Squad",
+          "突击队",
           "手雷",
           "步兵"
         ],
@@ -16713,37 +18236,37 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "any"
             ],
-            "timing": "The bearer 拥有 4+ invulnerable save。",
+            "timing": "持有人有4 +无懈可击的保存。",
             "type": "wargear",
-            "summary": "The bearer 拥有 4+ invulnerable save。",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持有人有4 +无懈可击的保存。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-assault-squad-chainsword-doctrines",
-            "name": "Chainsword Doctrines",
+            "name": "链剑教义",
             "phases": [
               "fight"
             ],
-            "timing": "该单位每次被选中进行近战时，select one of the following abilities to apply to all Astartes chainswords equ",
+            "timing": "每次选择此单位战斗时，选择以下技能之一应用于所有阿斯塔特链剑装备",
             "type": "active",
-            "summary": "该单位每次被选中进行近战时，select one of the following abilities to apply to all Astartes chainswords equipped by models in 该单位 until the end of the phase:\n- [SUSTAINED HITS 1]\n- [LETHAL HITS]\n- [LANCE]",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "该单位每次被选中进行近战时，select one of the following abilities to apply to all Astartes chainswords equipped by models in 该单位 until the end of the phase:\n- [连击 1]\n- [致命命中]\n- [突刺]",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
       },
       {
         "id": "unit-000000064",
-        "name": "Assault Squad with Jump Packs",
+        "name": "带有Jump Pack的突击小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
           "步兵",
           "手雷",
           "跳跃背包",
           "飞行",
-          "Assault Squad with Jump Packs"
+          "带有Jump Pack的突击小队"
         ],
         "abilities": [
           {
@@ -16752,22 +18275,22 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "any"
             ],
-            "timing": "The bearer 拥有 4+ invulnerable save。",
+            "timing": "持有人有4 +无懈可击的保存。",
             "type": "wargear",
-            "summary": "The bearer 拥有 4+ invulnerable save。",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持有人有4 +无懈可击的保存。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-assault-squad-with-jump-packs-hammer-of-wrath",
-            "name": "Hammer of Wrath",
+            "name": "愤怒之锤",
             "phases": [
               "charge"
             ],
-            "timing": "该单位每次结束一次冲锋移动时，select one 敌方单位 位于以下目标的接战范围内：it and roll one D6 for each mod",
+            "timing": "每当此单位结束一次充能移动时，选择其战斗范围内的一个敌方单位，并为每个模组滚动一个D6",
             "type": "reaction",
             "summary": "该单位每次结束一次冲锋移动时，select one 敌方单位 位于以下目标的接战范围内：it and roll one D6 for each model in 该单位: for each 4+, that 敌方单位 suffers 1 致命伤.",
-            "source": "星际战士 (Warhammer Legends)",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
@@ -16776,7 +18299,7 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000000134",
         "name": "Astartes Servitors",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "步兵",
           "帝国",
           "Astartes Servitors"
@@ -16784,91 +18307,91 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-astartes-servitors-mindlock",
-            "name": "Mindlock",
+            "name": "心锁",
             "phases": [
               "any"
             ],
-            "timing": "While a Techmarine model is leading 该单位, improve the 弹道技术 and 武器技术 characteristics of ranged an",
+            "timing": "在Techmarine模型领导此单位的同时，提高远程和",
             "type": "passive",
             "summary": "While a Techmarine model is leading 该单位, improve the 弹道技术 and 武器技术 characteristics of ranged and 近战武器 equipped by ASTARTES SERVITOR models in 该单位 by 1.",
-            "source": "星际战士 (Warhammer Legends)",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000002700",
-        "name": "Astraeus",
+        "name": "阿斯特赖俄斯",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "巨型",
           "载具",
           "帝国",
-          "Astraeus"
+          "阿斯特赖俄斯"
         ],
         "abilities": [
           {
             "id": "unit-astraeus-suppression-fire",
-            "name": "Suppression Fire",
+            "name": "镇压火力",
             "phases": [
               "shooting"
             ],
             "timing": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 hit by one or more attacks made with its twin macro-accelerator cannon this phase",
             "type": "reaction",
-            "summary": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 hit by one or more attacks made with its twin macro-accelerator cannon this phase. 直到你下个回合开始时，while 该模型 is on the battlefield, that 敌方单位 is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, 命中掷骰结果 -1.",
-            "source": "星际战士 (Forge World)",
+            "summary": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 hit by one or more attacks made with its twin macro-accelerator cannon this phase. 直到你下个回合开始时，while 该模型 is on the battlefield, that 敌方单位 is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the 命中掷骰.",
+            "source": "太空海军陆战队（锻造世界）",
             "priority": 3
           }
         ]
       },
       {
         "id": "unit-000000073",
-        "name": "Captain",
+        "name": "队长",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "步兵",
-          "Captain",
+          "队长",
           "手雷",
           "帝国",
           "角色",
-          "Tacticus"
+          "战术型"
         ],
         "abilities": [
           {
             "id": "unit-captain-relic-shield",
-            "name": "Relic Shield",
+            "name": "遗物护盾",
             "phases": [
               "any"
             ],
-            "timing": "The bearer has a 伤口属性 of 6.",
+            "timing": "持票人的伤口特征为6。",
             "type": "wargear",
-            "summary": "The bearer has a 伤口属性 of 6.",
+            "summary": "持票人的伤口特征为6。",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-captain-rites-of-battle",
-            "name": "Rites of Battle",
+            "name": "战斗仪式",
             "phases": [
               "any"
             ],
-            "timing": "每个战斗轮次一次，one unit 来自你军队的 with this ability can use it when its unit is targeted with a Stratagem.",
+            "timing": "每个战斗轮次一次，one unit from 你的军队 with this ability can use it when its unit is targeted with a Stratagem.",
             "type": "active",
             "once_per": "battle",
-            "summary": "Once per battle round, one unit 来自你军队的 with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+            "summary": "Once per battle round, one unit from 你的军队 with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-captain-finest-hour",
-            "name": "Finest Hour",
+            "name": "最光辉的时刻",
             "phases": [
               "fight"
             ],
-            "timing": "在近战阶段，该模型可以使用此能力",
+            "timing": "战斗阶段，该模型可以使用该能力",
             "type": "active",
             "once_per": "battle",
-            "summary": "每场战斗一次，at the start of the 在近战阶段，该模型可以使用此能力. If it does, until the end of the phase, add 3 to the 攻击次数属性 of melee 该模型装备的武器 and those weapons 拥有 [DEVASTATING WOUNDS] 能力.",
+            "summary": "每场战斗一次，at the start of the 在近战阶段，该模型可以使用此能力. If it does, until the end of the phase, add 3 to the 攻击次数属性 of 近战武器 equipped by 该模型 and those weapons have the [毁灭伤害] ability.",
             "source": "星际战士",
             "priority": 3
           }
@@ -16876,39 +18399,39 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001172",
-        "name": "Captain In Gravis Armour",
+        "name": "身着格雷维斯盔甲的队长",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "步兵",
           "角色",
           "手雷",
-          "Gravis",
-          "Captain",
+          "重甲型",
+          "队长",
           "帝国"
         ],
         "abilities": [
           {
             "id": "unit-captain-in-gravis-armour-rites-of-battle",
-            "name": "Rites of Battle",
+            "name": "战斗仪式",
             "phases": [
               "any"
             ],
-            "timing": "每个战斗轮次一次，one unit 来自你军队的 with this ability can use it when its unit is targeted with a Stratagem.",
+            "timing": "每个战斗轮次一次，one unit from 你的军队 with this ability can use it when its unit is targeted with a Stratagem.",
             "type": "active",
             "once_per": "battle",
-            "summary": "Once per battle round, one unit 来自你军队的 with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+            "summary": "Once per battle round, one unit from 你的军队 with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-captain-in-gravis-armour-refuse-to-yield",
-            "name": "Refuse to Yield",
+            "name": "拒绝屈服",
             "phases": [
               "any"
             ],
-            "timing": "Each time an attack is allocated to 该模型, halve the 伤害属性 of that attack.",
+            "timing": "每次向该模型分配攻击时，该攻击的伤害特性减半。",
             "type": "passive",
-            "summary": "Each time an attack is allocated to 该模型, halve the 伤害属性 of that attack.",
+            "summary": "每次向该模型分配攻击时，该攻击的伤害特性减半。",
             "source": "星际战士",
             "priority": 2
           }
@@ -16916,12 +18439,12 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002701",
-        "name": "Captain In Phobos Armour",
+        "name": "穿着火卫一护甲的船长",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
-          "Captain",
-          "Phobos",
+          "队长",
+          "福波斯型",
           "步兵",
           "角色",
           "手雷"
@@ -16929,26 +18452,26 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-captain-in-phobos-armour-rites-of-battle",
-            "name": "Rites of Battle",
+            "name": "战斗仪式",
             "phases": [
               "any"
             ],
-            "timing": "每个战斗轮次一次，one unit 来自你军队的 with this ability can use it when its unit is targeted with a Stratagem.",
+            "timing": "每个战斗轮次一次，one unit from 你的军队 with this ability can use it when its unit is targeted with a Stratagem.",
             "type": "active",
             "once_per": "battle",
-            "summary": "Once per battle round, one unit 来自你军队的 with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+            "summary": "Once per battle round, one unit from 你的军队 with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-captain-in-phobos-armour-master-of-deceit",
-            "name": "Master of Deceit",
+            "name": "欺骗大师",
             "phases": [
               "any"
             ],
             "timing": "After both players have deployed their armies, if 你的军队 includes one or more models with this ability, you can selec",
             "type": "passive",
-            "summary": "After both players have deployed their armies, if 你的军队 includes one or more models with this ability, you can select up to three friendly Adeptus Astartes Infantry units and redeploy all of those units. When doing so, any of those units can be placed into Strategic Reserves, regardless of how many units are already in Strategic Reserves.",
+            "summary": "After both players have deployed their armies, if 你的军队 includes one or more models with this ability, you can select up to three friendly 阿斯塔特修会 步兵 units and redeploy all of those units. When doing so, any of those units can be placed into Strategic Reserves, regardless of how many units are already in Strategic Reserves.",
             "source": "星际战士",
             "priority": 2
           }
@@ -16956,22 +18479,22 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000083",
-        "name": "Captain With Jump Pack",
+        "name": "带跳跃的队长礼包",
         "keywords": [
-          "Adeptus Astartes",
-          "Captain",
+          "阿斯塔特修会",
+          "队长",
           "步兵",
           "飞行",
           "帝国",
           "角色",
           "跳跃背包",
           "手雷",
-          "Tacticus"
+          "战术型"
         ],
         "abilities": [
           {
             "id": "unit-captain-with-jump-pack-angel-s-wrath",
-            "name": "Angel’s Wrath",
+            "name": "天使之怒",
             "phases": [
               "charge"
             ],
@@ -16983,26 +18506,26 @@ window.BC_BUILTIN_PACKS = {
           },
           {
             "id": "unit-captain-with-jump-pack-rites-of-battle",
-            "name": "Rites of Battle",
+            "name": "战斗仪式",
             "phases": [
               "any"
             ],
-            "timing": "每个战斗轮次一次，one unit 来自你军队的 with this ability can use it when its unit is targeted with a Stratagem.",
+            "timing": "每个战斗轮次一次，one unit from 你的军队 with this ability can use it when its unit is targeted with a Stratagem.",
             "type": "active",
             "once_per": "battle",
-            "summary": "Once per battle round, one unit 来自你军队的 with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+            "summary": "Once per battle round, one unit from 你的军队 with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-captain-with-jump-pack-relic-shield",
-            "name": "Relic Shield",
+            "name": "遗物护盾",
             "phases": [
               "any"
             ],
-            "timing": "The bearer has a 伤口属性 of 6.",
+            "timing": "持票人的伤口特征为6。",
             "type": "wargear",
-            "summary": "The bearer has a 伤口属性 of 6.",
+            "summary": "持票人的伤口特征为6。",
             "source": "星际战士",
             "priority": 2
           }
@@ -17010,35 +18533,35 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002793",
-        "name": "Castellan",
+        "name": "寨主",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "步兵",
           "角色",
           "手雷",
           "帝国",
-          "Tacticus",
-          "Lieutenant",
-          "Castellan"
+          "战术型",
+          "中尉",
+          "寨主"
         ],
         "abilities": [
           {
             "id": "unit-castellan-vehement-aggression",
-            "name": "Vehement Aggression",
+            "name": "激烈侵略",
             "phases": [
               "fight",
               "battleshock"
             ],
-            "timing": "当该模型领导一个单位时，each time that unit is 被选中进行近战, take a Leadership test for that unit: if passed, until the end of the phase, each time a model in that unit makes an attack, you 可以重掷命中掷骰; if failed, until the end of the phase, each time a model in that unit makes an attack, re-roll a 命中掷骰 of 1",
+            "timing": "当该模型领导一个单位时，each time that unit is 被选中进行近战, take a 领袖ship test for that unit: if passed, until the end of the phase, each time a model in that unit makes an attack, you can re-roll the 命中掷骰; if failed, until the end of the phase, each time a model in that unit makes an attack, re-roll a 命中掷骰 of 1",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，each time that unit is 被选中进行近战, take a Leadership test for that unit: if passed, until the end of the phase, each time a model in that unit makes an attack, you 可以重掷命中掷骰; if failed, until the end of the phase, each time a model in that unit makes an attack, re-roll a 命中掷骰 of 1.",
+            "summary": "当该模型领导一个单位时，each time that unit is 被选中进行近战, take a 领袖ship test for that unit: if passed, until the end of the phase, each time a model in that unit makes an attack, you can re-roll the 命中掷骰; if failed, until the end of the phase, each time a model in that unit makes an attack, re-roll a 命中掷骰 of 1.",
             "source": "黑色圣堂",
             "priority": 3
           },
           {
             "id": "unit-castellan-prioritised-eradication",
-            "name": "Prioritised Eradication",
+            "name": "优先根除",
             "phases": [
               "fight"
             ],
@@ -17052,36 +18575,36 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002703",
-        "name": "Centurion Assault Squad",
+        "name": "百夫长突击小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "步兵",
           "帝国",
           "Centurion",
-          "Centurion Assault Squad"
+          "百夫长突击小队"
         ],
         "abilities": [
           {
             "id": "unit-centurion-assault-squad-annihilator-protocols",
-            "name": "Annihilator Protocols",
+            "name": "歼灭者方案",
             "phases": [
               "any"
             ],
-            "timing": "Melee 本单位模型装备的武器 拥有 [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FO",
+            "timing": "Melee weapons equipped by models in 该单位 have the [连击 2] ability when targeting 怪兽, 载具 or FO",
             "type": "passive",
-            "summary": "Melee 本单位模型装备的武器 拥有 [SUSTAINED HITS 2] ability when targeting MONSTER , VEHICLE or FORTIFICATION units.",
+            "summary": "Melee weapons equipped by models in 该单位 have the [连击 2] ability when targeting 怪兽, 载具 or 防御工事 units.",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-centurion-assault-squad-centurion-assault-launcher",
-            "name": "Centurion Assault Launcher",
+            "name": "百夫长突击发射器",
             "phases": [
               "any"
             ],
-            "timing": "The bearer 拥有 Grenades keyword.",
+            "timing": "持有人有手榴弹关键字。",
             "type": "wargear",
-            "summary": "The bearer 拥有 Grenades keyword.",
+            "summary": "持有人有手榴弹关键字。",
             "source": "星际战士",
             "priority": 2
           }
@@ -17089,10 +18612,10 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001193",
-        "name": "Centurion Devastator Squad",
+        "name": "百夫长掠夺者小队",
         "keywords": [
-          "Adeptus Astartes",
-          "Centurion Devastator Squad",
+          "阿斯塔特修会",
+          "百夫长掠夺者小队",
           "Centurion",
           "帝国",
           "步兵"
@@ -17100,13 +18623,13 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-centurion-devastator-squad-decimator-protocols",
-            "name": "Decimator Protocols",
+            "name": "抽取器协议",
             "phases": [
               "shooting"
             ],
             "timing": "本单位中的模型每次进行远程攻击时，re-roll a 命中掷骰 of 1. If the target of that attack is an enemy",
             "type": "reaction",
-            "summary": "本单位中的模型每次进行远程攻击时，re-roll a 命中掷骰 of 1. If the target of that attack is an 敌方单位 位于一个目标标记范围内, you 可以重掷命中掷骰 instead.",
+            "summary": "本单位中的模型每次进行远程攻击时，re-roll a 命中掷骰 of 1. If the target of that attack is an 敌方单位 位于一个目标标记范围内, you can re-roll the 命中掷骰 instead.",
             "source": "星际战士",
             "priority": 3
           }
@@ -17114,36 +18637,36 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001153",
-        "name": "Cerberus",
+        "name": "刻耳柏洛斯",
         "keywords": [
-          "Adeptus Astartes",
-          "Cerberus",
-          "Smoke",
+          "阿斯塔特修会",
+          "刻耳柏洛斯",
+          "烟",
           "帝国",
           "载具"
         ],
         "abilities": [
           {
             "id": "unit-cerberus-atomantic-arc-reactor",
-            "name": "Atomantic Arc-reactor",
+            "name": "原子弧光反应器",
             "phases": [
               "shooting"
             ],
-            "timing": "in your Shooting phase, provided it 保持静止 this turn, that weapon 拥有 [LETHAL HITS] 能力",
+            "timing": "在你的射击阶段，如果该武器在本回合保持静止，则该武器具有[致命命中]能力",
             "type": "active",
-            "summary": "Each time 该单位 shoots its Cerberus neutron pulse array in your Shooting phase, provided it 保持静止 this turn, that weapon 拥有 [LETHAL HITS] 能力.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time 该单位 shoots its Cerberus neutron pulse array in your Shooting phase, provided it 保持静止 this turn, that weapon has the [致命命中] ability.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
       },
       {
         "id": "unit-000001174",
-        "name": "Chaplain",
+        "name": "军队牧师",
         "keywords": [
-          "Adeptus Astartes",
-          "Chaplain",
-          "Tacticus",
+          "阿斯塔特修会",
+          "军队牧师",
+          "战术型",
           "帝国",
           "手雷",
           "角色",
@@ -17152,26 +18675,26 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-chaplain-litany-of-hate",
-            "name": "Litany of Hate",
+            "name": "仇恨长篇大论",
             "phases": [
               "fight"
             ],
-            "timing": "当该模型领导一个单位时，each time a model in that unit makes a 近战攻击, 致伤掷骰结果 +1",
+            "timing": "当该模型领导一个单位时，该单位中的模型每次进行近战攻击时，在伤口卷上增加1",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，each time a model in that unit makes a 近战攻击, 致伤掷骰结果 +1.",
+            "summary": "当该模型带领一个单位时，该单位中的模型每次进行近战攻击时，伤口卷数增加1。",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-chaplain-spiritual-leader",
-            "name": "Spiritual Leader",
+            "name": "精神领袖",
             "phases": [
               "battleshock"
             ],
-            "timing": "Battle-shocked and within 12\" of 该模型",
+            "timing": "激烈震撼，距离该型号12英寸以内",
             "type": "active",
             "once_per": "battle",
-            "summary": "每场战斗一次，at the start of any phase, you can select one friendly ADEPTUS ASTARTES unit that is Battle-shocked and within 12\" of 该模型. That unit is no longer Battle-shocked.",
+            "summary": "每场战斗一次，at the start of any phase, you can select one friendly 阿斯塔特修会 unit that is 战斗冲击ed and within 12\" of 该模型. That unit is no longer 战斗冲击ed.",
             "source": "星际战士",
             "priority": 3
           }
@@ -17179,17 +18702,17 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002792",
-        "name": "Chaplain Grimaldus",
+        "name": "牧师Grimaldus",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "史诗英雄",
-          "Tacticus",
+          "战术型",
           "帝国",
           "步兵",
           "角色",
           "手雷",
-          "Chaplain Grimaldus"
+          "牧师Grimaldus"
         ],
         "abilities": [
           {
@@ -17198,15 +18721,15 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "fight"
             ],
-            "timing": "While 该单位 is leading a unit and contains a Chaplain Grimaldus model, each time a model in that unit makes a 近战攻击, you 可以重掷命中掷骰",
+            "timing": "While 该单位 is leading a unit and contains a Chaplain Grimaldus model, each time a model in that unit makes a 近战攻击, you can re-roll the 命中掷骰",
             "type": "passive",
-            "summary": "While 该单位 is leading a unit and contains a Chaplain Grimaldus model, each time a model in that unit makes a 近战攻击, you 可以重掷命中掷骰.",
+            "summary": "While 该单位 is leading a unit and contains a Chaplain Grimaldus model, each time a model in that unit makes a 近战攻击, you can re-roll the 命中掷骰.",
             "source": "黑色圣堂",
             "priority": 3
           },
           {
             "id": "unit-chaplain-grimaldus-temple-relics",
-            "name": "Temple Relics",
+            "name": "圣殿遗迹",
             "phases": [
               "command"
             ],
@@ -17220,32 +18743,32 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000112",
-        "name": "Chaplain With Jump Pack",
+        "name": "带跳跃礼包的牧师",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "跳跃背包",
           "飞行",
           "帝国",
-          "Chaplain",
+          "军队牧师",
           "步兵",
           "角色"
         ],
         "abilities": [
           {
             "id": "unit-chaplain-with-jump-pack-litany-of-hate",
-            "name": "Litany of Hate",
+            "name": "仇恨长篇大论",
             "phases": [
               "fight"
             ],
-            "timing": "当该模型领导一个单位时，each time a model in that unit makes a 近战攻击, 致伤掷骰结果 +1",
+            "timing": "当该模型领导一个单位时，该单位中的模型每次进行近战攻击时，在伤口卷上增加1",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，each time a model in that unit makes a 近战攻击, 致伤掷骰结果 +1.",
+            "summary": "当该模型带领一个单位时，该单位中的模型每次进行近战攻击时，伤口卷数增加1。",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-chaplain-with-jump-pack-exhortation-of-rage",
-            "name": "Exhortation of Rage",
+            "name": "愤怒劝诫",
             "phases": [
               "fight"
             ],
@@ -17259,12 +18782,12 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002103",
-        "name": "Command Squad",
+        "name": "指挥小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "手雷",
           "帝国",
-          "Command Squad",
+          "指挥小队",
           "步兵"
         ],
         "abilities": [
@@ -17274,10 +18797,10 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "any"
             ],
-            "timing": "The bearer 拥有 4+ invulnerable save。",
+            "timing": "持有人有4 +无懈可击的保存。",
             "type": "wargear",
-            "summary": "The bearer 拥有 4+ invulnerable save。",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持有人有4 +无懈可击的保存。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
@@ -17286,10 +18809,10 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "command"
             ],
-            "timing": "in your Command phase, you can return 1 destroyed model (excluding CHARACTER models) to 该单位",
+            "timing": "在你的指挥阶段，you can return 1 destroyed model (excluding 角色 models) to 该单位",
             "type": "active",
-            "summary": "While 该单位 contains an APOTHECARY , in your Command phase, you can return 1 destroyed model (excluding CHARACTER models) to 该单位.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "While 该单位 contains an APOTHECARY, 在你的指挥阶段，you can return 1 destroyed model (excluding 角色 models) to 该单位.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
@@ -17298,37 +18821,37 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "any"
             ],
-            "timing": "While 该单位 contains a Company Ancient, add 1 to the 目标控制（OC）属性 of models in 该单位",
+            "timing": "当本单位包含一个上古公司时，在本单位模型的目标控制（OC）属性中添加1",
             "type": "passive",
-            "summary": "While 该单位 contains a Company Ancient, add 1 to the 目标控制（OC）属性 of models in 该单位.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "当本单位包含一个上古公司时，在本单位模型的目标控制（OC）属性中添加1。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-command-squad-honour-or-death",
-            "name": "Honour or Death",
+            "name": "荣誉或死亡",
             "phases": [
               "any"
             ],
             "timing": "While 该单位 contains a Company Champion, add 1 to Advance and 冲锋掷骰 made for 该单位 and you can target 该单位 with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase",
             "type": "passive",
             "summary": "While 该单位 contains a Company Champion, add 1 to Advance and 冲锋掷骰 made for 该单位 and you can target 该单位 with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase.",
-            "source": "星际战士 (Warhammer Legends)",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000002772",
-        "name": "Company Heroes",
+        "name": "公司英雄",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
           "步兵",
           "手雷",
-          "Ancient",
-          "Company Heroes",
-          "Tacticus"
+          "上古",
+          "公司英雄",
+          "战术型"
         ],
         "abilities": [
           {
@@ -17337,21 +18860,21 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "any"
             ],
-            "timing": "While 该单位 contains an Ancient, add 1 to the 目标控制（OC）属性 of models in 该单位",
+            "timing": "While this unit contains an Ancient, add 1 to the 目标控制（OC） characteristic of models in this unit",
             "type": "passive",
-            "summary": "While 该单位 contains an Ancient, add 1 to the 目标控制（OC）属性 of models in 该单位.",
+            "summary": "当该单位包含一个古老时，为该单位中模型的目标控制（OC）属性增加1。",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-company-heroes-command-squad",
-            "name": "Command Squad",
+            "name": "指挥小队",
             "phases": [
               "any"
             ],
-            "timing": "While a CHARACTER model is leading 该单位, each time an attack targets 该单位, 致伤掷骰结果 -1.",
+            "timing": "当角色模型领导此单位时，每次攻击以此单位为目标时，从伤口卷中减去1。",
             "type": "passive",
-            "summary": "While a CHARACTER model is leading 该单位, each time an attack targets 该单位, 致伤掷骰结果 -1.",
+            "summary": "当角色模型领导此单位时，每次攻击以此单位为目标时，从伤口卷中减去1。",
             "source": "星际战士",
             "priority": 2
           }
@@ -17359,22 +18882,22 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000004136",
-        "name": "Crusade Ancient",
+        "name": "古代十字军东征",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
           "步兵",
           "角色",
           "手雷",
-          "Crusade Ancient",
-          "Ancient",
-          "Tacticus"
+          "古代十字军东征",
+          "上古",
+          "战术型"
         ],
         "abilities": [
           {
             "id": "unit-crusade-ancient-vengeful-exhortation",
-            "name": "Vengeful Exhortation",
+            "name": "复仇劝诫",
             "phases": [
               "fight"
             ],
@@ -17386,14 +18909,14 @@ window.BC_BUILTIN_PACKS = {
           },
           {
             "id": "unit-crusade-ancient-martial-honour",
-            "name": "Martial Honour",
+            "name": "吴尊",
             "phases": [
               "fight",
               "battleshock"
             ],
-            "timing": "Battle-shocked, add 5 to 该模型’s 目标控制（OC）属性",
+            "timing": "战斗冲击，增加5个该型号的目标控制（OC）属性",
             "type": "reaction",
-            "summary": "The first time a model in 该模型’s unit makes a 近战攻击 that destroys one or more 敌方单位s, until the end of the battle, while 该模型’s unit is not Battle-shocked, add 5 to 该模型’s 目标控制（OC）属性.",
+            "summary": "The first time a model in 该模型’s unit makes a 近战攻击 that destroys one or more 敌方单位s, until the end of the battle, while 该模型’s unit is not 战斗冲击ed, add 5 to 该模型’s 目标控制（OC）属性.",
             "source": "黑色圣堂",
             "priority": 3
           }
@@ -17401,28 +18924,28 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002799",
-        "name": "Crusader Squad",
+        "name": "十字军小队",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
-          "Crusader Squad",
+          "十字军小队",
           "步兵",
           "战线",
           "手雷",
-          "Tacticus"
+          "战术型"
         ],
         "abilities": [
           {
             "id": "unit-crusader-squad-righteous-zeal",
-            "name": "Righteous Zeal",
+            "name": "正义热情",
             "phases": [
               "shooting",
               "battleshock"
             ],
             "timing": "In your opponent’s Shooting phase, each time an 敌方单位 has shot, if any models in 该单位 were destroyed as a result of those attacks, 该单位 can make a Righteous Zeal move",
             "type": "reaction",
-            "summary": "In your opponent’s Shooting phase, each time an 敌方单位 has shot, if any models in 该单位 were destroyed as a result of those attacks, 该单位 can make a Righteous Zeal move. To do so, roll one D6 and add 2 to the result: models in 该单位 move a number of inches up to this result, but 该单位 must end that move as close as possible to the closest 敌方单位 (excluding AIRCRAFT ). When doing so, those models can be moved 位于以下目标的接战范围内：that 敌方单位. This unit cannot make a Righteous Zeal move while it is Battle-shocked or 位于以下目标的接战范围内：one or more 敌方单位s, and can only make one Righteous Zeal move per phase.",
+            "summary": "In your opponent’s Shooting phase, each time an 敌方单位 has shot, if any models in 该单位 were destroyed as a result of those attacks, 该单位 can make a Righteous Zeal move. To do so, roll one D6 and add 2 to the result: models in 该单位 move a number of inches up to this result, but 该单位 must end that move as close as possible to the closest 敌方单位 (excluding 飞行器 ). When doing so, those models can be moved 位于以下目标的接战范围内：that 敌方单位. This unit cannot make a Righteous Zeal move while it is 战斗冲击ed or 位于以下目标的接战范围内：one or more 敌方单位s, and can only make one Righteous Zeal move per phase.",
             "source": "黑色圣堂",
             "priority": 3
           }
@@ -17430,51 +18953,51 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000004154",
-        "name": "Crusader Squad (Legendary)",
+        "name": "十字军小队（传奇）",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "步兵",
           "战线",
           "帝国",
-          "Crusader Squad",
+          "十字军小队",
           "手雷"
         ],
         "abilities": [
           {
             "id": "unit-crusader-squad-legendary-righteous-zeal",
-            "name": "Righteous Zeal",
+            "name": "正义热情",
             "phases": [
               "any"
             ],
-            "timing": "You can re-roll Advance and 冲锋掷骰 made for 该单位.",
+            "timing": "您可以重新滚动为该单位制作的\"进阶\"和\"充能\"卷。",
             "type": "passive",
-            "summary": "You can re-roll Advance and 冲锋掷骰 made for 该单位.",
-            "source": "黑色圣堂 (Warhammer Legends)",
+            "summary": "您可以重新滚动为该单位制作的\"进阶\"和\"充能\"卷。",
+            "source": "黑色圣殿骑士（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000002267",
-        "name": "Deathstorm Drop Pod",
+        "name": "死亡风暴掉落吊舱",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
-          "Deathstorm Drop Pod",
+          "死亡风暴掉落吊舱",
           "载具"
         ],
         "abilities": [
           {
             "id": "unit-deathstorm-drop-pod-deathstorm-assault",
-            "name": "Deathstorm Assault",
+            "name": "死亡风暴突击",
             "phases": [
               "movement"
             ],
-            "timing": "Movement phase, regardless of any mission rules",
+            "timing": "移动阶段，不考虑任何任务规则",
             "type": "passive",
             "summary": "This model must start the battle in Reserves, but it is not counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules.",
-            "source": "星际战士 (Warhammer Legends)",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
@@ -17483,62 +19006,62 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000002268",
         "name": "Deimos Predator",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "载具",
-          "Smoke",
+          "烟",
           "帝国",
           "Deimos Predator"
         ],
         "abilities": [
           {
             "id": "unit-deimos-predator-armoured-spearhead",
-            "name": "Armoured Spearhead",
+            "name": "装甲矛头",
             "phases": [
               "any"
             ],
             "timing": "Each time 该模型 makes an attack that targets an 敌方单位, re-roll a 命中掷骰 of 1 and, if that unit is within ran",
             "type": "reaction",
-            "summary": "Each time 该模型 makes an attack that targets an 敌方单位, re-roll a 命中掷骰 of 1 and, if that unit is 位于一个目标标记范围内 you do not control, you 可以重掷命中掷骰 instead.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time 该模型 makes an attack that targets an 敌方单位, re-roll a 命中掷骰 of 1 and, if that unit is 位于一个目标标记范围内 you do not control, you can re-roll the 命中掷骰 instead.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-deimos-predator-conversion",
-            "name": "Conversion",
+            "name": "转流",
             "phases": [
               "any"
             ],
             "timing": "Each time an attack made with this weapon targets a unit more than 12\" from 持有者, an unmodified successful Hit rol",
             "type": "wargear",
-            "summary": "Each time an attack made with this weapon targets a unit more than 12\" from 持有者, an unmodified successful 命中掷骰 of 4+ 则记为一次暴击。",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time an attack made with this weapon targets a unit more than 12\" from 持有者, an unmodified successful 命中掷骰 of 4+ scores a 暴击.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-deimos-predator-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000002270",
-        "name": "Desolation Squad",
+        "name": "荒凉小队",
         "keywords": [
-          "Adeptus Astartes",
-          "Desolation Squad",
+          "阿斯塔特修会",
+          "荒凉小队",
           "帝国",
           "手雷",
           "步兵",
-          "Tacticus"
+          "战术型"
         ],
         "abilities": [
           {
@@ -17547,9 +19070,9 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "movement"
             ],
-            "timing": "Movement phase, ranged 本单位模型装备的武器 拥有 [IGNORES COVER] ability",
+            "timing": "移动阶段，本单位模型装备的远程武器具有[IGNORS COVER]能力",
             "type": "passive",
-            "summary": "Each time 该单位 Remains Stationary, until the start of your next Movement phase, ranged 本单位模型装备的武器 拥有 [IGNORES COVER] ability.",
+            "summary": "Each time 该单位 Remains Stationary, until the start of your next Movement phase, 远程武器 equipped by models in 该单位 have the [无视掩体] ability.",
             "source": "星际战士",
             "priority": 3
           }
@@ -17557,24 +19080,24 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002202",
-        "name": "Devastator Squad",
+        "name": "毁灭者小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "手雷",
           "步兵",
-          "Devastator Squad",
+          "毁灭者小队",
           "帝国"
         ],
         "abilities": [
           {
             "id": "unit-devastator-squad-signum",
-            "name": "Signum",
+            "name": "希格纳姆",
             "phases": [
               "movement"
             ],
-            "timing": "Movement phase, ranged 本单位模型装备的武器 拥有 [IGNORES COVER] ability",
+            "timing": "移动阶段，本单位模型装备的远程武器具有[IGNORS COVER]能力",
             "type": "passive",
-            "summary": "Each time 该单位 Remains Stationary, until the start of your next Movement phase, ranged 本单位模型装备的武器 拥有 [IGNORES COVER] ability.",
+            "summary": "Each time 该单位 Remains Stationary, until the start of your next Movement phase, 远程武器 equipped by models in 该单位 have the [无视掩体] ability.",
             "source": "星际战士",
             "priority": 3
           },
@@ -17584,22 +19107,22 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "any"
             ],
-            "timing": "每场战斗一次，after making a 命中掷骰 for a model in 该单位, you can change that roll to an unmodified 6.",
+            "timing": "每场战斗一次，为该单位的模型制作一个命中卷后，您可以将该卷更改为未修改的6。",
             "type": "active",
             "once_per": "battle",
-            "summary": "每场战斗一次，after making a 命中掷骰 for a model in 该单位, you can change that roll to an unmodified 6.",
+            "summary": "每场战斗一次，为该单位的模型制作一个命中卷后，您可以将该卷更改为未修改的6。",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-devastator-squad-designer-s-note",
-            "name": "Designer’s Note",
+            "name": "设计师备注",
             "phases": [
               "any"
             ],
-            "timing": "Place an Armorium Cherub token next to the unit, removing it once this ability has been used.",
+            "timing": "将一个护甲天使代币放置在单位旁边，使用该技能后将其移除。",
             "type": "passive",
-            "summary": "Place an Armorium Cherub token next to the unit, removing it once this ability has been used.",
+            "summary": "将一个护甲天使代币放置在单位旁边，使用该技能后将其移除。",
             "source": "星际战士",
             "priority": 2
           }
@@ -17609,7 +19132,7 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000000122",
         "name": "Dreadnought Drop Pod",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
           "运输",
           "Dreadnought Drop Pod",
@@ -17618,14 +19141,14 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-dreadnought-drop-pod-drop-pod-assault",
-            "name": "Drop Pod Assault",
+            "name": "掉落吊舱突击",
             "phases": [
               "movement"
             ],
-            "timing": "Movement phase, regardless of any mission rules",
+            "timing": "移动阶段，不考虑任何任务规则",
             "type": "passive",
             "summary": "This model must start the battle in Reserves, but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. Any units embarked within 该模型 must immediately disembark after it has been set up on the battlefield, and they must be set up more than 9\" away from all 敌方模型s. After 该模型 has been set up on the battlefield, no units can embark within it.",
-            "source": "星际战士 (Warhammer Legends)",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
@@ -17634,7 +19157,7 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000000087",
         "name": "Drop Pod",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "载具",
           "运输",
           "专属运输",
@@ -17644,11 +19167,11 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-drop-pod-drop-pod-assault",
-            "name": "Drop Pod Assault",
+            "name": "掉落吊舱突击",
             "phases": [
               "movement"
             ],
-            "timing": "Movement phase, regardless of any mission rules",
+            "timing": "移动阶段，不考虑任何任务规则",
             "type": "passive",
             "summary": "This model must start the battle in Reserves and can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. Any units embarked within 该模型 must immediately disembark after it has been set up on the battlefield, and they must be set up more than 9\" away from all 敌方模型s.",
             "source": "星际战士",
@@ -17656,25 +19179,25 @@ window.BC_BUILTIN_PACKS = {
           },
           {
             "id": "unit-drop-pod-combat-disembarkation",
-            "name": "Combat Disembarkation",
+            "name": "战斗下船",
             "phases": [
               "charge"
             ],
             "timing": "Each time a unit disembarks from 该模型 after it has been set up on the battlefield, that unit is still eligible to",
             "type": "passive",
-            "summary": "Each time a unit disembarks from 该模型 after it has been set up on the battlefield, that unit is still eligible to declare a charge this turn.",
+            "summary": "Each time a unit disembarks from 该模型 after it has been set up on the battlefield, that unit is still eligible to 声明冲锋 this turn.",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-drop-pod-deployment-complete",
-            "name": "Deployment Complete",
+            "name": "部署完成",
             "phases": [
               "any"
             ],
             "timing": "Once 该单位 is set up on the battlefield and all units within it have disembarked, until the end of the battle, units",
             "type": "passive",
-            "summary": "Once 该单位 is set up on the battlefield and all units within it have disembarked, until the end of the battle, units cannot embark within this TRANSPORT.",
+            "summary": "Once 该单位 is set up on the battlefield and all units within it have disembarked, until the end of the battle, units cannot embark within this 运输.",
             "source": "星际战士",
             "priority": 2
           }
@@ -17682,19 +19205,19 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001668",
-        "name": "Eliminator Squad",
+        "name": "消灭者小队",
         "keywords": [
-          "Adeptus Astartes",
-          "Eliminator Squad",
+          "阿斯塔特修会",
+          "消灭者小队",
           "步兵",
           "手雷",
           "帝国",
-          "Phobos"
+          "福波斯型"
         ],
         "abilities": [
           {
             "id": "unit-eliminator-squad-reposition-under-covering-fire",
-            "name": "Reposition Under Covering Fire",
+            "name": "在火力覆盖下重新定位",
             "phases": [
               "movement",
               "shooting",
@@ -17702,19 +19225,19 @@ window.BC_BUILTIN_PACKS = {
             ],
             "timing": "在你的射击阶段，after 该单位 has shot, if it contains an Eliminator Sergeant equipped with an instigator bolt carbine, 该单位 can make a 普通移动",
             "type": "active",
-            "summary": "在你的射击阶段，after 该单位 has shot, if it contains an Eliminator Sergeant equipped with an instigator bolt carbine, 该单位 can make a 普通移动. If it does so, until the end of the turn, 该单位 is not eligible to declare a charge.",
+            "summary": "在你的射击阶段，after 该单位 has shot, if it contains an Eliminator Sergeant equipped with an instigator bolt carbine, 该单位 can make a 普通移动. If it does so, until the end of the turn, 该单位 is not eligible to 声明冲锋.",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-eliminator-squad-mark-the-target",
-            "name": "Mark the Target",
+            "name": "标记目标",
             "phases": [
               "movement"
             ],
-            "timing": "Movement phase, ranged 本单位模型装备的武器 拥有 [DEVASTATING WOUNDS] 能力",
+            "timing": "Movement phase, ranged weapons equipped by models in this unit have the [毁灭伤害] ability",
             "type": "passive",
-            "summary": "Each time 该单位 Remains Stationary, until the start of your next Movement phase, ranged 本单位模型装备的武器 拥有 [DEVASTATING WOUNDS] 能力.",
+            "summary": "Each time 该单位 Remains Stationary, until the start of your next 在移动阶段，本单位模型装备的远程武器拥有 [毁灭伤害] 能力.",
             "source": "星际战士",
             "priority": 3
           }
@@ -17722,21 +19245,21 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002795",
-        "name": "Emperor’s Champion",
+        "name": "皇帝的捍卫者",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
-          "Emperor’s Champion",
+          "皇帝的捍卫者",
           "角色",
           "步兵",
-          "Tacticus",
+          "战术型",
           "手雷"
         ],
         "abilities": [
           {
             "id": "unit-emperor-s-champion-armour-of-faith",
-            "name": "Armour of Faith",
+            "name": "信仰的盔甲",
             "phases": [
               "any"
             ],
@@ -17749,14 +19272,14 @@ window.BC_BUILTIN_PACKS = {
           },
           {
             "id": "unit-emperor-s-champion-sigismund-s-heir",
-            "name": "Sigismund’s Heir",
+            "name": "齐格蒙特的继承人",
             "phases": [
               "fight"
             ],
-            "timing": "Each time 该模型’s unit 声明冲锋, if one or more targets of that charge 拥有 CHARACTER keyword, add 2 t",
+            "timing": "Each time 该模型’s unit 声明冲锋, if one or more targets of that charge have the 角色 keyword, add 2 t",
             "type": "active",
             "once_per": "battle",
-            "summary": "Each time 该模型’s unit 声明冲锋, if one or more targets of that charge 拥有 CHARACTER keyword, add 2 to the Charge roll. 每场战斗一次，when 该模型’s unit is 被选中进行近战, if that unit is 位于以下目标的接战范围内：one or more enemy CHARACTER units, 该模型 can use this ability. If it does, until the end of the phase, melee 该模型装备的武器 拥有 [DEVASTATING WOUNDS] 能力.",
+            "summary": "Each time 该模型’s unit 声明冲锋, if one or more targets of that charge have the 角色 keyword, add 2 to the Charge roll. 每场战斗一次，when 该模型’s unit is 被选中进行近战, if that unit is 位于以下目标的接战范围内：one or more enemy 角色 units, 该模型 can use this ability. If it does, until the end of the phase, 近战武器 equipped by 该模型 have the [毁灭伤害] ability.",
             "source": "黑色圣堂",
             "priority": 3
           }
@@ -17764,14 +19287,14 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000103",
-        "name": "Eradicator Squad",
+        "name": "根除者小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
           "步兵",
           "手雷",
-          "Gravis",
-          "Eradicator Squad"
+          "重甲型",
+          "根除者小队"
         ],
         "abilities": [
           {
@@ -17780,9 +19303,9 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "shooting"
             ],
-            "timing": "Each time a 远程攻击 made by a model in 该单位 targets a MONSTER or VEHICLE model, you 可以重掷命中掷骰,",
+            "timing": "Each time a 远程攻击 made by a model in 该单位 targets a 怪兽 or 载具 model, you can re-roll the 命中掷骰,",
             "type": "passive",
-            "summary": "Each time a 远程攻击 made by a model in 该单位 targets a MONSTER or VEHICLE model, you 可以重掷命中掷骰, you 可以重掷致伤掷骰 and you can re-roll the 伤害掷骰.",
+            "summary": "Each time a 远程攻击 made by a model in 该单位 targets a 怪兽 or 载具 model, you can re-roll the 命中掷骰, you can re-roll the 致伤掷骰 and you can re-roll the 伤害掷骰.",
             "source": "星际战士",
             "priority": 3
           }
@@ -17790,40 +19313,40 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000004135",
-        "name": "Execrator",
+        "name": "执行器",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
-          "Chaplain",
-          "Tacticus",
+          "阿斯塔特修会",
+          "军队牧师",
+          "战术型",
           "帝国",
           "手雷",
           "角色",
           "步兵",
-          "Execrator"
+          "执行器"
         ],
         "abilities": [
           {
             "id": "unit-execrator-remorseless-persecution",
-            "name": "Remorseless Persecution",
+            "name": "无情的迫害",
             "phases": [
               "charge"
             ],
-            "timing": "当该模型领导一个单位时，that unit is eligible to declare a charge in a turn in which it Advance",
+            "timing": "当此模型领导一个单元时，该单元有资格在其高级的回合中宣布收费",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，that unit is eligible to declare a charge in a turn in which it Advance.",
+            "summary": "当此模型领导一个单位时，该单位有资格在其高级的回合中宣布收费。",
             "source": "黑色圣堂",
             "priority": 3
           },
           {
             "id": "unit-execrator-condemnatory-annihilation",
-            "name": "Condemnatory Annihilation",
+            "name": "谴责性湮灭",
             "phases": [
               "battleshock"
             ],
             "timing": "战斗冲击测试",
             "type": "reaction",
-            "summary": "Each time 该模型’s unit has fought, if one or more 敌方单位s were destroyed as a result of those attacks, each 敌方单位 within 6\" of 该模型 must take a 战斗冲击测试.",
+            "summary": "Each time 该模型’s unit has fought, if one or more 敌方单位s were destroyed as a result of those attacks, each 敌方单位 within 6\" of 该模型 must take a 战斗冲击 test.",
             "source": "黑色圣堂",
             "priority": 3
           }
@@ -17831,11 +19354,11 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001666",
-        "name": "Falchion",
+        "name": "法鲁西翁",
         "keywords": [
-          "Adeptus Astartes",
-          "Smoke",
-          "Falchion",
+          "阿斯塔特修会",
+          "烟",
+          "法鲁西翁",
           "帝国",
           "载具",
           "巨型"
@@ -17843,14 +19366,14 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-falchion-titan-killer",
-            "name": "Titan-killer",
+            "name": "泰坦杀手",
             "phases": [
               "shooting"
             ],
-            "timing": "Each time 该模型 makes a 远程攻击 with its twin Falchion volcano cannon 以 MONSTER 或 VEHICLE 单位为目标,",
+            "timing": "Each time 该模型 makes a 远程攻击 with its twin Falchion volcano cannon 以怪兽或载具单位为目标,",
             "type": "passive",
-            "summary": "Each time 该模型 makes a 远程攻击 with its twin Falchion volcano cannon 以 MONSTER 或 VEHICLE 单位为目标, that attack 拥有 [DEVASTATING WOUNDS] ability.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time 该模型 makes a 远程攻击 with its twin Falchion volcano cannon 以怪兽或载具单位为目标, that attack has the [毁灭伤害] ability.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
@@ -17859,9 +19382,9 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000002704",
         "name": "Fellblade",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "Fellblade",
-          "Smoke",
+          "烟",
           "载具",
           "帝国",
           "巨型"
@@ -17869,14 +19392,14 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-fellblade-rolling-fortress",
-            "name": "Rolling Fortress",
+            "name": "滚动堡垒",
             "phases": [
               "shooting"
             ],
-            "timing": "Each time a 远程攻击 is allocated to a model 来自你军队的, if that model is not fully visible to every model in t",
+            "timing": "Each time a 远程攻击 is allocated to a model from 你的军队, if that model is not fully visible to every model in t",
             "type": "passive",
-            "summary": "Each time a 远程攻击 is allocated to a model 来自你军队的, if that model is not fully visible to every model in the attacking unit because of this Fellblade model, that model 拥有 掩体收益 against that attack.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time a 远程攻击 is allocated to a model from 你的军队, if that model is not fully visible to every model in the attacking unit because of this Fellblade model, that model has the 掩体增益 against that attack.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
@@ -17885,58 +19408,58 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000004204",
         "name": "Ferren Areios",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "步兵",
           "帝国",
           "角色",
           "手雷",
           "史诗英雄",
-          "Tacticus",
-          "Captain",
+          "战术型",
+          "队长",
           "Ferren Areios"
         ],
         "abilities": [
           {
             "id": "unit-ferren-areios-master-of-rites",
-            "name": "Master of Rites",
+            "name": "仪式大师",
             "phases": [
               "command",
               "charge"
             ],
             "timing": "在你的指挥阶段，select one of the following to apply to 该模型’s unit until the end of the turn: - This model’s unit is eligible to shoot in a turn in which it Advance",
             "type": "active",
-            "summary": "在你的指挥阶段，select one of the following to apply to 该模型’s unit until the end of the turn:\n- This model’s unit is eligible to shoot in a turn in which it Advance.\n- This model’s unit is eligible to declare a charge in a turn in it which it Advance.\n- This model’s unit is eligible to shoot and declare a charge in a turn in which it Fallback.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "在你的指挥阶段，select one of the following to apply to 该模型’s unit until the end of the turn:\n- This model’s unit is eligible to shoot in a turn in which it Advance.\n- This model’s unit is eligible to 声明冲锋 in a turn in it which it Advance.\n- This model’s unit is eligible to shoot and 声明冲锋 in a turn in which it Fallback.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-ferren-areios-unrelenting-and-uncompromising",
-            "name": "Unrelenting and Uncompromising",
+            "name": "不屈不挠、毫不妥协",
             "phases": [
               "any"
             ],
             "timing": "当该模型领导一个单位时，each time a model in that unit makes an attack, you can ignore any or all modifiers to that attack’s 弹道技术 or 武器技术 characteristics and/or all modifiers to the 命中掷骰",
             "type": "passive",
             "summary": "当该模型领导一个单位时，each time a model in that unit makes an attack, you can ignore any or all modifiers to that attack’s 弹道技术 or 武器技术 characteristics and/or all modifiers to the 命中掷骰.",
-            "source": "星际战士 (Warhammer Legends)",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000000086",
-        "name": "Firestrike Servo-turrets",
+        "name": "Firestrike伺服炮塔",
         "keywords": [
-          "Adeptus Astartes",
-          "Artillery",
+          "阿斯塔特修会",
+          "炮兵",
           "载具",
           "帝国",
-          "Firestrike Servo-turrets"
+          "Firestrike伺服炮塔"
         ],
         "abilities": [
           {
             "id": "unit-firestrike-servo-turrets-sentinel-protocols",
-            "name": "Sentinel Protocols",
+            "name": "哨兵方案",
             "phases": [
               "any"
             ],
@@ -17950,14 +19473,14 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002787",
-        "name": "Gladiator Lancer",
+        "name": "角斗士枪骑兵",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "载具",
-          "Smoke",
+          "烟",
           "帝国",
-          "Gladiator Lancer"
+          "角斗士枪骑兵"
         ],
         "abilities": [
           {
@@ -17976,25 +19499,25 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002789",
-        "name": "Gladiator Reaper",
+        "name": "角斗士收割者",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "黑色圣堂",
           "帝国",
-          "Gladiator Reaper",
-          "Smoke",
+          "角斗士收割者",
+          "烟",
           "载具"
         ],
         "abilities": [
           {
             "id": "unit-gladiator-reaper-reaping-tally",
-            "name": "Reaping Tally",
+            "name": "收割理货",
             "phases": [
               "any"
             ],
-            "timing": "This model’s twin heavy onslaught gatling cannon 拥有 [SUSTAINED HITS 2] ability while targeting INFANTRY units.",
+            "timing": "该模型的双重重猛攻格林机炮在瞄准步兵单位时具有[持续命中2]能力。",
             "type": "passive",
-            "summary": "This model’s twin heavy onslaught gatling cannon 拥有 [SUSTAINED HITS 2] ability while targeting INFANTRY units.",
+            "summary": "该模型的双重重猛攻格林机炮在瞄准步兵单位时具有[持续命中2]能力。",
             "source": "黑色圣堂",
             "priority": 2
           }
@@ -18002,25 +19525,25 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002788",
-        "name": "Gladiator Valiant",
+        "name": "角斗士勇士",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "黑色圣堂",
-          "Gladiator Valiant",
+          "角斗士勇士",
           "载具",
           "帝国",
-          "Smoke"
+          "烟"
         ],
         "abilities": [
           {
             "id": "unit-gladiator-valiant-priority-target-acquisition",
-            "name": "Priority Target Acquisition",
+            "name": "优先目标采集",
             "phases": [
               "any"
             ],
-            "timing": "Each time 该模型 makes an attack with its twin las-talon that targets the closest eligible MONSTER or VEHICLE unit,",
+            "timing": "Each time 该模型 makes an attack with its twin las-talon that targets the closest eligible 怪兽 or 载具 unit,",
             "type": "passive",
-            "summary": "Each time 该模型 makes an attack with its twin las-talon that targets the closest eligible MONSTER or VEHICLE unit, 命中掷骰结果 +1.",
+            "summary": "Each time 该模型 makes an attack with its twin las-talon that targets the closest eligible 怪兽 or 载具 unit, add 1 to the 命中掷骰.",
             "source": "黑色圣堂",
             "priority": 2
           }
@@ -18030,8 +19553,8 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000000097",
         "name": "Hammerfall Bunker",
         "keywords": [
-          "Adeptus Astartes",
-          "Fortification",
+          "阿斯塔特修会",
+          "要塞",
           "Hammerfall Bunker",
           "帝国",
           "载具"
@@ -18039,39 +19562,39 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-hammerfall-bunker-fortification",
-            "name": "Fortification",
+            "name": "要塞",
             "phases": [
               "shooting",
               "battleshock"
             ],
-            "timing": "Battle-shocked, except for those that will move over 敌方模型s when doing so",
+            "timing": "战斗冲击，但当这样做时会超越敌方模型的除外",
             "type": "reaction",
-            "summary": "While an 敌方单位 is only 位于以下目标的接战范围内：one or more FORTIFICATIONS 来自你军队的:\n- That unit can still be 被选为目标 of 远程攻击s, but each time such an attack is made, unless it is made with a Pistol, 命中掷骰结果 -1.\n- Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over 敌方模型s when doing so.",
+            "summary": "While an 敌方单位 is only 位于以下目标的接战范围内：one or more FORTIFICATIONS from 你的军队:\n- That unit can still be 被选为目标 of 远程攻击s, but each time such an attack is made, unless it is made with a 手枪, subtract 1 from the 命中掷骰.\n- Models in that unit do not need to take Desperate Escape tests due to Falling Back while 战斗冲击ed, except for those that will move over 敌方模型s when doing so.",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-hammerfall-bunker-ceramite-cover",
-            "name": "Ceramite Cover",
+            "name": "陶瓷盖",
             "phases": [
               "shooting"
             ],
             "timing": "Each time a 远程攻击 is allocated to a model, if that model is not fully visible to every model in the attacking un",
             "type": "passive",
-            "summary": "Each time a 远程攻击 is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this FORTIFICATION , that model 拥有 掩体收益 against that attack.",
+            "summary": "Each time a 远程攻击 is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this 防御工事, that model has the 掩体增益 against that attack.",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-hammerfall-bunker-defensive-array",
-            "name": "Defensive Array",
+            "name": "防御法阵",
             "phases": [
               "any"
             ],
-            "timing": "You can target this FORTIFICATION with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targ",
+            "timing": "You can target this 防御工事 with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targ",
             "type": "active",
             "once_per": "turn",
-            "summary": "You can target this FORTIFICATION with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted another unit with that Stratagem this turn. This FORTIFICATION can only be targeted with that Stratagem once per turn.",
+            "summary": "You can target this 防御工事 with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted another unit with that Stratagem this turn. This 防御工事 can only be targeted with that Stratagem once per turn.",
             "source": "星际战士",
             "priority": 2
           }
@@ -18079,20 +19602,20 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001177",
-        "name": "Heavy Intercessor Squad",
+        "name": "重型代祷小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
           "手雷",
           "战线",
           "步兵",
-          "Heavy Intercessor Squad",
-          "Gravis"
+          "重型代祷小队",
+          "重甲型"
         ],
         "abilities": [
           {
             "id": "unit-heavy-intercessor-squad-unyielding-in-the-face-of-the-foe",
-            "name": "Unyielding in the Face of the Foe",
+            "name": "在敌人面前不屈服",
             "phases": [
               "any"
             ],
@@ -18106,37 +19629,37 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002098",
-        "name": "Hellblaster Squad",
+        "name": "地狱爆裂者小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "手雷",
           "步兵",
-          "Hellblaster Squad",
-          "Tacticus",
+          "地狱爆裂者小队",
+          "战术型",
           "帝国"
         ],
         "abilities": [
           {
             "id": "unit-hellblaster-squad-for-the-chapter",
-            "name": "For the Chapter!",
+            "name": "为章节！",
             "phases": [
               "any"
             ],
             "timing": "Each time a model in 该单位 is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can s",
             "type": "passive",
-            "summary": "Each time a model in 该单位 is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model’s unit has finished making its attacks, and is then removed from play. When resolving these attacks, any Hazardous tests taken for that attack are automatically passed.",
+            "summary": "Each time a model in 该单位 is destroyed, roll one D6: on a 3+, do not remove it from play. The destroyed model can shoot after the attacking model’s unit has finished making its attacks, and is then removed from play. When resolving these attacks, any 凶险 tests taken for that attack are automatically passed.",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-hellblaster-squad-designer-s-note",
-            "name": "Designer’s Note",
+            "name": "设计师备注",
             "phases": [
               "any"
             ],
-            "timing": "This ability is triggered even when a model in 该单位 is destroyed as the result of failing a Hazardous test, meaning",
+            "timing": "This ability is triggered even when a model in 该单位 is destroyed as the result of failing a 凶险 test, meaning",
             "type": "passive",
-            "summary": "This ability is triggered even when a model in 该单位 is destroyed as the result of failing a Hazardous test, meaning such a model may be able to shoot twice in the same phase",
+            "summary": "This ability is triggered even when a model in 该单位 is destroyed as the result of failing a 凶险 test, meaning such a model may be able to shoot twice in the same phase",
             "source": "星际战士",
             "priority": 2
           }
@@ -18144,23 +19667,23 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002794",
-        "name": "High Marshal Helbrecht",
+        "name": "赫尔布雷希特元帅",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "步兵",
           "角色",
-          "Tacticus",
+          "战术型",
           "史诗英雄",
           "帝国",
           "手雷",
-          "High Marshal Helbrecht",
-          "Chapter Master"
+          "赫尔布雷希特元帅",
+          "章节大师"
         ],
         "abilities": [
           {
             "id": "unit-high-marshal-helbrecht-crusade-of-wrath",
-            "name": "Crusade of Wrath",
+            "name": "愤怒十字军",
             "phases": [
               "any"
             ],
@@ -18172,7 +19695,7 @@ window.BC_BUILTIN_PACKS = {
           },
           {
             "id": "unit-high-marshal-helbrecht-high-marshal",
-            "name": "High Marshal",
+            "name": "元帅",
             "phases": [
               "fight"
             ],
@@ -18186,49 +19709,49 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000146",
-        "name": "Hunter",
+        "name": "猎手",
         "keywords": [
-          "Adeptus Astartes",
-          "Smoke",
-          "Hunter",
+          "阿斯塔特修会",
+          "烟",
+          "猎手",
           "帝国",
           "载具"
         ],
         "abilities": [
           {
             "id": "unit-hunter-hunter-missile-targeting",
-            "name": "Hunter Missile Targeting",
+            "name": "猎人导弹瞄准",
             "phases": [
               "any"
             ],
-            "timing": "Each time 该模型 makes an attack with its skyspear missile launcher 以 MONSTER 或 VEHICLE 单位为目标, that att",
+            "timing": "Each time 该模型 makes an attack with its skyspear missile launcher 以怪兽或载具单位为目标, that att",
             "type": "passive",
-            "summary": "Each time 该模型 makes an attack with its skyspear missile launcher 以 MONSTER 或 VEHICLE 单位为目标, that attack scores a hit on an unmodified 命中掷骰 of 2+.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time 该模型 makes an attack with its skyspear missile launcher 以怪兽或载具单位为目标, that attack scores a hit on an unmodified 命中掷骰 of 2+.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-hunter-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000000148",
-        "name": "Imperial Space Marine",
+        "name": "帝国太空海军陆战队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "角色",
-          "Imperial Space Marine",
+          "帝国太空海军陆战队",
           "手雷",
           "帝国",
           "步兵"
@@ -18236,26 +19759,26 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-imperial-space-marine-swift-assault",
-            "name": "Swift Assault",
+            "name": "SWIFT突击",
             "phases": [
               "any"
             ],
-            "timing": "当该模型领导一个单位时，远程武器 equipped by 该单位中的模型 拥有 [ASSAULT] 能力",
+            "timing": "当该型号领导一个单位时，该单位中型号装备的远程武器具有[突击]能力",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，远程武器 equipped by 该单位中的模型 拥有 [ASSAULT] 能力.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "当该型号领导一个单位时，该单位中型号装备的远程武器具有[突击]能力。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-imperial-space-marine-unbreakable-duty",
-            "name": "Unbreakable Duty",
+            "name": "坚不可摧的职责",
             "phases": [
               "any"
             ],
-            "timing": "当该模型位于目标标记范围内且/或距离战场中心 6\" 内时，该模型 拥有 Feel No Pain 4+ 能力",
+            "timing": "当该模型位于目标标记范围内且/或距离战场中心 6\" 内时，该模型 has the 无视伤害 4+ ability",
             "type": "passive",
-            "summary": "当该模型位于目标标记范围内且/或距离战场中心 6\" 内时，该模型 拥有 Feel No Pain 4+ 能力.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "当该模型位于目标标记范围内且/或距离战场中心 6\" 内时，该模型 has the 无视伤害 4+ ability.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
@@ -18265,7 +19788,7 @@ window.BC_BUILTIN_PACKS = {
         "name": "Impulsor",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "运输",
           "专属运输",
           "Impulsor",
@@ -18275,38 +19798,38 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-impulsor-assault-vehicle",
-            "name": "Assault Vehicle",
+            "name": "突击车",
             "phases": [
               "movement",
               "charge"
             ],
-            "timing": "Units can disembark from this TRANSPORT after it has Advance. Units that do so count as having made a 普通移动, and",
+            "timing": "Units can disembark from this 运输 after it has Advance. Units that do so count as having made a 普通移动, and",
             "type": "passive",
-            "summary": "Units can disembark from this TRANSPORT after it has Advance. Units that do so count as having made a 普通移动, and cannot declare a charge that turn.",
+            "summary": "Units can disembark from this 运输 after it has Advance. Units that do so count as having made a 普通移动, and cannot 声明冲锋 that turn.",
             "source": "黑色圣堂",
             "priority": 3
           },
           {
             "id": "unit-impulsor-orbital-comms-array-aura",
-            "name": "Orbital Comms Array (Aura)",
+            "name": "轨道通信阵列（光环）",
             "phases": [
               "any"
             ],
-            "timing": "While a friendly ADEPTUS ASTARTES unit is 位于持有者 6\" 内, each time you target that unit with a Stratagem, roll",
+            "timing": "While a friendly 阿斯塔特修会 unit is within 6\" of 持有者, each time you target that unit with a Stratagem, roll",
             "type": "wargear",
-            "summary": "While a friendly ADEPTUS ASTARTES unit is 位于持有者 6\" 内, each time you target that unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",
+            "summary": "While a friendly 阿斯塔特修会 unit is within 6\" of 持有者, each time you target that unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",
             "source": "黑色圣堂",
             "priority": 2
           },
           {
             "id": "unit-impulsor-shield-dome",
-            "name": "Shield Dome",
+            "name": "盾牌穹顶",
             "phases": [
               "any"
             ],
-            "timing": "The bearer has a 5+ invulnerable save.",
+            "timing": "持有人有5 +无懈可击的保存。",
             "type": "wargear",
-            "summary": "The bearer has a 5+ invulnerable save.",
+            "summary": "持有人有5 +无懈可击的保存。",
             "source": "黑色圣堂",
             "priority": 2
           }
@@ -18314,11 +19837,11 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000125",
-        "name": "Inceptor Squad",
+        "name": "探测器小队",
         "keywords": [
-          "Adeptus Astartes",
-          "Gravis",
-          "Inceptor Squad",
+          "阿斯塔特修会",
+          "重甲型",
+          "探测器小队",
           "步兵",
           "跳跃背包",
           "飞行",
@@ -18327,14 +19850,14 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-inceptor-squad-meteoric-descent",
-            "name": "Meteoric Descent",
+            "name": "流星降临",
             "phases": [
               "movement",
               "charge"
             ],
-            "timing": "In your Movement phase, when 该单位 is set up on the battlefield using the Deep Strike ability, it can perform a meteoric descent",
+            "timing": "In your Movement phase, when 该单位 is set up on the battlefield using the 深袭 ability, it can perform a meteoric descent",
             "type": "reaction",
-            "summary": "In your Movement phase, when 该单位 is set up on the battlefield using the Deep Strike ability, it can perform a meteoric descent. If it does, 该单位 can be set up anywhere on the battlefield that is more than 6\" horizontally away from all 敌方单位s, but until the end of the turn, it is not eligible to declare a charge.",
+            "summary": "In your Movement phase, when 该单位 is set up on the battlefield using the 深袭 ability, it can perform a meteoric descent. If it does, 该单位 can be set up anywhere on the battlefield that is more than 6\" horizontally away from all 敌方单位s, but until the end of the turn, it is not eligible to 声明冲锋.",
             "source": "星际战士",
             "priority": 3
           }
@@ -18342,26 +19865,26 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001159",
-        "name": "Incursor Squad",
+        "name": "侵袭者小队",
         "keywords": [
-          "Adeptus Astartes",
-          "Phobos",
-          "Incursor Squad",
+          "阿斯塔特修会",
+          "福波斯型",
+          "侵袭者小队",
           "步兵",
           "帝国",
-          "Smoke",
+          "烟",
           "手雷"
         ],
         "abilities": [
           {
             "id": "unit-incursor-squad-multi-spectrum-array",
-            "name": "Multi-spectrum Array",
+            "name": "多光谱阵列",
             "phases": [
               "shooting"
             ],
             "timing": "在你的射击阶段，after 该单位 has shot, select one 敌方单位 that was hit by one or more attacks made by 该单位 this phase",
             "type": "reaction",
-            "summary": "在你的射击阶段，after 该单位 has shot, select one 敌方单位 that was hit by one or more attacks made by 该单位 this phase. 直到本阶段结束，each time a friendly ADEPTUS ASTARTES unit makes an attack that targets that 敌方单位, 命中掷骰结果 +1.",
+            "summary": "在你的射击阶段，after 该单位 has shot, select one 敌方单位 that was hit by one or more attacks made by 该单位 this phase. 直到本阶段结束，each time a friendly 阿斯塔特修会 unit makes an attack that targets that 敌方单位, add 1 to the 命中掷骰.",
             "source": "星际战士",
             "priority": 3
           },
@@ -18374,7 +19897,7 @@ window.BC_BUILTIN_PACKS = {
             "timing": "每场战斗一次，at the start of any phase, you can select one 敌方单位 within 3\" of 持有者 and roll one D6: on a",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "每场战斗一次，at the start of any phase, you can select one 敌方单位 within 3\" of 持有者 and roll one D6: on a 2+, that 敌方单位 suffers D3 致命伤, or 2D3 致命伤 instead if it is a Vehicle unit.",
+            "summary": "每场战斗一次，at the start of any phase, you can select one 敌方单位 within 3\" of 持有者 and roll one D6: on a 2+, that 敌方单位 suffers D3 致命伤, or 2D3 致命伤 instead if it is a 载具 unit.",
             "source": "星际战士",
             "priority": 2
           }
@@ -18382,26 +19905,26 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000126",
-        "name": "Infernus Squad",
+        "name": "地狱小队",
         "keywords": [
-          "Adeptus Astartes",
-          "Tacticus",
+          "阿斯塔特修会",
+          "战术型",
           "帝国",
           "手雷",
           "步兵",
-          "Infernus Squad"
+          "地狱小队"
         ],
         "abilities": [
           {
             "id": "unit-infernus-squad-incendiary-terror",
-            "name": "Incendiary Terror",
+            "name": "燃烧恐怖",
             "phases": [
               "shooting",
               "battleshock"
             ],
-            "timing": "在你的射击阶段，after 该单位 has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster",
+            "timing": "在你的射击阶段，after 该单位 has shot, you can select one enemy 步兵 unit hit by one or more of those attacks made with a pyre爆炸er",
             "type": "reaction",
-            "summary": "在你的射击阶段，after 该单位 has shot, you can select one enemy INFANTRY unit hit by one or more of those attacks made with a pyreblaster. That 敌方单位 must take a 战斗冲击测试, subtracting 1 from that test.",
+            "summary": "在你的射击阶段，after 该单位 has shot, you can select one enemy 步兵 unit hit by one or more of those attacks made with a pyre爆炸er. That 敌方单位 must take a 战斗冲击 test, subtracting 1 from that test.",
             "source": "星际战士",
             "priority": 3
           }
@@ -18409,20 +19932,20 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000128",
-        "name": "Infiltrator Squad",
+        "name": "渗透部队",
         "keywords": [
-          "Adeptus Astartes",
-          "Infiltrator Squad",
-          "Phobos",
+          "阿斯塔特修会",
+          "渗透部队",
+          "福波斯型",
           "帝国",
           "步兵",
           "手雷",
-          "Smoke"
+          "烟"
         ],
         "abilities": [
           {
             "id": "unit-infiltrator-squad-omni-scramblers",
-            "name": "Omni-scramblers",
+            "name": "全方位扰频器",
             "phases": [
               "any"
             ],
@@ -18434,25 +19957,25 @@ window.BC_BUILTIN_PACKS = {
           },
           {
             "id": "unit-infiltrator-squad-helix-gauntlet",
-            "name": "Helix Gauntlet",
+            "name": "螺旋护手",
             "phases": [
               "any"
             ],
-            "timing": "Models in 持有者’s unit 拥有 Feel No Pain 6+ ability.",
+            "timing": "持票人单位中的模特具有无痛感6 +能力。",
             "type": "wargear",
-            "summary": "Models in 持有者’s unit 拥有 Feel No Pain 6+ ability.",
+            "summary": "持票人单位中的模特具有无痛感6 +能力。",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-infiltrator-squad-infiltrator-comms-array",
-            "name": "Infiltrator Comms Array",
+            "name": "渗透者通信阵列",
             "phases": [
               "any"
             ],
-            "timing": "Each time you target 持有者’s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",
+            "timing": "每次你用策略瞄准持有者的单位时，滚动一个D6：在5 +上，你获得1CP。",
             "type": "wargear",
-            "summary": "Each time you target 持有者’s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",
+            "summary": "每次你用策略瞄准持有者的单位时，滚动一个D6：在5 +上，你获得1CP。",
             "source": "星际战士",
             "priority": 2
           }
@@ -18460,11 +19983,11 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001157",
-        "name": "Intercessor Squad",
+        "name": "调解者小队",
         "keywords": [
-          "Adeptus Astartes",
-          "Intercessor Squad",
-          "Tacticus",
+          "阿斯塔特修会",
+          "调解者小队",
+          "战术型",
           "帝国",
           "手雷",
           "战线",
@@ -18473,7 +19996,7 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-intercessor-squad-objective-secured",
-            "name": "Objective Secured",
+            "name": "目标已确定",
             "phases": [
               "command"
             ],
@@ -18485,7 +20008,7 @@ window.BC_BUILTIN_PACKS = {
           },
           {
             "id": "unit-intercessor-squad-target-elimination",
-            "name": "Target Elimination",
+            "name": "目标消除",
             "phases": [
               "shooting"
             ],
@@ -18499,26 +20022,26 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001156",
-        "name": "Invictor Tactical Warsuit",
+        "name": "Invictor战术战衣",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "载具",
           "步行机甲",
-          "Invictor Tactical Warsuit",
-          "Phobos",
+          "Invictor战术战衣",
+          "福波斯型",
           "帝国"
         ],
         "abilities": [
           {
             "id": "unit-invictor-tactical-warsuit-combat-support",
-            "name": "Combat Support",
+            "name": "战斗支援",
             "phases": [
               "shooting"
             ],
-            "timing": "in your opponent’s Shooting phase, when a friendly Adeptus Astartes Phobos Infantry unit within 6\" of 该模型 is 被选为目标 of an attack, one model 来自你军队的 with this ability can use it",
+            "timing": "in your opponent’s Shooting phase, when a friendly 阿斯塔特修会 福波斯型 步兵 unit within 6\" of 该模型 is 被选为目标 of an attack, one model from 你的军队 with this ability can use it",
             "type": "reaction",
             "once_per": "turn",
-            "summary": "Once per turn, in your opponent’s Shooting phase, when a friendly Adeptus Astartes Phobos Infantry unit within 6\" of 该模型 is 被选为目标 of an attack, one model 来自你军队的 with this ability can use it. If it does, after that 敌方单位 has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that 敌方单位 [and only if it is an eligible target).",
+            "summary": "Once per turn, in your opponent’s Shooting phase, when a friendly 阿斯塔特修会 福波斯型 步兵 unit within 6\" of 该模型 is 被选为目标 of an attack, one model from 你的军队 with this ability can use it. If it does, after that 敌方单位 has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that 敌方单位 [and only if it is an eligible target).",
             "source": "星际战士",
             "priority": 3
           }
@@ -18528,11 +20051,11 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000002707",
         "name": "Judiciar",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "角色",
           "步兵",
           "Judiciar",
-          "Tacticus",
+          "战术型",
           "帝国"
         ],
         "abilities": [
@@ -18542,21 +20065,21 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "any"
             ],
-            "timing": "当该模型领导一个单位时，that unit 拥有 Fights First ability",
+            "timing": "当该模型领导一个单位时，该单位具有战斗第一能力",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，that unit 拥有 Fights First ability.",
+            "summary": "当该模型领导一个单位时，该单位具有战斗优先能力。",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-judiciar-silent-fury",
-            "name": "Silent Fury",
+            "name": "沉默之怒",
             "phases": [
               "any"
             ],
-            "timing": "Each time 该模型 destroys an enemy CHARACTER model, until the end of the battle, add 1 to the 攻击次数属性",
+            "timing": "Each time 该模型 destroys an enemy 角色 model, until the end of the battle, add 1 to the 攻击次数属性",
             "type": "passive",
-            "summary": "Each time 该模型 destroys an enemy CHARACTER model, until the end of the battle, add 1 to the 攻击次数属性 of its executioner relic blade.",
+            "summary": "Each time 该模型 destroys an enemy 角色 model, until the end of the battle, add 1 to the 攻击次数属性 of its executioner relic blade.",
             "source": "星际战士",
             "priority": 2
           }
@@ -18564,132 +20087,132 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001175",
-        "name": "Kratos",
+        "name": "奎托斯",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
           "载具",
-          "Kratos",
-          "Smoke"
+          "奎托斯",
+          "烟"
         ],
         "abilities": [
           {
             "id": "unit-kratos-line-breaker",
-            "name": "Line-breaker",
+            "name": "断线器",
             "phases": [
               "shooting"
             ],
-            "timing": "When making 远程攻击s, 该模型 can target 敌方单位s 位于以下目标的接战范围内：it with Blast weapons (provided",
+            "timing": "When making 远程攻击s, 该模型 can target 敌方单位s 位于以下目标的接战范围内：it with 爆炸 weapons (provided",
             "type": "reaction",
-            "summary": "When making 远程攻击s, 该模型 can target 敌方单位s 位于以下目标的接战范围内：it with Blast weapons (provided no other friendly units are also 位于以下目标的接战范围内：that 敌方单位). In addition, when making 远程攻击s, 该模型 does not suffer the penalty to its 命中掷骰s for being 位于以下目标的接战范围内：one or more 敌方单位s.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "When making 远程攻击s, 该模型 can target 敌方单位s 位于以下目标的接战范围内：it with 爆炸 weapons (provided no other friendly units are also 位于以下目标的接战范围内：that 敌方单位). In addition, when making 远程攻击s, 该模型 does not suffer the penalty to its 命中掷骰s for being 位于以下目标的接战范围内：one or more 敌方单位s.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-kratos-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000001607",
-        "name": "Land Raider Achilles",
+        "name": "土地掠夺者阿喀琉斯",
         "keywords": [
-          "Adeptus Astartes",
-          "Land Raider Achilles",
+          "阿斯塔特修会",
+          "土地掠夺者阿喀琉斯",
           "帝国",
-          "Smoke",
+          "烟",
           "运输",
           "载具"
         ],
         "abilities": [
           {
             "id": "unit-land-raider-achilles-assault-ramp",
-            "name": "Assault Ramp",
+            "name": "突击坡道",
             "phases": [
               "movement",
               "charge"
             ],
             "timing": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a ch",
             "type": "passive",
-            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a charge this turn.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to 声明冲锋 this turn.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-land-raider-achilles-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000004139",
-        "name": "Land Raider Crusader",
+        "name": "土地掠夺者十字军",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "黑色圣堂",
-          "Land Raider Crusader",
+          "土地掠夺者十字军",
           "手雷",
           "运输",
           "帝国",
-          "Land Raider",
+          "土地掠夺者",
           "载具",
-          "Smoke"
+          "烟"
         ],
         "abilities": [
           {
             "id": "unit-land-raider-crusader-assault-ramp",
-            "name": "Assault Ramp",
+            "name": "突击坡道",
             "phases": [
               "movement",
               "charge"
             ],
             "timing": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a ch",
             "type": "passive",
-            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a charge this turn.",
+            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to 声明冲锋 this turn.",
             "source": "黑色圣堂",
             "priority": 3
           },
           {
             "id": "unit-land-raider-crusader-legacy-of-jerulas",
-            "name": "Legacy of Jerulas",
+            "name": "耶鲁拉斯的遗产",
             "phases": [
               "shooting"
             ],
-            "timing": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 hit by one or more of those attacks",
+            "timing": "在你的射击阶段，在这个模型射击后，选择一个被这些攻击中的一个或多个击中的敌方单位",
             "type": "reaction",
-            "summary": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 hit by one or more of those attacks. 直到本回合结束，each time a friendly model that disembarked from this TRANSPORT this turn makes an attack that targets that 敌方单位, re-roll a 命中掷骰 of 1 and re-roll a 致伤掷骰 of 1.",
+            "summary": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 hit by one or more of those attacks. 直到本回合结束，each time a friendly model that disembarked from this 运输 this turn makes an attack that targets that 敌方单位, re-roll a 命中掷骰 of 1 and re-roll a 致伤掷骰 of 1.",
             "source": "黑色圣堂",
             "priority": 3
           },
           {
             "id": "unit-land-raider-crusader-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
             "source": "黑色圣堂",
             "priority": 2
           }
@@ -18699,9 +20222,9 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000000067",
         "name": "Land Raider Excelsior",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "运输",
-          "Smoke",
+          "烟",
           "载具",
           "帝国",
           "Land Raider Excelsior"
@@ -18709,41 +20232,41 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-land-raider-excelsior-rites-of-battle",
-            "name": "Rites of Battle",
+            "name": "战斗仪式",
             "phases": [
               "any"
             ],
-            "timing": "每个战斗轮次一次，one unit 来自你军队的 with this ability can use it when its unit is targeted with a Stratagem.",
+            "timing": "每个战斗轮次一次，one unit from 你的军队 with this ability can use it when its unit is targeted with a Stratagem.",
             "type": "active",
             "once_per": "battle",
-            "summary": "Once per battle round, one unit 来自你军队的 with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Once per battle round, one unit from 你的军队 with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-land-raider-excelsior-assault-ramp",
-            "name": "Assault Ramp",
+            "name": "突击坡道",
             "phases": [
               "movement",
               "charge"
             ],
             "timing": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a ch",
             "type": "passive",
-            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a charge this turn.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to 声明冲锋 this turn.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-land-raider-excelsior-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
@@ -18752,78 +20275,78 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000002710",
         "name": "Land Raider Helios",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "Land Raider Helios",
           "帝国",
           "运输",
-          "Smoke",
+          "烟",
           "载具"
         ],
         "abilities": [
           {
             "id": "unit-land-raider-helios-assault-ramp",
-            "name": "Assault Ramp",
+            "name": "突击坡道",
             "phases": [
               "movement",
               "charge"
             ],
             "timing": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a ch",
             "type": "passive",
-            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a charge this turn.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to 声明冲锋 this turn.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-land-raider-helios-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000001347",
-        "name": "Land Raider Prometheus",
+        "name": "陆地掠夺者普罗米修斯",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "载具",
-          "Land Raider Prometheus",
+          "陆地掠夺者普罗米修斯",
           "帝国",
           "运输",
-          "Smoke"
+          "烟"
         ],
         "abilities": [
           {
             "id": "unit-land-raider-prometheus-assault-ramp",
-            "name": "Assault Ramp",
+            "name": "突击坡道",
             "phases": [
               "movement",
               "charge"
             ],
             "timing": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a ch",
             "type": "passive",
-            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a charge this turn.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to 声明冲锋 this turn.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-land-raider-prometheus-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
@@ -18832,9 +20355,9 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000001608",
         "name": "Land Raider Proteus",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "载具",
-          "Smoke",
+          "烟",
           "运输",
           "帝国",
           "Land Raider Proteus"
@@ -18842,52 +20365,52 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-land-raider-proteus-explorator-augury-web",
-            "name": "Explorator Augury Web",
+            "name": "探险家奥古丽蛛网",
             "phases": [
               "any"
             ],
             "timing": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this bearer, but the bea",
             "type": "wargear",
-            "summary": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this bearer, but 持有者 must halve its Transport Capacity.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Enemy units that are set up on the battlefield as Reinforcements cannot be set up within 12\" of this bearer, but 持有者 must halve its 运输 Capacity.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-land-raider-proteus-assault-ramp",
-            "name": "Assault Ramp",
+            "name": "突击坡道",
             "phases": [
               "movement",
               "charge"
             ],
             "timing": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a ch",
             "type": "passive",
-            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a charge this turn.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to 声明冲锋 this turn.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-land-raider-proteus-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000001346",
-        "name": "Lieutenant",
+        "name": "中尉",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "手雷",
-          "Lieutenant",
-          "Tacticus",
+          "中尉",
+          "战术型",
           "帝国",
           "角色",
           "步兵"
@@ -18895,37 +20418,37 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-lieutenant-tactical-precision",
-            "name": "Tactical Precision",
+            "name": "战术精确度",
             "phases": [
               "any"
             ],
-            "timing": "当该模型领导一个单位时，weapons equipped by 该单位中的模型 拥有 [LETHAL HITS] 能力",
+            "timing": "当该型号领导一个单位时，该单位中型号装备的武器具有[致命命中]能力",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，weapons equipped by 该单位中的模型 拥有 [LETHAL HITS] 能力.",
+            "summary": "当该模型领导一个单位时，该单位中的模型装备的武器具有[致命命中]能力。",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-lieutenant-target-priority",
-            "name": "Target Priority",
+            "name": "目标优先级",
             "phases": [
               "charge"
             ],
-            "timing": "This model’s unit is eligible to shoot and declare a charge in a turn in which it Fallback.",
+            "timing": "该单位有资格在倒退的回合中射击并宣布收费。",
             "type": "passive",
-            "summary": "This model’s unit is eligible to shoot and declare a charge in a turn in which it Fallback.",
+            "summary": "该单位有资格在倒退的回合中射击并宣布收费。",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-lieutenant-storm-shield",
-            "name": "Storm Shield",
+            "name": "风暴护盾",
             "phases": [
               "any"
             ],
-            "timing": "The bearer 拥有 4+ invulnerable save。",
+            "timing": "持有人有4 +无懈可击的保存。",
             "type": "wargear",
-            "summary": "The bearer 拥有 4+ invulnerable save。",
+            "summary": "持有人有4 +无懈可击的保存。",
             "source": "星际战士",
             "priority": 2
           }
@@ -18933,32 +20456,32 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002530",
-        "name": "Lieutenant In Phobos Armour",
+        "name": "Phobos Armour中尉",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "手雷",
           "角色",
           "步兵",
           "帝国",
-          "Phobos",
-          "Lieutenant"
+          "福波斯型",
+          "中尉"
         ],
         "abilities": [
           {
             "id": "unit-lieutenant-in-phobos-armour-tactical-precision",
-            "name": "Tactical Precision",
+            "name": "战术精确度",
             "phases": [
               "any"
             ],
-            "timing": "当该模型领导一个单位时，weapons equipped by 该单位中的模型 拥有 [LETHAL HITS] 能力",
+            "timing": "当该型号领导一个单位时，该单位中型号装备的武器具有[致命命中]能力",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，weapons equipped by 该单位中的模型 拥有 [LETHAL HITS] 能力.",
+            "summary": "当该模型领导一个单位时，该单位中的模型装备的武器具有[致命命中]能力。",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-lieutenant-in-phobos-armour-strategic-dispersal",
-            "name": "Strategic Dispersal",
+            "name": "战略分散",
             "phases": [
               "movement",
               "shooting",
@@ -18966,7 +20489,7 @@ window.BC_BUILTIN_PACKS = {
             ],
             "timing": "在你的射击阶段，after 该模型’s unit has shot, if it is not 位于以下目标的接战范围内：one or more 敌方单位s, it can make a 普通移动 of up to 6\"",
             "type": "reaction",
-            "summary": "在你的射击阶段，after 该模型’s unit has shot, if it is not 位于以下目标的接战范围内：one or more 敌方单位s, it can make a 普通移动 of up to 6\". If it does, until the end of the turn, that unit is not eligible to declare a charge.",
+            "summary": "在你的射击阶段，after 该模型’s unit has shot, if it is not 位于以下目标的接战范围内：one or more 敌方单位s, it can make a 普通移动 of up to 6\". If it does, until the end of the turn, that unit is not eligible to 声明冲锋.",
             "source": "星际战士",
             "priority": 3
           }
@@ -18974,40 +20497,40 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001345",
-        "name": "Lieutenant In Reiver Armour",
+        "name": "Reiver Armour中尉",
         "keywords": [
-          "Adeptus Astartes",
-          "Lieutenant in Reiver Armour",
-          "Lieutenant",
-          "Phobos",
+          "阿斯塔特修会",
+          "Reiver Armour中尉",
+          "中尉",
+          "福波斯型",
           "帝国",
           "手雷",
           "步兵",
-          "Smoke",
+          "烟",
           "角色"
         ],
         "abilities": [
           {
             "id": "unit-lieutenant-in-reiver-armour-tactical-precision",
-            "name": "Tactical Precision",
+            "name": "战术精确度",
             "phases": [
               "any"
             ],
-            "timing": "当该模型领导一个单位时，weapons equipped by 该单位中的模型 拥有 [LETHAL HITS] 能力",
+            "timing": "当该型号领导一个单位时，该单位中型号装备的武器具有[致命命中]能力",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，weapons equipped by 该单位中的模型 拥有 [LETHAL HITS] 能力.",
+            "summary": "当该模型领导一个单位时，该单位中的模型装备的武器具有[致命命中]能力。",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-lieutenant-in-reiver-armour-deadly-terror",
-            "name": "Deadly Terror",
+            "name": "致命恐怖",
             "phases": [
               "any"
             ],
             "timing": "当该模型领导一个单位时，increase the range of that unit’s Terror Troops ability by 3\"",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，increase the range of that unit’s Terror Troops ability by 3\".",
+            "summary": "While this model is leading a unit, increase the range of that unit’s Terror Troops ability by 3\".",
             "source": "星际战士",
             "priority": 2
           }
@@ -19015,40 +20538,40 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000076",
-        "name": "Lieutenant With Combi-weapon",
+        "name": "带组合武器的中尉",
         "keywords": [
-          "Adeptus Astartes",
-          "Lieutenant",
-          "Phobos",
+          "阿斯塔特修会",
+          "中尉",
+          "福波斯型",
           "帝国",
           "手雷",
           "角色",
           "步兵",
-          "Lieutenant with Combi-weapon"
+          "中尉与Combi武器"
         ],
         "abilities": [
           {
             "id": "unit-lieutenant-with-combi-weapon-priority-objective-identified",
-            "name": "Priority Objective Identified",
+            "name": "确定优先目标",
             "phases": [
               "any"
             ],
             "timing": "At the start of the first battle round, if 你的军队 includes one or more models with this ability, you can select one o",
             "type": "reaction",
-            "summary": "At the start of the first battle round, if 你的军队 includes one or more models with this ability, you can select one objective marker on the battlefield. 直到战斗结束，while one or more models with this ability are on the battlefield, each time a friendly ADEPTUS ASTARTES model makes an attack that targets an 敌方单位 that is within range of that objective marker, re-roll a 致伤掷骰 of 1.",
+            "summary": "At the start of the first battle round, if 你的军队 includes one or more models with this ability, you can select one objective marker on the battlefield. 直到战斗结束，while one or more models with this ability are on the battlefield, each time a friendly 阿斯塔特修会 model makes an attack that targets an 敌方单位 that is within range of that objective marker, re-roll a 致伤掷骰 of 1.",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-lieutenant-with-combi-weapon-evade-and-survive",
-            "name": "Evade and Survive",
+            "name": "躲避和存活",
             "phases": [
               "movement"
             ],
-            "timing": "Once per turn, when an 敌方单位 ends a Normal, Advance or Fall Back move within 9\" of 该单位, if 该单位 is not w",
+            "timing": "Once per turn, when an 敌方单位 ends a Normal, Advance or Fallback move within 9\" of 该单位, if 该单位 is not w",
             "type": "reaction",
             "once_per": "turn",
-            "summary": "Once per turn, when an 敌方单位 ends a Normal, Advance or Fall Back move within 9\" of 该单位, if 该单位 is not 位于以下目标的接战范围内：one or more 敌方单位s, it can make a 普通移动.",
+            "summary": "Once per turn, when an 敌方单位 ends a Normal, Advance or Fallback move within 9\" of 该单位, if 该单位 is not 位于以下目标的接战范围内：one or more 敌方单位s, it can make a 普通移动.",
             "source": "星际战士",
             "priority": 3
           }
@@ -19056,13 +20579,13 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002796",
-        "name": "Marshal",
+        "name": "元帅",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
-          "Captain",
-          "Marshal",
-          "Tacticus",
+          "阿斯塔特修会",
+          "队长",
+          "元帅",
+          "战术型",
           "帝国",
           "手雷",
           "角色",
@@ -19071,19 +20594,19 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-marshal-inspirational-exemplar",
-            "name": "Inspirational Exemplar",
+            "name": "鼓舞人心的典范",
             "phases": [
               "fight"
             ],
             "timing": "当该模型领导一个单位时，each time a model in that unit makes a 近战攻击, an unmodified 命中掷骰 of 5+ scores a 暴击",
             "type": "passive",
-            "summary": "当该模型领导一个单位时，each time a model in that unit makes a 近战攻击, an unmodified 命中掷骰 of 5+ 则记为一次暴击。",
+            "summary": "当该模型领导一个单位时，each time a model in that unit makes a 近战攻击, an unmodified 命中掷骰 of 5+ scores a 暴击.",
             "source": "黑色圣堂",
             "priority": 3
           },
           {
             "id": "unit-marshal-pious-fervour",
-            "name": "Pious Fervour",
+            "name": "虔诚热情",
             "phases": [
               "fight"
             ],
@@ -19097,20 +20620,20 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001189",
-        "name": "Mastodon",
+        "name": "庞然大物",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "运输",
           "载具",
           "巨型",
           "帝国",
-          "Mastodon",
-          "Smoke"
+          "庞然大物",
+          "烟"
         ],
         "abilities": [
           {
             "id": "unit-mastodon-inviolable-transport",
-            "name": "Inviolable Transport",
+            "name": "不可侵犯的运输",
             "phases": [
               "any"
             ],
@@ -19118,44 +20641,44 @@ window.BC_BUILTIN_PACKS = {
             "type": "active",
             "once_per": "battle round",
             "summary": "每个战斗轮次一次，when an attack is allocated to 该模型, you can change the 伤害属性 of that attack to 0.",
-            "source": "星际战士 (Warhammer Legends)",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000002714",
-        "name": "Predator Annihilator",
+        "name": "捕食者歼灭者",
         "keywords": [
-          "Adeptus Astartes",
-          "Smoke",
+          "阿斯塔特修会",
+          "烟",
           "载具",
-          "Predator Annihilator",
+          "捕食者歼灭者",
           "帝国"
         ],
         "abilities": [
           {
             "id": "unit-predator-annihilator-annihilator",
-            "name": "Annihilator",
+            "name": "灭杀者",
             "phases": [
               "shooting"
             ],
-            "timing": "Each time a 远程攻击 made by 该模型 is allocated to a MONSTER or VEHICLE model, you can re-roll the 伤害掷骰",
+            "timing": "Each time a 远程攻击 made by 该模型 is allocated to a 怪兽 or 载具 model, you can re-roll the 伤害掷骰",
             "type": "passive",
-            "summary": "Each time a 远程攻击 made by 该模型 is allocated to a MONSTER or VEHICLE model, you can re-roll the 伤害掷骰.",
+            "summary": "Each time a 远程攻击 made by 该模型 is allocated to a 怪兽 or 载具 model, you can re-roll the 伤害掷骰.",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-predator-annihilator-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
             "source": "星际战士",
             "priority": 2
           }
@@ -19163,37 +20686,37 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002715",
-        "name": "Predator Destructor",
+        "name": "捕食者破坏者",
         "keywords": [
-          "Adeptus Astartes",
-          "Smoke",
+          "阿斯塔特修会",
+          "烟",
           "帝国",
           "载具",
-          "Predator Destructor"
+          "捕食者破坏者"
         ],
         "abilities": [
           {
             "id": "unit-predator-destructor-destructor",
-            "name": "Destructor",
+            "name": "析构函数",
             "phases": [
               "shooting"
             ],
-            "timing": "Each time 该模型 makes a 远程攻击 that targets an INFANTRY unit, improve the 护甲穿透属性",
+            "timing": "Each time 该模型 makes a 远程攻击 that targets an 步兵 unit, improve the 护甲穿透属性",
             "type": "passive",
-            "summary": "Each time 该模型 makes a 远程攻击 that targets an INFANTRY unit, improve the 护甲穿透属性 of that attack by 1.",
+            "summary": "Each time 该模型 makes a 远程攻击 that targets an 步兵 unit, improve the 护甲穿透属性 of that attack by 1.",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-predator-destructor-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
             "source": "星际战士",
             "priority": 2
           }
@@ -19201,39 +20724,39 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002234",
-        "name": "Primaris Company Champion",
+        "name": "Primaris公司冠军",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "角色",
           "步兵",
           "帝国",
-          "Primaris Company Champion",
-          "Tacticus",
+          "Primaris公司冠军",
+          "战术型",
           "手雷"
         ],
         "abilities": [
           {
             "id": "unit-primaris-company-champion-honour-or-death",
-            "name": "Honour or Death",
+            "name": "荣誉或死亡",
             "phases": [
               "any"
             ],
             "timing": "当该模型领导一个单位时，add 1 to Advance and 冲锋掷骰 made for that unit and you can target that unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase",
             "type": "passive",
             "summary": "当该模型领导一个单位时，add 1 to Advance and 冲锋掷骰 made for that unit and you can target that unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase.",
-            "source": "星际战士 (Warhammer Legends)",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-primaris-company-champion-martial-superiority",
-            "name": "Martial Superiority",
+            "name": "武术优势",
             "phases": [
               "fight"
             ],
-            "timing": "Each time 该模型 makes a 近战攻击 that targets a CHARACTER unit, you 可以重掷命中掷骰 and you can re-rol",
+            "timing": "Each time 该模型 makes a 近战攻击 that targets a 角色 unit, you can re-roll the 命中掷骰 and you can re-rol",
             "type": "passive",
-            "summary": "Each time 该模型 makes a 近战攻击 that targets a CHARACTER unit, you 可以重掷命中掷骰 and you 可以重掷致伤掷骰.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time 该模型 makes a 近战攻击 that targets a 角色 unit, you can re-roll the 命中掷骰 and you can re-roll the 致伤掷骰.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
@@ -19242,62 +20765,62 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000000110",
         "name": "Rapier Carrier",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "Rapier Carrier",
           "载具",
           "帝国",
-          "Artillery"
+          "炮兵"
         ],
         "abilities": [
           {
             "id": "unit-rapier-carrier-powerful-volley",
-            "name": "Powerful Volley",
+            "name": "强力凌空射击",
             "phases": [
               "shooting"
             ],
-            "timing": "in your Shooting phase, provided it 保持静止 this turn, all [HEAVY] 本单位模型装备的武器 拥有 [LETHAL HITS] 能力",
+            "timing": "in your Shooting phase, provided it 保持静止 this turn, all [重型] weapons equipped by models in 该单位 have the [致命命中] ability",
             "type": "active",
-            "summary": "Each time 该模型 shoots in your Shooting phase, provided it 保持静止 this turn, all [HEAVY] 本单位模型装备的武器 拥有 [LETHAL HITS] 能力.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time 该模型 shoots in your Shooting phase, provided it 保持静止 this turn, all [重型] weapons equipped by models in 该单位 have the [致命命中] ability.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
       },
       {
         "id": "unit-000000129",
-        "name": "Razorback",
+        "name": "剃刀野猪",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
-          "Smoke",
+          "烟",
           "运输",
           "专属运输",
-          "Razorback",
+          "剃刀野猪",
           "载具"
         ],
         "abilities": [
           {
             "id": "unit-razorback-fire-support",
-            "name": "Fire Support",
+            "name": "火力支援",
             "phases": [
               "shooting"
             ],
-            "timing": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 hit by one or more of those attacks, 直到本阶段结束，each time a friendly model that disembarked from this Transport this turn makes an attack that targets that 敌方单位, you 可以重掷致伤掷骰",
+            "timing": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 hit by one or more of those attacks, 直到本阶段结束，each time a friendly model that disembarked from this 运输 this turn makes an attack that targets that 敌方单位, you can re-roll the 致伤掷骰",
             "type": "reaction",
-            "summary": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 hit by one or more of those attacks, 直到本阶段结束，each time a friendly model that disembarked from this Transport this turn makes an attack that targets that 敌方单位, you 可以重掷致伤掷骰.",
+            "summary": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 hit by one or more of those attacks, 直到本阶段结束，each time a friendly model that disembarked from this 运输 this turn makes an attack that targets that 敌方单位, you can re-roll the 致伤掷骰.",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-razorback-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
             "source": "星际战士",
             "priority": 2
           }
@@ -19305,33 +20828,33 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002718",
-        "name": "Reiver Squad",
+        "name": "Reiver小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "步兵",
-          "Smoke",
-          "Reiver Squad",
-          "Phobos",
+          "烟",
+          "Reiver小队",
+          "福波斯型",
           "帝国",
           "手雷"
         ],
         "abilities": [
           {
             "id": "unit-reiver-squad-fearsome-assault",
-            "name": "Fearsome Assault",
+            "name": "可怕的攻击",
             "phases": [
               "fight",
               "battleshock"
             ],
-            "timing": "Fight phase, each 敌方单位 位于以下目标的接战范围内：one or more units with this ability must take a 战斗冲击测试, subtracting 1 from that test",
+            "timing": "Fight phase, each 敌方单位 位于以下目标的接战范围内：one or more units with this ability must take a 战斗冲击 test, subtracting 1 from that test",
             "type": "reaction",
-            "summary": "At the start of the Fight phase, each 敌方单位 位于以下目标的接战范围内：one or more units with this ability must take a 战斗冲击测试, subtracting 1 from that test.",
+            "summary": "At the start of the Fight phase, each 敌方单位 位于以下目标的接战范围内：one or more units with this ability must take a 战斗冲击 test, subtracting 1 from that test.",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-reiver-squad-terror-troops-aura",
-            "name": "Terror Troops (Aura)",
+            "name": "恐怖部队（光环）",
             "phases": [
               "any"
             ],
@@ -19347,9 +20870,9 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "charge"
             ],
-            "timing": "Each time 持有者’s unit makes a Normal, Advance, Fall Back or Charge move, ignore any vertical distance when determi",
+            "timing": "Each time 持有者’s unit makes a Normal, Advance, Fallback or Charge move, ignore any vertical distance when determi",
             "type": "wargear",
-            "summary": "Each time 持有者’s unit makes a Normal, Advance, Fall Back or Charge move, ignore any vertical distance when determining the total distance 持有者 can be moved during that move.",
+            "summary": "Each time 持有者’s unit makes a Normal, Advance, Fallback or Charge move, ignore any vertical distance when determining the total distance 持有者 can be moved during that move.",
             "source": "星际战士",
             "priority": 3
           },
@@ -19359,9 +20882,9 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "any"
             ],
-            "timing": "The bearer 拥有 Deep Strike ability.",
+            "timing": "持有人具有深度打击能力。",
             "type": "wargear",
-            "summary": "The bearer 拥有 Deep Strike ability.",
+            "summary": "持有人具有深度打击能力。",
             "source": "星际战士",
             "priority": 2
           }
@@ -19371,77 +20894,77 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000002720",
         "name": "Relic Razorback",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "专属运输",
           "运输",
           "载具",
-          "Smoke",
+          "烟",
           "帝国",
           "Relic Razorback"
         ],
         "abilities": [
           {
             "id": "unit-relic-razorback-fire-support",
-            "name": "Fire Support",
+            "name": "火力支援",
             "phases": [
               "shooting"
             ],
-            "timing": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 it scored one or more hits against this phase",
+            "timing": "在你的射击阶段，在此模型射击后，选择一个敌方单位，它在此阶段获得一个或多个命中",
             "type": "reaction",
-            "summary": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 it scored one or more hits against this phase. 直到本阶段结束，each time a friendly model that disembarked from this TRANSPORT this turn makes an attack that targets that 敌方单位, you 可以重掷致伤掷骰.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "在你的射击阶段，after 该模型 has shot, select one 敌方单位 it scored one or more hits against this phase. 直到本阶段结束，each time a friendly model that disembarked from this 运输 this turn makes an attack that targets that 敌方单位, you can re-roll the 致伤掷骰.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-relic-razorback-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000002791",
-        "name": "Repulsor",
+        "name": "排斥器",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
-          "Repulsor",
+          "阿斯塔特修会",
+          "排斥器",
           "帝国",
           "运输",
-          "Smoke",
+          "烟",
           "载具"
         ],
         "abilities": [
           {
             "id": "unit-repulsor-stabilised-disembarkation",
-            "name": "Stabilised Disembarkation",
+            "name": "稳定下船",
             "phases": [
               "shooting"
             ],
-            "timing": "In your opponent’s Shooting phase, each time an 敌方单位 is 被选中进行射击, after that unit has shot, if any of those attacks targeted this TRANSPORT , it can use this ability",
+            "timing": "In your opponent’s Shooting phase, each time an 敌方单位 is 被选中进行射击, after that unit has shot, if any of those attacks targeted this 运输, it can use this ability",
             "type": "reaction",
-            "summary": "In your opponent’s Shooting phase, each time an 敌方单位 is 被选中进行射击, after that unit has shot, if any of those attacks targeted this TRANSPORT , it can use this ability. If it does, any units embarked within it can disembark. When doing so, models in those units can be set up anywhere on the battlefield wholly within 6\" of this TRANSPORT and not 位于以下目标的接战范围内：one or more 敌方单位s.",
+            "summary": "In your opponent’s Shooting phase, each time an 敌方单位 is 被选中进行射击, after that unit has shot, if any of those attacks targeted this 运输, it can use this ability. If it does, any units embarked within it can disembark. When doing so, models in those units can be set up anywhere on the battlefield wholly within 6\" of this 运输 and not 位于以下目标的接战范围内：one or more 敌方单位s.",
             "source": "黑色圣堂",
             "priority": 3
           },
           {
             "id": "unit-repulsor-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
             "source": "黑色圣堂",
             "priority": 2
           }
@@ -19449,26 +20972,26 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002790",
-        "name": "Repulsor Executioner",
+        "name": "击退者刽子手",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
-          "Smoke",
+          "阿斯塔特修会",
+          "烟",
           "载具",
           "运输",
           "帝国",
-          "Repulsor Executioner"
+          "击退者刽子手"
         ],
         "abilities": [
           {
             "id": "unit-repulsor-executioner-interception-strike",
-            "name": "Interception Strike",
+            "name": "拦截打击",
             "phases": [
               "shooting"
             ],
-            "timing": "Each time 该模型 makes a 远程攻击 that targets an 敌方单位 within 12\" of one or more ADEPTUS ASTARTES units f",
+            "timing": "Each time 该模型 makes a 远程攻击 that targets an 敌方单位 within 12\" of one or more 阿斯塔特修会 units f",
             "type": "reaction",
-            "summary": "Each time 该模型 makes a 远程攻击 that targets an 敌方单位 within 12\" of one or more ADEPTUS ASTARTES units 来自你军队的, you 可以重掷命中掷骰.",
+            "summary": "Each time 该模型 makes a 远程攻击 that targets an 敌方单位 within 12\" of one or more 阿斯塔特修会 units from 你的军队, you can re-roll the 命中掷骰.",
             "source": "黑色圣堂",
             "priority": 3
           }
@@ -19476,12 +20999,12 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002723",
-        "name": "Rhino",
+        "name": "犀牛",
         "keywords": [
-          "Adeptus Astartes",
-          "Rhino",
+          "阿斯塔特修会",
+          "犀牛",
           "载具",
-          "Smoke",
+          "烟",
           "运输",
           "专属运输",
           "帝国"
@@ -19489,26 +21012,26 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-rhino-self-repair",
-            "name": "Self Repair",
+            "name": "修复自主",
             "phases": [
               "command"
             ],
-            "timing": "At the end of your Command phase, 该模型 regains 1 lost wound",
+            "timing": "在你的指挥阶段结束时，这个模型会恢复1个丢失的伤口",
             "type": "active",
-            "summary": "At the end of your Command phase, 该模型 regains 1 lost wound.",
+            "summary": "在你的指挥阶段结束时，这个模型会恢复1个丢失的伤口。",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-rhino-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
             "source": "星际战士",
             "priority": 2
           }
@@ -19518,94 +21041,94 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000000085",
         "name": "Rhino Primaris",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
           "Rhino Primaris",
           "运输",
-          "Smoke",
+          "烟",
           "载具"
         ],
         "abilities": [
           {
             "id": "unit-rhino-primaris-self-repair",
-            "name": "Self Repair",
+            "name": "修复自主",
             "phases": [
               "command"
             ],
-            "timing": "At the end of your Command phase, 该模型 regains 1 lost wound",
+            "timing": "在你的指挥阶段结束时，这个模型会恢复1个丢失的伤口",
             "type": "active",
-            "summary": "At the end of your Command phase, 该模型 regains 1 lost wound.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "在你的指挥阶段结束时，这个模型会恢复1个丢失的伤口。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-rhino-primaris-orbital-comms-array-aura",
-            "name": "Orbital Comms Array (Aura)",
+            "name": "轨道通信阵列（光环）",
             "phases": [
               "any"
             ],
-            "timing": "While a friendly ADEPTUS ASTARTES unit is 位于持有者 6\" 内, each time you target that unit with a Stratagem, roll",
+            "timing": "While a friendly 阿斯塔特修会 unit is within 6\" of 持有者, each time you target that unit with a Stratagem, roll",
             "type": "passive",
-            "summary": "While a friendly ADEPTUS ASTARTES unit is 位于持有者 6\" 内, each time you target that unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "While a friendly 阿斯塔特修会 unit is within 6\" of 持有者, each time you target that unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-rhino-primaris-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000001523",
-        "name": "Scout Sniper Squad",
+        "name": "侦察狙击小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
-          "Smoke",
+          "烟",
           "手雷",
           "步兵",
-          "Scout Sniper Squad"
+          "侦察狙击小队"
         ],
         "abilities": [
           {
             "id": "unit-scout-sniper-squad-concealed-positions",
-            "name": "Concealed Positions",
+            "name": "隐藏位置",
             "phases": [
               "shooting"
             ],
-            "timing": "This unit can only be 被选为目标 of a 远程攻击 if the attacking model is within 12\".",
+            "timing": "This unit can only be selected as the target of a ranged attack if the attacking model is within 12\".",
             "type": "reaction",
-            "summary": "This unit can only be 被选为目标 of a 远程攻击 if the attacking model is within 12\".",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "This unit can only be selected as the target of a ranged attack if the attacking model is within 12\".",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
       },
       {
         "id": "unit-000001160",
-        "name": "Scout Squad",
+        "name": "童子军小队",
         "keywords": [
-          "Adeptus Astartes",
-          "Scout Squad",
+          "阿斯塔特修会",
+          "童子军小队",
           "帝国",
-          "Smoke",
+          "烟",
           "步兵",
           "手雷"
         ],
         "abilities": [
           {
             "id": "unit-scout-squad-guerrilla-tactics",
-            "name": "Guerrilla Tactics",
+            "name": "游击战术",
             "phases": [
               "any"
             ],
@@ -19621,150 +21144,150 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000001161",
         "name": "Sicaran Arcus",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
-          "Smoke",
+          "烟",
           "Sicaran Arcus",
           "载具"
         ],
         "abilities": [
           {
             "id": "unit-sicaran-arcus-specialised-weapon-system",
-            "name": "Specialised Weapon System",
+            "name": "专用武器系统",
             "phases": [
               "any"
             ],
             "timing": "Each time 该模型 makes an attack that targets the 敌方单位 you selected for the Oath of Moment ability that attack",
             "type": "reaction",
-            "summary": "Each time 该模型 makes an attack that targets the 敌方单位 you selected for the Oath of Moment ability that attack 拥有 [IGNORES COVER] ability and can ignore the penalty to their 命中掷骰s when making attacks with Indirect Fire weapons against targets that are not visible to them.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time 该模型 makes an attack that targets the 敌方单位 you selected for the Oath of Moment ability that attack has the [无视掩体] ability and can ignore the penalty to their 命中掷骰s when making attacks with 间接射击 weapons against targets that are not visible to them.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-sicaran-arcus-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000001185",
-        "name": "Sicaran Battle Tank",
+        "name": "西卡兰作战坦克",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
-          "Sicaran Battle Tank",
+          "西卡兰作战坦克",
           "载具",
-          "Smoke"
+          "烟"
         ],
         "abilities": [
           {
             "id": "unit-sicaran-battle-tank-armoured-spearhead",
-            "name": "Armoured Spearhead",
+            "name": "装甲矛头",
             "phases": [
               "any"
             ],
             "timing": "Each time 该模型 makes an attack that targets an 敌方单位, re-roll a 命中掷骰 of 1 and, if that unit is within ran",
             "type": "reaction",
-            "summary": "Each time 该模型 makes an attack that targets an 敌方单位, re-roll a 命中掷骰 of 1 and, if that unit is 位于一个目标标记范围内 you do not control, you 可以重掷命中掷骰 instead.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time 该模型 makes an attack that targets an 敌方单位, re-roll a 命中掷骰 of 1 and, if that unit is 位于一个目标标记范围内 you do not control, you can re-roll the 命中掷骰 instead.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-sicaran-battle-tank-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000001163",
-        "name": "Sicaran Omega",
+        "name": "西卡兰欧米茄",
         "keywords": [
-          "Adeptus Astartes",
-          "Smoke",
+          "阿斯塔特修会",
+          "烟",
           "帝国",
           "载具",
-          "Sicaran Omega"
+          "西卡兰欧米茄"
         ],
         "abilities": [
           {
             "id": "unit-sicaran-omega-overwhelming-short-range-firepower",
-            "name": "Overwhelming Short-range Firepower",
+            "name": "压倒性的短程火力",
             "phases": [
               "any"
             ],
             "timing": "Each time 该模型 makes an attack that targets the closest eligible 敌方单位, re-roll a 命中掷骰 of 1 and re-roll a",
             "type": "reaction",
             "summary": "Each time 该模型 makes an attack that targets the closest eligible 敌方单位, re-roll a 命中掷骰 of 1 and re-roll a 致伤掷骰 or 1.",
-            "source": "星际战士 (Warhammer Legends)",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-sicaran-omega-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000000123",
-        "name": "Sicaran Punisher",
+        "name": "西卡惩罚者",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "载具",
           "帝国",
-          "Sicaran Punisher",
-          "Smoke"
+          "西卡惩罚者",
+          "烟"
         ],
         "abilities": [
           {
             "id": "unit-sicaran-punisher-rotating-death",
-            "name": "Rotating Death",
+            "name": "旋转死亡",
             "phases": [
               "any"
             ],
-            "timing": "This model’s Punisher rotary cannon 拥有 [SUSTAINED HITS 1] ability when targeting INFANTRY units.",
+            "timing": "This model’s Punisher rotary cannon has the [连击 1] ability when targeting 步兵 units.",
             "type": "passive",
-            "summary": "This model’s Punisher rotary cannon 拥有 [SUSTAINED HITS 1] ability when targeting INFANTRY units.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "This model’s Punisher rotary cannon has the [连击 1] ability when targeting 步兵 units.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-sicaran-punisher-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
@@ -19773,8 +21296,8 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000000092",
         "name": "Sicaran Venator",
         "keywords": [
-          "Adeptus Astartes",
-          "Smoke",
+          "阿斯塔特修会",
+          "烟",
           "Sicaran Venator",
           "载具",
           "帝国"
@@ -19782,104 +21305,104 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-sicaran-venator-ferocious-assault",
-            "name": "Ferocious Assault",
+            "name": "凶猛突击",
             "phases": [
               "shooting"
             ],
-            "timing": "Each time 该模型 makes a 远程攻击 that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit r",
+            "timing": "Each time 该模型 makes a 远程攻击 that targets the closest eligible 怪兽 or 载具 unit, add 1 to the Hit r",
             "type": "passive",
-            "summary": "Each time 该模型 makes a 远程攻击 that targets the closest eligible MONSTER or VEHICLE unit, 命中掷骰结果 +1.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time 该模型 makes a 远程攻击 that targets the closest eligible 怪兽 or 载具 unit, add 1 to the 命中掷骰.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-sicaran-venator-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000002252",
-        "name": "Spartan",
+        "name": "斯巴达人号",
         "keywords": [
-          "Adeptus Astartes",
-          "Spartan",
+          "阿斯塔特修会",
+          "斯巴达人号",
           "帝国",
           "运输",
           "载具",
-          "Smoke"
+          "烟"
         ],
         "abilities": [
           {
             "id": "unit-spartan-assault-ramp",
-            "name": "Assault Ramp",
+            "name": "突击坡道",
             "phases": [
               "movement",
               "charge"
             ],
             "timing": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a ch",
             "type": "passive",
-            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a charge this turn.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to 声明冲锋 this turn.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
       },
       {
         "id": "unit-000002258",
-        "name": "Stalker",
+        "name": "潜行者",
         "keywords": [
-          "Adeptus Astartes",
-          "Stalker",
+          "阿斯塔特修会",
+          "潜行者",
           "载具",
-          "Smoke",
+          "烟",
           "帝国"
         ],
         "abilities": [
           {
             "id": "unit-stalker-skyfire-protocols",
-            "name": "Skyfire Protocols",
+            "name": "天火协议",
             "phases": [
               "movement"
             ],
-            "timing": "Each time you target 该模型 with the Overwatch Stratagem just after an 敌方单位 that can Fly starts or ends a Norm",
+            "timing": "Each time you target 该模型 with the Overwatch Stratagem just after an 敌方单位 that can 飞行 starts or ends a Norm",
             "type": "reaction",
-            "summary": "Each time you target 该模型 with the Overwatch Stratagem just after an 敌方单位 that can Fly starts or ends a Normal, Advance or Fall Back move, when resolving that Stratagem, in addition to shooting that 敌方单位, you can select up to three additional 敌方单位s within 24\" of 该模型 that can FLY ; 该模型 can also shoot at each of those units with its Icarus stormcannons (provided each one is an eligible target), but when doing so, an unmodified 命中掷骰 of 6 is required to score a hit.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time you target 该模型 with the Overwatch Stratagem just after an 敌方单位 that can 飞行 starts or ends a Normal, Advance or Fallback move, when resolving that Stratagem, in addition to shooting that 敌方单位, you can select up to three additional 敌方单位s within 24\" of 该模型 that can 飞行; 该模型 can also shoot at each of those units with its Icarus stormcannons (provided each one is an eligible target), but when doing so, an unmodified 命中掷骰 of 6 is required to score a hit.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-stalker-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000004137",
-        "name": "Sternguard Veteran Squad",
+        "name": "Sternguard老兵小队",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
-          "Tacticus",
-          "Sternguard Veteran Squad",
+          "阿斯塔特修会",
+          "战术型",
+          "Sternguard老兵小队",
           "手雷",
           "帝国",
           "步兵"
@@ -19887,13 +21410,13 @@ window.BC_BUILTIN_PACKS = {
         "abilities": [
           {
             "id": "unit-sternguard-veteran-squad-virtuous-onslaught",
-            "name": "Virtuous Onslaught",
+            "name": "良性猛攻",
             "phases": [
               "any"
             ],
-            "timing": "本单位中的模型每次进行攻击并以the closest eligible target, re-roll a 致伤掷骰 of 1.",
+            "timing": "每当此单位中的模型进行针对最接近的可选目标的攻击时，重新滚动1个伤口卷。",
             "type": "passive",
-            "summary": "本单位中的模型每次进行攻击并以the closest eligible target, re-roll a 致伤掷骰 of 1.",
+            "summary": "每当此单位中的模型进行针对最接近的可选目标的攻击时，重新滚动1个伤口卷。",
             "source": "黑色圣堂",
             "priority": 2
           }
@@ -19901,27 +21424,27 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000068",
-        "name": "Suppressor Squad",
+        "name": "镇压小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "步兵",
           "手雷",
-          "Smoke",
+          "烟",
           "跳跃背包",
           "飞行",
           "帝国",
-          "Suppressor Squad"
+          "镇压小队"
         ],
         "abilities": [
           {
             "id": "unit-suppressor-squad-suppression-fire",
-            "name": "Suppression Fire",
+            "name": "镇压火力",
             "phases": [
               "shooting"
             ],
             "timing": "在你的射击阶段，after 该单位 has shot, select one 敌方单位 hit by one or more of those attacks made with an accelerator autocannon",
             "type": "reaction",
-            "summary": "在你的射击阶段，after 该单位 has shot, select one 敌方单位 hit by one or more of those attacks made with an accelerator autocannon. 直到你下个回合开始时，while 该单位 is on the battlefield, that 敌方单位 is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, 命中掷骰结果 -1.",
+            "summary": "在你的射击阶段，after 该单位 has shot, select one 敌方单位 hit by one or more of those attacks made with an accelerator autocannon. 直到你下个回合开始时，while 该单位 is on the battlefield, that 敌方单位 is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the 命中掷骰.",
             "source": "星际战士",
             "priority": 3
           }
@@ -19929,26 +21452,26 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002798",
-        "name": "Sword Brethren Squad",
+        "name": "剑弟小队",
         "keywords": [
           "黑色圣堂",
-          "Adeptus Astartes",
-          "Sword Brethren Squad",
+          "阿斯塔特修会",
+          "剑弟小队",
           "步兵",
           "手雷",
           "帝国",
-          "Tacticus"
+          "战术型"
         ],
         "abilities": [
           {
             "id": "unit-sword-brethren-squad-exploit-their-cowardice",
-            "name": "Exploit Their Cowardice",
+            "name": "利用他们的怯懦",
             "phases": [
               "movement"
             ],
-            "timing": "Each time an 敌方单位 位于以下目标的接战范围内：该单位 is selected to Fall Back, after it ends that Fall Back move",
+            "timing": "Each time an 敌方单位 位于以下目标的接战范围内：该单位 is selected to Fallback, after it ends that Fallback move",
             "type": "reaction",
-            "summary": "Each time an 敌方单位 位于以下目标的接战范围内：该单位 is selected to Fall Back, after it ends that Fall Back move, if 该单位 is not 位于以下目标的接战范围内：one or more 敌方单位s, 该单位 can make a 普通移动.",
+            "summary": "Each time an 敌方单位 位于以下目标的接战范围内：该单位 is selected to Fallback, after it ends that Fallback move, if 该单位 is not 位于以下目标的接战范围内：one or more 敌方单位s, 该单位 can make a 普通移动.",
             "source": "黑色圣堂",
             "priority": 3
           }
@@ -19956,19 +21479,19 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000070",
-        "name": "Tactical Squad",
+        "name": "战术小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "手雷",
           "步兵",
           "战线",
           "帝国",
-          "Tactical Squad"
+          "战术小队"
         ],
         "abilities": [
           {
             "id": "unit-tactical-squad-combat-squads",
-            "name": "Combat Squads",
+            "name": "战斗小队们",
             "phases": [
               "any"
             ],
@@ -19982,17 +21505,17 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000000099",
-        "name": "Tarantula Air Defence Battery",
+        "name": "狼蛛防空电池",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "载具",
           "帝国",
-          "Tarantula Air Defence Battery"
+          "狼蛛防空电池"
         ],
         "abilities": [
           {
             "id": "unit-tarantula-air-defence-battery-sentry-programming",
-            "name": "Sentry Programming",
+            "name": "哨兵编程",
             "phases": [
               "any"
             ],
@@ -20000,32 +21523,32 @@ window.BC_BUILTIN_PACKS = {
             "type": "active",
             "once_per": "turn",
             "summary": "You can target 该模型 with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn. This model can only be targeted with that Stratagem once per turn.",
-            "source": "星际战士 (Warhammer Legends)",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000000098",
-        "name": "Tarantula Sentry Battery",
+        "name": "狼蛛哨兵电池",
         "keywords": [
-          "Adeptus Astartes",
-          "Tarantula Sentry Battery",
-          "Artillery",
+          "阿斯塔特修会",
+          "狼蛛哨兵电池",
+          "炮兵",
           "载具",
           "帝国"
         ],
         "abilities": [
           {
             "id": "unit-tarantula-sentry-battery-sentinel-protocols",
-            "name": "Sentinel Protocols",
+            "name": "哨兵方案",
             "phases": [
               "any"
             ],
             "timing": "Each time you select 该单位 for the Fire Overwatch Stratagem, hits are scored on unmodified 命中掷骰s of 4+ when reso",
             "type": "passive",
             "summary": "Each time you select 该单位 for the Fire Overwatch Stratagem, hits are scored on unmodified 命中掷骰s of 4+ when resolving that Stratagem.",
-            "source": "星际战士 (Warhammer Legends)",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
@@ -20034,12 +21557,12 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000000140",
         "name": "Techmarine",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "步兵",
           "角色",
           "手雷",
           "帝国",
-          "Tacticus",
+          "战术型",
           "Techmarine"
         ],
         "abilities": [
@@ -20049,34 +21572,34 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "any"
             ],
-            "timing": "While 该模型 is within 3\" of one or more friendly Adeptus Astartes Vehicle units, 该模型 拥有 Lone Operative ability",
+            "timing": "While 该模型 is within 3\" of one or more friendly 阿斯塔特修会 载具 units, 该模型 has the 独行特工 ability",
             "type": "passive",
-            "summary": "While 该模型 is within 3\" of one or more friendly Adeptus Astartes Vehicle units, 该模型 拥有 Lone Operative ability.",
+            "summary": "While 该模型 is within 3\" of one or more friendly 阿斯塔特修会 载具 units, 该模型 has the 独行特工 ability.",
             "source": "星际战士",
             "priority": 2
           },
           {
             "id": "unit-techmarine-blessing-of-the-omnissiah",
-            "name": "Blessing of the Omnissiah",
+            "name": "Omnissiah的祝福",
             "phases": [
               "command"
             ],
-            "timing": "在你的指挥阶段，you can select one friendly Adeptus Astartes Vehicle model within 3\" of 该模型",
+            "timing": "In your Command phase, you can select one friendly 阿斯塔特修会 Vehicle model within 3\" of this model",
             "type": "active",
             "once_per": "turn",
-            "summary": "在你的指挥阶段，you can select one friendly Adeptus Astartes Vehicle model within 3\" of 该模型. That model regains up to D3 lost wounds and, until the start of your next Command phase, each time that Vehicle model makes an attack, 命中掷骰结果 +1. Each model can only be selected for this ability once per turn.",
+            "summary": "在你的指挥阶段，you can select one friendly 阿斯塔特修会 载具 model within 3\" of 该模型. That model regains up to D3 lost wounds and, until the start of your next Command phase, each time that 载具 model makes an attack, add 1 to the 命中掷骰. Each model can only be selected for this ability once per turn.",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-techmarine-vengeance-of-the-omnissiah",
-            "name": "Vengeance of the Omnissiah",
+            "name": "Omnissiah的复仇",
             "phases": [
               "any"
             ],
-            "timing": "If a friendly Adeptus Astartes Vehicle model is destroyed within 12\" of 该模型, until the end of the battle, this mo",
+            "timing": "If a friendly 阿斯塔特修会 载具 model is destroyed within 12\" of 该模型, until the end of the battle, this mo",
             "type": "passive",
-            "summary": "If a friendly Adeptus Astartes Vehicle model is destroyed within 12\" of 该模型, until the end of the battle, 该模型’s Omnissian power axe has an 攻击次数属性 of 7.",
+            "summary": "If a friendly 阿斯塔特修会 载具 model is destroyed within 12\" of 该模型, until the end of the battle, 该模型’s Omnissian power axe has an 攻击次数属性 of 7.",
             "source": "星际战士",
             "priority": 2
           }
@@ -20084,23 +21607,23 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000004138",
-        "name": "Terminator Squad",
+        "name": "终结者小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "黑色圣堂",
-          "Terminator Squad",
-          "Terminator",
+          "终结者小队",
+          "终结者",
           "帝国",
           "步兵"
         ],
         "abilities": [
           {
             "id": "unit-terminator-squad-teleport-homer",
-            "name": "Teleport Homer",
+            "name": "传送荷马",
             "phases": [
               "any"
             ],
-            "timing": "in your opponent’s deployment zone",
+            "timing": "在对手的部署区域",
             "type": "active",
             "once_per": "battle",
             "summary": "At the start of the battle, you can set up one Teleport Homer token for 该单位 anywhere on the battlefield that is not in your opponent’s deployment zone. If you do, once per battle, you can target 该单位 with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set 该单位 up within 3\" of that token and not within 9\" of any 敌方模型s. That token is then removed.",
@@ -20109,13 +21632,13 @@ window.BC_BUILTIN_PACKS = {
           },
           {
             "id": "unit-terminator-squad-judgement-of-the-weak",
-            "name": "Judgement of the Weak",
+            "name": "弱者审判",
             "phases": [
               "battleshock"
             ],
-            "timing": "Battle-shocked, subtract 1 from each of those tests",
+            "timing": "受到战斗冲击，从每个测试中减去1",
             "type": "reaction",
-            "summary": "Each time an 敌方单位 (excluding MONSTERS and VEHICLES ) 位于以下目标的接战范围内：该单位 Falls Back, all models in that 敌方单位 must take a Desperate Escape test. When doing so, if that 敌方单位 is Battle-shocked, subtract 1 from each of those tests.",
+            "summary": "Each time an 敌方单位 (excluding MONSTERS and VEHICLES ) 位于以下目标的接战范围内：该单位 Falls Back, all models in that 敌方单位 must take a Desperate Escape test. When doing so, if that 敌方单位 is 战斗冲击ed, subtract 1 from each of those tests.",
             "source": "黑色圣堂",
             "priority": 3
           }
@@ -20125,112 +21648,112 @@ window.BC_BUILTIN_PACKS = {
         "id": "unit-000001184",
         "name": "Terminus Ultra",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "载具",
           "Terminus Ultra",
           "帝国",
           "运输",
-          "Smoke"
+          "烟"
         ],
         "abilities": [
           {
             "id": "unit-terminus-ultra-assault-ramp",
-            "name": "Assault Ramp",
+            "name": "突击坡道",
             "phases": [
               "movement",
               "charge"
             ],
             "timing": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a ch",
             "type": "passive",
-            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to declare a charge this turn.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time a unit disembarks from 该模型 after it has made a 普通移动, that unit is still eligible to 声明冲锋 this turn.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-terminus-ultra-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000001991",
-        "name": "Terrax-pattern Termite",
+        "name": "兵马俑图案白蚁",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "专属运输",
           "运输",
           "帝国",
           "载具",
-          "Terrax-pattern Termite"
+          "兵马俑图案白蚁"
         ],
         "abilities": [
           {
             "id": "unit-terrax-pattern-termite-termite-assault",
-            "name": "Termite Assault",
+            "name": "白蚁攻击",
             "phases": [
               "movement"
             ],
-            "timing": "Movement phase, regardless of any mission rules",
+            "timing": "移动阶段，不考虑任何任务规则",
             "type": "passive",
             "summary": "This model must start the battle in Reserves, but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. Any units embarked within 该模型 can disembark after it has been set up on the battlefield, and if they do they must be set up more than 9\" away from all 敌方模型s.",
-            "source": "星际战士 (Warhammer Legends)",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
       },
       {
         "id": "unit-000001164",
-        "name": "Thunderfire Cannon",
+        "name": "雷火炮",
         "keywords": [
-          "Adeptus Astartes",
-          "Artillery",
+          "阿斯塔特修会",
+          "炮兵",
           "载具",
           "帝国",
-          "Thunderfire Cannon"
+          "雷火炮"
         ],
         "abilities": [
           {
             "id": "unit-thunderfire-cannon-tremor-shells",
-            "name": "Tremor Shells",
+            "name": "震颤贝壳",
             "phases": [
               "shooting"
             ],
-            "timing": "在你的射击阶段，after 该单位 has shot, if an enemy INFANTRY unit was hit by one or more attacks made by 该单位’s thunderfire cannon this phase, until the end of your opponent’s next turn, that 敌方单位 is shaken",
+            "timing": "在你的射击阶段，after 该单位 has shot, if an enemy 步兵 unit was hit by one or more attacks made by 该单位’s thunderfire cannon this phase, until the end of your opponent’s next turn, that 敌方单位 is shaken",
             "type": "reaction",
-            "summary": "在你的射击阶段，after 该单位 has shot, if an enemy INFANTRY unit was hit by one or more attacks made by 该单位’s thunderfire cannon this phase, until the end of your opponent’s next turn, that 敌方单位 is shaken. While a unit is shaken, subtract 2 from that unit’s 移动属性, and subtract 2 from Advance and 冲锋掷骰 made for that unit.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "在你的射击阶段，after 该单位 has shot, if an enemy 步兵 unit was hit by one or more attacks made by 该单位’s thunderfire cannon this phase, until the end of your opponent’s next turn, that 敌方单位 is shaken. While a unit is shaken, subtract 2 from that unit’s 移动属性, and subtract 2 from Advance and 冲锋掷骰 made for that unit.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-thunderfire-cannon-crewed-artillery",
-            "name": "Crewed Artillery",
+            "name": "乘员炮兵",
             "phases": [
               "any"
             ],
-            "timing": "If one model in 该单位 is destroyed, the remaining model in 该单位 is also destroyed.",
+            "timing": "如果本单元中的一个模型被销毁，则本单元中的剩余模型也会被销毁。",
             "type": "passive",
-            "summary": "If one model in 该单位 is destroyed, the remaining model in 该单位 is also destroyed.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "如果本单元中的一个模型被销毁，则本单元中的剩余模型也会被销毁。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000000093",
-        "name": "Typhon",
+        "name": "提丰",
         "keywords": [
-          "Adeptus Astartes",
-          "Typhon",
-          "Smoke",
+          "阿斯塔特修会",
+          "提丰",
+          "烟",
           "帝国",
           "载具"
         ],
@@ -20241,65 +21764,65 @@ window.BC_BUILTIN_PACKS = {
             "phases": [
               "any"
             ],
-            "timing": "Each time 该模型 makes an attack that targets a VEHICLE , improve the Strength and 伤害属性 of that att",
+            "timing": "Each time 该模型 makes an attack that targets a 载具, improve the Strength and 伤害属性 of that att",
             "type": "passive",
-            "summary": "Each time 该模型 makes an attack that targets a VEHICLE , improve the Strength and 伤害属性 of that attack by 1 (if that attack targets a FORTIFICATION unit, improve the Strength and 伤害属性s of that attack by 2 instead).",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "Each time 该模型 makes an attack that targets a 载具, improve the Strength and 伤害属性 of that attack by 1 (if that attack targets a 防御工事 unit, improve the Strength and 伤害属性s of that attack by 2 instead).",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000001154",
-        "name": "Vanguard Veteran Squad",
+        "name": "先锋老兵小队",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
           "手雷",
           "步兵",
-          "Vanguard Veteran Squad"
+          "先锋老兵小队"
         ],
         "abilities": [
           {
             "id": "unit-vanguard-veteran-squad-storm-shield",
-            "name": "Storm Shield",
+            "name": "风暴护盾",
             "phases": [
               "any"
             ],
-            "timing": "The bearer 拥有 4+ invulnerable save。",
+            "timing": "持有人有4 +无懈可击的保存。",
             "type": "wargear",
-            "summary": "The bearer 拥有 4+ invulnerable save。",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持有人有4 +无懈可击的保存。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           },
           {
             "id": "unit-vanguard-veteran-squad-vanguard-assault",
-            "name": "Vanguard Assault",
+            "name": "先锋突击",
             "phases": [
               "charge"
             ],
-            "timing": "该单位每次结束一次冲锋移动时，until the end of the turn, melee 本单位模型装备的武器 have th",
+            "timing": "该单位每次结束一次冲锋移动时，until the end of the turn, 近战武器 equipped by models in 该单位 have th",
             "type": "passive",
-            "summary": "该单位每次结束一次冲锋移动时，until the end of the turn, melee 本单位模型装备的武器 拥有 [LETHAL HITS] 能力.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "该单位每次结束一次冲锋移动时，until the end of the turn, 近战武器 equipped by models in 该单位 have the [致命命中] ability.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           }
         ]
       },
       {
         "id": "unit-000001188",
-        "name": "Vindicator",
+        "name": "维护者",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "帝国",
-          "Vindicator",
+          "维护者",
           "载具",
-          "Smoke"
+          "烟"
         ],
         "abilities": [
           {
             "id": "unit-vindicator-siege-shield",
-            "name": "Siege Shield",
+            "name": "攻城盾牌",
             "phases": [
               "shooting"
             ],
@@ -20311,14 +21834,14 @@ window.BC_BUILTIN_PACKS = {
           },
           {
             "id": "unit-vindicator-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
             "source": "星际战士",
             "priority": 2
           }
@@ -20326,76 +21849,76 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000001178",
-        "name": "Vindicator Laser Destroyer",
+        "name": "Vindicator激光驱逐舰",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "载具",
-          "Smoke",
+          "烟",
           "帝国",
-          "Vindicator Laser Destroyer"
+          "Vindicator激光驱逐舰"
         ],
         "abilities": [
           {
             "id": "unit-vindicator-laser-destroyer-annihilator",
-            "name": "Annihilator",
+            "name": "灭杀者",
             "phases": [
               "shooting"
             ],
-            "timing": "Each time 该模型 makes a 远程攻击 以 MONSTER 或 VEHICLE 单位为目标, re-roll a 伤害掷骰 of 1.",
+            "timing": "每次该模型对怪物或载具单位进行远程攻击时，重新滚动1次伤害。",
             "type": "passive",
-            "summary": "Each time 该模型 makes a 远程攻击 以 MONSTER 或 VEHICLE 单位为目标, re-roll a 伤害掷骰 of 1.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "每次该模型对怪物或载具单位进行远程攻击时，重新滚动1次伤害。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-vindicator-laser-destroyer-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
       },
       {
         "id": "unit-000002727",
-        "name": "Whirlwind",
+        "name": "旋风",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "载具",
-          "Smoke",
+          "烟",
           "帝国",
-          "Whirlwind"
+          "旋风"
         ],
         "abilities": [
           {
             "id": "unit-whirlwind-pinning-bombardment",
-            "name": "Pinning Bombardment",
+            "name": "固定轰炸",
             "phases": [
               "shooting",
               "battleshock"
             ],
-            "timing": "在你的射击阶段，after 该模型 has shot, if one or more of those attacks made with its Whirlwind vengeance launcher scored a hit against an enemy INFANTRY unit, that unit must take a 战斗冲击测试",
+            "timing": "在你的射击阶段，after 该模型 has shot, if one or more of those attacks made with its Whirlwind vengeance launcher scored a hit against an enemy 步兵 unit, that unit must take a 战斗冲击 test",
             "type": "active",
-            "summary": "在你的射击阶段，after 该模型 has shot, if one or more of those attacks made with its Whirlwind vengeance launcher scored a hit against an enemy INFANTRY unit, that unit must take a 战斗冲击测试.",
+            "summary": "在你的射击阶段，after 该模型 has shot, if one or more of those attacks made with its Whirlwind vengeance launcher scored a hit against an enemy 步兵 unit, that unit must take a 战斗冲击 test.",
             "source": "星际战士",
             "priority": 3
           },
           {
             "id": "unit-whirlwind-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
             "source": "星际战士",
             "priority": 2
           }
@@ -20403,39 +21926,39 @@ window.BC_BUILTIN_PACKS = {
       },
       {
         "id": "unit-000002728",
-        "name": "Whirlwind Scorpius",
+        "name": "旋风天蝎座",
         "keywords": [
-          "Adeptus Astartes",
+          "阿斯塔特修会",
           "载具",
-          "Smoke",
-          "Whirlwind Scorpius",
+          "烟",
+          "旋风天蝎座",
           "帝国"
         ],
         "abilities": [
           {
             "id": "unit-whirlwind-scorpius-pinning-bombardment",
-            "name": "Pinning Bombardment",
+            "name": "固定轰炸",
             "phases": [
               "shooting",
               "battleshock"
             ],
-            "timing": "在你的射击阶段，after 该模型 has shot, if one or more of those attacks made with its Scorpius multi-launcher scored a hit against an enemy INFANTRY unit, that unit must take a 战斗冲击测试",
+            "timing": "在你的射击阶段，after 该模型 has shot, if one or more of those attacks made with its Scorpius multi-launcher scored a hit against an enemy 步兵 unit, that unit must take a 战斗冲击 test",
             "type": "active",
-            "summary": "在你的射击阶段，after 该模型 has shot, if one or more of those attacks made with its Scorpius multi-launcher scored a hit against an enemy INFANTRY unit, that unit must take a 战斗冲击测试.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "在你的射击阶段，after 该模型 has shot, if one or more of those attacks made with its Scorpius multi-launcher scored a hit against an enemy 步兵 unit, that unit must take a 战斗冲击 test.",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 3
           },
           {
             "id": "unit-whirlwind-scorpius-one-shot",
-            "name": "One Shot",
+            "name": "单集",
             "phases": [
               "any"
             ],
-            "timing": "The bearer can only shoot with this weapon once per battle.",
+            "timing": "持枪人每场战斗只能使用此武器射击一次。",
             "type": "wargear",
             "once_per": "battle",
-            "summary": "The bearer can only shoot with this weapon once per battle.",
-            "source": "星际战士 (Warhammer Legends)",
+            "summary": "持枪人每场战斗只能使用此武器射击一次。",
+            "source": "太空海军陆战队（战锤传奇）",
             "priority": 2
           }
         ]
@@ -20443,898 +21966,1217 @@ window.BC_BUILTIN_PACKS = {
     ],
     "stratagems": [
       {
+        "id": "strat-000008335010",
+        "name": "GO TO GROUND",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "敌方单位选择目标后，你的对手的射击阶段。",
+        "target": "您军队中的一个步兵单位被选为攻击单位的一个或多个攻击目标。",
+        "effect": "在阶段结束之前，您单位中的所有型号都有6 +无懈可击的保存，并享有保障福利。",
+        "source": "Wahapedia 数据/核心策略",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "核心–战斗策略策略",
+          "核心策略"
+        ]
+      },
+      {
+        "id": "strat-000008335002",
+        "name": "命令重新滚动",
+        "cp_cost": 1,
+        "phases": [
+          "any"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Any phase, just after you make an Advance 掷骰, a Charge roll, a Desperate Escape test or a 凶险 test for a unit from 你的军队, or a 命中掷骰, a 致伤掷骰, a 伤害掷骰 or a saving throw for a model in that unit, or a roll to determine the number of attacks made with a weapon equipped by a model in that unit. If you are using fast dice rolling, this Stratagem can still be used after rolling multiple rolls or saving throws at once.",
+        "target": "你的军队中的那个单位或模型。",
+        "effect": "You re-roll that roll, test or saving throw. If you are using fast dice rolling, select one of those rolls or saving throws to re-roll.",
+        "source": "Wahapedia 数据/核心策略",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "核心–战斗策略策略",
+          "核心策略"
+        ]
+      },
+      {
+        "id": "strat-000008335004",
+        "name": "史诗级挑战",
+        "cp_cost": 1,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, when a 角色 unit from 你的军队 that is 位于以下目标的接战范围内：one or more Attached units is 被选中进行近战.",
+        "target": "您单位中的一个角色模型。",
+        "effect": "在该阶段结束之前，该模型进行的所有近战攻击都具有[精度]能力。",
+        "source": "Wahapedia 数据/核心策略",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "核心–史诗契约策略",
+          "核心策略"
+        ]
+      },
+      {
+        "id": "strat-000008335005",
+        "name": "疯狂勇敢",
+        "cp_cost": 1,
+        "phases": [
+          "command"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "指挥阶段的战斗冲击步骤，就在你对军队中的一个单位进行战斗冲击测试之前。",
+        "target": "你军队的那个单位。",
+        "effect": "你的单位会自动通过战斗冲击测试。",
+        "source": "Wahapedia 数据/核心策略",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "核心–史诗契约策略",
+          "核心策略"
+        ]
+      },
+      {
+        "id": "strat-000008335012",
+        "name": "英雄干预",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "敌方单位结束充能移动后立即进入对手的充能阶段。",
+        "target": "One unit from 你的军队 that is within 6\" of that 敌方单位 and would be eligible to 声明冲锋 against that 敌方单位 if it were your Charge phase.",
+        "effect": "Your unit now 声明冲锋 that targets only that 敌方单位, and you resolve that charge as if it were your Charge phase.",
+        "source": "Wahapedia 数据/核心策略",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "核心–战略策略",
+          "核心策略"
+        ]
+      },
+      {
+        "id": "strat-000008335009",
+        "name": "守望先锋之火",
+        "cp_cost": 1,
+        "phases": [
+          "movement",
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Movement or Charge phase, just after an 敌方单位 is set up or when an 敌方单位 starts or ends a Normal, Advance or Fallback move, or 声明冲锋.",
+        "target": "One unit from 你的军队 that is within 24\" of that 敌方单位 and that would be eligible to shoot if it were your Shooting phase.",
+        "effect": "如果该敌方单位对你的单位可见，你的单位可以像射击阶段一样射击该敌方单位。",
+        "source": "Wahapedia 数据/核心策略",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "核心–战略策略",
+          "核心策略"
+        ]
+      },
+      {
+        "id": "strat-000008335008",
+        "name": "快速入口",
+        "cp_cost": 1,
+        "phases": [
+          "movement"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "对手的移动阶段结束。",
+        "target": "你的军队中有一个单位在预备役中。",
+        "effect": "Your unit can arrive on the battlefield as if it were the Reinforcements step of your Movement phase, and if every model in that unit has the 深袭 ability, you can set that unit up as described in the 深袭 ability (even though it is not your Movement phase).",
+        "source": "Wahapedia 数据/核心策略",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "核心–战略策略",
+          "核心策略"
+        ]
+      },
+      {
+        "id": "strat-000008335003",
+        "name": "反击攻势",
+        "cp_cost": 2,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段，就在敌方单位战斗之后。",
+        "target": "One unit from 你的军队 that is 位于以下目标的接战范围内：one or more 敌方单位s and that has not already been 被选中进行近战 this phase.",
+        "effect": "你的单位接下来战斗。",
+        "source": "Wahapedia 数据/核心策略",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "核心–战略策略",
+          "核心策略"
+        ]
+      },
+      {
+        "id": "strat-000008335007",
+        "name": "坦克冲击",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "你的冲锋阶段，就在你军队的载具单位结束冲锋移动之后。",
+        "target": "那辆车。",
+        "effect": "Select one 敌方单位 位于以下目标的接战范围内：你的单位, and select one 载具 model in 你的单位 that is 位于以下目标的接战范围内：that 敌方单位. Roll a number of D6 equal to the 韧性属性 of the selected 载具 model. For each 5+, that 敌方单位 suffers 1 致命伤 (to a maximum of 6 致命伤).",
+        "source": "Wahapedia 数据/核心策略",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "核心–战略策略",
+          "核心策略"
+        ]
+      },
+      {
+        "id": "strat-000008335011",
+        "name": "烟幕弹",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "敌方单位选择目标后，你的对手的射击阶段。",
+        "target": "你的军队中的一个烟雾单位被选中作为攻击单位的一个或多个攻击的目标。",
+        "effect": "在阶段结束前，你单位的所有模型都具有掩护效益和隐身能力。",
+        "source": "Wahapedia 数据/核心策略",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "核心–战争装备策略",
+          "核心策略"
+        ]
+      },
+      {
+        "id": "strat-000008335006",
+        "name": "手雷",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "<g id=\"1\">时间： </g>您的拍摄阶段。",
+        "target": "One 手雷 unit from 你的军队 (excluding units that Advance, Fallback or have shot this turn) that is not 位于以下目标的接战范围内：one or more 敌方单位s.",
+        "effect": "Select one 手雷 model in 你的单位 and one 敌方单位 that is not 位于以下目标的接战范围内：any units from 你的军队 and is within 8\" of and visible to your 手雷 model. Roll six D6: for each 4+, that 敌方单位 suffers 1 致命伤.",
+        "source": "Wahapedia 数据/核心策略",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "核心–战争装备策略",
+          "核心策略"
+        ]
+      },
+      {
         "id": "strat-000008475002",
-        "name": "ARMOUR OF CONTEMPT",
+        "name": "蔑视的盔甲",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "在对手的射击阶段或近战阶段，敌方单位刚刚选择其目标后。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其被选为该攻击单位一次或多次攻击的目标。",
-        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, 使该攻击的护甲穿透属性恶化 1。",
-        "source": "Wahapedia CSV / 铁砧攻城特遣队",
+        "target": "One 阿斯塔特修会 unit from 你的军队 that was 被选为目标 of one or more of the attacking unit’s attacks.",
+        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, worsen the 护甲穿透属性 of that attack by 1.",
+        "source": "Wahapedia 数据/铁砧攻城部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "铁砧攻城特遣队 – 战斗战术战略",
+          "铁砧围攻部队–战术策略",
           "铁砧攻城特遣队"
         ]
       },
       {
         "id": "strat-000008475005",
-        "name": "NO THREAT TOO GREAT",
+        "name": "没有太大的威胁",
         "cp_cost": 2,
         "phases": [
           "shooting"
         ],
-        "timing": "你的射击阶段。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其在本阶段尚未被选中进行射击。",
-        "effect": "直到本阶段结束，each time a model in 你的单位 makes a 远程攻击 以 MONSTER 或 VEHICLE 单位为目标, you 可以重掷致伤掷骰.",
-        "source": "Wahapedia CSV / 铁砧攻城特遣队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "<g id=\"1\">时间： </g>您的拍摄阶段。",
+        "target": "来自您的军队的一个阿斯塔特修会单位尚未被选中拍摄此阶段。",
+        "effect": "直到本阶段结束，each time a model in 你的单位 makes a 远程攻击 以怪兽或载具单位为目标, you can re-roll the 致伤掷骰.",
+        "source": "Wahapedia 数据/铁砧攻城部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "铁砧攻城特遣队 – 战斗战术战略",
+          "铁砧围攻部队–战术策略",
           "铁砧攻城特遣队"
         ]
       },
       {
         "id": "strat-000008475006",
-        "name": "BATTLE DRILL RECALL",
+        "name": "战斗演习召回",
         "cp_cost": 1,
         "phases": [
           "shooting"
         ],
-        "timing": "你的射击阶段。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其在本阶段尚未被选中进行射击。",
-        "effect": "直到本阶段结束，ranged 你单位中模型装备的武器 拥有 [SUSTAINED HITS 1] 能力. If 你的单位 保持静止 this turn, then until the end of the phase, each time a model in 你的单位 makes a 远程攻击, a successful unmodified 命中掷骰 of 5+ 则记为一次暴击。",
-        "source": "Wahapedia CSV / 铁砧攻城特遣队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "<g id=\"1\">时间： </g>您的拍摄阶段。",
+        "target": "来自您的军队的一个阿斯塔特修会单位尚未被选中拍摄此阶段。",
+        "effect": "直到本阶段结束，远程武器 equipped by models in 你的单位 have the [连击 1] ability. If 你的单位 保持静止 this turn, then until the end of the phase, each time a model in 你的单位 makes a 远程攻击, a successful unmodified 命中掷骰 of 5+ scores a 暴击.",
+        "source": "Wahapedia 数据/铁砧攻城部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "铁砧攻城特遣队 – 战斗战术战略",
+          "铁砧围攻部队–战术策略",
           "铁砧攻城特遣队"
         ]
       },
       {
         "id": "strat-000008475004",
-        "name": "NOT ONE BACKWARDS STEP",
+        "name": "没有一个后退的步骤",
         "cp_cost": 1,
         "phases": [
           "command"
         ],
-        "timing": "你的指挥阶段。",
-        "target": "One ADEPTUS ASTARTES INFANTRY unit 来自你军队的 位于一个目标标记范围内.",
-        "effect": "直到本回合结束，double the 目标控制（OC）属性 of 你单位中的模型, 但它本回合必须保持静止。",
-        "source": "Wahapedia CSV / 铁砧攻城特遣队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "<g id=\"1\">时间： </g>您的命令阶段。",
+        "target": "一个阿斯塔特修会步兵单位，来自你的军队，在目标标记的范围内。",
+        "effect": "直到本回合结束，double the 目标控制（OC）属性 of models in 你的单位, but it must Remain Stationary this turn.",
+        "source": "Wahapedia 数据/铁砧攻城部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "铁砧攻城特遣队 – 战略计策战略",
+          "铁砧围攻部队–战略策略",
           "铁砧攻城特遣队"
         ]
       },
       {
         "id": "strat-000008475007",
-        "name": "HAIL OF VENGEANCE",
+        "name": "复仇冰雹",
         "cp_cost": 2,
         "phases": [
           "shooting"
         ],
-        "timing": "Your opponent’s Shooting phase, just after an 敌方单位 has resolved its attacks.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that had one or more of its models destroyed as a result of the attacking unit’s attacks.",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "你的对手的射击阶段，就在敌方单位解决其攻击后。",
+        "target": "One 阿斯塔特修会 unit from 你的军队 that had one or more of its models destroyed as a result of the attacking unit’s attacks.",
         "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that 敌方单位 when doing so, and can only do so if that 敌方单位 is an eligible target.",
-        "source": "Wahapedia CSV / 铁砧攻城特遣队",
+        "source": "Wahapedia 数据/铁砧攻城部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "铁砧攻城特遣队 – 战略计策战略",
+          "铁砧围攻部队–战略策略",
           "铁砧攻城特遣队"
         ]
       },
       {
         "id": "strat-000008475003",
-        "name": "RIGID DISCIPLINE",
+        "name": "严格的纪律",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "End of the Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that is 位于以下目标的接战范围内：one or more 敌方单位s.",
-        "effect": "Your unit can immediately make a Fall Back move of up to 6\".",
-        "source": "Wahapedia CSV / 铁砧攻城特遣队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段结束。",
+        "target": "One 阿斯塔特修会 unit from your army that is within 接战范围 of one or more enemy units.",
+        "effect": "您的单位可以立即进行最多6英寸的后退。",
+        "source": "Wahapedia 数据/铁砧攻城部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "铁砧攻城特遣队 – 战略计策战略",
+          "铁砧围攻部队–战略策略",
           "铁砧攻城特遣队"
         ]
       },
       {
         "id": "strat-000010677002",
-        "name": "CODEX DISCIPLINE",
+        "name": "法典纪律",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
-        "timing": "Your Shooting phase or the Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that has not been 被选中进行射击 or fight this phase.",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "你的射击阶段或战斗阶段。",
+        "target": "One 阿斯塔特修会 unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "直到本阶段结束，each time a model in 你的单位 makes an attack that targets an 敌方单位, re-roll a 命中掷骰 of 1. If that target is auspex scanned, re-roll a 致伤掷骰 of 1 as well.",
-        "source": "Wahapedia CSV / 堡垒特遣队",
+        "source": "Wahapedia 数据/堡垒特遣部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "堡垒特遣队 – 战斗战术战略",
+          "堡垒特遣部队–战斗战术策略",
           "堡垒特遣队"
         ]
       },
       {
         "id": "strat-000010677004",
-        "name": "LIGHT OF VENGEANCE",
+        "name": "复仇之光",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
-        "timing": "Your Shooting phase or the Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that has not been 被选中进行射击 or fight this phase.",
-        "effect": "Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. 直到本阶段结束，你单位中模型装备的武器 have that ability while targeting an auspex scanned unit or if 持有者 拥有 Battleline keyword.",
-        "source": "Wahapedia CSV / 堡垒特遣队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "你的射击阶段或战斗阶段。",
+        "target": "One 阿斯塔特修会 unit from your army that has not been selected to shoot or fight this phase.",
+        "effect": "Select the [致命命中] or [连击 1] ability. 直到本阶段结束，weapons equipped by models in 你的单位 have that ability while targeting an auspex scanned unit or if 持有者 has the 战线 keyword.",
+        "source": "Wahapedia 数据/堡垒特遣部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "堡垒特遣队 – 战斗战术战略",
+          "堡垒特遣部队–战斗战术策略",
           "堡垒特遣队"
         ]
       },
       {
         "id": "strat-000010677007",
-        "name": "HERESY UNDONE",
+        "name": "异端已撤销",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "charge"
         ],
-        "timing": "Your Shooting phase or your Charge phase.",
-        "target": "One ADEPTUS ASTARTES unit (excluding Battleline units) 来自你军队的.",
-        "effect": "直到本阶段结束，你的单位 is eligible to shoot and declare a charge in a turn in which it Advance or Fallback. If it does, every target of that charge and every target of those attacks must be an auspex scanned unit.",
-        "source": "Wahapedia CSV / 堡垒特遣队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "您的拍摄阶段或充电阶段。",
+        "target": "你的军队中有一个阿斯塔特修会单位（不包括战线单位）。",
+        "effect": "直到本阶段结束，你的单位 is eligible to shoot and 声明冲锋 in a turn in which it Advance or Fallback. If it does, every target of that charge and every target of those attacks must be an auspex scanned unit.",
+        "source": "Wahapedia 数据/堡垒特遣部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "堡垒特遣队 – 战略计策战略",
+          "堡垒特遣部队–战略策略",
           "堡垒特遣队"
         ]
       },
       {
         "id": "strat-000010677003",
-        "name": "GUIDED DISRUPTION",
+        "name": "引导式中断",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
-        "timing": "Your Shooting phase or the Fight phase, just after an Adeptus Astartes Battleline unit 来自你军队的 has finished making its attacks.",
-        "target": "That ADEPTUS ASTARTES BATTLELINE unit.",
-        "effect": "When an 敌方单位 is auspex scanned as a result of those attacks this turn, if that 敌方单位 does not 拥有 MONSTER or VEHICLE keywords, until the start of your next turn, it is pinned. While a unit is pinned, subtract 2 from that unit’s 移动属性 and subtract 2 from 冲锋掷骰 made for that unit.",
-        "source": "Wahapedia CSV / 堡垒特遣队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Your Shooting phase or the Fight phase, just after an 阿斯塔特修会 战线 unit from 你的军队 has finished making its attacks.",
+        "target": "阿斯塔特修会 BATTLELINE单元。",
+        "effect": "When an 敌方单位 is auspex scanned as a result of those attacks this turn, if that 敌方单位 does not have the 怪兽 or 载具 keywords, until the start of your next turn, it is pinned. While a unit is pinned, subtract 2 from that unit’s 移动属性 and subtract 2 from 冲锋掷骰 made for that unit.",
+        "source": "Wahapedia 数据/堡垒特遣部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "堡垒特遣队 – 战略计策战略",
+          "堡垒特遣部队–战略策略",
           "堡垒特遣队"
         ]
       },
       {
         "id": "strat-000010677005",
-        "name": "SHOCK BOMBARDMENT",
+        "name": "冲击轰击",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
-        "timing": "Your Shooting phase or the Fight phase, just after an Adeptus Astartes Battleline unit 来自你军队的 finished making its attacks.",
-        "target": "That ADEPTUS ASTARTES BATTLELINE unit.",
-        "effect": "When an 敌方单位 is auspex scanned as a result of those attacks this turn, until the start of your next turn, it is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, 命中掷骰结果 -1.",
-        "source": "Wahapedia CSV / 堡垒特遣队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Your Shooting phase or the Fight phase, just after an 阿斯塔特修会 战线 unit from 你的军队 finished making its attacks.",
+        "target": "阿斯塔特修会 BATTLELINE单元。",
+        "effect": "When an 敌方单位 is auspex scanned as a result of those attacks this turn, until the start of your next turn, it is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the 命中掷骰.",
+        "source": "Wahapedia 数据/堡垒特遣部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "堡垒特遣队 – 战略计策战略",
+          "堡垒特遣部队–战略策略",
           "堡垒特遣队"
         ]
       },
       {
         "id": "strat-000010393005",
-        "name": "PIOUS ENMITY",
+        "name": "虔诚的敌意",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "Fight phase.",
-        "target": "One Chaplain or Judiciar unit 来自你军队的 that has not been 被选中进行近战 this phase.",
-        "effect": "直到本阶段结束，each time a model in 你的单位 makes a 近战攻击 that targets an 敌方单位, re-roll a 命中掷骰 of 1. If that target is a MONSTER or VEHICLE unit, re-roll a 致伤掷骰 of 1 as well.",
-        "source": "Wahapedia CSV / 狂烈伴军",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段。",
+        "target": "你的军队中一个尚未被选中参与本阶段战斗的牧师或司法单位。",
+        "effect": "直到本阶段结束，each time a model in 你的单位 makes a 近战攻击 that targets an 敌方单位, re-roll a 命中掷骰 of 1. If that target is a 怪兽 or 载具 unit, re-roll a 致伤掷骰 of 1 as well.",
+        "source": "Wahapedia 数据/Vehemence的伴侣",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "狂烈伴军 – 战斗战术战略",
+          "猛烈精灵–战术策略",
           "狂烈伴军"
         ]
       },
       {
         "id": "strat-000010393002",
-        "name": "DEVOUT PUSH",
+        "name": "虔诚推送",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "Fight phase.",
-        "target": "One Adeptus Astartes Infantry unit 来自你军队的 that has not been 被选中进行近战 this phase.",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段。",
+        "target": "One 阿斯塔特修会 步兵 unit from 你的军队 that has not been 被选中进行近战 this phase.",
         "effect": "直到本阶段结束，each time a model in 你的单位 makes a Pile-in or Consolidation move, it can move up to 6\" instead of up to 3\".",
-        "source": "Wahapedia CSV / 狂烈伴军",
+        "source": "Wahapedia 数据/Vehemence的伴侣",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "狂烈伴军 – 战斗战术战略",
+          "猛烈精灵–战术策略",
           "狂烈伴军"
         ]
       },
       {
         "id": "strat-000010393004",
-        "name": "FOR THE EMPEROR'S HONOUR!",
+        "name": "为了皇帝的荣耀！",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "Fight phase.",
-        "target": "One Adeptus Astartes Infantry unit 来自你军队的 that has not been 被选中进行近战 this phase.",
-        "effect": "直到本阶段结束，melee 你单位中模型装备的武器 拥有 [PRECISION] ability.",
-        "source": "Wahapedia CSV / 狂烈伴军",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段。",
+        "target": "One 阿斯塔特修会 步兵 unit from 你的军队 that has not been 被选中进行近战 this phase.",
+        "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [精准] ability.",
+        "source": "Wahapedia 数据/Vehemence的伴侣",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "狂烈伴军 – 战斗战术战略",
+          "猛烈精灵–战术策略",
           "狂烈伴军"
         ]
       },
       {
         "id": "strat-000010393003",
-        "name": "HEARTS HARDENED TO DUTY",
+        "name": "内心坚韧不拔",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "Fight phase, just before an Adeptus Astartes Infantry unit 来自你军队的 Consolidates.",
-        "target": "That ADEPTUS ASTARTES INFANTRY unit.",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段，就在你军队的阿德普图斯·阿斯塔特斯步兵单位整合之前。",
+        "target": "那个阿斯塔特修会步兵部队。",
         "effect": "直到本阶段结束，each time a model in 你的单位 makes a Consolidation move, it does not need to end that move closer to the closest 敌方模型 (or the closest 敌方单位 if the Suffer Not the Unclean to Live Vow is active for it).",
-        "source": "Wahapedia CSV / 狂烈伴军",
+        "source": "Wahapedia 数据/Vehemence的伴侣",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "狂烈伴军 – 战略计策战略",
+          "VEHEMENCE的同伴–战略策略",
           "狂烈伴军"
         ]
       },
       {
         "id": "strat-000010393007",
-        "name": "DREAD CRUSADERS",
+        "name": "恐怖十字军",
         "cp_cost": 1,
         "phases": [
           "charge"
         ],
-        "timing": "Your opponent’s Charge phase, just after an 敌方单位 声明冲锋.",
-        "target": "One Adeptus Astartes Infantry unit 来自你军队的 that was selected as one of the targets of that charge.",
-        "effect": "That 敌方单位 must take a 战斗冲击测试, subtracting 1 from the result.",
-        "source": "Wahapedia CSV / 狂烈伴军",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "敌方单位宣布冲锋后立即进入对手的冲锋阶段。",
+        "target": "你的军队中的一个阿德普图斯·阿斯塔特斯步兵单位被选为该冲锋的目标之一。",
+        "effect": "该敌方单位必须进行战斗冲击测试，从结果中减去1。",
+        "source": "Wahapedia 数据/Vehemence的伴侣",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "狂烈伴军 – 战略计策战略",
+          "VEHEMENCE的同伴–战略策略",
           "狂烈伴军"
         ]
       },
       {
         "id": "strat-000010393006",
-        "name": "HERESY BEGETS RETRIBUTION",
+        "name": "异端会招致报复",
         "cp_cost": 1,
         "phases": [
           "movement"
         ],
-        "timing": "Your opponent’s Movement phase, just after an 敌方单位 ends a Normal, Advance or Fall Back move.",
-        "target": "One Chaplain or Judiciar unit 来自你军队的 that is within 9\" of that 敌方单位 and is not 位于以下目标的接战范围内：one or more 敌方单位s.",
-        "effect": "Your unit can make a Retribution move. To do so, roll one D6: 你单位中的模型 move a number of inches up to the result, but 你的单位 must end that move as close as possible to the closest 敌方单位 (excluding AIRCRAFT ). When doing so, those models can be moved 位于以下目标的接战范围内：that 敌方单位.",
-        "source": "Wahapedia CSV / 狂烈伴军",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "在对手的移动阶段，敌方单位刚完成一次普通移动、Advance 或 Fallback 后。",
+        "target": "One Chaplain or Judiciar unit from 你的军队 that is within 9\" of that 敌方单位 and is not 位于以下目标的接战范围内：one or more 敌方单位s.",
+        "effect": "Your unit can make a Retribution move. To do so, roll one D6: models in 你的单位 move a number of inches up to the result, but 你的单位 must end that move as close as possible to the closest 敌方单位 (excluding 飞行器 ). When doing so, those models can be moved 位于以下目标的接战范围内：that 敌方单位.",
+        "source": "Wahapedia 数据/Vehemence的伴侣",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "狂烈伴军 – 战略计策战略",
+          "VEHEMENCE的同伴–战略策略",
           "狂烈伴军"
         ]
       },
       {
         "id": "strat-000008483003",
-        "name": "CRUCIBLE OF BATTLE",
+        "name": "战斗坩埚",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
-        "timing": "Your Shooting phase or the Fight phase.",
-        "target": "One ADEPTUS ASTARTES INFANTRY unit 来自你军队的 that has not been 被选中进行射击 or fight this phase.",
-        "effect": "直到本阶段结束，each time a model in 你的单位 makes an attack 以最近的合法目标为目标 within 6\", 致伤掷骰结果 +1.",
-        "source": "Wahapedia CSV / 烈焰风暴突击部队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "你的射击阶段或战斗阶段。",
+        "target": "一个来自您的军队的阿斯塔特修会步兵单位，尚未被选中在此阶段射击或战斗。",
+        "effect": "直到本阶段结束，each time a model in 你的单位 makes an attack 以最近的可选目标为目标 within 6\", add 1 to the 致伤掷骰.",
+        "source": "Wahapedia 数据/Firestorm突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "烈焰风暴突击部队 – 战斗战术战略",
+          "烈焰风暴突击部队–战斗策略策略",
           "烈焰风暴突击部队"
         ]
       },
       {
         "id": "strat-000008483005",
-        "name": "IMMOLATION PROTOCOLS",
+        "name": "牺牲方案",
         "cp_cost": 2,
         "phases": [
           "shooting"
         ],
-        "timing": "你的射击阶段。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其在本阶段尚未被选中进行射击。",
-        "effect": "直到本阶段结束，Torrent weapons equipped by 该单位中的模型 拥有 [DEVASTATING WOUNDS] 能力.",
-        "source": "Wahapedia CSV / 烈焰风暴突击部队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "<g id=\"1\">时间： </g>您的拍摄阶段。",
+        "target": "来自您的军队的一个阿斯塔特修会单位尚未被选中拍摄此阶段。",
+        "effect": "在该阶段结束前，该单位模特装备的洪流武器具有[毁灭伤害]能力。",
+        "source": "Wahapedia 数据/Firestorm突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "烈焰风暴突击部队 – 战斗战术战略",
+          "烈焰风暴突击部队–战斗策略策略",
           "烈焰风暴突击部队"
         ]
       },
       {
         "id": "strat-000008483002",
-        "name": "ARMOUR OF CONTEMPT",
+        "name": "蔑视的盔甲",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "在对手的射击阶段或近战阶段，敌方单位刚刚选择其目标后。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其被选为该攻击单位一次或多次攻击的目标。",
-        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, 使该攻击的护甲穿透属性恶化 1。",
-        "source": "Wahapedia CSV / 烈焰风暴突击部队",
+        "target": "One 阿斯塔特修会 unit from 你的军队 that was 被选为目标 of one or more of the attacking unit’s attacks.",
+        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, worsen the 护甲穿透属性 of that attack by 1.",
+        "source": "Wahapedia 数据/Firestorm突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "烈焰风暴突击部队 – 战斗战术战略",
+          "烈焰风暴突击部队–战斗策略策略",
           "烈焰风暴突击部队"
         ]
       },
       {
         "id": "strat-000008483007",
-        "name": "BURNING VENGEANCE",
+        "name": "燃烧复仇",
         "cp_cost": 1,
         "phases": [
           "shooting"
         ],
-        "timing": "Your opponent’s Shooting phase, just after an 敌方单位 has resolved its attacks.",
-        "target": "One ADEPTUS ASTARTES TRANSPORT unit 来自你军队的 其被选为该攻击单位一次或多次攻击的目标。",
-        "effect": "One unit embarked within that TRANSPORT can disembark as if it were your Movement phase, and can then shoot as if it were your Shooting phase, but must target only that 敌方单位 when doing so, and can only do so if that 敌方单位 is an eligible target.",
-        "source": "Wahapedia CSV / 烈焰风暴突击部队",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "你的对手的射击阶段，就在敌方单位解决其攻击后。",
+        "target": "One 阿斯塔特修会 运输 unit from 你的军队 that was 被选为目标 of one or more of the attacking unit’s attacks.",
+        "effect": "One unit embarked within that 运输 can disembark as if it were your Movement phase, and can then shoot as if it were your Shooting phase, but must target only that 敌方单位 when doing so, and can only do so if that 敌方单位 is an eligible target.",
+        "source": "Wahapedia 数据/Firestorm突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "烈焰风暴突击部队 – 战斗战术战略",
+          "烈焰风暴突击部队–战斗策略策略",
           "烈焰风暴突击部队"
         ]
       },
       {
         "id": "strat-000008483006",
-        "name": "ONSLAUGHT OF FIRE",
+        "name": "火焰猛攻",
         "cp_cost": 1,
         "phases": [
           "shooting"
         ],
-        "timing": "你的射击阶段。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that disembarked from a TRANSPORT this turn and has not been 被选中进行射击 this phase.",
-        "effect": "直到本阶段结束，each time a model in 你的单位 makes a 远程攻击 以最近的合法目标为目标 within 12\", 命中掷骰结果 +1. If one or more 敌方模型s are destroyed as the result of any of those attacks, select one of those destroyed models; that destroyed model’s unit must take a 战斗冲击测试.",
-        "source": "Wahapedia CSV / 烈焰风暴突击部队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "<g id=\"1\">时间： </g>您的拍摄阶段。",
+        "target": "One 阿斯塔特修会 unit from 你的军队 that disembarked from a 运输 this turn and has not been 被选中进行射击 this phase.",
+        "effect": "直到本阶段结束，each time a model in 你的单位 makes a 远程攻击 以最近的可选目标为目标 within 12\", add 1 to the 命中掷骰. If one or more 敌方模型s are destroyed as the result of any of those attacks, select one of those destroyed models; that destroyed model’s unit must take a 战斗冲击 test.",
+        "source": "Wahapedia 数据/Firestorm突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "烈焰风暴突击部队 – 战斗战术战略",
+          "烈焰风暴突击部队–战斗策略策略",
           "烈焰风暴突击部队"
         ]
       },
       {
         "id": "strat-000008483004",
-        "name": "RAPID EMBARKATION",
+        "name": "快速登船",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "End of the Fight phase.",
-        "target": "One ADEPTUS ASTARTES TRANSPORT unit 来自你军队的 that has no models embarked within it, and one ADEPTUS ASTARTES INFANTRY unit 来自你军队的 wholly within 6\" of that TRANSPORT.",
-        "effect": "Your INFANTRY unit can embark within that TRANSPORT.",
-        "source": "Wahapedia CSV / 烈焰风暴突击部队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段结束。",
+        "target": "One 阿斯塔特修会 运输 unit from 你的军队 that has no models embarked within it, and one 阿斯塔特修会 步兵 unit from 你的军队 wholly within 6\" of that 运输.",
+        "effect": "您的步兵部队可以在该运输工具内登船。",
+        "source": "Wahapedia 数据/Firestorm突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "烈焰风暴突击部队 – 战略计策战略",
+          "烈焰风暴突击部队–战略策略",
           "烈焰风暴突击部队"
         ]
       },
       {
         "id": "strat-000008352006",
-        "name": "STORM OF FIRE",
+        "name": "火焰风暴",
         "cp_cost": 1,
         "phases": [
           "shooting"
         ],
-        "timing": "你的射击阶段。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其在本阶段尚未被选中进行射击。",
-        "effect": "直到本阶段结束，ranged 你单位中模型装备的武器 拥有 [IGNORES COVER] ability. If 你的单位 is under the effects of the Devastator Doctrine, until the end of the phase, improve the 护甲穿透属性 of such weapons by 1 as well.",
-        "source": "Wahapedia CSV / 格拉迪乌斯特遣队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "<g id=\"1\">时间： </g>您的拍摄阶段。",
+        "target": "来自您的军队的一个阿斯塔特修会单位尚未被选中拍摄此阶段。",
+        "effect": "直到本阶段结束，远程武器 equipped by models in 你的单位 have the [无视掩体] ability. If 你的单位 is under the effects of the Devastator Doctrine, until the end of the phase, improve the 护甲穿透属性 of such weapons by 1 as well.",
+        "source": "Wahapedia 数据/Gladius特别工作组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "格拉迪乌斯特遣队 – 战斗战术战略",
+          "嘉迪斯特遣部队–战斗战术策略",
           "格拉迪乌斯特遣队"
         ]
       },
       {
         "id": "strat-000008352002",
-        "name": "ARMOUR OF CONTEMPT",
+        "name": "蔑视的盔甲",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "在对手的射击阶段或近战阶段，敌方单位刚刚选择其目标后。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其被选为该攻击单位一次或多次攻击的目标。",
-        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, 使该攻击的护甲穿透属性恶化 1。",
-        "source": "Wahapedia CSV / 格拉迪乌斯特遣队",
+        "target": "One 阿斯塔特修会 unit from 你的军队 that was 被选为目标 of one or more of the attacking unit’s attacks.",
+        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, worsen the 护甲穿透属性 of that attack by 1.",
+        "source": "Wahapedia 数据/Gladius特别工作组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "格拉迪乌斯特遣队 – 战斗战术战略",
+          "嘉迪斯特遣部队–战斗战术策略",
           "格拉迪乌斯特遣队"
         ]
       },
       {
         "id": "strat-000008352004",
-        "name": "HONOUR THE CHAPTER",
+        "name": "遵守这一章",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的.",
-        "effect": "直到本阶段结束，melee 你单位中模型装备的武器 拥有 [LANCE] ability. If 你的单位 is under the effects of the Assault Doctrine, until the end of the phase, improve the 护甲穿透属性 of such weapons by 1 as well.",
-        "source": "Wahapedia CSV / 格拉迪乌斯特遣队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段。",
+        "target": "一个来自您军队的阿斯塔特修会单位。",
+        "effect": "直到本阶段结束，近战武器 equipped by models in 你的单位 have the [突刺] ability. If 你的单位 is under the effects of the Assault Doctrine, until the end of the phase, improve the 护甲穿透属性 of such weapons by 1 as well.",
+        "source": "Wahapedia 数据/Gladius特别工作组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "格拉迪乌斯特遣队 – 战斗战术战略",
+          "嘉迪斯特遣部队–战斗战术策略",
           "格拉迪乌斯特遣队"
         ]
       },
       {
         "id": "strat-000008352003",
-        "name": "ONLY IN DEATH DOES DUTY END",
+        "name": "只有在死亡时，职责才会结束",
         "cp_cost": 2,
         "phases": [
           "fight"
         ],
-        "timing": "Fight phase, just after an 敌方单位 has selected its targets.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其被选为该攻击单位一次或多次攻击的目标。",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "<g id=\"1\">时间： </g>战斗阶段，敌方单位选择目标后立即开始。",
+        "target": "One 阿斯塔特修会 unit from 你的军队 that was 被选为目标 of one or more of the attacking unit’s attacks.",
         "effect": "直到本阶段结束，each time a model in 你的单位 is destroyed, if that model has not fought this phase, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.",
-        "source": "Wahapedia CSV / 格拉迪乌斯特遣队",
+        "source": "Wahapedia 数据/Gladius特别工作组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "格拉迪乌斯特遣队 – 英雄事迹战略",
+          "嘉迪斯特遣部队–史诗契约策略",
           "格拉迪乌斯特遣队"
         ]
       },
       {
         "id": "strat-000008352005",
-        "name": "ADAPTIVE STRATEGY",
+        "name": "适应策略",
         "cp_cost": 1,
         "phases": [
           "command"
         ],
-        "timing": "你的指挥阶段。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的.",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "<g id=\"1\">时间： </g>您的命令阶段。",
+        "target": "一个来自您军队的阿斯塔特修会单位。",
         "effect": "Select the Devastator Doctrine, Tactical Doctrine or Assault Doctrine. 直到你下个指挥阶段开始时，that Combat Doctrine is active for that unit instead of any other Combat Doctrine that is active for 你的军队, even if you have already selected that doctrine this battle.",
-        "source": "Wahapedia CSV / 格拉迪乌斯特遣队",
+        "source": "Wahapedia 数据/Gladius特别工作组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "格拉迪乌斯特遣队 – 战略计策战略",
+          "嘉迪斯特遣部队–战略策略",
           "格拉迪乌斯特遣队"
         ]
       },
       {
         "id": "strat-000008352007",
-        "name": "SQUAD TACTICS",
+        "name": "小队战术",
         "cp_cost": 1,
         "phases": [
           "movement"
         ],
-        "timing": "Your opponent’s Movement phase, just after an 敌方单位 ends a Normal, Advance or Fall Back move.",
-        "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit 来自你军队的 that is within 9\" of the 敌方单位 that just ended that move.",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "在对手的移动阶段，敌方单位刚完成一次普通移动、Advance 或 Fallback 后。",
+        "target": "One 阿斯塔特修会 步兵 or 阿斯塔特修会 骑乘 unit from 你的军队 that is within 9\" of the 敌方单位 that just ended that move.",
         "effect": "Your unit can make a 普通移动 of up to D6\", or a 普通移动 of up to 6\" instead if it is under the effects of the Tactical Doctrine.",
-        "source": "Wahapedia CSV / 格拉迪乌斯特遣队",
+        "source": "Wahapedia 数据/Gladius特别工作组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "格拉迪乌斯特遣队 – 战略计策战略",
+          "嘉迪斯特遣部队–战略策略",
           "格拉迪乌斯特遣队"
         ]
       },
       {
         "id": "strat-000010401007",
-        "name": "BLESSED HULL",
+        "name": "有福的船体",
         "cp_cost": 2,
         "phases": [
           "shooting"
         ],
-        "timing": "Your opponent’s Shooting phase, just after an 敌方单位 has selected its targets.",
-        "target": "One Adeptus Astartes Vehicle unit 来自你军队的 其被选为该攻击单位一次或多次攻击的目标。",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "敌方单位选择目标后，你的对手的射击阶段。",
+        "target": "One 阿斯塔特修会 载具 unit from 你的军队 that was 被选为目标 of one or more of the attacking unit’s attacks.",
         "effect": "直到本阶段结束，each time an attack is allocated to a model in 你的单位, subtract 1 from the 伤害属性 of that attack.",
-        "source": "Wahapedia CSV / 神锤突击部队",
+        "source": "Wahapedia 数据/Godhammer突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "神锤突击部队 – 战斗战术战略",
+          "神锤突击部队–战术策略",
           "神锤突击部队"
         ]
       },
       {
         "id": "strat-000010401006",
-        "name": "CONDEMNATORY INFO-SCREED",
+        "name": "谴责信息-已筛选",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "Your Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that has not been 被选中进行近战 this phase.",
-        "effect": "直到本阶段结束，each time a model in 你的单位 makes an attack, 如果它本回合曾从运输载具中下车，re-roll a 致伤掷骰 of 1. If that TRANSPORT 拥有 Land Raider keyword, you 可以重掷致伤掷骰 instead.",
-        "source": "Wahapedia CSV / 神锤突击部队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "你的战斗阶段。",
+        "target": "来自您的军队的一个阿斯塔特修会单位尚未被选中参与此阶段的战斗。",
+        "effect": "直到本阶段结束，each time a model in 你的单位 makes an attack, if it disembarked from a 运输 this turn, re-roll a 致伤掷骰 of 1. If that 运输 has the Land Raider keyword, you can re-roll the 致伤掷骰 instead.",
+        "source": "Wahapedia 数据/Godhammer突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "神锤突击部队 – 战斗战术战略",
+          "神锤突击部队–战术策略",
           "神锤突击部队"
         ]
       },
       {
         "id": "strat-000010401005",
-        "name": "FOCUSED HATRED",
+        "name": "聚焦仇恨",
         "cp_cost": 1,
         "phases": [
           "charge"
         ],
-        "timing": "Your Charge phase, just after you make a Charge roll for an ADEPTUS ASTARTES unit 来自你军队的 that disembarked from a Transport this turn.",
-        "target": "That ADEPTUS ASTARTES unit.",
-        "effect": "直到本阶段结束，each time 你的单位 makes a Charge move, 你单位中的模型 can move through models (when doing so, its models can move 位于以下目标的接战范围内：敌方模型s, but they can only end that move 位于以下目标的接战范围内：敌方模型s if those 敌方模型s belong to a unit that 你的单位 declared a charge against this turn).",
-        "source": "Wahapedia CSV / 神锤突击部队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Charge phase, just after you make a Charge roll for an 阿斯塔特修会 unit from 你的军队 that disembarked from a 运输 this turn.",
+        "target": "那个阿斯塔特修会单元。",
+        "effect": "直到本阶段结束，each time 你的单位 makes a Charge move, models in 你的单位 can move through models (when doing so, its models can move 位于以下目标的接战范围内：敌方模型s, but they can only end that move 位于以下目标的接战范围内：敌方模型s if those 敌方模型s belong to a unit that 你的单位 declared a charge against this turn).",
+        "source": "Wahapedia 数据/Godhammer突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "神锤突击部队 – 战略计策战略",
+          "Godhammer突击部队–战略策略策略",
           "神锤突击部队"
         ]
       },
       {
         "id": "strat-000010401004",
-        "name": "GAUNTLET OF THE GOD-EMPEROR",
+        "name": "神帝帝国的护手",
         "cp_cost": 1,
         "phases": [
           "movement"
         ],
-        "timing": "Your Movement phase.",
-        "target": "One Adeptus Astartes Vehicle model 来自你军队的 that has not been selected to move this phase.",
-        "effect": "直到本阶段结束，each time your model makes a Normal or Advance move, it can move horizontally through terrain features.",
-        "source": "Wahapedia CSV / 神锤突击部队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "您的运动阶段。",
+        "target": "您的军队中的一个未被选中移动此阶段的阿斯塔特修会载具模型。",
+        "effect": "直到本阶段结束，each time your model makes a Normal or Advance 移动, it can move horizontally through terrain features.",
+        "source": "Wahapedia 数据/Godhammer突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "神锤突击部队 – 战略计策战略",
+          "Godhammer突击部队–战略策略策略",
           "神锤突击部队"
         ]
       },
       {
         "id": "strat-000010401003",
-        "name": "UNCOMPROMISING EGRESS",
+        "name": "毫不妥协的出口",
         "cp_cost": 1,
         "phases": [
           "movement"
         ],
-        "timing": "Your Movement phase.",
-        "target": "One Land Raider model 来自你军队的 that has not been selected to move this phase.",
-        "effect": "One ADEPTUS ASTARTES unit embarked within your LAND RAIDER can disembark. When doing so, 该单位中的模型 can be set up anywhere on the battlefield wholly within 6\" of your LAND RAIDER and can be set up 位于以下目标的接战范围内：one or more 敌方单位s.",
-        "source": "Wahapedia CSV / 神锤突击部队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "您的运动阶段。",
+        "target": "您的军队中有一个尚未被选中移动此阶段的土地掠夺者模型。",
+        "effect": "One 阿斯塔特修会 unit embarked within your LAND RAIDER can disembark. When doing so, 该单位中的模型 can be set up anywhere on the battlefield wholly within 6\" of your LAND RAIDER and can be set up 位于以下目标的接战范围内：one or more 敌方单位s.",
+        "source": "Wahapedia 数据/Godhammer突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "神锤突击部队 – 战略计策战略",
+          "Godhammer突击部队–战略策略策略",
           "神锤突击部队"
         ]
       },
       {
         "id": "strat-000010401002",
-        "name": "A CEASELESS CAUSE",
+        "name": "无止境的事业",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "End of the Fight phase.",
-        "target": "One Adeptus Astartes Infantry unit 来自你军队的 that was eligible to fight this phase.",
-        "effect": "If 你的单位 is not 位于以下目标的接战范围内：one or more 敌方单位s, it can make a 普通移动 of up to 6\". It cannot embark within a Transport at the end of this move if it disembarked from a TRANSPORT this turn.",
-        "source": "Wahapedia CSV / 神锤突击部队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段结束。",
+        "target": "你的军队中有一个有资格参加本阶段战斗的阿斯特普图斯阿斯塔特步兵单位。",
+        "effect": "If 你的单位 is not 位于以下目标的接战范围内：one or more 敌方单位s, it can make a 普通移动 of up to 6\". It cannot embark within a 运输 at the end of this move if it disembarked from a 运输 this turn.",
+        "source": "Wahapedia 数据/Godhammer突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "神锤突击部队 – 战略计策战略",
+          "Godhammer突击部队–战略策略策略",
           "神锤突击部队"
         ]
       },
       {
         "id": "strat-000008479004",
-        "name": "MERCY IS WEAKNESS",
+        "name": "怜悯是软弱",
         "cp_cost": 2,
         "phases": [
           "shooting",
           "fight"
         ],
-        "timing": "Your Shooting phase or the Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that has not been 被选中进行射击 or fight this phase.",
-        "effect": "直到本阶段结束，each time a model in 你的单位 makes an attack that targets a unit that is below its Starting Strength, that attack 拥有 [SUSTAINED HITS 1] ability, and when making such an attack, if the attacking model is a VEHICLE , a successful unmodified 命中掷骰 of 5+ 则记为一次暴击。",
-        "source": "Wahapedia CSV / 铁暴矛头",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "你的射击阶段或战斗阶段。",
+        "target": "One 阿斯塔特修会 unit from your army that has not been selected to shoot or fight this phase.",
+        "effect": "直到本阶段结束，each time a model in 你的单位 makes an attack that targets a unit that is below its Starting Strength, that attack has the [连击 1] ability, and when making such an attack, if the attacking model is a 载具, a successful unmodified 命中掷骰 of 5+ scores a 暴击.",
+        "source": "Wahapedia 数据/Ironstorm Spearhead",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "铁暴矛头 – 战斗战术战略",
+          "铁风暴先锋–战斗策略策略",
           "铁暴矛头"
         ]
       },
       {
         "id": "strat-000008479003",
-        "name": "ARMOUR OF CONTEMPT",
+        "name": "蔑视的盔甲",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "在对手的射击阶段或近战阶段，敌方单位刚刚选择其目标后。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其被选为该攻击单位一次或多次攻击的目标。",
-        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, 使该攻击的护甲穿透属性恶化 1。",
-        "source": "Wahapedia CSV / 铁暴矛头",
+        "target": "One 阿斯塔特修会 unit from 你的军队 that was 被选为目标 of one or more of the attacking unit’s attacks.",
+        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, worsen the 护甲穿透属性 of that attack by 1.",
+        "source": "Wahapedia 数据/Ironstorm Spearhead",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "铁暴矛头 – 战斗战术战略",
+          "铁风暴先锋–战斗策略策略",
           "铁暴矛头"
         ]
       },
       {
         "id": "strat-000008479002",
-        "name": "UNBOWED CONVICTION",
+        "name": "不屈不挠的信念",
         "cp_cost": 1,
         "phases": [
           "command"
         ],
-        "timing": "Command phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that is below its Starting Strength.",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "命令阶段。",
+        "target": "来自您军队的一个阿斯塔特修会单位，低于其起始强度。",
         "effect": "直到本回合结束，你的单位 can ignore any or all modifiers to its characteristics and/or to any roll or test made for it (excluding modifiers to saving throws).",
-        "source": "Wahapedia CSV / 铁暴矛头",
+        "source": "Wahapedia 数据/Ironstorm Spearhead",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "铁暴矛头 – 战斗战术战略",
+          "铁风暴先锋–战斗策略策略",
           "铁暴矛头"
         ]
       },
       {
         "id": "strat-000008479005",
-        "name": "VENGEFUL ANIMUS",
+        "name": "复仇的阿尼姆斯",
         "cp_cost": 1,
         "phases": [
           "any"
         ],
-        "timing": "Any phase, just after an ADEPTUS ASTARTES VEHICLE model 来自你军队的 with the Deadly Demise ability is destroyed.",
-        "target": "That ADEPTUS ASTARTES VEHICLE model. You can use this Stratagem on that model even though it was just destroyed.",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "任何阶段，就在你的军队中具有致命死亡能力的阿斯塔特修会车辆模型被摧毁之后。",
+        "target": "阿斯塔特修会车型。您可以在该模型上使用此策略，即使它刚刚被摧毁。",
         "effect": "Do not roll one D6 to determine whether 致命伤 are inflicted by your model’s Deadly Demise ability. Instead, 致命伤 are automatically inflicted.",
-        "source": "Wahapedia CSV / 铁暴矛头",
+        "source": "Wahapedia 数据/Ironstorm Spearhead",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "铁暴矛头 – 英雄事迹战略",
+          "铁风暴先锋–史诗契约策略",
           "铁暴矛头"
         ]
       },
       {
         "id": "strat-000008479006",
-        "name": "ANCIENT FURY",
+        "name": "古代狂怒",
         "cp_cost": 1,
         "phases": [
           "command"
         ],
-        "timing": "你的指挥阶段。",
-        "target": "One ADEPTUS ASTARTES WALKER model 来自你军队的.",
-        "effect": "直到你下个指挥阶段开始时，improve your model’s Move, Toughness, Leadership and 目标控制（OC）属性s by 1 and each time your model makes an attack, 命中掷骰结果 +1.",
-        "source": "Wahapedia CSV / 铁暴矛头",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "<g id=\"1\">时间： </g>您的命令阶段。",
+        "target": "一款来自您军队的阿斯塔特修会 WALKER模型。",
+        "effect": "直到你下个指挥阶段开始时，improve your model’s Move, Toughness, 领袖ship and 目标控制（OC）属性s by 1 and each time your model makes an attack, add 1 to the 命中掷骰.",
+        "source": "Wahapedia 数据/Ironstorm Spearhead",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "铁暴矛头 – 英雄事迹战略",
+          "铁风暴先锋–史诗契约策略",
           "铁暴矛头"
         ]
       },
       {
         "id": "strat-000008479007",
-        "name": "POWER OF THE MACHINE SPIRIT",
+        "name": "机器精神的力量",
         "cp_cost": 1,
         "phases": [
           "shooting"
         ],
-        "timing": "Your opponent’s Shooting phase, just after an 敌方单位 has resolved its attacks.",
-        "target": "One ADEPTUS ASTARTES VEHICLE unit 来自你军队的 that was reduced to Below Half-strength as a result of the attacking unit’s attacks.",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "你的对手的射击阶段，就在敌方单位解决其攻击后。",
+        "target": "One 阿斯塔特修会 载具 unit from 你的军队 that was reduced to Below Half-strength as a result of the attacking unit’s attacks.",
         "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that 敌方单位 when doing so, and can only do so if that 敌方单位 is an eligible target.",
-        "source": "Wahapedia CSV / 铁暴矛头",
+        "source": "Wahapedia 数据/Ironstorm Spearhead",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "铁暴矛头 – 英雄事迹战略",
+          "铁风暴先锋–史诗契约策略",
           "铁暴矛头"
         ]
       },
       {
         "id": "strat-000010681005",
-        "name": "AUTO‑SENSE COORDINATION",
+        "name": "自动感应协调",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
-        "timing": "Your Shooting phase or the Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that has not been 被选中进行射击 or fight this phase.",
-        "effect": "Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. 直到本阶段结束，你单位中模型装备的武器 have this ability in a turn in which they disembarked from a Drop Pod or while targeting an 敌方单位 within 12\".",
-        "source": "Wahapedia CSV / 轨道突击部队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "你的射击阶段或战斗阶段。",
+        "target": "One 阿斯塔特修会 unit from your army that has not been selected to shoot or fight this phase.",
+        "effect": "Select the [致命命中] or [连击 1] ability. 直到本阶段结束，weapons equipped by models in 你的单位 have this ability in a turn in which they disembarked from a Drop Pod or while targeting an 敌方单位 within 12\".",
+        "source": "Wahapedia 数据/轨道突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "轨道突击部队 – 战斗战术战略",
+          "轨道突击部队–战斗策略策略",
           "轨道突击部队"
         ]
       },
       {
         "id": "strat-000010681003",
-        "name": "TACTICAL DECAPITATION",
+        "name": "战术斩首",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
-        "timing": "Your Shooting phase or the Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that has not been 被选中进行射击 or fight this phase.",
-        "effect": "直到本阶段结束，你单位中模型装备的武器 拥有 [PRECISION] ability and each time a model in 你的单位 makes an attack that targets a CHARACTER unit, 命中掷骰结果 +1.",
-        "source": "Wahapedia CSV / 轨道突击部队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "你的射击阶段或战斗阶段。",
+        "target": "One 阿斯塔特修会 unit from your army that has not been selected to shoot or fight this phase.",
+        "effect": "直到本阶段结束，weapons equipped by models in 你的单位 have the [精准] ability and each time a model in 你的单位 makes an attack that targets a 角色 unit, add 1 to the 命中掷骰.",
+        "source": "Wahapedia 数据/轨道突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "轨道突击部队 – 战斗战术战略",
+          "轨道突击部队–战斗策略策略",
           "轨道突击部队"
         ]
       },
       {
         "id": "strat-000010681006",
-        "name": "BLIND SCREEN",
+        "name": "遮蔽屏幕",
         "cp_cost": 1,
         "phases": [
           "shooting"
         ],
-        "timing": "Your opponent’s Shooting phase, just after an 敌方单位 has selected its targets.",
-        "target": "One ADEPTUS ASTARTES unit (excluding Titanic units) 来自你军队的 that was 被选为目标 of one or more of the attacking unit’s attacks and one friendly Adeptus Astartes Smoke Vehicle or Drop Pod unit within 9\" of it.",
-        "effect": "直到本阶段结束，你单位中的模型s 拥有 Stealth ability and each time a 远程攻击 targets one of 你的单位s, 该单位中的模型 拥有 掩体收益 against that attack.",
-        "source": "Wahapedia CSV / 轨道突击部队",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "敌方单位选择目标后，你的对手的射击阶段。",
+        "target": "One 阿斯塔特修会 unit (excluding 巨型 units) from 你的军队 that was 被选为目标 of one or more of the attacking unit’s attacks and one friendly 阿斯塔特修会 Smoke 载具 or Drop Pod unit within 9\" of it.",
+        "effect": "直到本阶段结束，models in 你的单位s have the 隐蔽 ability and each time a 远程攻击 targets one of 你的单位s, 该单位中的模型 have the 掩体增益 against that attack.",
+        "source": "Wahapedia 数据/轨道突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "轨道突击部队 – 战略计策战略",
+          "轨道突击部队–战略策略",
           "轨道突击部队"
         ]
       },
       {
         "id": "strat-000010681004",
-        "name": "SHOCK ONSLAUGHT",
+        "name": "冲击猛攻",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that has not been 被选中进行近战 this phase.",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段。",
+        "target": "来自您的军队的一个阿斯塔特修会单位尚未被选中参与此阶段的战斗。",
         "effect": "直到本阶段结束，each time a model in 你的单位 makes a Pile-in or Consolidation move, it can move up to 6\" instead of up to 3\".",
-        "source": "Wahapedia CSV / 轨道突击部队",
+        "source": "Wahapedia 数据/轨道突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "轨道突击部队 – 战略计策战略",
+          "轨道突击部队–战略策略",
           "轨道突击部队"
         ]
       },
       {
         "id": "strat-000010681007",
-        "name": "ONWARD FOR THE EMPEROR",
+        "name": "向皇帝前进",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "End of your opponent’s Fight phase.",
-        "target": "One Adeptus Astartes Infantry unit 来自你军队的 that was not set up on the battlefield this turn and one friendly Transport it is able to embark within.",
-        "effect": "If your ADEPTUS ASTARTES unit is wholly within 6\" of that TRANSPORT , it can embark within it.",
-        "source": "Wahapedia CSV / 轨道突击部队",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "结束对手的战斗阶段。",
+        "target": "One 阿斯塔特修会 步兵 unit from 你的军队 that was not set up on the battlefield this turn and one friendly 运输 it is able to embark within.",
+        "effect": "如果您的阿斯塔特修会装置完全位于该运输工具的6英寸范围内，它可以在其中登船。",
+        "source": "Wahapedia 数据/轨道突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "轨道突击部队 – 战略计策战略",
+          "轨道突击部队–战略策略",
           "轨道突击部队"
         ]
       },
       {
         "id": "strat-000010681002",
-        "name": "SUPPRESSION STRAFING",
+        "name": "压制扫射",
         "cp_cost": 1,
         "phases": [
           "command"
         ],
-        "timing": "Command phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的.",
-        "effect": "Select one 敌方单位 visible to and within 18\" of 你的单位. That 敌方单位 takes a 战斗冲击测试. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that 敌方单位 is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, 命中掷骰结果 -1.",
-        "source": "Wahapedia CSV / 轨道突击部队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "命令阶段。",
+        "target": "一个来自您军队的阿斯塔特修会单位。",
+        "effect": "Select one 敌方单位 visible to and within 18\" of 你的单位. That 敌方单位 takes a 战斗冲击 test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that 敌方单位 is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the 命中掷骰.",
+        "source": "Wahapedia 数据/轨道突击部队",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "轨道突击部队 – 战略计策战略",
+          "轨道突击部队–战略策略",
           "轨道突击部队"
         ]
       },
       {
         "id": "strat-000008487006",
-        "name": "RIDE HARD, RIDE FAST",
+        "name": "拼车出行，快速出行",
         "cp_cost": 1,
         "phases": [
           "shooting"
         ],
-        "timing": "Your opponent’s Shooting phase, just after an 敌方单位 has selected its targets.",
-        "target": "One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit 来自你军队的 其被选为该攻击单位一次或多次攻击的目标。",
-        "effect": "直到本阶段结束，each time an attack targets 你的单位, 命中掷骰结果 -1 and 致伤掷骰结果 -1.",
-        "source": "Wahapedia CSV / 风暴枪骑特遣队",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "敌方单位选择目标后，你的对手的射击阶段。",
+        "target": "One 阿斯塔特修会 MOUNTED or 阿斯塔特修会 飞行 载具 unit from 你的军队 that was 被选为目标 of one or more of the attacking unit’s attacks.",
+        "effect": "直到本阶段结束，each time an attack targets 你的单位, subtract 1 from the 命中掷骰 and subtract 1 from the 致伤掷骰.",
+        "source": "Wahapedia 数据/Storm突刺专责小组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "风暴枪骑特遣队 – 战斗战术战略",
+          "风暴之矛特遣部队–战斗战术策略",
           "风暴枪骑特遣队"
         ]
       },
       {
         "id": "strat-000008487002",
-        "name": "ARMOUR OF CONTEMPT",
+        "name": "蔑视的盔甲",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "在对手的射击阶段或近战阶段，敌方单位刚刚选择其目标后。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其被选为该攻击单位一次或多次攻击的目标。",
-        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, 使该攻击的护甲穿透属性恶化 1。",
-        "source": "Wahapedia CSV / 风暴枪骑特遣队",
+        "target": "One 阿斯塔特修会 unit from 你的军队 that was 被选为目标 of one or more of the attacking unit’s attacks.",
+        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, worsen the 护甲穿透属性 of that attack by 1.",
+        "source": "Wahapedia 数据/Storm突刺专责小组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "风暴枪骑特遣队 – 战斗战术战略",
+          "风暴之矛特遣部队–战斗战术策略",
           "风暴枪骑特遣队"
         ]
       },
@@ -21345,396 +23187,440 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
-        "timing": "你的射击阶段。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其在本阶段尚未被选中进行射击。",
-        "effect": "直到本阶段结束，ranged 你单位中模型装备的武器 拥有 [ASSAULT] 能力. 如果该武器已拥有此能力，until the end of the phase, that weapon 拥有 [SUSTAINED HITS 1] ability as well.",
-        "source": "Wahapedia CSV / 风暴枪骑特遣队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "<g id=\"1\">时间： </g>您的拍摄阶段。",
+        "target": "来自您的军队的一个阿斯塔特修会单位尚未被选中拍摄此阶段。",
+        "effect": "直到本阶段结束，远程武器 equipped by models in 你的单位 have the [突击] ability. 如果该武器已拥有此能力，until the end of the phase, that weapon has the [连击 1] ability as well.",
+        "source": "Wahapedia 数据/Storm突刺专责小组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "风暴枪骑特遣队 – 战斗战术战略",
+          "风暴之矛特遣部队–战斗战术策略",
           "风暴枪骑特遣队"
         ]
       },
       {
         "id": "strat-000008487005",
-        "name": "SHOCK ASSAULT",
+        "name": "冲击突击",
         "cp_cost": 1,
         "phases": [
           "charge"
         ],
-        "timing": "你的冲锋阶段。",
-        "target": "One ADEPTUS ASTARTES MOUNTED unit 来自你军队的 that has not declared a charge this phase.",
-        "effect": "直到本回合结束，you can re-roll 冲锋掷骰 made for 你的单位 and 近战武器 equipped by 该单位中的模型 拥有 [LANCE] ability.",
-        "source": "Wahapedia CSV / 风暴枪骑特遣队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "您的充电阶段。",
+        "target": "一个来自您的军队的阿斯塔特修会坐骑单位，尚未在此阶段宣布冲锋。",
+        "effect": "直到本回合结束，you can re-roll 冲锋掷骰 made for 你的单位 and 近战武器 equipped by 该单位中的模型 have the [突刺] ability.",
+        "source": "Wahapedia 数据/Storm突刺专责小组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "风暴枪骑特遣队 – 战斗战术战略",
+          "风暴之矛特遣部队–战斗战术策略",
           "风暴枪骑特遣队"
         ]
       },
       {
         "id": "strat-000008487007",
-        "name": "WIND-SWIFT EVASION",
+        "name": "WIND-SWIFT规避",
         "cp_cost": 1,
         "phases": [
           "movement"
         ],
-        "timing": "Your opponent’s Movement phase, just after an 敌方单位 ends a Normal, Advance or Fall Back move.",
-        "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit 来自你军队的 that is within 9\" of that 敌方单位.",
-        "effect": "Your unit can make a 普通移动 of up to 6\".",
-        "source": "Wahapedia CSV / 风暴枪骑特遣队",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "在对手的移动阶段，敌方单位刚完成一次普通移动、Advance 或 Fallback 后。",
+        "target": "你的军队中的一个阿德普图斯阿斯塔特步兵或阿德普图斯阿斯塔特骑兵单位，距离该敌方单位9英寸以内。",
+        "effect": "您的单位可以进行最多6英寸的正常移动。",
+        "source": "Wahapedia 数据/Storm突刺专责小组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "风暴枪骑特遣队 – 战略计策战略",
+          "Storm突刺 Task Force –战略策略策略",
           "风暴枪骑特遣队"
         ]
       },
       {
         "id": "strat-000008487004",
-        "name": "FULL THROTTLE",
+        "name": "满油门",
         "cp_cost": 2,
         "phases": [
           "movement"
         ],
-        "timing": "Your Movement phase.",
-        "target": "One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES VEHICLE unit (excluding WALKERS) 来自你军队的.",
-        "effect": "直到本阶段结束，if 你的单位 Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the 移动属性 of 你单位中的模型, or 9\" instead if 你的单位 is MOUNTED.",
-        "source": "Wahapedia CSV / 风暴枪骑特遣队",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "您的运动阶段。",
+        "target": "One 阿斯塔特修会 MOUNTED or 阿斯塔特修会 载具 unit (excluding WALKERS) from your army.",
+        "effect": "直到本阶段结束，if 你的单位 Advances, do not make an Advance 掷骰 for it. Instead, until the end of the phase, add 6\" to the 移动属性 of models in 你的单位, or 9\" instead if 你的单位 is MOUNTED.",
+        "source": "Wahapedia 数据/Storm突刺专责小组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "风暴枪骑特遣队 – 装备战略",
+          "风暴之矛特遣部队–战装策略",
           "风暴枪骑特遣队"
         ]
       },
       {
         "id": "strat-000008491005",
-        "name": "STRIKE FROM THE SHADOWS",
+        "name": "阴影一击",
         "cp_cost": 1,
         "phases": [
           "shooting"
         ],
-        "timing": "你的射击阶段。",
-        "target": "One ADEPTUS ASTARTES INFANTRY unit 来自你军队的 其在本阶段尚未被选中进行射击。",
-        "effect": "直到本阶段结束，each time a model in 你的单位 makes a 远程攻击 that targets an 敌方单位 that is more than 12\" away, improve the 弹道技术 and 护甲穿透属性s of that attack by 1. If one or more 敌方模型s are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model’s unit must take a 战斗冲击测试.",
-        "source": "Wahapedia CSV / 先锋矛头",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "<g id=\"1\">时间： </g>您的拍摄阶段。",
+        "target": "One 阿斯塔特修会 步兵 unit from 你的军队 that has not been 被选中进行射击 this phase.",
+        "effect": "直到本阶段结束，each time a model in 你的单位 makes a 远程攻击 that targets an 敌方单位 that is more than 12\" away, improve the 弹道技术 and 护甲穿透属性s of that attack by 1. If one or more 敌方模型s are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model’s unit must take a 战斗冲击 test.",
+        "source": "Wahapedia 数据/Vanguard Spearhead",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "先锋矛头 – 战斗战术战略",
+          "先锋先锋–战术策略",
           "先锋矛头"
         ]
       },
       {
         "id": "strat-000008491004",
-        "name": "SURGICAL STRIKES",
+        "name": "手术打击",
         "cp_cost": 2,
         "phases": [
           "fight"
         ],
-        "timing": "Fight phase.",
-        "target": "One ADEPTUS ASTARTES INFANTRY unit 来自你军队的 that has not been 被选中进行近战 this phase.",
-        "effect": "直到本阶段结束，melee 你单位中模型装备的武器 拥有 [PRECISION] ability.",
-        "source": "Wahapedia CSV / 先锋矛头",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段。",
+        "target": "One 阿斯塔特修会 步兵 unit from 你的军队 that has not been 被选中进行近战 this phase.",
+        "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [精准] ability.",
+        "source": "Wahapedia 数据/Vanguard Spearhead",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "先锋矛头 – 战斗战术战略",
+          "先锋先锋–战术策略",
           "先锋矛头"
         ]
       },
       {
         "id": "strat-000008491003",
-        "name": "ARMOUR OF CONTEMPT",
+        "name": "蔑视的盔甲",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "在对手的射击阶段或近战阶段，敌方单位刚刚选择其目标后。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其被选为该攻击单位一次或多次攻击的目标。",
-        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, 使该攻击的护甲穿透属性恶化 1。",
-        "source": "Wahapedia CSV / 先锋矛头",
+        "target": "One 阿斯塔特修会 unit from 你的军队 that was 被选为目标 of one or more of the attacking unit’s attacks.",
+        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, worsen the 护甲穿透属性 of that attack by 1.",
+        "source": "Wahapedia 数据/Vanguard Spearhead",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "先锋矛头 – 战斗战术战略",
+          "先锋先锋–战术策略",
           "先锋矛头"
         ]
       },
       {
         "id": "strat-000008491007",
-        "name": "GUERRILLA TACTICS",
+        "name": "游击战术",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "End of your opponent’s Fight phase.",
-        "target": "Up to two PHOBOS and/or SCOUT SQUAD units 来自你军队的, or one other ADEPTUS ASTARTES INFANTRY unit 来自你军队的.",
-        "effect": "Remove those units from the battlefield and place them into Strategic Reserves.",
-        "source": "Wahapedia CSV / 先锋矛头",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "结束对手的战斗阶段。",
+        "target": "您的军队中最多两个火卫一和/或侦察小队单位，或者您的军队中的另一个阿斯塔特修会步兵单位。",
+        "effect": "将这些单位从战场上移除，并将其放置到战略储备中。",
+        "source": "Wahapedia 数据/Vanguard Spearhead",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "先锋矛头 – 战略计策战略",
+          "先锋先锋–战略策略",
           "先锋矛头"
         ]
       },
       {
         "id": "strat-000008491006",
-        "name": "CALCULATED FEINT",
+        "name": "计算的FEINT",
         "cp_cost": 1,
         "phases": [
           "charge"
         ],
-        "timing": "Your opponent’s Charge phase, just after an 敌方单位 声明冲锋.",
-        "target": "One ADEPTUS ASTARTES INFANTRY unit 来自你军队的 that was selected as a target of that charge.",
-        "effect": "Your unit can make a 普通移动 of up to D6\", or up to 6\" instead if it is a PHOBOS or ScouT SQUAD unit.",
-        "source": "Wahapedia CSV / 先锋矛头",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "敌方单位宣布冲锋后立即进入对手的冲锋阶段。",
+        "target": "从您的军队中选择了一个阿斯塔特修会步兵单位作为该冲锋的目标。",
+        "effect": "你的单位可以进行最多D6英寸的普通移动，如果是PHOBOS或ScouT小队单位，则可以进行最多6英寸的普通移动。",
+        "source": "Wahapedia 数据/Vanguard Spearhead",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "先锋矛头 – 战略计策战略",
+          "先锋先锋–战略策略",
           "先锋矛头"
         ]
       },
       {
         "id": "strat-000008491002",
-        "name": "A DEADLY PRIZE",
+        "name": "致命奖品",
         "cp_cost": 1,
         "phases": [
           "command"
         ],
-        "timing": "Start of the Command phase.",
-        "target": "One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit 来自你军队的 位于一个目标标记范围内 you control.",
-        "effect": "That objective marker is said to be Sabotaged, and remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn. While an objective marker is Sabotaged and under your control, each time an 敌方单位 ends a Normal, Advance, Fall Back or Charge move within range of that objective marker, roll one D6: on a 2+, that 敌方单位 suffers D3 致命伤.",
-        "source": "Wahapedia CSV / 先锋矛头",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "开始\"命令\"阶段。",
+        "target": "One 阿斯塔特修会 步兵 or 阿斯塔特修会 MOUNTED unit from 你的军队 位于一个目标标记范围内 you control.",
+        "effect": "That objective marker is said to be Sabotaged, and remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn. While an objective marker is Sabotaged and under your control, each time an 敌方单位 ends a Normal, Advance, Fallback or Charge move within range of that objective marker, roll one D6: on a 2+, that 敌方单位 suffers D3 致命伤.",
+        "source": "Wahapedia 数据/Vanguard Spearhead",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "先锋矛头 – 装备战略",
+          "先锋先锋–战装策略",
           "先锋矛头"
         ]
       },
       {
         "id": "strat-000010397003",
-        "name": "LITANIES OF PURGATION",
+        "name": "LITANIES of Purgation",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that has not been 被选中进行近战 this phase.",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段。",
+        "target": "来自您的军队的一个阿斯塔特修会单位尚未被选中参与此阶段的战斗。",
         "effect": "直到本阶段结束，each time a model in 你的单位 makes an attack, if that model’s unit is within range of one or more objective markers or the target unit is within range of one or more objective markers, improve the 护甲穿透属性 of that attack by 1.",
-        "source": "Wahapedia CSV / 昭雪特遣队",
+        "source": "Wahapedia 数据/辩护工作组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "昭雪特遣队 – 战斗战术战略",
+          "辩护特遣部队–战斗策略策略",
           "昭雪特遣队"
         ]
       },
       {
         "id": "strat-000010397004",
-        "name": "SPOOR OF THE UNHOLY",
+        "name": "邪恶斯普尔",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
-        "timing": "Your Shooting phase or the Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that has not been 被选中进行射击 or fight this phase.",
-        "effect": "直到本阶段结束，ranged 你单位中模型装备的武器 拥有 [IGNORES COVER] ability and each time a model in 你的单位 makes an attack, you can ignore any or all modifiers to the following: that attack’s 弹道技术 or 武器技术 characteristic; the 命中掷骰.",
-        "source": "Wahapedia CSV / 昭雪特遣队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "你的射击阶段或战斗阶段。",
+        "target": "One 阿斯塔特修会 unit from your army that has not been selected to shoot or fight this phase.",
+        "effect": "直到本阶段结束，远程武器 equipped by models in 你的单位 have the [无视掩体] ability and each time a model in 你的单位 makes an attack, you can ignore any or all modifiers to the following: that attack’s 弹道技术 or 武器技术 characteristic; the 命中掷骰.",
+        "source": "Wahapedia 数据/辩护工作组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "昭雪特遣队 – 战斗战术战略",
+          "辩护特遣部队–战斗策略策略",
           "昭雪特遣队"
         ]
       },
       {
         "id": "strat-000010397002",
-        "name": "REFUSAL TO YIELD",
+        "name": "拒绝屈服",
         "cp_cost": 1,
         "phases": [
           "any"
         ],
-        "timing": "Any phase, just after an Ancient model 来自你军队的 is destroyed.",
-        "target": "That ANCIENT model. You can use this Stratagem on that model even though it was just destroyed.",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "任何阶段，就在你军队的古代模型被摧毁之后。",
+        "target": "那个古老的模型，即使刚刚被摧毁，你也可以在那个模型上使用这个策略。",
         "effect": "At the end of the phase, set your model back up on the battlefield, as close as possible to where it was destroyed and not 位于以下目标的接战范围内：one or more 敌方单位s, with its full wounds remaining.",
-        "source": "Wahapedia CSV / 昭雪特遣队",
+        "source": "Wahapedia 数据/辩护工作组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "昭雪特遣队 – 英雄事迹战略",
+          "辩护特遣部队–史诗契约策略",
           "昭雪特遣队"
         ]
       },
       {
         "id": "strat-000010397005",
-        "name": "RECLAIM OUR HONOUR!",
+        "name": "夺回我们的荣誉！",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
-        "timing": "Your opponent’s Shooting phase or the Fight phase, just after an 敌方单位 destroys an Ancient model 来自你军队的 that has not been targeted with the Refusal to Yield Stratagem this phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 visible to that 敌方单位.",
-        "effect": "直到战斗结束，each time an ADEPTUS ASTARTES model 来自你军队的 makes an attack that targets that 敌方单位, 命中掷骰结果 +1.",
-        "source": "Wahapedia CSV / 昭雪特遣队",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Your opponent’s Shooting phase or the Fight phase, just after an 敌方单位 destroys an Ancient model from 你的军队 that has not been targeted with the Refusal to Yield Stratagem this phase.",
+        "target": "你的军队中的一个阿斯塔特修会单位对该敌方单位可见。",
+        "effect": "直到战斗结束，each time an 阿斯塔特修会 model from 你的军队 makes an attack that targets that 敌方单位, add 1 to the 命中掷骰.",
+        "source": "Wahapedia 数据/辩护工作组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "昭雪特遣队 – 战略计策战略",
+          "辩护工作组–战略策略策略",
           "昭雪特遣队"
         ]
       },
       {
         "id": "strat-000010397006",
-        "name": "RECITATION OF THE REVERED",
+        "name": "尊者朗诵",
         "cp_cost": 1,
         "phases": [
           "shooting"
         ],
-        "timing": "Your opponent’s Shooting phase, just after an 敌方单位 has selected its targets.",
-        "target": "One Ancient unit 来自你军队的 其被选为该攻击单位一次或多次攻击的目标。",
-        "effect": "直到本阶段结束，each time an attack targets 你的单位, 命中掷骰结果 -1.",
-        "source": "Wahapedia CSV / 昭雪特遣队",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "敌方单位选择目标后，你的对手的射击阶段。",
+        "target": "你军队中的一个被选为攻击单位的一个或多个攻击目标的远古单位。",
+        "effect": "在阶段结束前，每次攻击以你的单位为目标时，从击球次数中减1。",
+        "source": "Wahapedia 数据/辩护工作组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "昭雪特遣队 – 战略计策战略",
+          "辩护工作组–战略策略策略",
           "昭雪特遣队"
         ]
       },
       {
         "id": "strat-000010397007",
-        "name": "PERFERVID INTERVENTION",
+        "name": "PERFERVID干预",
         "cp_cost": 2,
         "phases": [
           "charge"
         ],
-        "timing": "End of your opponent’s Charge phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that is within 6\" of one or more 敌方单位s and would be eligible to declare a charge against one or more of those 敌方单位s if it were your Charge phase.",
-        "effect": "Your unit now 声明冲锋 that only targets one or more of those 敌方单位s, and you resolve that charge.",
-        "source": "Wahapedia CSV / 昭雪特遣队",
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "对手的充能阶段结束。",
+        "target": "One 阿斯塔特修会 unit from 你的军队 that is within 6\" of one or more 敌方单位s and would be eligible to 声明冲锋 against one or more of those 敌方单位s if it were your Charge phase.",
+        "effect": "你的单位现在宣布一个只针对一个或多个敌方单位的冲锋，你解决了这个冲锋。",
+        "source": "Wahapedia 数据/辩护工作组",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "昭雪特遣队 – 战略计策战略",
+          "辩护工作组–战略策略策略",
           "昭雪特遣队"
         ]
       },
       {
         "id": "strat-000009844005",
-        "name": "BRUTE FERVOUR",
+        "name": "蛮狂热",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that has not been 被选中进行近战 this phase.",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段。",
+        "target": "来自您的军队的一个阿斯塔特修会单位尚未被选中参与此阶段的战斗。",
         "effect": "直到本阶段结束，each time a model in 你的单位 makes an attack, re-roll a 命中掷骰 of 1 and you can ignore any or all modifiers to the following: that attack’s 武器技术 characteristic; the 命中掷骰; the 致伤掷骰.",
-        "source": "Wahapedia CSV / 愤怒巡征",
+        "source": "Wahapedia 数据/愤怒游行",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "愤怒巡征 – 战斗战术战略",
+          "愤怒游行–战斗策略策略",
           "愤怒巡征"
         ]
       },
       {
         "id": "strat-000009844004",
-        "name": "CASTIGATE THE DEMAGOGUES",
+        "name": "抨击煽动者",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that has not been 被选中进行近战 this phase.",
-        "effect": "直到本阶段结束，melee 你单位中模型装备的武器 拥有 [PRECISION] ability.",
-        "source": "Wahapedia CSV / 愤怒巡征",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段。",
+        "target": "来自您的军队的一个阿斯塔特修会单位尚未被选中参与此阶段的战斗。",
+        "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [精准] ability.",
+        "source": "Wahapedia 数据/愤怒游行",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "愤怒巡征 – 战斗战术战略",
+          "愤怒游行–战斗策略策略",
           "愤怒巡征"
         ]
       },
       {
         "id": "strat-000009844002",
-        "name": "FUELLED BY FAITH",
+        "name": "以信心为动力",
         "cp_cost": 1,
         "phases": [
           "any"
         ],
-        "timing": "Any phase, just after a 致命伤 is allocated to an ADEPTUS ASTARTES unit 来自你军队的.",
-        "target": "That ADEPTUS ASTARTES unit.",
-        "effect": "直到本阶段结束，你单位中的模型 拥有 Feel No Pain 5+ ability against 致命伤.",
-        "source": "Wahapedia CSV / 愤怒巡征",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "在将致命伤分配给您军队的阿斯塔特修会单位之后的任何阶段。",
+        "target": "那个阿斯塔特修会单元。",
+        "effect": "Until the end of the phase, models in your unit have the 无视伤害 5+ ability against mortal wounds.",
+        "source": "Wahapedia 数据/愤怒游行",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "愤怒巡征 – 战斗战术战略",
+          "愤怒游行–战斗策略策略",
           "愤怒巡征"
         ]
       },
       {
         "id": "strat-000009844003",
-        "name": "ARMOUR OF CONTEMPT",
+        "name": "蔑视的盔甲",
         "cp_cost": 1,
         "phases": [
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "在对手的射击阶段或近战阶段，敌方单位刚刚选择其目标后。",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 其被选为该攻击单位一次或多次攻击的目标。",
-        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, 使该攻击的护甲穿透属性恶化 1。",
-        "source": "Wahapedia CSV / 愤怒巡征",
+        "target": "One 阿斯塔特修会 unit from 你的军队 that was 被选为目标 of one or more of the attacking unit’s attacks.",
+        "effect": "Until the attacking unit has finished making its attacks, each time an attack targets 你的单位, worsen the 护甲穿透属性 of that attack by 1.",
+        "source": "Wahapedia 数据/愤怒游行",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "愤怒巡征 – 战斗战术战略",
+          "愤怒游行–战斗策略策略",
           "愤怒巡征"
         ]
       },
       {
         "id": "strat-000009844007",
-        "name": "VOICE OF DEVOTION",
+        "name": "奉献之声",
         "cp_cost": 1,
         "phases": [
           "command"
         ],
-        "timing": "你的指挥阶段。",
-        "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit 来自你军队的.",
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "<g id=\"1\">时间： </g>您的命令阶段。",
+        "target": "你军队中的一个阿德普图斯阿斯塔特步兵或阿德普图斯阿斯塔特骑兵单位。",
         "effect": "Select the Chorus of Relentless Hate, Rite of Perfervid Wrath or Chant of Deathless Devotion Litany. 直到本战斗轮结束，that Litany is active for 你的单位 instead of any other Litany that is active for 你的军队.",
-        "source": "Wahapedia CSV / 愤怒巡征",
+        "source": "Wahapedia 数据/愤怒游行",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "愤怒巡征 – 战略计策战略",
+          "愤怒的游行–战略策略策略",
           "愤怒巡征"
         ]
       },
       {
         "id": "strat-000009844006",
-        "name": "RELENTLESS MOMENTUM",
+        "name": "无情的动力",
         "cp_cost": 1,
         "phases": [
           "fight"
         ],
-        "timing": "Fight phase.",
-        "target": "One ADEPTUS ASTARTES unit 来自你军队的 that has not been 被选中进行近战 this phase and is 位于以下目标的接战范围内：one or more 敌方单位s.",
-        "effect": "直到本阶段结束，when determining which 你单位中的模型 are eligible to fight, any models in it that are within 3\" of one or more 敌方模型s are eligible to fight. When resolving those attacks, such models can target one of those 敌方单位s that is within 3\" of them and 位于以下目标的接战范围内：their unit.",
-        "source": "Wahapedia CSV / 愤怒巡征",
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "战斗阶段。",
+        "target": "One 阿斯塔特修会 unit from 你的军队 that has not been 被选中进行近战 this phase and is 位于以下目标的接战范围内：one or more 敌方单位s.",
+        "effect": "直到本阶段结束，when determining which models in 你的单位 are eligible to fight, any models in it that are within 3\" of one or more 敌方模型s are eligible to fight. When resolving those attacks, such models can target one of those 敌方单位s that is within 3\" of them and 位于以下目标的接战范围内：their unit.",
+        "source": "Wahapedia 数据/愤怒游行",
         "once_per": "phase",
         "priority": 4,
         "tags": [
-          "愤怒巡征 – 战略计策战略",
+          "愤怒的游行–战略策略策略",
           "愤怒巡征"
         ]
       }
@@ -21746,10 +23632,10 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "分遣队规则 - 格拉迪乌斯特遣队",
+        "timing": "分离规则-嘉迪斯特遣部队",
         "type": "detachment",
-        "summary": "在你的指挥阶段开始时，you can select one of the Combat Doctrines listed below. 直到你下个指挥阶段开始时，that Combat Doctrine is active and its effects apply to all ADEPTUS ASTARTES units 来自你军队的. You can only select each Combat Doctrine once per battle. Devastator Doctrine\nThe Codex Astartes details the strategic value of overwhelming firepower applied to key targets while advancing into position to eliminate threats.\nThis unit is eligible to shoot in a turn in which it Advance.\nTactical Doctrine\nAs the warring armies close upon one another and vicious fire-fights erupt, the Codex lays out strategies for swiftly seizing the initiative and combining versatility with firepower.\nThis unit is eligible to shoot and declare a charge in a turn in which it Fallback.\nAssault Doctrine\nThe Codex Astartes leaves no doubt that the killing blow in most engagements must be delivered with a decisive close-quarters strike. It presents plentiful tactical means to achieve this end.\nThis unit is eligible to declare a charge in a turn in which it Advance.",
-        "source": "Wahapedia CSV / 格拉迪乌斯特遣队",
+        "summary": "在你的指挥阶段开始时，you can select one of the 战斗条令 listed below. 直到你下个指挥阶段开始时，that Combat Doctrine is active and its effects apply to all 阿斯塔特修会 units from 你的军队. You can only select each Combat Doctrine once per battle. Devastator Doctrine\nThe Codex Astartes details the strategic value of overwhelming firepower applied to key targets while advancing into position to eliminate threats.\nThis unit is eligible to shoot in a turn in which it Advance.\nTactical Doctrine\nAs the warring armies close upon one another and vicious fire-fights erupt, the Codex lays out strategies for swiftly seizing the initiative and combining versatility with firepower.\nThis unit is eligible to shoot and 声明冲锋 in a turn in which it Fallback.\nAssault Doctrine\nThe Codex Astartes leaves no doubt that the killing blow in most engagements must be delivered with a decisive close-quarters strike. It presents plentiful tactical means to achieve this end.\nThis unit is eligible to 声明冲锋 in a turn in which it Advance.",
+        "source": "Wahapedia 数据/Gladius特别工作组",
         "priority": 5
       },
       {
@@ -21758,10 +23644,10 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "分遣队规则 - 铁砧攻城特遣队",
+        "timing": "分离规则-铁砧攻城部队",
         "type": "detachment",
-        "summary": "Ranged weapons equipped by ADEPTUS ASTARTES models 来自你军队的 拥有 [HEAVY] 能力. 如果该武器已拥有此能力，each time an attack is made with that weapon, 若攻击模型所在单位本回合保持静止，致伤掷骰结果 +1.",
-        "source": "Wahapedia CSV / 铁砧攻城特遣队",
+        "summary": "Ranged weapons equipped by 阿斯塔特修会 models from 你的军队 have the [重型] ability. 如果该武器已拥有此能力，each time an attack is made with that weapon, 若攻击模型所在单位本回合保持静止，add 1 to the 致伤掷骰.",
+        "source": "Wahapedia 数据/铁砧攻城部队",
         "priority": 5
       },
       {
@@ -21770,10 +23656,10 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "分遣队规则 - 铁暴矛头",
+        "timing": "分离规则-铁风暴先锋",
         "type": "detachment",
-        "summary": "Once per phase for each ADEPTUS ASTARTES unit in 你的军队, you can re-roll one 命中掷骰, one 致伤掷骰 or one 伤害掷骰 made for a model in that unit.",
-        "source": "Wahapedia CSV / 铁暴矛头",
+        "summary": "Once per phase for each 阿斯塔特修会 unit in 你的军队, you can re-roll one 命中掷骰, one 致伤掷骰 or one 伤害掷骰 made for a model in that unit.",
+        "source": "Wahapedia 数据/Ironstorm Spearhead",
         "priority": 5
       },
       {
@@ -21782,10 +23668,10 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "分遣队规则 - 烈焰风暴突击部队",
+        "timing": "分离规则-烈焰风暴突击部队",
         "type": "detachment",
-        "summary": "Ranged weapons equipped by ADEPTUS ASTARTES models 来自你军队的 拥有 [ASSAULT] 能力, and each time an attack made with such a weapon targets a unit within 12\", add 1 to the 力量属性 of that attack.",
-        "source": "Wahapedia CSV / 烈焰风暴突击部队",
+        "summary": "Ranged weapons equipped by 阿斯塔特修会 models from 你的军队 have the [突击] ability, and each time an attack made with such a weapon targets a unit within 12\", add 1 to the 力量属性 of that attack.",
+        "source": "Wahapedia 数据/Firestorm突击部队",
         "priority": 5
       },
       {
@@ -21794,10 +23680,10 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "分遣队规则 - 风暴枪骑特遣队",
+        "timing": "分离规则-风暴之矛特遣部队",
         "type": "detachment",
-        "summary": "ADEPTUS ASTARTES units 来自你军队的 are eligible to declare a charge in a turn in which they Advance or Fallback.",
-        "source": "Wahapedia CSV / 风暴枪骑特遣队",
+        "summary": "来自您军队的阿斯塔特修会单位有资格在进攻或后退的回合中宣布冲锋。",
+        "source": "Wahapedia 数据/Storm突刺专责小组",
         "priority": 5
       },
       {
@@ -21806,10 +23692,10 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "分遣队规则 - 先锋矛头",
+        "timing": "分离规则-先锋先锋",
         "type": "detachment",
-        "summary": "每次有远程攻击以an ADEPTUS ASTARTES unit 来自你军队的, unless the attacking model is within 12\", 命中掷骰结果 -1 and the target 拥有 掩体收益 against that attack.",
-        "source": "Wahapedia CSV / 先锋矛头",
+        "summary": "每次有远程攻击以an 阿斯塔特修会 unit from 你的军队, unless the attacking model is within 12\", subtract 1 from the 命中掷骰 and the target has the 掩体增益 against that attack.",
+        "source": "Wahapedia 数据/Vanguard Spearhead",
         "priority": 5
       },
       {
@@ -21818,10 +23704,10 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "分遣队规则 - 愤怒巡征",
+        "timing": "分离规则-愤怒游行",
         "type": "detachment",
-        "summary": "在战斗轮开始时，you can select one of the Litanies listed below. If you do, until the end of the battle round, that Litany is active and its effects apply to all Adeptus Astartes Infantry and Adeptus Astartes Mounted units 来自你军队的.\nChorus of Relentless Hate\nAdd 2\" to the 移动属性 of models in 该单位 and add 1 to Advance 掷骰 made for it.\nRite of Perfervid Wrath\nAdd 1 to the 力量属性 of melee 本单位模型装备的武器.\nCHANT OF DEATHLESS DEVOTION\nModels in 该单位 have a 5+ invulnerable save against 远程攻击s.\n限制\nYour army can include 黑色圣堂 units, but it cannot include ADEPTUS ASTARTES units drawn from any other Chapter.",
-        "source": "Wahapedia CSV / 愤怒巡征",
+        "summary": "在战斗轮开始时，you can select one of the Litanies listed below. If you do, until the end of the battle round, that Litany is active and its effects apply to all 阿斯塔特修会 步兵 and 阿斯塔特修会 骑乘 units from 你的军队.\nChorus of Relentless Hate\nAdd 2\" to the 移动属性 of models in 该单位 and add 1 to Advance 掷骰 made for it.\nRite of Perfervid Wrath\nAdd 1 to the 力量属性 of 近战武器 equipped by models in 该单位.\nCHANT OF DEATHLESS DEVOTION\nModels in 该单位 have a 5+ 无敌豁免 against 远程攻击s.\n限制\nYour army can include 黑色圣堂 units, but it cannot include 阿斯塔特修会 units drawn from any other Chapter.",
+        "source": "Wahapedia 数据/愤怒游行",
         "priority": 5
       },
       {
@@ -21830,10 +23716,10 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "分遣队规则 - 狂烈伴军",
+        "timing": "分离规则-猛烈的同伴",
         "type": "detachment",
-        "summary": "You can re-roll Advance and 冲锋掷骰 made for ADEPTUS ASTARTES units 来自你军队的.\n限制\nYour army can include 黑色圣堂 units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter.",
-        "source": "Wahapedia CSV / 狂烈伴军",
+        "summary": "You can re-roll Advance and 冲锋掷骰 made for 阿斯塔特修会 units from 你的军队.\n限制\nYour army can include 黑色圣堂 units, but it cannot include any 阿斯塔特修会 units drawn from any other Chapter.",
+        "source": "Wahapedia 数据/Vehemence的伴侣",
         "priority": 5
       },
       {
@@ -21842,10 +23728,10 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "分遣队规则 - 昭雪特遣队",
+        "timing": "分离规则-辩护特遣部队",
         "type": "detachment",
-        "summary": "- 每次有攻击以an Ancient unit 来自你军队的, if that unit is within range of one or more objective markers and the 力量属性 of that attack is greater than the 韧性属性 of that unit, 致伤掷骰结果 -1.\n- Each time a Crusader Squad unit 来自你军队的 makes a Righteous Zeal move, that unit can end that move as close as possible to the closest objective marker instead of as close as possible to the closest 敌方单位.\n限制\nYour army can include 黑色圣堂 units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter.",
-        "source": "Wahapedia CSV / 昭雪特遣队",
+        "summary": "- 每次有攻击以an Ancient unit from 你的军队, if that unit is within range of one or more objective markers and the 力量属性 of that attack is greater than the 韧性属性 of that unit, subtract 1 from the 致伤掷骰.\n- Each time a Crusader Squad unit from 你的军队 makes a Righteous Zeal move, that unit can end that move as close as possible to the closest objective marker instead of as close as possible to the closest 敌方单位.\n限制\nYour army can include 黑色圣堂 units, but it cannot include any 阿斯塔特修会 units drawn from any other Chapter.",
+        "source": "Wahapedia 数据/辩护工作组",
         "priority": 5
       },
       {
@@ -21854,10 +23740,10 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "分遣队规则 - 神锤突击部队",
+        "timing": "分离规则-神锤突击部队",
         "type": "detachment",
-        "summary": "- Each time an ADEPTUS ASTARTES unit 来自你军队的 声明冲锋, 如果它本回合曾从运输载具中下车，after selecting the targets of that charge, select one of those targets; that 敌方单位 must take a 战斗冲击测试.\n- Each time a model in an ADEPTUS ASTARTES unit 来自你军队的 makes a 近战攻击, if it disembarked from a TRANSPORT this turn, 命中掷骰结果 +1.\n限制\nYour army can include 黑色圣堂 units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter.",
-        "source": "Wahapedia CSV / 神锤突击部队",
+        "summary": "- Each time an 阿斯塔特修会 unit from 你的军队 声明冲锋, if it disembarked from a 运输 this turn, after selecting the targets of that charge, select one of those targets; that 敌方单位 must take a 战斗冲击 test.\n- Each time a model in an 阿斯塔特修会 unit from 你的军队 makes a 近战攻击, if it disembarked from a 运输 this turn, add 1 to the 命中掷骰.\n限制\nYour army can include 黑色圣堂 units, but it cannot include any 阿斯塔特修会 units drawn from any other Chapter.",
+        "source": "Wahapedia 数据/Godhammer突击部队",
         "priority": 5
       },
       {
@@ -21866,10 +23752,10 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "分遣队规则 - 堡垒特遣队",
+        "timing": "脱离接触规则-堡垒特遣部队",
         "type": "detachment",
-        "summary": "Adeptus Astartes Battleline units 来自你军队的:\n- Are eligible to shoot and declare a charge in a turn in which they Advance or Fallback.\n- Are eligible to start to perform an Action in a turn in which they Advance or Fallback.\nEach time an ADEPTUS ASTARTES BATTLELINE unit 来自你军队的 is 被选中进行攻击, after resolving those attacks, select one 敌方单位 hit by one or more of those attacks. 直到本回合结束，that 敌方单位 is auspex scanned. Each time an ADEPTUS ASTARTES model 来自你军队的 makes an attack that targets an auspex scanned unit, re-roll a 命中掷骰 of 1.",
-        "source": "Wahapedia CSV / 堡垒特遣队",
+        "summary": "阿斯塔特修会 战线 units from 你的军队:\n- Are eligible to shoot and 声明冲锋 in a turn in which they Advance or Fallback.\n- Are eligible to start to perform an Action in a turn in which they Advance or Fallback.\nEach time an 阿斯塔特修会 战线 unit from 你的军队 is 被选中进行攻击, after resolving those attacks, select one 敌方单位 hit by one or more of those attacks. 直到本回合结束，that 敌方单位 is auspex scanned. Each time an 阿斯塔特修会 model from 你的军队 makes an attack that targets an auspex scanned unit, re-roll a 命中掷骰 of 1.",
+        "source": "Wahapedia 数据/堡垒特遣部队",
         "priority": 5
       },
       {
@@ -21878,10 +23764,10 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "分遣队规则 - 轨道突击部队",
+        "timing": "分离规则-轨道突击部队",
         "type": "detachment",
-        "summary": "在声明战斗编成步骤开始时，select a number of ADEPTUS ASTARTES units (excluding Titanic units) 来自你军队的 based on the battle size, as shown below. Models in those units 拥有 Deep Strike ability.\nBATTLE SIZE NUMBER OF UNITS Incursion 2 Strike Force 3 Onslaught 4\nEach time an ADEPTUS ASTARTES model 来自你军队的 makes an attack, 如果它于本回合被部署到战场上，re-roll a 致伤掷骰 of 1. If it disembarked from a Drop Pod this turn, re-roll a 命中掷骰 of 1 as well.",
-        "source": "Wahapedia CSV / 轨道突击部队",
+        "summary": "在声明战斗编成步骤开始时，select a number of 阿斯塔特修会 units (excluding 巨型 units) from 你的军队 based on the battle size, as shown below. Models in those units have the 深袭 ability.\nBATTLE SIZE NUMBER OF UNITS Incursion 2 Strike Force 3 Onslaught 4\nEach time an 阿斯塔特修会 model from 你的军队 makes an attack, 如果它于本回合被部署到战场上，re-roll a 致伤掷骰 of 1. If it disembarked from a Drop Pod this turn, re-roll a 命中掷骰 of 1 as well.",
+        "source": "Wahapedia 数据/轨道突击部队",
         "priority": 5
       }
     ],
@@ -21892,118 +23778,118 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 铁暴矛头",
+        "timing": "陆军名册-铁风暴先锋",
         "type": "enhancement",
-        "summary": "Techmarine model only. 在你的指挥阶段，select one Adeptus Astartes Vehicle model 位于持有者 6\" 内. 直到你下个指挥阶段开始时，该 VEHICLE 模型装备的武器 拥有 [LETHAL HITS] 能力.\n\n点数：30",
-        "source": "Wahapedia CSV / 铁暴矛头",
+        "summary": "Techmarine model only. 在你的指挥阶段，select one 阿斯塔特修会 载具 model within 6\" of 持有者. 直到你下个指挥阶段开始时，该载具模型装备的武器 have the [致命命中] ability.\n\n点数：30",
+        "source": "Wahapedia 数据/Ironstorm Spearhead",
         "priority": 3
       },
       {
         "id": "enh-000010680002",
-        "name": "Laurels of Thunder",
+        "name": "雷霆桂冠",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 轨道突击部队",
+        "timing": "陆军名册-轨道突击部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. You can re-roll 冲锋掷骰 made for 持有者’s unit in a turn in which it was set up on the battlefield.\n\n点数：15",
-        "source": "Wahapedia CSV / 轨道突击部队",
+        "summary": "阿斯塔特修会 model only. You can re-roll 冲锋掷骰 made for 持有者’s unit in a turn in which it was set up on the battlefield.\n\n点数：15",
+        "source": "Wahapedia 数据/轨道突击部队",
         "priority": 3
       },
       {
         "id": "enh-000010676002",
-        "name": "Eye of the Primarch",
+        "name": "太古之眼",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 堡垒特遣队",
+        "timing": "陆军名册-堡垒特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. Ranged 持有者装备的武器 and Battleline models in 持有者’s unit 拥有 [PRECISION] ability.\n\n点数：10",
-        "source": "Wahapedia CSV / 堡垒特遣队",
+        "summary": "阿斯塔特修会 model only. Ranged weapons equipped by 持有者 and 战线 models in 持有者’s unit have the [精准] ability.\n\n点数：10",
+        "source": "Wahapedia 数据/堡垒特遣部队",
         "priority": 3
       },
       {
         "id": "enh-000008482002",
-        "name": "Champion of Humanity",
+        "name": "人类的捍卫者",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 烈焰风暴突击部队",
+        "timing": "军队名册-烈焰风暴突击部队",
         "type": "enhancement",
         "summary": "TACTICUS model only. While 持有者 is leading a unit, 该单位中的模型 can ignore any or all modifiers to their characteristics and/or to any roll or test made for them (excluding modifiers to saving throws).\n\n点数：10",
-        "source": "Wahapedia CSV / 烈焰风暴突击部队",
+        "source": "Wahapedia 数据/Firestorm突击部队",
         "priority": 3
       },
       {
         "id": "enh-000010400002",
-        "name": "Paragon of Fury",
+        "name": "愤怒典范",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 神锤突击部队",
+        "timing": "军队名册-神锤突击部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. Add 2 to the 力量属性 of melee 持有者装备的武器. 持有者每次进行的近战攻击被分配给敌方模型时，if 持有者 disembarked from a Transport this turn, add 1 to the 伤害属性 of that attack.\n\n点数：25",
-        "source": "Wahapedia CSV / 神锤突击部队",
+        "summary": "阿斯塔特修会 model only. Add 2 to the 力量属性 of 近战武器 equipped by 持有者. 持有者每次进行的近战攻击被分配给敌方模型时，if 持有者 disembarked from a 运输 this turn, add 1 to the 伤害属性 of that attack.\n\n点数：25",
+        "source": "Wahapedia 数据/Godhammer突击部队",
         "priority": 3
       },
       {
         "id": "enh-000008490002",
-        "name": "The Blade Driven Deep",
+        "name": "刀片深度驱动",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 先锋矛头",
+        "timing": "军队名册-先锋先锋",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES INFANTRY model only. While 持有者 is leading a unit, 该单位中的模型 拥有 Infiltrators ability.\n\n点数：25",
-        "source": "Wahapedia CSV / 先锋矛头",
+        "summary": "阿斯塔特修会 步兵 model only. While 持有者 is leading a unit, 该单位中的模型 have the 渗透者 ability.\n\n点数：25",
+        "source": "Wahapedia 数据/Vanguard Spearhead",
         "priority": 3
       },
       {
         "id": "enh-000008353002",
-        "name": "Artificer Armour",
+        "name": "<g id=\"1\">人工护甲</g>",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 格拉迪乌斯特遣队",
+        "timing": "陆军名册-嘉迪斯特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. The bearer has a Save characteristic of 2+ and the Feel No Pain 5+ ability.\n\n点数：10",
-        "source": "Wahapedia CSV / 格拉迪乌斯特遣队",
+        "summary": "仅限阿斯塔特修会型号。 承载者具有2 +的保存特性和5 +的无痛感能力。\n\n积分： 10",
+        "source": "Wahapedia 数据/Gladius特别工作组",
         "priority": 3
       },
       {
         "id": "enh-000008474002",
-        "name": "Indomitable Fury",
+        "name": "不屈不挠的狂怒",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 铁砧攻城特遣队",
+        "timing": "军队名册-铁砧围攻部队",
         "type": "enhancement",
         "summary": "GRAVIS model only. The first time 持有者 is destroyed, roll one D6 at the end of the phase. On a 2+, set 持有者 back up on the battlefield, as close as possible to where it was destroyed and not 位于以下目标的接战范围内：any 敌方单位s, with its full wounds remaining.\n\n点数：20",
-        "source": "Wahapedia CSV / 铁砧攻城特遣队",
+        "source": "Wahapedia 数据/铁砧攻城部队",
         "priority": 3
       },
       {
         "id": "enh-000010396002",
-        "name": "Imperialis of the Eternal Crusade",
+        "name": "永恒十字军帝国",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 昭雪特遣队",
+        "timing": "陆军名册-辩护特遣部队",
         "type": "enhancement",
         "summary": "Ancient model only. Each time an 敌方单位 selects 持有者’s unit as a target of a charge, subtract 2 from the Charge roll (this is not cumulative with any olher negative modifiers to that Charge roll).\n\n点数：15",
-        "source": "Wahapedia CSV / 昭雪特遣队",
+        "source": "Wahapedia 数据/辩护工作组",
         "priority": 3
       },
       {
         "id": "enh-000010392002",
-        "name": "Incendiary Animus",
+        "name": "燃烧的Animus",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 狂烈伴军",
+        "timing": "陆军名册-猛烈战友",
         "type": "enhancement",
         "summary": "Chaplain or Judiciar model only. Improve the 护甲穿透属性 of 近战武器 equipped by models in 持有者’s unit by 1.\n\n点数：25",
-        "source": "Wahapedia CSV / 狂烈伴军",
+        "source": "Wahapedia 数据/Vehemence的伴侣",
         "priority": 3
       },
       {
@@ -22012,46 +23898,46 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 愤怒巡征",
+        "timing": "军队名册-愤怒游行",
         "type": "enhancement",
-        "summary": "黑色圣堂 model only. Models in 持有者’s unit 拥有 Stealth ability.\n\n点数：25",
-        "source": "Wahapedia CSV / 愤怒巡征",
+        "summary": "仅限黑色圣殿骑士模型。 持有人单位中的模型具有隐身能力。\n\n积分： 25",
+        "source": "Wahapedia 数据/愤怒游行",
         "priority": 3
       },
       {
         "id": "enh-000008486002",
-        "name": "Fury of the Storm",
+        "name": "暴风之怒",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 风暴枪骑特遣队",
+        "timing": "陆军名册-风暴之矛特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES MOUNTED model only. Improve the Strength and 护甲穿透属性s of 持有者’s 近战武器 by 1. Each time 持有者 ends a Charge move, until the end of the turn, improve the Strength and 护甲穿透属性s of 持有者s 近战武器 by 2 instead.\n\n点数：25",
-        "source": "Wahapedia CSV / 风暴枪骑特遣队",
+        "summary": "阿斯塔特修会 MOUNTED model only. Improve the Strength and 护甲穿透属性s of 持有者’s 近战武器 by 1. Each time 持有者 ends a Charge move, until the end of the turn, improve the Strength and 护甲穿透属性s of 持有者s 近战武器 by 2 instead.\n\n点数：25",
+        "source": "Wahapedia 数据/Storm突刺专责小组",
         "priority": 3
       },
       {
         "id": "enh-000010680003",
-        "name": "Veteran of the Vanguard",
+        "name": "先锋队老兵",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 轨道突击部队",
+        "timing": "陆军名册-轨道突击部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. Models in 持有者’s unit 拥有 Scouts 6\" ability.\n\n点数：20",
-        "source": "Wahapedia CSV / 轨道突击部队",
+        "summary": "仅限阿斯塔特修会型号。 持票人单位中的模特具有6英寸侦察兵能力。\n\n积分： 20",
+        "source": "Wahapedia 数据/轨道突击部队",
         "priority": 3
       },
       {
         "id": "enh-000008353003",
-        "name": "The Honour Vehement",
+        "name": "<g id=\"1\">荣誉激情</g>",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 格拉迪乌斯特遣队",
+        "timing": "陆军名册-嘉迪斯特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. Add 1 to the Attacks and 力量属性s of 持有者’s 近战武器. While 持有者 is under the effects of the Assault Doctrine, add 2 to the Attacks and 力量属性s of 持有者s 近战武器 instead.\n\n点数：15",
-        "source": "Wahapedia CSV / 格拉迪乌斯特遣队",
+        "summary": "阿斯塔特修会 model only. Add 1 to the Attacks and 力量属性s of 持有者’s 近战武器. While 持有者 is under the effects of the Assault Doctrine, add 2 to the Attacks and 力量属性s of 持有者s 近战武器 instead.\n\n点数：15",
+        "source": "Wahapedia 数据/Gladius特别工作组",
         "priority": 3
       },
       {
@@ -22060,106 +23946,106 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 神锤突击部队",
+        "timing": "军队名册-神锤突击部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. Each time 持有者’s unit 声明冲锋, if an 敌方单位 takes a 战斗冲击测试 as a result of the Shock and Awe Detachment rule, subtract 1 from that 战斗冲击测试.\n\n点数：10",
-        "source": "Wahapedia CSV / 神锤突击部队",
+        "summary": "阿斯塔特修会 model only. Each time 持有者’s unit 声明冲锋, if an 敌方单位 takes a 战斗冲击 test as a result of the 震慑突击 Detachment rule, subtract 1 from that 战斗冲击 test.\n\n点数：10",
+        "source": "Wahapedia 数据/Godhammer突击部队",
         "priority": 3
       },
       {
         "id": "enh-000008486003",
-        "name": "Portents of Wisdom",
+        "name": "智慧预兆",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 风暴枪骑特遣队",
+        "timing": "陆军名册-风暴之矛特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. While 持有者 is leading a unit, you can re-roll Advance 掷骰 made for that unit.\n\n点数：15",
-        "source": "Wahapedia CSV / 风暴枪骑特遣队",
+        "summary": "阿斯塔特修会 model only. While 持有者 is leading a unit, you can re-roll Advance 掷骰 made for that unit.\n\n点数：15",
+        "source": "Wahapedia 数据/Storm突刺专责小组",
         "priority": 3
       },
       {
         "id": "enh-000010676003",
-        "name": "Hero of the Chapter",
+        "name": "章节英雄",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 堡垒特遣队",
+        "timing": "陆军名册-堡垒特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. While 持有者 is leading a unit, 持有者 拥有 Battleline keyword.\n\n点数：20",
-        "source": "Wahapedia CSV / 堡垒特遣队",
+        "summary": "仅限阿斯塔特修会型号。 当持票人带领一个单位时，持票人有战斗线关键词。\n\n积分： 20",
+        "source": "Wahapedia 数据/堡垒特遣部队",
         "priority": 3
       },
       {
         "id": "enh-000010396003",
-        "name": "Consecrating Aura",
+        "name": "奉献光环",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 昭雪特遣队",
+        "timing": "陆军名册-辩护特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. Models in 持有者’s unit have a 5+ invulnerable save.\n\n点数：25",
-        "source": "Wahapedia CSV / 昭雪特遣队",
+        "summary": "阿斯塔特修会 model only. Models in the bearer’s unit have a 5+ 无敌豁免.\n\n点数： 25",
+        "source": "Wahapedia 数据/辩护工作组",
         "priority": 3
       },
       {
         "id": "enh-000009843003",
-        "name": "Sacred Rage",
+        "name": "神圣之怒",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 愤怒巡征",
+        "timing": "军队名册-愤怒游行",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. 每场战斗一次，at the start of the Fight phase, 持有者 can use this Enhancement. If it does, until the end of the phase, models in 持有者’s unit 拥有 Fights First ability.\n\n点数：30",
-        "source": "Wahapedia CSV / 愤怒巡征",
+        "summary": "阿斯塔特修会 model only. 每场战斗一次，at the start of the Fight phase, 持有者 can use this Enhancement. If it does, until the end of the phase, models in 持有者’s unit have the 先攻 ability.\n\n点数：30",
+        "source": "Wahapedia 数据/愤怒游行",
         "priority": 3
       },
       {
         "id": "enh-000008490003",
-        "name": "Ghostweave Cloak",
+        "name": "幽灵编织斗篷",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 先锋矛头",
+        "timing": "军队名册-先锋先锋",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. The bearer 拥有 Stealth and Lone Operative abilities.\n\n点数：15",
-        "source": "Wahapedia CSV / 先锋矛头",
+        "summary": "阿斯塔特修会 model only. The bearer has the 隐蔽 and 独行特工 abilities.\n\n点数：15",
+        "source": "Wahapedia 数据/Vanguard Spearhead",
         "priority": 3
       },
       {
         "id": "enh-000008478003",
-        "name": "The Flesh is Weak",
+        "name": "肉体是软弱的。",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 铁暴矛头",
+        "timing": "陆军名册-铁风暴先锋",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. The bearer 拥有 Feel No Pain 4+ 能力.\n\n点数：10",
-        "source": "Wahapedia CSV / 铁暴矛头",
+        "summary": "仅限阿斯塔特修会型号。 持有人具有无痛感4 +能力。\n\n积分： 10",
+        "source": "Wahapedia 数据/Ironstorm Spearhead",
         "priority": 3
       },
       {
         "id": "enh-000008474003",
-        "name": "Fleet Commander",
+        "name": "舰队指挥官",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 铁砧攻城特遣队",
+        "timing": "军队名册-铁砧围攻部队",
         "type": "enhancement",
         "summary": "CAPTAIN model only. 每场战斗一次，at the start of your Shooting phase, you can select one point on the battlefield and place a marker on that point. At the start of your next Shooting phase, place another marker on the battlefield within 12\" of the centre of the first marker, then draw a straight line between the centre of each of these markers. Roll one D6 for each unit that line passes over or through: on a 3+, that unit suffers D3 致命伤. Both markers are then removed.\n\n点数：15",
-        "source": "Wahapedia CSV / 铁砧攻城特遣队",
+        "source": "Wahapedia 数据/铁砧攻城部队",
         "priority": 3
       },
       {
         "id": "enh-000008482003",
-        "name": "War-tempered Artifice",
+        "name": "脾气暴躁的诀窍",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 烈焰风暴突击部队",
+        "timing": "军队名册-烈焰风暴突击部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES INFANTRY model only. Add 3 to the 力量属性 of 持有者’s 近战武器.\n\n点数：25",
-        "source": "Wahapedia CSV / 烈焰风暴突击部队",
+        "summary": "仅限阿斯塔特修会步兵模型。 携带者近战武器的力量特性增加3点。\n\n积分： 25",
+        "source": "Wahapedia 数据/Firestorm突击部队",
         "priority": 3
       },
       {
@@ -22168,274 +24054,274 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 狂烈伴军",
+        "timing": "陆军名册-猛烈战友",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES INFANTRY model only. Add 1 to Advance 掷骰 made for 持有者’s unit. If the mission pack you are playing features Actions, 持有者’s unit is eligible to start to perform an Action in a turn in which it Advance.\n\n点数：15",
-        "source": "Wahapedia CSV / 狂烈伴军",
+        "summary": "阿斯塔特修会 步兵 model only. Add 1 to Advance 掷骰 made for 持有者’s unit. If the mission pack you are playing features Actions, 持有者’s unit is eligible to start to perform an Action in a turn in which it Advance.\n\n点数：15",
+        "source": "Wahapedia 数据/Vehemence的伴侣",
         "priority": 3
       },
       {
         "id": "enh-000009843004",
-        "name": "Taramond’s Censer",
+        "name": "塔拉蒙的香炉",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 愤怒巡征",
+        "timing": "军队名册-愤怒游行",
         "type": "enhancement",
-        "summary": "黑色圣堂 model only. At the start of the Fight phase, each 敌方单位 位于以下目标的接战范围内：持有者’s unit must take a 战斗冲击测试. When doing so, subtract 1 from the result.\n\n点数：15",
-        "source": "Wahapedia CSV / 愤怒巡征",
+        "summary": "黑色圣堂 model only. At the start of the Fight phase, each 敌方单位 位于以下目标的接战范围内：持有者’s unit must take a 战斗冲击 test. When doing so, subtract 1 from the result.\n\n点数：15",
+        "source": "Wahapedia 数据/愤怒游行",
         "priority": 3
       },
       {
         "id": "enh-000010680004",
-        "name": "Orbital Uplink Reliquary",
+        "name": "轨道上行链路遗物库",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 轨道突击部队",
+        "timing": "陆军名册-轨道突击部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. After both players have deployed their armies, select up to three ADEPTUS ASTARTES units 来自你军队的 and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves.\n\n点数：25",
-        "source": "Wahapedia CSV / 轨道突击部队",
+        "summary": "阿斯塔特修会 model only. After both players have deployed their armies, select up to three 阿斯塔特修会 units from 你的军队 and redeploy them. When doing so, you can set those units up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves.\n\n点数：25",
+        "source": "Wahapedia 数据/轨道突击部队",
         "priority": 3
       },
       {
         "id": "enh-000008486004",
-        "name": "Feinting Withdrawal",
+        "name": "Feinting提款",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 风暴枪骑特遣队",
+        "timing": "陆军名册-风暴之矛特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. While 持有者 is leading a unit, that unit is eligible to shoot in a turn in which it Fallback.\n\n点数：10",
-        "source": "Wahapedia CSV / 风暴枪骑特遣队",
+        "summary": "阿斯塔特修会 model only. While 持有者 is leading a unit, that unit is eligible to shoot in a turn in which it Fallback.\n\n点数：10",
+        "source": "Wahapedia 数据/Storm突刺专责小组",
         "priority": 3
       },
       {
         "id": "enh-000010676004",
-        "name": "Blades of Valour",
+        "name": "勇气之刃",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 堡垒特遣队",
+        "timing": "陆军名册-堡垒特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. Improve the 护甲穿透属性 of melee 持有者装备的武器 and Battleline models in 持有者’s unit by 1.\n\n点数：15",
-        "source": "Wahapedia CSV / 堡垒特遣队",
+        "summary": "阿斯塔特修会 model only. Improve the 护甲穿透属性 of 近战武器 equipped by 持有者 and 战线 models in 持有者’s unit by 1.\n\n点数：15",
+        "source": "Wahapedia 数据/堡垒特遣部队",
         "priority": 3
       },
       {
         "id": "enh-000008490004",
-        "name": "Execute and Redeploy",
+        "name": "执行和重新部署",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 先锋矛头",
+        "timing": "军队名册-先锋先锋",
         "type": "enhancement",
-        "summary": "PHOBOS model only. 在你的射击阶段，after 持有者’s unit has shot, if that unit is not 位于以下目标的接战范围内：one or more 敌方单位s, it can make a 普通移动 of up to 6\". If it does, until the end of the turn, that unit is not eligible to declare a charge. This cannot allow 持有者’s unit to move more than once in your Shooting phase.\n\n点数：20",
-        "source": "Wahapedia CSV / 先锋矛头",
+        "summary": "PHOBOS model only. 在你的射击阶段，after 持有者’s unit has shot, if that unit is not 位于以下目标的接战范围内：one or more 敌方单位s, it can make a 普通移动 of up to 6\". If it does, until the end of the turn, that unit is not eligible to 声明冲锋. This cannot allow 持有者’s unit to move more than once in your Shooting phase.\n\n点数：20",
+        "source": "Wahapedia 数据/Vanguard Spearhead",
         "priority": 3
       },
       {
         "id": "enh-000010396004",
-        "name": "Orb of the Emperor’s Aegis",
+        "name": "皇帝之盾魔球",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 昭雪特遣队",
+        "timing": "陆军名册-辩护特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. Models in 持有者’s unit 拥有 Deep Strike ability.\n\n点数：10",
-        "source": "Wahapedia CSV / 昭雪特遣队",
+        "summary": "阿斯塔特修会 model only. Models in 持有者’s unit have the 深袭 ability.\n\n点数：10",
+        "source": "Wahapedia 数据/辩护工作组",
         "priority": 3
       },
       {
         "id": "enh-000008474004",
-        "name": "Stoic Defender",
+        "name": "斯多葛防御者",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 铁砧攻城特遣队",
+        "timing": "军队名册-铁砧围攻部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. While 持有者 is leading a unit, 该单位中的模型 拥有 Feel No Pain 6+ ability while they are 位于一个目标标记范围内 you control and, while that unit is Battle-shocked, halve the 目标控制（OC）属性 of 该单位中的模型 instead of changing it to 0.\n\n点数：15",
-        "source": "Wahapedia CSV / 铁砧攻城特遣队",
+        "summary": "阿斯塔特修会 model only. While 持有者 is leading a unit, 该单位中的模型 have the 无视伤害 6+ ability while they are 位于一个目标标记范围内 you control and, while that unit is 战斗冲击ed, halve the 目标控制（OC）属性 of 该单位中的模型 instead of changing it to 0.\n\n点数：15",
+        "source": "Wahapedia 数据/铁砧攻城部队",
         "priority": 3
       },
       {
         "id": "enh-000010400004",
-        "name": "Augury Servo-host",
+        "name": "Augury伺服主机",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 神锤突击部队",
+        "timing": "军队名册-神锤突击部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. At the start of your Shooting phase, select one 敌方单位 within 12\" of and visible to 持有者. 直到本阶段结束，该单位中的模型 cannot 拥有 掩体收益.\n\n点数：15",
-        "source": "Wahapedia CSV / 神锤突击部队",
+        "summary": "阿斯塔特修会 model only. At the start of your Shooting phase, select one 敌方单位 within 12\" of and visible to 持有者. 直到本阶段结束，该单位中的模型 cannot have the 掩体增益.\n\n点数：15",
+        "source": "Wahapedia 数据/Godhammer突击部队",
         "priority": 3
       },
       {
         "id": "enh-000008482004",
-        "name": "Forged in Battle",
+        "name": "在战斗中锻造",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 烈焰风暴突击部队",
+        "timing": "军队名册-烈焰风暴突击部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. While 持有者 is leading a unit, once per turn, after making a 命中掷骰 or a saving throw for a model in that unit, you can change the result of that roll to an unmodified 6.\n\n点数：15",
-        "source": "Wahapedia CSV / 烈焰风暴突击部队",
+        "summary": "阿斯塔特修会 model only. While 持有者 is leading a unit, once per turn, after making a 命中掷骰 or a saving throw for a model in that unit, you can change the result of that roll to an unmodified 6.\n\n点数：15",
+        "source": "Wahapedia 数据/Firestorm突击部队",
         "priority": 3
       },
       {
         "id": "enh-000008478004",
-        "name": "Adept of the Omnissiah",
+        "name": "Omnissiah的擅长者",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 铁暴矛头",
+        "timing": "陆军名册-铁风暴先锋",
         "type": "enhancement",
-        "summary": "TECHMARINE model only. 每个战斗轮次一次，when a saving throw is failed for a friendly ADEPTUS ASTARTES VEHICLE model 位于持有者 6\" 内, you can change the 伤害属性 of that attack to 0.\n\n点数：35",
-        "source": "Wahapedia CSV / 铁暴矛头",
+        "summary": "TECHMARINE model only. 每个战斗轮次一次，when a saving throw is failed for a friendly 阿斯塔特修会 载具 model within 6\" of 持有者, you can change the 伤害属性 of that attack to 0.\n\n点数：35",
+        "source": "Wahapedia 数据/Ironstorm Spearhead",
         "priority": 3
       },
       {
         "id": "enh-000008353004",
-        "name": "Adept of the Codex",
+        "name": "<g id=\"1\">擅长法典</g>",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 格拉迪乌斯特遣队",
+        "timing": "陆军名册-嘉迪斯特遣部队",
         "type": "enhancement",
         "summary": "CAPTAIN model only. 在你的指挥阶段开始时，if 持有者 is on the battlefield, instead of selecting a Combat Doctrine to be active for 你的军队, you can select the Tactical Doctrine. If you do, until the start of your next Command phase, that Combat Doctrine is active for 持有者’s unit only, even if you have already selected that Combat Doctrine to be active for 你的军队 this battle.\n\n点数：20",
-        "source": "Wahapedia CSV / 格拉迪乌斯特遣队",
+        "source": "Wahapedia 数据/Gladius特别工作组",
         "priority": 3
       },
       {
         "id": "enh-000010392004",
-        "name": "Merciless Denunciation",
+        "name": "无情的谴责",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 狂烈伴军",
+        "timing": "陆军名册-猛烈战友",
         "type": "enhancement",
-        "summary": "Chaplain or Judiciar model only. Each time a model in 持有者’s unit makes a 近战攻击, you 可以重掷命中掷骰.\n\n点数：25",
-        "source": "Wahapedia CSV / 狂烈伴军",
+        "summary": "Chaplain or Judiciar model only. Each time a model in 持有者’s unit makes a 近战攻击, you can re-roll the 命中掷骰.\n\n点数：25",
+        "source": "Wahapedia 数据/Vehemence的伴侣",
         "priority": 3
       },
       {
         "id": "enh-000010680005",
-        "name": "Dedicated Gunship",
+        "name": "专用枪舰",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 轨道突击部队",
+        "timing": "陆军名册-轨道突击部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES TERMINATOR model only. 每场战斗一次，at the end of your opponent’s Fight phase, if 持有者’s unit is not 位于以下目标的接战范围内：one or more 敌方单位s, 持有者 can use this Enhancement. If it does, remove 持有者’s unit from the battlefield and place it into Strategic Reserves.\n\n点数：15",
-        "source": "Wahapedia CSV / 轨道突击部队",
+        "summary": "阿斯塔特修会 TERMINATOR model only. 每场战斗一次，at the end of your opponent’s Fight phase, if 持有者’s unit is not 位于以下目标的接战范围内：one or more 敌方单位s, 持有者 can use this Enhancement. If it does, remove 持有者’s unit from the battlefield and place it into Strategic Reserves.\n\n点数：15",
+        "source": "Wahapedia 数据/轨道突击部队",
         "priority": 3
       },
       {
         "id": "enh-000008474005",
-        "name": "Architect of War",
+        "name": "战争建筑师",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 铁砧攻城特遣队",
+        "timing": "军队名册-铁砧围攻部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. While 持有者 is leading a unit, 远程武器 equipped by 该单位中的模型 拥有 [IGNORES COVER] ability.\n\n点数：25",
-        "source": "Wahapedia CSV / 铁砧攻城特遣队",
+        "summary": "阿斯塔特修会 model only. While 持有者 is leading a unit, 远程武器 equipped by 该单位中的模型 have the [无视掩体] ability.\n\n点数：25",
+        "source": "Wahapedia 数据/铁砧攻城部队",
         "priority": 3
       },
       {
         "id": "enh-000008478005",
-        "name": "Master of Machine War",
+        "name": "机械战争大师",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 铁暴矛头",
+        "timing": "陆军名册-铁风暴先锋",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. 在你的指挥阶段，select one Adeptus Astartes Vehicle model 位于持有者 6\" 内. 直到你下个指挥阶段开始时，that VEHICLE is eligible to shoot even if it Fallback or Advance this turn.\n\n点数：20",
-        "source": "Wahapedia CSV / 铁暴矛头",
+        "summary": "阿斯塔特修会 model only. 在你的指挥阶段，select one 阿斯塔特修会 载具 model within 6\" of 持有者. 直到你下个指挥阶段开始时，that 载具 is eligible to shoot even if it Fallback or Advance this turn.\n\n点数：20",
+        "source": "Wahapedia 数据/Ironstorm Spearhead",
         "priority": 3
       },
       {
         "id": "enh-000008482005",
-        "name": "Adamantine Mantle",
+        "name": "金刚斗篷",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 烈焰风暴突击部队",
+        "timing": "军队名册-烈焰风暴突击部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. Each time an attack is allocated to 持有者, subtract 1 from the 伤害属性 of that attack. If that attack was made with a Melta or Torrent weapon, change the 伤害属性 of that attack to 1 instead.\n\n点数：20",
-        "source": "Wahapedia CSV / 烈焰风暴突击部队",
+        "summary": "阿斯塔特修会 model only. Each time an attack is allocated to 持有者, subtract 1 from the 伤害属性 of that attack. If that attack was made with a 熔融 or 洪流 weapon, change the 伤害属性 of that attack to 1 instead.\n\n点数：20",
+        "source": "Wahapedia 数据/Firestorm突击部队",
         "priority": 3
       },
       {
         "id": "enh-000010392005",
-        "name": "Zealous Vanguard",
+        "name": "狂热先锋",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 狂烈伴军",
+        "timing": "陆军名册-猛烈战友",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. Models in 持有者’s unit 拥有 Scouts 6\" ability.\n\n点数：20",
-        "source": "Wahapedia CSV / 狂烈伴军",
+        "summary": "仅限阿斯塔特修会型号。 持票人单位中的模特具有6英寸侦察兵能力。\n\n积分： 20",
+        "source": "Wahapedia 数据/Vehemence的伴侣",
         "priority": 3
       },
       {
         "id": "enh-000008486005",
-        "name": "Hunter’s Instincts",
+        "name": "猎人的本能",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 风暴枪骑特遣队",
+        "timing": "陆军名册-风暴之矛特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES MOUNTED model only. If 持有者’s unit is in Strategic Reserves, for the purposes of setting up that unit on the battlefield, treat the current battle round number as being one higher than it actually is.\n\n点数：25",
-        "source": "Wahapedia CSV / 风暴枪骑特遣队",
+        "summary": "阿斯塔特修会 MOUNTED model only. If 持有者’s unit is in Strategic Reserves, for the purposes of setting up that unit on the battlefield, treat the current battle round number as being one higher than it actually is.\n\n点数：25",
+        "source": "Wahapedia 数据/Storm突刺专责小组",
         "priority": 3
       },
       {
         "id": "enh-000008490005",
-        "name": "Shadow War Veteran",
+        "name": "影子战争老兵",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 先锋矛头",
+        "timing": "军队名册-先锋先锋",
         "type": "enhancement",
         "summary": "PHOBOS model only. Gain following ability:\nLord of Deceit (Aura): Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12\" of 该模型, increase the cost of that use of that Stratagem by 1CP.\n\n点数：30",
-        "source": "Wahapedia CSV / 先锋矛头",
+        "source": "Wahapedia 数据/Vanguard Spearhead",
         "priority": 3
       },
       {
         "id": "enh-000009843005",
-        "name": "Benediction of Fury",
+        "name": "狂怒祝福",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 愤怒巡征",
+        "timing": "军队名册-愤怒游行",
         "type": "enhancement",
-        "summary": "Chaplain model only. The bearer’s 近战武器 拥有 [DEVASTATING WOUNDS] 能力.\n\n点数：10",
-        "source": "Wahapedia CSV / 愤怒巡征",
+        "summary": "Chaplain model only. The bearer’s melee weapons have the [毁灭伤害] ability.\n\n点数： 10",
+        "source": "Wahapedia 数据/愤怒游行",
         "priority": 3
       },
       {
         "id": "enh-000010400005",
-        "name": "Herald of Sacred Slaughter",
+        "name": "圣杀使者",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 神锤突击部队",
+        "timing": "军队名册-神锤突击部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. In the Declare Battle Formations step, if 持有者 starts the battle embarked within a Dedicated Transport, that DEDICATED TRANSPORT 拥有 Scouts 9\" ability.\n\n点数：15",
-        "source": "Wahapedia CSV / 神锤突击部队",
+        "summary": "阿斯塔特修会 model only. In the Declare Battle Formations step, if 持有者 starts the battle embarked within a Dedicated 运输, that DEDICATED 运输 has the 侦察 9\" ability.\n\n点数：15",
+        "source": "Wahapedia 数据/Godhammer突击部队",
         "priority": 3
       },
       {
         "id": "enh-000010396005",
-        "name": "Warden of Honour",
+        "name": "名誉典狱长",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 昭雪特遣队",
+        "timing": "陆军名册-辩护特遣部队",
         "type": "enhancement",
         "summary": "Crusade Ancient model only. While 持有者 is leading a unit, each time you roll one D6 for 持有者’s Vengeful Exhortation ability, add 1 to the result.\n\n点数：20",
-        "source": "Wahapedia CSV / 昭雪特遣队",
+        "source": "Wahapedia 数据/辩护工作组",
         "priority": 3
       },
       {
@@ -22444,22 +24330,22 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 堡垒特遣队",
+        "timing": "陆军名册-堡垒特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. Each time you select 持有者’s unit as the target of a Stratagem, roll one D6, adding 1 if 持有者’s unit 拥有 Battleline keyword: on a 4+, you gain 1CP.\n\n点数：15",
-        "source": "Wahapedia CSV / 堡垒特遣队",
+        "summary": "阿斯塔特修会 model only. Each time you select 持有者’s unit as the target of a Stratagem, roll one D6, adding 1 if 持有者’s unit has the 战线 keyword: on a 4+, you gain 1CP.\n\n点数：15",
+        "source": "Wahapedia 数据/堡垒特遣部队",
         "priority": 3
       },
       {
         "id": "enh-000008353005",
-        "name": "Fire Discipline",
+        "name": "火系",
         "phases": [
           "any"
         ],
-        "timing": "军队名单 - 格拉迪乌斯特遣队",
+        "timing": "陆军名册-嘉迪斯特遣部队",
         "type": "enhancement",
-        "summary": "ADEPTUS ASTARTES model only. While 持有者 is leading a unit, 远程武器 equipped by 该单位中的模型 拥有 [SUSTAINED HITS 1] 能力. In addition, while 持有者’s unit is under the effects of the Devastator Doctrine, you can reroll Advance 掷骰 made for that unit.\n\n点数：25",
-        "source": "Wahapedia CSV / 格拉迪乌斯特遣队",
+        "summary": "阿斯塔特修会 model only. While 持有者 is leading a unit, 远程武器 equipped by 该单位中的模型 have the [连击 1] ability. In addition, while 持有者’s unit is under the effects of the Devastator Doctrine, you can reroll Advance 掷骰 made for that unit.\n\n点数：25",
+        "source": "Wahapedia 数据/Gladius特别工作组",
         "priority": 3
       }
     ]
@@ -22472,9 +24358,9 @@ window.BC_BUILTIN_PACKS = {
     "subfaction": "Ultramarines",
     "game_version": "10th Edition",
     "pack_version": "1.1.0",
-    "date": "2026-03-27",
+    "date": "2026-05-05",
     "author": "Community",
-    "source_note": "Generated from current 10e CSV exports. This pack includes Ultramarines-exclusive detachments Blade of Ultramar, Reclamation Force, plus generic Space Marines detachments Gladius Task Force, Anvil Siege Force, Ironstorm Spearhead, Firestorm Assault Force, Stormlance Task Force, Vanguard Spearhead, 1st Company Task Force, Librarius Conclave, Bastion Task Force, Orbital Assault Force and common Space Marines units that do not belong to another chapter source. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+    "source_note": "Generated from current 10e CSV exports. This pack includes Ultramarines-exclusive detachments Blade of Ultramar, Reclamation Force, plus generic Space Marines detachments Gladius Task Force, Anvil Siege Force, Ironstorm Spearhead, Firestorm Assault Force, Stormlance Task Force, Vanguard Spearhead, 1st Company Task Force, Librarius Conclave, Bastion Task Force, Orbital Assault Force and standard Core Stratagems. Common Space Marines units that do not belong to another chapter source are also included. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
     "units": [
       {
         "id": "unit-000002099",
@@ -26644,12 +28530,235 @@ window.BC_BUILTIN_PACKS = {
     ],
     "stratagems": [
       {
+        "id": "strat-000008335010",
+        "name": "GO TO GROUND",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+        "target": "One INFANTRY unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+        "effect": "Until the end of the phase, all models in your unit have a 6+ invulnerable save and have the Benefit of Cover.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Battle Tactic Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335002",
+        "name": "COMMAND RE-ROLL",
+        "cp_cost": 1,
+        "phases": [
+          "any"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Any phase, just after you make an Advance roll, a Charge roll, a Desperate Escape test or a Hazardous test for a unit from your army, or a Hit roll, a Wound roll, a Damage roll or a saving throw for a model in that unit, or a roll to determine the number of attacks made with a weapon equipped by a model in that unit. If you are using fast dice rolling, this Stratagem can still be used after rolling multiple rolls or saving throws at once.",
+        "target": "That unit or model from your army.",
+        "effect": "You re-roll that roll, test or saving throw. If you are using fast dice rolling, select one of those rolls or saving throws to re-roll.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Battle Tactic Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335004",
+        "name": "EPIC CHALLENGE",
+        "cp_cost": 1,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, when a CHARACTER unit from your army that is within Engagement Range of one or more Attached units is selected to fight.",
+        "target": "One CHARACTER model in your unit.",
+        "effect": "Until the end of the phase, all melee attacks made by that model have the [PRECISION] ability.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Epic Deed Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335005",
+        "name": "INSANE BRAVERY",
+        "cp_cost": 1,
+        "phases": [
+          "command"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Battle-shock step of your Command phase, just before you take a Battle-shock test for a unit from your army.",
+        "target": "That unit from your army.",
+        "effect": "Your unit automatically passes that Battle-shock test.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Epic Deed Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335012",
+        "name": "HEROIC INTERVENTION",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Charge phase, just after an enemy unit ends a Charge move.",
+        "target": "One unit from your army that is within 6\" of that enemy unit and would be eligible to declare a charge against that enemy unit if it were your Charge phase.",
+        "effect": "Your unit now declares a charge that targets only that enemy unit, and you resolve that charge as if it were your Charge phase.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335009",
+        "name": "FIRE OVERWATCH",
+        "cp_cost": 1,
+        "phases": [
+          "movement",
+          "charge"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Movement or Charge phase, just after an enemy unit is set up or when an enemy unit starts or ends a Normal, Advance or Fall Back move, or declares a charge.",
+        "target": "One unit from your army that is within 24\" of that enemy unit and that would be eligible to shoot if it were your Shooting phase.",
+        "effect": "If that enemy unit is visible to your unit, your unit can shoot that enemy unit as if it were your Shooting phase.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335008",
+        "name": "RAPID INGRESS",
+        "cp_cost": 1,
+        "phases": [
+          "movement"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "End of your opponent’s Movement phase.",
+        "target": "One unit from your army that is in Reserves.",
+        "effect": "Your unit can arrive on the battlefield as if it were the Reinforcements step of your Movement phase, and if every model in that unit has the Deep Strike ability, you can set that unit up as described in the Deep Strike ability (even though it is not your Movement phase).",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335003",
+        "name": "COUNTER-OFFENSIVE",
+        "cp_cost": 2,
+        "phases": [
+          "fight"
+        ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
+        "timing": "Fight phase, just after an enemy unit has fought.",
+        "target": "One unit from your army that is within Engagement Range of one or more enemy units and that has not already been selected to fight this phase.",
+        "effect": "Your unit fights next.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335007",
+        "name": "TANK SHOCK",
+        "cp_cost": 1,
+        "phases": [
+          "charge"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Charge phase, just after a VEHICLE unit from your army ends a Charge move.",
+        "target": "That VEHICLE unit.",
+        "effect": "Select one enemy unit within Engagement Range of your unit, and select one VEHICLE model in your unit that is within Engagement Range of that enemy unit. Roll a number of D6 equal to the Toughness characteristic of the selected VEHICLE model. For each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds).",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Strategic Ploy Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335011",
+        "name": "SMOKESCREEN",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
+        "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+        "target": "One SMOKE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+        "effect": "Until the end of the phase, all models in your unit have the Benefit of Cover and the Stealth ability.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Wargear Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
+        "id": "strat-000008335006",
+        "name": "GRENADE",
+        "cp_cost": 1,
+        "phases": [
+          "shooting"
+        ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
+        "timing": "Your Shooting phase.",
+        "target": "One GRENADES unit from your army (excluding units that Advanced, Fell Back or have shot this turn) that is not within Engagement Range of one or more enemy units.",
+        "effect": "Select one GRENADES model in your unit and one enemy unit that is not within Engagement Range of any units from your army and is within 8\" of and visible to your GRENADES model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.",
+        "source": "Wahapedia CSV / Core Stratagems",
+        "once_per": "phase",
+        "priority": 4,
+        "tags": [
+          "Core – Wargear Stratagem",
+          "Core Stratagems"
+        ]
+      },
+      {
         "id": "strat-000008495007",
         "name": "LEGENDARY FORTITUDE",
         "cp_cost": 1,
         "phases": [
           "charge"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Charge phase, just after an enemy unit ends a Charge move.",
         "target": "One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army within Engagement Range of that enemy unit.",
         "effect": "Until the end of the turn, each time an attack is allocated to a model in your unit, subtract 1 from the Damage characteristic of that attack.",
@@ -26669,6 +28778,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -26688,6 +28799,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack, add 1 to the Hit roll. If your unit is Below Half-strength, add 1 to the Wound roll as well.",
@@ -26706,6 +28819,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "End of your opponent’s Fight phase.",
         "target": "One ADEPTUS ASTARTES TERMINATOR unit from your army.",
         "effect": "Remove your unit from the battlefield and place it into Strategic Reserves. It will arrive back on the battlefield in the Reinforcements step of your next Movement phase using the Deep Strike ability.",
@@ -26724,6 +28839,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Fight phase.",
         "target": "One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army that made a Charge move this turn and destroyed one or more enemy units this phase.",
         "effect": "In your opponent’s next Command phase, each enemy unit within 6\" of your unit must take a Battle-shock test. If the unit taking that test is Below Half-strength, subtract 1 from that test. Enemy units affected by this Stratagem do not need to take any other Battle-shock tests in the same phase.",
@@ -26742,6 +28859,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One ADEPTUS ASTARTES TERMINATOR, BLADEGUARD VETERAN SQUAD, STERNGUARD VETERAN SQUAD or VANGUARD VETERAN SQUAD unit from your army within range of an objective marker you control.",
         "effect": "That objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
@@ -26761,6 +28880,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -26779,6 +28900,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets a MONSTER or VEHICLE unit, you can re-roll the Wound roll.",
@@ -26797,6 +28920,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability. If your unit Remained Stationary this turn, then until the end of the phase, each time a model in your unit makes a ranged attack, a successful unmodified Hit roll of 5+ scores a Critical Hit.",
@@ -26815,6 +28940,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "One ADEPTUS ASTARTES INFANTRY unit from your army within range of an objective marker.",
         "effect": "Until the end of the turn, double the Objective Control characteristic of models in your unit, but it must Remain Stationary this turn.",
@@ -26833,6 +28960,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.",
         "target": "One ADEPTUS ASTARTES unit from your army that had one or more of its models destroyed as a result of the attacking unit’s attacks.",
         "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
@@ -26851,6 +28980,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "End of the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that is within Engagement Range of one or more enemy units.",
         "effect": "Your unit can immediately make a Fall Back move of up to 6\".",
@@ -26870,6 +29001,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit, re-roll a Hit roll of 1. If that target is auspex scanned, re-roll a Wound roll of 1 as well.",
@@ -26889,6 +29022,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have that ability while targeting an auspex scanned unit or if the bearer has the Battleline keyword.",
@@ -26908,6 +29043,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "charge"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase or your Charge phase.",
         "target": "One ADEPTUS ASTARTES unit (excluding Battleline units) from your army.",
         "effect": "Until the end of the phase, your unit is eligible to shoot and declare a charge in a turn in which it Advanced or Fell Back. If it does, every target of that charge and every target of those attacks must be an auspex scanned unit.",
@@ -26927,6 +29064,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase, just after an Adeptus Astartes Battleline unit from your army has finished making its attacks.",
         "target": "That ADEPTUS ASTARTES BATTLELINE unit.",
         "effect": "When an enemy unit is auspex scanned as a result of those attacks this turn, if that enemy unit does not have the MONSTER or VEHICLE keywords, until the start of your next turn, it is pinned. While a unit is pinned, subtract 2 from that unit’s Move characteristic and subtract 2 from Charge rolls made for that unit.",
@@ -26946,6 +29085,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase, just after an Adeptus Astartes Battleline unit from your army finished making its attacks.",
         "target": "That ADEPTUS ASTARTES BATTLELINE unit.",
         "effect": "When an enemy unit is auspex scanned as a result of those attacks this turn, until the start of your next turn, it is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
@@ -26965,6 +29106,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -26983,6 +29126,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. If your unit is under the effects of the Devastator Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",
@@ -27001,6 +29146,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army.",
         "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [LANCE] ability. If your unit is under the effects of the Assault Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",
@@ -27020,6 +29167,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time an attack targets your unit, if the Strength characteristic of that attack is greater than or equal to the Toughness characteristic of that unit, subtract 1 from the Wound roll.",
@@ -27038,6 +29187,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
         "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that is not within Engagement Range of one or more enemy units and is within 9\" of the enemy unit that just ended that move.",
         "effect": "Your unit can make a Normal move of up to D6\", or a Normal move of up to 6\" instead if it is under the effects of the Tactical Doctrine.",
@@ -27056,6 +29207,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "One ADEPTUS ASTARTES unit from your army.",
         "effect": "Select the Devastator Doctrine, Tactical Doctrine or Assault Doctrine. Until the start of your next Command phase, that Combat Doctrine is active for your unit instead of any other Combat Doctrine that is active for your army, even if you have already selected that Combat Doctrine this battle.",
@@ -27075,6 +29228,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets the closest eligible target within 6\", add 1 to the Wound roll.",
@@ -27093,6 +29248,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, Torrent weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability.",
@@ -27112,6 +29269,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -27130,6 +29289,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.",
         "target": "One ADEPTUS ASTARTES TRANSPORT unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "One unit embarked within that TRANSPORT can disembark as if it were your Movement phase, and can then shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
@@ -27148,6 +29309,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that disembarked from a TRANSPORT this turn and has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets the closest eligible target within 12\", add 1 to the Hit roll. If one or more enemy models are destroyed as the result of any of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test.",
@@ -27166,6 +29329,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "End of the Fight phase.",
         "target": "One ADEPTUS ASTARTES TRANSPORT unit from your army that has no models embarked within it, and one ADEPTUS ASTARTES INFANTRY unit from your army wholly within 6\" of that TRANSPORT .",
         "effect": "Your INFANTRY unit can embark within that TRANSPORT .",
@@ -27184,6 +29349,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. If your unit is under the effects of the Devastator Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",
@@ -27203,6 +29370,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -27221,6 +29390,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army.",
         "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [LANCE] ability. If your unit is under the effects of the Assault Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",
@@ -27239,6 +29410,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.",
@@ -27257,6 +29430,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "One ADEPTUS ASTARTES unit from your army.",
         "effect": "Select the Devastator Doctrine, Tactical Doctrine or Assault Doctrine. Until the start of your next Command phase, that Combat Doctrine is active for that unit instead of any other Combat Doctrine that is active for your army, even if you have already selected that doctrine this battle.",
@@ -27275,6 +29450,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
         "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that is within 9\" of the enemy unit that just ended that move.",
         "effect": "Your unit can make a Normal move of up to D6\", or a Normal move of up to 6\" instead if it is under the effects of the Tactical Doctrine.",
@@ -27294,6 +29471,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets a unit that is below its Starting Strength, that attack has the [SUSTAINED HITS 1] ability, and when making such an attack, if the attacking model is a VEHICLE , a successful unmodified Hit roll of 5+ scores a Critical Hit.",
@@ -27313,6 +29492,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -27331,6 +29512,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Command phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that is below its Starting Strength.",
         "effect": "Until the end of the turn, your unit can ignore any or all modifiers to its characteristics and/or to any roll or test made for it (excluding modifiers to saving throws).",
@@ -27349,6 +29532,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "any"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Any phase, just after an ADEPTUS ASTARTES VEHICLE model from your army with the Deadly Demise ability is destroyed.",
         "target": "That ADEPTUS ASTARTES VEHICLE model. You can use this Stratagem on that model even though it was just destroyed.",
         "effect": "Do not roll one D6 to determine whether mortal wounds are inflicted by your model’s Deadly Demise ability. Instead, mortal wounds are automatically inflicted.",
@@ -27367,6 +29552,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Command phase.",
         "target": "One ADEPTUS ASTARTES WALKER model from your army.",
         "effect": "Until the start of your next Command phase, improve your model’s Move, Toughness, Leadership and Objective Control characteristics by 1 and each time your model makes an attack, add 1 to the Hit roll.",
@@ -27385,6 +29572,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.",
         "target": "One ADEPTUS ASTARTES VEHICLE unit from your army that was reduced to Below Half-strength as a result of the attacking unit’s attacks.",
         "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
@@ -27403,6 +29592,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just after an enemy unit has selected its targets.",
         "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that is within 18\" of one or more friendly Adeptus Astartes Psyker models, and that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll, and if the Pyromancy Discipline is active for your army, weapons that target your unit have the [HAZARDOUS] ability.",
@@ -27421,6 +29612,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One Adeptus Astartes Infantry unit from your army that is within 18\" of one or more Adeptus Astartes Psyker models from your army and has not been selected to Fight this phase.",
         "effect": "Until the end of the phase, add 1 to the Strength characteristic of melee weapons equipped by models in your unit, or add 2 if the Biomancy Discipline is active for your army.",
@@ -27439,6 +29632,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One Adeptus Astartes Psyker unit from your army that is eligible to shoot.",
         "effect": "Select one enemy unit within 18\" of and visible to one or more PSYKER models in your unit (excluding units with the Lone Operative ability), and roll six D6, adding 1 to each result if the Telekinesis Discipline is active for your army: for each 4+, that enemy unit suffers 1 mortal wound.",
@@ -27457,6 +29652,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One Adeptus Astartes Psyker unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes an attack, that attack has the [LETHAL HITS] ability, and the [IGNORES COVER] ability as well if the Divination Discipline is active for your army.",
@@ -27475,6 +29672,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Command phase.",
         "target": "One Adeptus Astartes Psyker unit from your army.",
         "effect": "Select one enemy unit that is within 18\" of and visible to one PSYKER model in your unit. Until the start of your next turn, that enemy unit is pinned. While a unit is pinned, subtract 2 from that unit’s Move characteristic and subtract 2 from Charge rolls made for it. In addition, if the Telepathy Discipline is active for your army, that enemy unit must take a Battle-shock test, subtracting 1 from the result.",
@@ -27494,6 +29693,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -27513,6 +29714,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a Drop Pod or while targeting an enemy unit within 12\".",
@@ -27532,6 +29735,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Shooting phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
         "effect": "Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll.",
@@ -27550,6 +29755,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit (excluding Titanic units) from your army that was selected as the target of one or more of the attacking unit’s attacks and one friendly Adeptus Astartes Smoke Vehicle or Drop Pod unit within 9\" of it.",
         "effect": "Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack.",
@@ -27568,6 +29775,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6\" instead of up to 3\".",
@@ -27586,6 +29795,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "End of your opponent’s Fight phase.",
         "target": "One Adeptus Astartes Infantry unit from your army that was not set up on the battlefield this turn and one friendly Transport it is able to embark within.",
         "effect": "If your ADEPTUS ASTARTES unit is wholly within 6\" of that TRANSPORT , it can embark within it.",
@@ -27604,6 +29815,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Command phase.",
         "target": "One ADEPTUS ASTARTES unit from your army.",
         "effect": "Select one enemy unit visible to and within 18\" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
@@ -27623,6 +29836,8 @@ window.BC_BUILTIN_PACKS = {
           "charge",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your Charge phase or the Fight phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not declared a charge or been selected to fight this phase.",
         "effect": "Until the end of the turn, add 2 to Charge rolls made for your unit and add 1 to the Attacks characteristic of melee weapons equipped by models in your unit.",
@@ -27641,6 +29856,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6: on a 4+, do not remove the destroyed model from play; it can fight after the attacking unit has finished making its attacks, and is then removed from play.",
@@ -27659,6 +29876,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "End of the Command phase.",
         "target": "One ADEPTUS ASTARTES unit from your army.",
         "effect": "Until the start of the next Command phase, add 1 to the Objective Control characteristic of models in your unit.",
@@ -27677,6 +29896,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase, just after an ADEPTUS ASTARTES unit from your army ends a Fall Back move.",
         "target": "That ADEPTUS ASTARTES unit.",
         "effect": "Until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Fell Back.",
@@ -27695,6 +29916,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One ADEPTUS ASTARTES unit from your army.",
         "effect": "Select one objective marker you control that your unit is within range of. That objective marker remains under your control until your opponent’s Level of Control over that objective marker is greater than yours at the end of a phase.",
@@ -27713,6 +29936,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Movement phase, just after an enemy unit Falls Back.",
         "target": "One ADEPTUS ASTARTES unit from your army that was within Engagement Range of that enemy unit at the start of the phase.",
         "effect": "Your unit can make a Normal move of up to D6\"+1.",
@@ -27731,6 +29956,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll and subtract 1 from the Wound roll.",
@@ -27750,6 +29977,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -27768,6 +29997,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [ASSAULT] ability. If such a weapon already has this ability, until the end of the phase, that weapon has the [SUSTAINED HITS 1] ability as well.",
@@ -27786,6 +30017,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Charge phase.",
         "target": "One ADEPTUS ASTARTES MOUNTED unit from your army that has not declared a charge this phase.",
         "effect": "Until the end of the turn, you can re-roll Charge rolls made for your unit and melee weapons equipped by models in that unit have the [LANCE] ability.",
@@ -27804,6 +30037,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
         "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that is within 9\" of that enemy unit.",
         "effect": "Your unit can make a Normal move of up to 6\".",
@@ -27822,6 +30057,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "movement"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Movement phase.",
         "target": "One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES VEHICLE unit (excluding WALKERS) from your army.",
         "effect": "Until the end of the phase, if your unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit, or 9\" instead if your unit is MOUNTED .",
@@ -27840,6 +30077,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "shooting"
         ],
+        "turn": "Your turn",
+        "turn_scope": "friendly",
         "timing": "Your Shooting phase.",
         "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot this phase.",
         "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit that is more than 12\" away, improve the Ballistic Skill and Armour Penetration characteristics of that attack by 1. If one or more enemy models are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test.",
@@ -27858,6 +30097,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Fight phase.",
         "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.",
         "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
@@ -27877,6 +30118,8 @@ window.BC_BUILTIN_PACKS = {
           "shooting",
           "fight"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
         "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
         "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -27895,6 +30138,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "fight"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "End of your opponent’s Fight phase.",
         "target": "Up to two PHOBOS and/or SCOUT SQUAD units from your army, or one other ADEPTUS ASTARTES INFANTRY unit from your army.",
         "effect": "Remove those units from the battlefield and place them into Strategic Reserves.",
@@ -27913,6 +30158,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "charge"
         ],
+        "turn": "Opponent’s turn",
+        "turn_scope": "enemy",
         "timing": "Your opponent’s Charge phase, just after an enemy unit declares a charge.",
         "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that was selected as a target of that charge.",
         "effect": "Your unit can make a Normal move of up to D6\", or up to 6\" instead if it is a PHOBOS or ScouT SQUAD unit.",
@@ -27931,6 +30178,8 @@ window.BC_BUILTIN_PACKS = {
         "phases": [
           "command"
         ],
+        "turn": "Either player’s turn",
+        "turn_scope": "either",
         "timing": "Start of the Command phase.",
         "target": "One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit from your army within range of an objective marker you control.",
         "effect": "That objective marker is said to be Sabotaged, and remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn. While an objective marker is Sabotaged and under your control, each time an enemy unit ends a Normal, Advance, Fall Back or Charge move within range of that objective marker, roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds.",

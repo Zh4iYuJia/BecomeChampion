@@ -10,6 +10,7 @@ const OUT_JSON_PATH = path.join(ROOT, 'rulepacks', 'SM-UM-rules-pack.json');
 const PACK_VERSION = '1.1.0';
 const PACK_ID = 'sm-um-rules-pack';
 const PACK_NAME = 'SM-UM-rules-pack.json';
+const CORE_STRATAGEM_TYPE_RE = /^Core\s*[–-]/i;
 
 const INCLUDED_DETACHMENTS = [
   { id: '000000750', name: 'Gladius Task Force', kind: 'generic' },
@@ -110,6 +111,14 @@ function mapPhases(phaseRaw) {
   if (phase.includes('battle-shock') || phase.includes('battleshock')) phases.push('battleshock');
 
   return phases.length > 0 ? [...new Set(phases)] : ['any'];
+}
+
+function mapTurnScope(turnRaw) {
+  const turn = String(turnRaw || '').toLowerCase();
+  if (turn.includes('either')) return 'either';
+  if (turn.includes('opponent')) return 'enemy';
+  if (turn.includes('your')) return 'friendly';
+  return 'either';
 }
 
 function inferPhasesFromText(name, description) {
@@ -265,26 +274,44 @@ function buildUnits(datasheets, abilityMap, keywordMap, sourceMap) {
 }
 
 function buildStratagems(rows, detachmentById) {
-  return rows.map((row) => {
-    const detachmentName = detachmentById.get(row.detachment_id) || stripHtml(row.detachment) || 'Unknown Detachment';
+  const seenCoreNames = new Set();
+
+  return rows.flatMap((row) => {
+    const typeName = stripHtml(row.type || 'Stratagem');
+    const isCoreStratagem = CORE_STRATAGEM_TYPE_RE.test(typeName);
+    const coreKey = `${stripHtml(row.name)}|${stripHtml(row.turn)}|${stripHtml(row.phase)}`;
+
+    if (isCoreStratagem && seenCoreNames.has(coreKey)) {
+      return [];
+    }
+
+    if (isCoreStratagem) {
+      seenCoreNames.add(coreKey);
+    }
+
+    const detachmentName = isCoreStratagem
+      ? 'Core Stratagems'
+      : detachmentById.get(row.detachment_id) || stripHtml(row.detachment) || 'Unknown Detachment';
     const timing = extractRuleSection(row.description, 'WHEN') || `${stripHtml(row.turn)} - ${stripHtml(row.phase)}`;
     const target = extractRuleSection(row.description, 'TARGET') || 'See rule text';
     const effect = extractRuleSection(row.description, 'EFFECT') || stripHtml(row.description);
     const cpCost = Number(row.cp_cost);
 
-    return {
+    return [{
       id: `strat-${row.id || slugify(row.name)}`,
       name: stripHtml(row.name),
       cp_cost: Number.isFinite(cpCost) ? cpCost : 1,
       phases: mapPhases(row.phase),
+      turn: stripHtml(row.turn),
+      turn_scope: mapTurnScope(row.turn),
       timing,
       target,
       effect,
       source: `Wahapedia CSV / ${detachmentName}`,
       once_per: 'phase',
       priority: 4,
-      tags: [stripHtml(row.type || 'Stratagem'), detachmentName],
-    };
+      tags: [typeName, detachmentName],
+    }];
   });
 }
 
@@ -340,7 +367,7 @@ function main() {
   const abilityMap = buildAbilityMap(readCsv('Datasheets_abilities.csv'));
 
   const stratagemRows = readCsv('Stratagems.csv')
-    .filter((row) => detachmentIds.has(row.detachment_id));
+    .filter((row) => detachmentIds.has(row.detachment_id) || CORE_STRATAGEM_TYPE_RE.test(stripHtml(row.type || '')));
 
   const detachmentAbilityRows = readCsv('Detachment_abilities.csv')
     .filter((row) => detachmentIds.has(row.detachment_id));
@@ -363,7 +390,7 @@ function main() {
     pack_version: PACK_VERSION,
     date: new Date().toISOString().slice(0, 10),
     author: 'Community',
-    source_note: `Generated from current 10e CSV exports. This pack includes Ultramarines-exclusive detachments ${umDetachmentNames.join(', ')}, plus generic Space Marines detachments ${genericDetachmentNames.join(', ')} and common Space Marines units that do not belong to another chapter source. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.`,
+    source_note: `Generated from current 10e CSV exports. This pack includes Ultramarines-exclusive detachments ${umDetachmentNames.join(', ')}, plus generic Space Marines detachments ${genericDetachmentNames.join(', ')} and standard Core Stratagems. Common Space Marines units that do not belong to another chapter source are also included. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.`,
     units,
     stratagems,
     detachment_rules: detachmentRules,

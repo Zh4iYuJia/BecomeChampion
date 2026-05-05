@@ -5,9 +5,9 @@
   "faction": "Tyranids",
   "game_version": "10th Edition",
   "pack_version": "1.0.0",
-  "date": "2026-04-14",
+  "date": "2026-05-05",
   "author": "Community",
-  "source_note": "Generated from current 10e CSV exports. This pack includes Tyranid detachments Invasion Fleet, Crusher Stampede, Unending Swarm, Assimilation Swarm, Vanguard Onslaught, Synaptic Nexus. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+  "source_note": "Generated from current 10e CSV exports. This pack includes Tyranid detachments Invasion Fleet, Crusher Stampede, Unending Swarm, Assimilation Swarm, Vanguard Onslaught, Synaptic Nexus plus standard Core Stratagems. Boarding Actions detachments are intentionally excluded. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
   "units": [
     {
       "id": "unit-000000503",
@@ -1818,12 +1818,235 @@
   ],
   "stratagems": [
     {
+      "id": "strat-000008335010",
+      "name": "GO TO GROUND",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One INFANTRY unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, all models in your unit have a 6+ invulnerable save and have the Benefit of Cover.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Battle Tactic Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335002",
+      "name": "COMMAND RE-ROLL",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
+      "timing": "Any phase, just after you make an Advance roll, a Charge roll, a Desperate Escape test or a Hazardous test for a unit from your army, or a Hit roll, a Wound roll, a Damage roll or a saving throw for a model in that unit, or a roll to determine the number of attacks made with a weapon equipped by a model in that unit. If you are using fast dice rolling, this Stratagem can still be used after rolling multiple rolls or saving throws at once.",
+      "target": "That unit or model from your army.",
+      "effect": "You re-roll that roll, test or saving throw. If you are using fast dice rolling, select one of those rolls or saving throws to re-roll.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Battle Tactic Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335004",
+      "name": "EPIC CHALLENGE",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
+      "timing": "Fight phase, when a CHARACTER unit from your army that is within Engagement Range of one or more Attached units is selected to fight.",
+      "target": "One CHARACTER model in your unit.",
+      "effect": "Until the end of the phase, all melee attacks made by that model have the [PRECISION] ability.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Epic Deed Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335005",
+      "name": "INSANE BRAVERY",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
+      "timing": "Battle-shock step of your Command phase, just before you take a Battle-shock test for a unit from your army.",
+      "target": "That unit from your army.",
+      "effect": "Your unit automatically passes that Battle-shock test.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Epic Deed Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335012",
+      "name": "HEROIC INTERVENTION",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "Your opponent’s Charge phase, just after an enemy unit ends a Charge move.",
+      "target": "One unit from your army that is within 6\" of that enemy unit and would be eligible to declare a charge against that enemy unit if it were your Charge phase.",
+      "effect": "Your unit now declares a charge that targets only that enemy unit, and you resolve that charge as if it were your Charge phase.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335009",
+      "name": "FIRE OVERWATCH",
+      "cp_cost": 1,
+      "phases": [
+        "movement",
+        "charge"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "Your opponent’s Movement or Charge phase, just after an enemy unit is set up or when an enemy unit starts or ends a Normal, Advance or Fall Back move, or declares a charge.",
+      "target": "One unit from your army that is within 24\" of that enemy unit and that would be eligible to shoot if it were your Shooting phase.",
+      "effect": "If that enemy unit is visible to your unit, your unit can shoot that enemy unit as if it were your Shooting phase.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335008",
+      "name": "RAPID INGRESS",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "End of your opponent’s Movement phase.",
+      "target": "One unit from your army that is in Reserves.",
+      "effect": "Your unit can arrive on the battlefield as if it were the Reinforcements step of your Movement phase, and if every model in that unit has the Deep Strike ability, you can set that unit up as described in the Deep Strike ability (even though it is not your Movement phase).",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335003",
+      "name": "COUNTER-OFFENSIVE",
+      "cp_cost": 2,
+      "phases": [
+        "fight"
+      ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
+      "timing": "Fight phase, just after an enemy unit has fought.",
+      "target": "One unit from your army that is within Engagement Range of one or more enemy units and that has not already been selected to fight this phase.",
+      "effect": "Your unit fights next.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335007",
+      "name": "TANK SHOCK",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
+      "timing": "Your Charge phase, just after a VEHICLE unit from your army ends a Charge move.",
+      "target": "That VEHICLE unit.",
+      "effect": "Select one enemy unit within Engagement Range of your unit, and select one VEHICLE model in your unit that is within Engagement Range of that enemy unit. Roll a number of D6 equal to the Toughness characteristic of the selected VEHICLE model. For each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds).",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335011",
+      "name": "SMOKESCREEN",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One SMOKE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, all models in your unit have the Benefit of Cover and the Stealth ability.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Wargear Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335006",
+      "name": "GRENADE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
+      "timing": "Your Shooting phase.",
+      "target": "One GRENADES unit from your army (excluding units that Advanced, Fell Back or have shot this turn) that is not within Engagement Range of one or more enemy units.",
+      "effect": "Select one GRENADES model in your unit and one enemy unit that is not within Engagement Range of any units from your army and is within 8\" of and visible to your GRENADES model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Wargear Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
       "id": "strat-000008413007",
       "name": "RAPACIOUS HUNGER",
       "cp_cost": 1,
       "phases": [
         "fight"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Fight phase.",
       "target": "One TYRANIDS unit from your army that just destroyed an enemy unit.",
       "effect": "Your unit immediately Regenerates (See Feed the Swarm). When doing so, if your unit is a Harvester unit and you choose for one model to regain up to D3 lost wounds, that model regains up to 3 lost wounds instead.",
@@ -1842,6 +2065,8 @@
       "phases": [
         "any"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Any phase.",
       "target": "One Harvester unit from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
       "effect": "Until the end of the battle, each time a friendly TYRANIDS model makes an attack that targets the enemy unit that just destroyed your HARVESTER unit, add 1 to the Wound roll.",
@@ -1861,6 +2086,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One Harvester unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, models in your unit have the Feel No Pain 5+ ability. If your unit is within range of an objective marker you control, until the end of the phase models in your unit have the Feel No Pain 4+ ability instead.",
@@ -1879,6 +2106,8 @@
       "phases": [
         "any"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Any phase, when a TYRANIDS unit from your army is destroyed, before the last model in it is removed from play.",
       "target": "One Harvester unit from your army that is within 6\" of that destroyed unit.",
       "effect": "Regenerate one friendly TYRANIDS unit within 6\" of your HARVESTER unit (See Feed the Swarm).",
@@ -1897,6 +2126,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Command phase.",
       "target": "One Harvester unit from your army that is within range of an objective marker you control.",
       "effect": "That objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.",
@@ -1915,6 +2146,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One TYRANIDS unit from your army that has not been selected to fight this phase.",
       "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [LETHAL HITS] ability. If your unit is a Harvester unit, each time a model in that unit makes a melee attack, a successful unmodified Hit roll of 5+ scores a Critical Hit as well.",
@@ -1933,6 +2166,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase, just after an enemy unit has selected its targets.",
       "target": "One Tyranids Monster unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "That enemy unit must take a Battle-shock test and, until the end of the phase, each time a model in that enemy unit makes an attack that targets your unit, subtract 1 from the Hit roll. If that Battle-shock test was failed, subtract 1 from the Wound roll as well.",
@@ -1951,6 +2186,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One Tyranids Monster unit from your army that has not been selected to shoot this phase.",
       "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability, and until the end of the phase each time a model in your unit makes an attack, you can ignore any or all modifiers to that model’s Ballistic Skill characteristic and any or all modifiers to the Hit roll.",
@@ -1969,6 +2206,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One Tyranids Monster unit from your army that has not been selected to fight this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes an attack, you can re-roll the Hit roll.",
@@ -1987,6 +2226,8 @@
       "phases": [
         "charge"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Charge phase, just after a Tyranids Monster model from your army ends a Charge move.",
       "target": "That TYRANIDS MONSTER model.",
       "effect": "Select one enemy unit within Engagement Range of your model and roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.",
@@ -2005,6 +2246,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Movement phase.",
       "target": "One Tyranids Monster unit from your army that has not been selected to move this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes a Normal, Advance or Fall Back move, it can move through models (excluding TITANIC models) and sections of terrain features that are 4\" or less in height. When doing so: - It can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them. - It can also move through sections of terrain features that are more than 4\" in height, but if it does, after its unit has moved, roll one D6: on a 1, your unit is Battle-shocked.",
@@ -2024,6 +2267,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after a Tyranids Monster model from your army with the Deadly Demise ability that cannot FLY is destroyed.",
       "target": "That TYRANIDS MONSTER model. You can use this Stratagem on that model even though it was just destroyed.",
       "effect": "Do not roll one D6 to determine whether mortal wounds are inflicted by your model’s Deadly Demise ability. Instead, mortal wounds are automatically inflicted.",
@@ -2042,6 +2287,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "Up to two TYRANIDS units from your army that are within Synapse Range of your army and are eligible to fight, or one other TYRANIDS unit from your army that is eligible to fight.",
       "effect": "Until the end of the phase, each time a model in any of those selected units makes an attack, an unmodified Hit roll of 5+ scores a Critical Hit.",
@@ -2061,6 +2308,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One TYRANIDS unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, models in your unit have the Feel No Pain 6+ ability. If your unit is within Synapse Range of your army, models in your unit have the Feel No Pain 5+ ability instead.",
@@ -2079,6 +2328,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase, just before a TYRANIDS unit from your army Consolidates.",
       "target": "That TYRANIDS unit.",
       "effect": "Until the end of the phase, each time your unit Consolidates, models in it can move an additional 3\" as long as your unit can end that move within Engagement Range of one or more enemy units. If your unit is within Synapse Range of your army and not within Engagement Range of any enemy units, instead of making that Consolidation move, it can make a Normal move of up to 6\".",
@@ -2097,6 +2348,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Command phase.",
       "target": "Up to two TYRANIDS units from your army that are within Synapse Range of your army, or one other TYRANIDS unit from your army.",
       "effect": "Select one Hyper-adaptation. Until the start of your next Command phase, that Hyper-adaptation is active for those selected units in addition to any other that may be active for your army.",
@@ -2115,6 +2368,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Command phase.",
       "target": "Up to two Endless Multitude units from your army that are within Synapse Range of your army, or one other ENDLESS MULTITUDE unit from your army.",
       "effect": "You can return up to D3+3 destroyed models to each of the selected units.",
@@ -2133,6 +2388,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase, just after an enemy unit has selected its targets.",
       "target": "One TYRANIDS unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.",
@@ -2152,6 +2409,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One Synapse unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -2171,6 +2430,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase.",
       "target": "One Synapse unit from your army that has not been selected to shoot or fight this phase, and one enemy unit within 24\" of and visible to the SYNAPSE unit.",
       "effect": "Until the end of the phase, each time a friendly TYRANIDS model makes an attack that targets that enemy unit, if the attacking model’s unit is within 6\" of your SYNAPSE unit, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.",
@@ -2189,6 +2450,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Command phase.",
       "target": "One Synapse unit from your army.",
       "effect": "Until the end of the turn, while a friendly TYRANIDS unit is within 9\" of the selected unit, that unit is within Synapse Range of your army.",
@@ -2207,6 +2470,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Command phase.",
       "target": "One TYRANIDS unit from your army that is within Synapse Range of your army.",
       "effect": "Select one Synaptic Imperative, even if you have already selected that imperative this battle. Until the start of your next Command phase, that Synaptic Imperative is active for your unit instead of any other Synaptic Imperative that is active for your army.",
@@ -2225,6 +2490,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Movement phase.",
       "target": "One TYRANIDS unit from your army that is within Synapse Range of your army and made a Fall Back move this phase.",
       "effect": "Your unit is eligible to shoot and declare a charge this turn.",
@@ -2243,6 +2510,8 @@
       "phases": [
         "any"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Any phase, just after an enemy unit fails a Battle-shock test.",
       "target": "One Synapse unit from your army within 12\" of that enemy unit.",
       "effect": "Roll six D6: for each 3+, that enemy unit suffers 1 mortal wound.",
@@ -2262,6 +2531,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase.",
       "target": "One Endless Multitude unit from your army that has not been selected to shoot or fight this phase.",
       "effect": "Until the end of the phase, weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability, and If your unit contains 15 or more models, each time a model in your unit makes an attack, an unmodified Hit roll of 5+ scores a Critical Hit.",
@@ -2281,6 +2552,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One Endless Multitude unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll.",
@@ -2299,6 +2572,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Movement phase.",
       "target": "One Endless Multitude unit from your army.",
       "effect": "Until the end of the phase, each time your unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit.",
@@ -2317,6 +2592,8 @@
       "phases": [
         "any"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Any phase, just before an Endless Multitude unit from your army that is within Synapse Range of your army makes a Surge move.",
       "target": "That ENDLESS MULTITUDE unit.",
       "effect": "When making that Surge move, you can re-roll the D6 to determine how far your unit moves, and your unit can end that move as close as possible to the closest objective marker (instead of as close as possible to the closest enemy unit]. All other rules for making Surge moves still apply.",
@@ -2335,6 +2612,8 @@
       "phases": [
         "any"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Any phase.",
       "target": "One Endless Multitude unit from your army that was just destroyed. You can use this Stratagem on that unit even though it was just destroyed.",
       "effect": "Add a new unit to your army identical to your destroyed unit, in Strategic Reserves, at its Starting Strength.",
@@ -2353,6 +2632,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
       "target": "One Endless Multitude unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, your unit is treated as containing fewer than five models for the purpose of the [BLAST] ability.",
@@ -2371,6 +2652,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One Vanguard Invader Infantry unit from your army that has not been selected to fight this phase.",
       "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
@@ -2390,6 +2673,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase, just after a Vanguard Invader unit from your army has selected its targets.",
       "target": "That VANGUARD INVADER unit.",
       "effect": "Select one enemy unit that was selected as the target of one or more of your unit’s attacks. That enemy unit must take a Battle-shock test. Until the end of the phase, each time a model in your unit makes an attack that targets that enemy unit, add 1 to the Hit roll. If the Battle-shock test was failed, add 1 to the Wound roll as well.",
@@ -2408,6 +2693,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
       "target": "One Vanguard Invader unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, your unit can only be selected as the target of a ranged attack if the attacking model is within 18\" or, if your unit has the Lone Operative ability, if the attacking model is within 6\". Your opponent can select new targets for the attacking unit’s attacks.",
@@ -2426,6 +2713,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
       "target": "Up to two Vanguard Invader units from your army that are within 9\" of that enemy unit, or one other Tyranids Infantry unit from your army that is within 9\" of that enemy unit.",
       "effect": "Those selected units can each make a Normal move of up to 6\".",
@@ -2444,6 +2733,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Movement phase.",
       "target": "One TYRANIDS unit from your army that is in Reserves, or up to two Vanguard Invader units from your army that are in Reserves.",
       "effect": "Until the end of the phase, for the purposes of setting up those selected units on the battlefield, treat the current battle round number as being one higher than it actually is.",
@@ -2462,6 +2753,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "End of your opponent’s Fight phase.",
       "target": "Up to two Vanguard Invader units from your army, or one Tyranids Infantry unit from your army.",
       "effect": "Remove the targeted units from the battlefield and place them into Strategic Reserves.",

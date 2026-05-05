@@ -6,9 +6,9 @@
   "subfaction": "Black Templars",
   "game_version": "10th Edition",
   "pack_version": "1.0.0",
-  "date": "2026-03-18",
+  "date": "2026-05-05",
   "author": "Community",
-  "source_note": "Generated from current 10e CSV exports. This pack includes Black Templars-exclusive detachments Wrathful Procession, Companions of Vehemence, Vindication Task Force, Godhammer Assault Force, plus generic Space Marines detachments Gladius Task Force, Anvil Siege Force, Ironstorm Spearhead, Firestorm Assault Force, Stormlance Task Force, Vanguard Spearhead, Bastion Task Force, Orbital Assault Force. Units include Black Templars-exclusive datasheets and common Space Marines datasheets compatible with Heirs of Sigismund restrictions, excluding Adeptus Astartes Psykers, 1st Company Task Force content, and generic codex datasheets explicitly banned for Black Templars armies. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
+  "source_note": "Generated from current 10e CSV exports. This pack includes Black Templars-exclusive detachments Wrathful Procession, Companions of Vehemence, Vindication Task Force, Godhammer Assault Force, plus generic Space Marines detachments Gladius Task Force, Anvil Siege Force, Ironstorm Spearhead, Firestorm Assault Force, Stormlance Task Force, Vanguard Spearhead, Bastion Task Force, Orbital Assault Force and standard Core Stratagems. Units include Black Templars-exclusive datasheets and common Space Marines datasheets compatible with Heirs of Sigismund restrictions, excluding Adeptus Astartes Psykers, 1st Company Task Force content, and generic codex datasheets explicitly banned for Black Templars armies. Rules text is extracted and normalized for in-app prompting; check official publications for authoritative wording.",
   "units": [
     {
       "id": "unit-000002099",
@@ -3954,6 +3954,227 @@
   ],
   "stratagems": [
     {
+      "id": "strat-000008335010",
+      "name": "GO TO GROUND",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One INFANTRY unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, all models in your unit have a 6+ invulnerable save and have the Benefit of Cover.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Battle Tactic Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335002",
+      "name": "COMMAND RE-ROLL",
+      "cp_cost": 1,
+      "phases": [
+        "any"
+      ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
+      "timing": "Any phase, just after you make an Advance roll, a Charge roll, a Desperate Escape test or a Hazardous test for a unit from your army, or a Hit roll, a Wound roll, a Damage roll or a saving throw for a model in that unit, or a roll to determine the number of attacks made with a weapon equipped by a model in that unit. If you are using fast dice rolling, this Stratagem can still be used after rolling multiple rolls or saving throws at once.",
+      "target": "That unit or model from your army.",
+      "effect": "You re-roll that roll, test or saving throw. If you are using fast dice rolling, select one of those rolls or saving throws to re-roll.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Battle Tactic Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335004",
+      "name": "EPIC CHALLENGE",
+      "cp_cost": 1,
+      "phases": [
+        "fight"
+      ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
+      "timing": "Fight phase, when a CHARACTER unit from your army that is within Engagement Range of one or more Attached units is selected to fight.",
+      "target": "One CHARACTER model in your unit.",
+      "effect": "Until the end of the phase, all melee attacks made by that model have the [PRECISION] ability.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Epic Deed Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335005",
+      "name": "INSANE BRAVERY",
+      "cp_cost": 1,
+      "phases": [
+        "command"
+      ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
+      "timing": "Battle-shock step of your Command phase, just before you take a Battle-shock test for a unit from your army.",
+      "target": "That unit from your army.",
+      "effect": "Your unit automatically passes that Battle-shock test.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Epic Deed Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335012",
+      "name": "HEROIC INTERVENTION",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "Your opponent’s Charge phase, just after an enemy unit ends a Charge move.",
+      "target": "One unit from your army that is within 6\" of that enemy unit and would be eligible to declare a charge against that enemy unit if it were your Charge phase.",
+      "effect": "Your unit now declares a charge that targets only that enemy unit, and you resolve that charge as if it were your Charge phase.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335009",
+      "name": "FIRE OVERWATCH",
+      "cp_cost": 1,
+      "phases": [
+        "movement",
+        "charge"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "Your opponent’s Movement or Charge phase, just after an enemy unit is set up or when an enemy unit starts or ends a Normal, Advance or Fall Back move, or declares a charge.",
+      "target": "One unit from your army that is within 24\" of that enemy unit and that would be eligible to shoot if it were your Shooting phase.",
+      "effect": "If that enemy unit is visible to your unit, your unit can shoot that enemy unit as if it were your Shooting phase.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335008",
+      "name": "RAPID INGRESS",
+      "cp_cost": 1,
+      "phases": [
+        "movement"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "End of your opponent’s Movement phase.",
+      "target": "One unit from your army that is in Reserves.",
+      "effect": "Your unit can arrive on the battlefield as if it were the Reinforcements step of your Movement phase, and if every model in that unit has the Deep Strike ability, you can set that unit up as described in the Deep Strike ability (even though it is not your Movement phase).",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335003",
+      "name": "COUNTER-OFFENSIVE",
+      "cp_cost": 2,
+      "phases": [
+        "fight"
+      ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
+      "timing": "Fight phase, just after an enemy unit has fought.",
+      "target": "One unit from your army that is within Engagement Range of one or more enemy units and that has not already been selected to fight this phase.",
+      "effect": "Your unit fights next.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335007",
+      "name": "TANK SHOCK",
+      "cp_cost": 1,
+      "phases": [
+        "charge"
+      ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
+      "timing": "Your Charge phase, just after a VEHICLE unit from your army ends a Charge move.",
+      "target": "That VEHICLE unit.",
+      "effect": "Select one enemy unit within Engagement Range of your unit, and select one VEHICLE model in your unit that is within Engagement Range of that enemy unit. Roll a number of D6 equal to the Toughness characteristic of the selected VEHICLE model. For each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds).",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Strategic Ploy Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335011",
+      "name": "SMOKESCREEN",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
+      "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
+      "target": "One SMOKE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
+      "effect": "Until the end of the phase, all models in your unit have the Benefit of Cover and the Stealth ability.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Wargear Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
+      "id": "strat-000008335006",
+      "name": "GRENADE",
+      "cp_cost": 1,
+      "phases": [
+        "shooting"
+      ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
+      "timing": "Your Shooting phase.",
+      "target": "One GRENADES unit from your army (excluding units that Advanced, Fell Back or have shot this turn) that is not within Engagement Range of one or more enemy units.",
+      "effect": "Select one GRENADES model in your unit and one enemy unit that is not within Engagement Range of any units from your army and is within 8\" of and visible to your GRENADES model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.",
+      "source": "Wahapedia CSV / Core Stratagems",
+      "once_per": "phase",
+      "priority": 4,
+      "tags": [
+        "Core – Wargear Stratagem",
+        "Core Stratagems"
+      ]
+    },
+    {
       "id": "strat-000008475002",
       "name": "ARMOUR OF CONTEMPT",
       "cp_cost": 1,
@@ -3961,6 +4182,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -3979,6 +4202,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets a MONSTER or VEHICLE unit, you can re-roll the Wound roll.",
@@ -3997,6 +4222,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
       "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability. If your unit Remained Stationary this turn, then until the end of the phase, each time a model in your unit makes a ranged attack, a successful unmodified Hit roll of 5+ scores a Critical Hit.",
@@ -4015,6 +4242,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Command phase.",
       "target": "One ADEPTUS ASTARTES INFANTRY unit from your army within range of an objective marker.",
       "effect": "Until the end of the turn, double the Objective Control characteristic of models in your unit, but it must Remain Stationary this turn.",
@@ -4033,6 +4262,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.",
       "target": "One ADEPTUS ASTARTES unit from your army that had one or more of its models destroyed as a result of the attacking unit’s attacks.",
       "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
@@ -4051,6 +4282,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "End of the Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that is within Engagement Range of one or more enemy units.",
       "effect": "Your unit can immediately make a Fall Back move of up to 6\".",
@@ -4070,6 +4303,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets an enemy unit, re-roll a Hit roll of 1. If that target is auspex scanned, re-roll a Wound roll of 1 as well.",
@@ -4089,6 +4324,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
       "effect": "Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have that ability while targeting an auspex scanned unit or if the bearer has the Battleline keyword.",
@@ -4108,6 +4345,8 @@
         "shooting",
         "charge"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase or your Charge phase.",
       "target": "One ADEPTUS ASTARTES unit (excluding Battleline units) from your army.",
       "effect": "Until the end of the phase, your unit is eligible to shoot and declare a charge in a turn in which it Advanced or Fell Back. If it does, every target of that charge and every target of those attacks must be an auspex scanned unit.",
@@ -4127,6 +4366,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase, just after an Adeptus Astartes Battleline unit from your army has finished making its attacks.",
       "target": "That ADEPTUS ASTARTES BATTLELINE unit.",
       "effect": "When an enemy unit is auspex scanned as a result of those attacks this turn, if that enemy unit does not have the MONSTER or VEHICLE keywords, until the start of your next turn, it is pinned. While a unit is pinned, subtract 2 from that unit’s Move characteristic and subtract 2 from Charge rolls made for that unit.",
@@ -4146,6 +4387,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase, just after an Adeptus Astartes Battleline unit from your army finished making its attacks.",
       "target": "That ADEPTUS ASTARTES BATTLELINE unit.",
       "effect": "When an enemy unit is auspex scanned as a result of those attacks this turn, until the start of your next turn, it is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
@@ -4164,6 +4407,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One Chaplain or Judiciar unit from your army that has not been selected to fight this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes a melee attack that targets an enemy unit, re-roll a Hit roll of 1. If that target is a MONSTER or VEHICLE unit, re-roll a Wound roll of 1 as well.",
@@ -4182,6 +4427,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One Adeptus Astartes Infantry unit from your army that has not been selected to fight this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6\" instead of up to 3\".",
@@ -4200,6 +4447,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One Adeptus Astartes Infantry unit from your army that has not been selected to fight this phase.",
       "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
@@ -4218,6 +4467,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase, just before an Adeptus Astartes Infantry unit from your army Consolidates.",
       "target": "That ADEPTUS ASTARTES INFANTRY unit.",
       "effect": "Until the end of the phase, each time a model in your unit makes a Consolidation move, it does not need to end that move closer to the closest enemy model (or the closest enemy unit if the Suffer Not the Unclean to Live Vow is active for it).",
@@ -4236,6 +4487,8 @@
       "phases": [
         "charge"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Charge phase, just after an enemy unit declares a charge.",
       "target": "One Adeptus Astartes Infantry unit from your army that was selected as one of the targets of that charge.",
       "effect": "That enemy unit must take a Battle-shock test, subtracting 1 from the result.",
@@ -4254,6 +4507,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
       "target": "One Chaplain or Judiciar unit from your army that is within 9\" of that enemy unit and is not within Engagement Range of one or more enemy units.",
       "effect": "Your unit can make a Retribution move. To do so, roll one D6: models in your unit move a number of inches up to the result, but your unit must end that move as close as possible to the closest enemy unit (excluding AIRCRAFT ). When doing so, those models can be moved within Engagement Range of that enemy unit.",
@@ -4273,6 +4528,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase.",
       "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot or fight this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets the closest eligible target within 6\", add 1 to the Wound roll.",
@@ -4291,6 +4548,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
       "effect": "Until the end of the phase, Torrent weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability.",
@@ -4310,6 +4569,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -4328,6 +4589,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.",
       "target": "One ADEPTUS ASTARTES TRANSPORT unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "One unit embarked within that TRANSPORT can disembark as if it were your Movement phase, and can then shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
@@ -4346,6 +4609,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that disembarked from a TRANSPORT this turn and has not been selected to shoot this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets the closest eligible target within 12\", add 1 to the Hit roll. If one or more enemy models are destroyed as the result of any of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test.",
@@ -4364,6 +4629,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "End of the Fight phase.",
       "target": "One ADEPTUS ASTARTES TRANSPORT unit from your army that has no models embarked within it, and one ADEPTUS ASTARTES INFANTRY unit from your army wholly within 6\" of that TRANSPORT .",
       "effect": "Your INFANTRY unit can embark within that TRANSPORT .",
@@ -4382,6 +4649,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
       "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. If your unit is under the effects of the Devastator Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",
@@ -4401,6 +4670,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -4419,6 +4690,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army.",
       "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [LANCE] ability. If your unit is under the effects of the Assault Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.",
@@ -4437,6 +4710,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase, just after an enemy unit has selected its targets.",
       "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.",
@@ -4455,6 +4730,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Command phase.",
       "target": "One ADEPTUS ASTARTES unit from your army.",
       "effect": "Select the Devastator Doctrine, Tactical Doctrine or Assault Doctrine. Until the start of your next Command phase, that Combat Doctrine is active for that unit instead of any other Combat Doctrine that is active for your army, even if you have already selected that doctrine this battle.",
@@ -4473,6 +4750,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
       "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that is within 9\" of the enemy unit that just ended that move.",
       "effect": "Your unit can make a Normal move of up to D6\", or a Normal move of up to 6\" instead if it is under the effects of the Tactical Doctrine.",
@@ -4491,6 +4770,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
       "target": "One Adeptus Astartes Vehicle unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, each time an attack is allocated to a model in your unit, subtract 1 from the Damage characteristic of that attack.",
@@ -4509,6 +4790,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes an attack, if it disembarked from a Transport this turn, re-roll a Wound roll of 1. If that TRANSPORT has the Land Raider keyword, you can re-roll the Wound roll instead.",
@@ -4527,6 +4810,8 @@
       "phases": [
         "charge"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Charge phase, just after you make a Charge roll for an ADEPTUS ASTARTES unit from your army that disembarked from a Transport this turn.",
       "target": "That ADEPTUS ASTARTES unit.",
       "effect": "Until the end of the phase, each time your unit makes a Charge move, models in your unit can move through models (when doing so, its models can move within Engagement Range of enemy models, but they can only end that move within Engagement Range of enemy models if those enemy models belong to a unit that your unit declared a charge against this turn).",
@@ -4545,6 +4830,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Movement phase.",
       "target": "One Adeptus Astartes Vehicle model from your army that has not been selected to move this phase.",
       "effect": "Until the end of the phase, each time your model makes a Normal or Advance move, it can move horizontally through terrain features.",
@@ -4563,6 +4850,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Movement phase.",
       "target": "One Land Raider model from your army that has not been selected to move this phase.",
       "effect": "One ADEPTUS ASTARTES unit embarked within your LAND RAIDER can disembark. When doing so, models in that unit can be set up anywhere on the battlefield wholly within 6\" of your LAND RAIDER and can be set up within Engagement Range of one or more enemy units.",
@@ -4581,6 +4870,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "End of the Fight phase.",
       "target": "One Adeptus Astartes Infantry unit from your army that was eligible to fight this phase.",
       "effect": "If your unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\". It cannot embark within a Transport at the end of this move if it disembarked from a TRANSPORT this turn.",
@@ -4600,6 +4891,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes an attack that targets a unit that is below its Starting Strength, that attack has the [SUSTAINED HITS 1] ability, and when making such an attack, if the attacking model is a VEHICLE , a successful unmodified Hit roll of 5+ scores a Critical Hit.",
@@ -4619,6 +4912,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -4637,6 +4932,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Command phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that is below its Starting Strength.",
       "effect": "Until the end of the turn, your unit can ignore any or all modifiers to its characteristics and/or to any roll or test made for it (excluding modifiers to saving throws).",
@@ -4655,6 +4952,8 @@
       "phases": [
         "any"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Any phase, just after an ADEPTUS ASTARTES VEHICLE model from your army with the Deadly Demise ability is destroyed.",
       "target": "That ADEPTUS ASTARTES VEHICLE model. You can use this Stratagem on that model even though it was just destroyed.",
       "effect": "Do not roll one D6 to determine whether mortal wounds are inflicted by your model’s Deadly Demise ability. Instead, mortal wounds are automatically inflicted.",
@@ -4673,6 +4972,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Command phase.",
       "target": "One ADEPTUS ASTARTES WALKER model from your army.",
       "effect": "Until the start of your next Command phase, improve your model’s Move, Toughness, Leadership and Objective Control characteristics by 1 and each time your model makes an attack, add 1 to the Hit roll.",
@@ -4691,6 +4992,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Shooting phase, just after an enemy unit has resolved its attacks.",
       "target": "One ADEPTUS ASTARTES VEHICLE unit from your army that was reduced to Below Half-strength as a result of the attacking unit’s attacks.",
       "effect": "Your unit can shoot as if it were your Shooting phase, but must target only that enemy unit when doing so, and can only do so if that enemy unit is an eligible target.",
@@ -4710,6 +5013,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
       "effect": "Select the [LETHAL HITS] or [SUSTAINED HITS 1] ability. Until the end of the phase, weapons equipped by models in your unit have this ability in a turn in which they disembarked from a Drop Pod or while targeting an enemy unit within 12\".",
@@ -4729,6 +5034,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
       "effect": "Until the end of the phase, weapons equipped by models in your unit have the [PRECISION] ability and each time a model in your unit makes an attack that targets a CHARACTER unit, add 1 to the Hit roll.",
@@ -4747,6 +5054,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
       "target": "One ADEPTUS ASTARTES unit (excluding Titanic units) from your army that was selected as the target of one or more of the attacking unit’s attacks and one friendly Adeptus Astartes Smoke Vehicle or Drop Pod unit within 9\" of it.",
       "effect": "Until the end of the phase, models in your units have the Stealth ability and each time a ranged attack targets one of your units, models in that unit have the Benefit of Cover against that attack.",
@@ -4765,6 +5074,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can move up to 6\" instead of up to 3\".",
@@ -4783,6 +5094,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "End of your opponent’s Fight phase.",
       "target": "One Adeptus Astartes Infantry unit from your army that was not set up on the battlefield this turn and one friendly Transport it is able to embark within.",
       "effect": "If your ADEPTUS ASTARTES unit is wholly within 6\" of that TRANSPORT , it can embark within it.",
@@ -4801,6 +5114,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Command phase.",
       "target": "One ADEPTUS ASTARTES unit from your army.",
       "effect": "Select one enemy unit visible to and within 18\" of your unit. That enemy unit takes a Battle-shock test. When doing so, subtract 1 from that test and, if that test is failed, until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.",
@@ -4819,6 +5134,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
       "target": "One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES FLY VEHICLE unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll and subtract 1 from the Wound roll.",
@@ -4838,6 +5155,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -4856,6 +5175,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot this phase.",
       "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [ASSAULT] ability. If such a weapon already has this ability, until the end of the phase, that weapon has the [SUSTAINED HITS 1] ability as well.",
@@ -4874,6 +5195,8 @@
       "phases": [
         "charge"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Charge phase.",
       "target": "One ADEPTUS ASTARTES MOUNTED unit from your army that has not declared a charge this phase.",
       "effect": "Until the end of the turn, you can re-roll Charge rolls made for your unit and melee weapons equipped by models in that unit have the [LANCE] ability.",
@@ -4892,6 +5215,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.",
       "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army that is within 9\" of that enemy unit.",
       "effect": "Your unit can make a Normal move of up to 6\".",
@@ -4910,6 +5235,8 @@
       "phases": [
         "movement"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Movement phase.",
       "target": "One ADEPTUS ASTARTES MOUNTED or ADEPTUS ASTARTES VEHICLE unit (excluding WALKERS) from your army.",
       "effect": "Until the end of the phase, if your unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in your unit, or 9\" instead if your unit is MOUNTED .",
@@ -4928,6 +5255,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Shooting phase.",
       "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to shoot this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes a ranged attack that targets an enemy unit that is more than 12\" away, improve the Ballistic Skill and Armour Penetration characteristics of that attack by 1. If one or more enemy models are destroyed as a result of those attacks, select one of those destroyed models; that destroyed model’s unit must take a Battle-shock test.",
@@ -4946,6 +5275,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that has not been selected to fight this phase.",
       "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
@@ -4965,6 +5296,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -4983,6 +5316,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "End of your opponent’s Fight phase.",
       "target": "Up to two PHOBOS and/or SCOUT SQUAD units from your army, or one other ADEPTUS ASTARTES INFANTRY unit from your army.",
       "effect": "Remove those units from the battlefield and place them into Strategic Reserves.",
@@ -5001,6 +5336,8 @@
       "phases": [
         "charge"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Charge phase, just after an enemy unit declares a charge.",
       "target": "One ADEPTUS ASTARTES INFANTRY unit from your army that was selected as a target of that charge.",
       "effect": "Your unit can make a Normal move of up to D6\", or up to 6\" instead if it is a PHOBOS or ScouT SQUAD unit.",
@@ -5019,6 +5356,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Start of the Command phase.",
       "target": "One ADEPTUS ASTARTES INFANTRY or ADEPTUS ASTARTES MOUNTED unit from your army within range of an objective marker you control.",
       "effect": "That objective marker is said to be Sabotaged, and remains under your control even if you have no models within range of it, until your opponent controls it at the start or end of any turn. While an objective marker is Sabotaged and under your control, each time an enemy unit ends a Normal, Advance, Fall Back or Charge move within range of that objective marker, roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds.",
@@ -5037,6 +5376,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes an attack, if that model’s unit is within range of one or more objective markers or the target unit is within range of one or more objective markers, improve the Armour Penetration characteristic of that attack by 1.",
@@ -5056,6 +5397,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your Shooting phase or the Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to shoot or fight this phase.",
       "effect": "Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability and each time a model in your unit makes an attack, you can ignore any or all modifiers to the following: that attack’s Ballistic Skill or Weapon Skill characteristic; the Hit roll.",
@@ -5074,6 +5417,8 @@
       "phases": [
         "any"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Any phase, just after an Ancient model from your army is destroyed.",
       "target": "That ANCIENT model. You can use this Stratagem on that model even though it was just destroyed.",
       "effect": "At the end of the phase, set your model back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with its full wounds remaining.",
@@ -5093,6 +5438,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit destroys an Ancient model from your army that has not been targeted with the Refusal to Yield Stratagem this phase.",
       "target": "One ADEPTUS ASTARTES unit from your army visible to that enemy unit.",
       "effect": "Until the end of the battle, each time an ADEPTUS ASTARTES model from your army makes an attack that targets that enemy unit, add 1 to the Hit roll.",
@@ -5111,6 +5458,8 @@
       "phases": [
         "shooting"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "Your opponent’s Shooting phase, just after an enemy unit has selected its targets.",
       "target": "One Ancient unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll.",
@@ -5129,6 +5478,8 @@
       "phases": [
         "charge"
       ],
+      "turn": "Opponent’s turn",
+      "turn_scope": "enemy",
       "timing": "End of your opponent’s Charge phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that is within 6\" of one or more enemy units and would be eligible to declare a charge against one or more of those enemy units if it were your Charge phase.",
       "effect": "Your unit now declares a charge that only targets one or more of those enemy units, and you resolve that charge.",
@@ -5147,6 +5498,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.",
       "effect": "Until the end of the phase, each time a model in your unit makes an attack, re-roll a Hit roll of 1 and you can ignore any or all modifiers to the following: that attack’s Weapon Skill characteristic; the Hit roll; the Wound roll.",
@@ -5165,6 +5518,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase.",
       "effect": "Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
@@ -5183,6 +5538,8 @@
       "phases": [
         "any"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Any phase, just after a mortal wound is allocated to an ADEPTUS ASTARTES unit from your army.",
       "target": "That ADEPTUS ASTARTES unit.",
       "effect": "Until the end of the phase, models in your unit have the Feel No Pain 5+ ability against mortal wounds.",
@@ -5202,6 +5559,8 @@
         "shooting",
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.",
       "target": "One ADEPTUS ASTARTES unit from your army that was selected as the target of one or more of the attacking unit’s attacks.",
       "effect": "Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
@@ -5220,6 +5579,8 @@
       "phases": [
         "command"
       ],
+      "turn": "Your turn",
+      "turn_scope": "friendly",
       "timing": "Your Command phase.",
       "target": "One Adeptus Astartes Infantry or Adeptus Astartes Mounted unit from your army.",
       "effect": "Select the Chorus of Relentless Hate, Rite of Perfervid Wrath or Chant of Deathless Devotion Litany. Until the end of the battle round, that Litany is active for your unit instead of any other Litany that is active for your army.",
@@ -5238,6 +5599,8 @@
       "phases": [
         "fight"
       ],
+      "turn": "Either player’s turn",
+      "turn_scope": "either",
       "timing": "Fight phase.",
       "target": "One ADEPTUS ASTARTES unit from your army that has not been selected to fight this phase and is within Engagement Range of one or more enemy units.",
       "effect": "Until the end of the phase, when determining which models in your unit are eligible to fight, any models in it that are within 3\" of one or more enemy models are eligible to fight. When resolving those attacks, such models can target one of those enemy units that is within 3\" of them and within Engagement Range of their unit.",

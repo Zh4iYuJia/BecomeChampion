@@ -4,7 +4,7 @@
    ================================================================ */
 'use strict';
 
-const CACHE_NAME   = 'bc-shell-v2.4.2';
+const CACHE_NAME   = 'bc-shell-v2.4.4';
 const SHELL_FILES  = [
   './',
   './index.html',
